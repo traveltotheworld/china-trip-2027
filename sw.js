@@ -1,5 +1,6 @@
-const CACHE="china-trip-v24";
+const CACHE="china-trip-v25";
 const ASSETS=[
+  "/assets/china-cities-card.png",
   "/assets/supabase-data.js",
   "/assets/supabase-config.js",
   "/admin.html",
