@@ -100,16 +100,21 @@ function itineraryLocation(activity){
 
 async function renderItinerary(){
  const members=await getJSON("data/members.json");
- const me=members.find(x=>x.id===getMemberId());
- let data;
+ const me=members.find(x=>x.id===getMemberId())||members[0];
 
- if(me?.itineraryGroup==="septino-lina-raelyn"){
-   data=await getJSON("data/itinerary-septino-lina-raelyn.json");
- }else{
-   data=await getJSON("data/itinerary.json");
- }
+ const earlyFile=me?.itineraryGroup==="septino-lina-raelyn"
+   ? "data/itinerary-group-a-early.json"
+   : "data/itinerary-group-b-early.json";
 
- const days=data.days||data;
+ const [earlyData,commonData]=await Promise.all([
+   getJSON(earlyFile),
+   getJSON("data/itinerary-common.json")
+ ]);
+
+ const days=[
+   ...(earlyData.days||[]),
+   ...(commonData.days||[])
+ ].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
 
  $("#content").innerHTML=`
    <div class="itinerary-table-list">
@@ -265,7 +270,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=18",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=19",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });

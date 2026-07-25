@@ -1,0 +1,430 @@
+{
+  "groupId": "group-a",
+  "members": [
+    "septino",
+    "lina",
+    "raelyn"
+  ],
+  "days": [
+    {
+      "date": "2027-03-02",
+      "label": "Selasa, 02 Maret 2027",
+      "items": [
+        {
+          "from": "12:30",
+          "to": "13:30",
+          "activity": "Persiapan keberangkatan",
+          "baiduMap": false
+        },
+        {
+          "from": "13:30",
+          "to": "15:30",
+          "activity": "Perjalanan menuju Batam Centre",
+          "baiduMap": false
+        },
+        {
+          "from": "15:30",
+          "to": "17:00",
+          "activity": "Menunggu boarding ferry (rekomendasi ferry pukul 17:30)",
+          "baiduMap": false
+        },
+        {
+          "from": "17:00",
+          "to": "19:00",
+          "activity": "Batam Centre - Singapore Tanah Merah via Majestic",
+          "baiduMap": false
+        },
+        {
+          "from": "19:00",
+          "to": "20:35",
+          "activity": "Proses imigrasi",
+          "baiduMap": false
+        },
+        {
+          "from": "20:35",
+          "to": "21:35",
+          "activity": "HarbourFront - Changi Airport Terminal 3",
+          "baiduMap": false
+        },
+        {
+          "from": "21:35",
+          "to": "01:15",
+          "activity": "Menunggu boarding pesawat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-03",
+      "label": "Rabu, 03 Maret 2027",
+      "items": [
+        {
+          "from": "01:15",
+          "to": "06:30",
+          "activity": "Singapore - Shanghai via Singapore Airlines SQ826",
+          "baiduMap": false
+        },
+        {
+          "from": "06:30",
+          "to": "08:00",
+          "activity": "Proses imigrasi",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "10:00",
+          "activity": "Shanghai Pudong Airport - Shanghai Hongqiao International",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海浦东国际机场",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "10:00",
+          "to": "12:19",
+          "activity": "Menunggu boarding HSR dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "12:19",
+          "to": "15:05",
+          "activity": "Shanghai Hongqiao Railway Station - Shangrao Railway Station",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "上饶站",
+            "regionZh": "",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "15:05",
+          "to": "16:15",
+          "activity": "Proses keluar stasiun",
+          "baiduMap": false
+        },
+        {
+          "from": "16:15",
+          "to": "17:15",
+          "activity": "Shangrao Railway Station - Wangxiangu Zhonglou Homestay",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上饶站",
+            "destinationZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "regionZh": "上饶",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "17:15",
+          "to": "18:30",
+          "activity": "Check-in Wangxiangu Zhonglou Homestay",
+          "baiduMap": false
+        },
+        {
+          "from": "18:30",
+          "to": "18:45",
+          "activity": "Wangxiangu Zhonglou Homestay - Wangxian Valley",
+          "baiduMap": true,
+          "route": {
+            "originZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "destinationZh": "望仙谷景区",
+            "regionZh": "上饶",
+            "mode": "walking"
+          }
+        },
+        {
+          "from": "18:45",
+          "to": "23:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "23:00",
+          "to": "23:15",
+          "activity": "Wangxian Valley - Wangxiangu Zhonglou Homestay",
+          "baiduMap": true,
+          "route": {
+            "originZh": "望仙谷景区",
+            "destinationZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "regionZh": "上饶",
+            "mode": "walking"
+          }
+        },
+        {
+          "from": "23:15",
+          "to": "07:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-04",
+      "label": "Kamis, 04 Maret 2027",
+      "items": [
+        {
+          "from": "07:30",
+          "to": "09:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "11:00",
+          "activity": "Jalan-jalan sekitar dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "11:15",
+          "activity": "Check-out",
+          "baiduMap": false
+        },
+        {
+          "from": "11:15",
+          "to": "12:30",
+          "activity": "Wangxiangu Zhonglou Homestay - Shangrao Railway Station",
+          "baiduMap": true,
+          "route": {
+            "originZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "destinationZh": "上饶站",
+            "regionZh": "上饶",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "12:30",
+          "to": "14:35",
+          "activity": "Menunggu boarding HSR dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "14:35",
+          "to": "16:50",
+          "activity": "Shangrao Railway Station - Shanghai Hongqiao Railway Station",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上饶站",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "16:50",
+          "to": "18:00",
+          "activity": "Shanghai Hongqiao Railway Station - Hotel",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "18:00",
+          "to": "18:15",
+          "activity": "Check-in hotel",
+          "baiduMap": false
+        },
+        {
+          "from": "18:15",
+          "to": "19:15",
+          "activity": "Hotel - Sijing Night Market",
+          "baiduMap": true,
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "泗泾夜市",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "19:15",
+          "to": "21:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "21:00",
+          "to": "22:00",
+          "activity": "Sijing Night Market - Hotel",
+          "baiduMap": true,
+          "route": {
+            "originZh": "泗泾夜市",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "22:00",
+          "to": "23:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-05",
+      "label": "Jumat, 05 Maret 2027",
+      "items": [
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Jalan-jalan sekitar dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:00",
+          "activity": "Hotel - Hongqiao Railway Station",
+          "baiduMap": true,
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Menunggu boarding HSR",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "12:00",
+          "activity": "Hongqiao Railway Station - Jinshan North Station",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "金山北站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "12:00",
+          "to": "12:30",
+          "activity": "Jinshan North Station - LEGOLAND Shanghai",
+          "baiduMap": true,
+          "route": {
+            "originZh": "金山北站",
+            "destinationZh": "上海乐高乐园度假区",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "12:30",
+          "to": "18:00",
+          "activity": "Jalan-jalan, makan siang dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "18:00",
+          "to": "18:30",
+          "activity": "LEGOLAND Shanghai - Hotel",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海乐高乐园度假区",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "18:30",
+          "to": "19:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-06",
+      "label": "Sabtu, 06 Maret 2027",
+      "items": [
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Jalan-jalan sekitar dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:00",
+          "activity": "Hotel - Shanghai Wild Animal Park",
+          "baiduMap": true,
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "上海野生动物园",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Jalan-jalan, makan siang dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "12:00",
+          "activity": "Shanghai Wild Animal Park - Shanghai Pudong Airport",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海野生动物园",
+            "destinationZh": "上海浦东国际机场",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "12:00",
+          "to": "13:00",
+          "activity": "Menunggu proses imigrasi grup",
+          "baiduMap": false
+        },
+        {
+          "from": "13:00",
+          "to": "14:00",
+          "activity": "Shanghai Pudong Airport - Hotel",
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海浦东国际机场",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
+        },
+        {
+          "from": "14:00",
+          "to": "08:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    }
+  ]
+}
