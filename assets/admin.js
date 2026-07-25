@@ -79,7 +79,7 @@ function renderEditor(){
  else if(t==="flights")renderFlights();
  else if(t==="hotels")renderSimpleList("Hotel",["city","name","dates","address","mapsQuery"]);
  else if(t==="hsr")renderSimpleList("HSR",["route","date","train","time","station","group"]);
- else if(t==="members")renderSimpleList("Peserta",["id","name","email","member","room","roommates","flightGroup","seat","itineraryGroup"]);
+ else if(t==="members")renderSimpleList("Peserta",["id","name","whatsapp","email","member","room","roommates","flightGroup","seat","itineraryGroup"]);
  else if(t==="rooms")renderRooms();
  else if(t==="tripinfo")renderTripInfo();
  bindFields()
@@ -216,7 +216,7 @@ function handleAction(e){
   const t=activeDataset.type;
   if(t==="hotels")workingData.push({city:"",name:"",dates:"",address:"",mapsQuery:""});
   if(t==="hsr")workingData.push({route:"",date:"",train:"",time:"",station:"",group:""});
-  if(t==="members")workingData.push({id:"",name:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",seat:"",itineraryGroup:"main-group"});
+  if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",seat:"",itineraryGroup:"main-group"});
   if(t==="tripinfo")workingData.push({title:"Informasi Baru",icon:"ℹ️",items:[]})
  }
  if(a==="delete-record"){if(confirm("Hapus data ini?"))workingData.splice(+e.currentTarget.dataset.index,1)}

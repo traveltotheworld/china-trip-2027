@@ -1,6 +1,10 @@
 <!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111820"><link rel="canonical" href="https://china-trip-2027.vercel.app/"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="assets/style.css"><title>China Trip 2027</title></head><body><main class="app">
 <section class="hero"><div class="topbar"><span class="pill">CHINA TRIP 2027</span><span class="pill" id="memberNumber">01 / 12</span></div><div><div style="margin-bottom:26px"><span class="eyebrow">06–14 March 2027</span><h1>Beyond<br>the Journey</h1><div class="sub">Shanghai • Suzhou • Hangzhou</div></div><div class="profile"><div class="avatar" id="travelerInitial">T</div><div><h2 id="travelerName">Traveler</h2><small id="travelerEmail">Email belum diisi</small></div><span class="status"></span></div></div></section>
-<section class="section"><span class="eyebrow">Welcome aboard</span><h3>Halo, <span id="welcomeName">Traveler</span> 👋</h3><p class="lead">Semua informasi perjalananmu tersimpan di satu tempat.</p><div class="stats"><div class="stat"><b id="room">Belum diisi</b><span>Kamar</span></div><div class="stat"><b id="roommates">Belum diisi</b><span>Teman sekamar</span></div></div></section>
+<section class="section personal-section"><span class="eyebrow">Personal profile</span><h3>Data Personal</h3><p class="lead">Informasi kontak pemilik QR perjalanan ini.</p><div class="nfc-card">
+<div class="nfc-row"><span class="nfc-label">Nama</span><strong id="personalName">Traveler</strong></div>
+<div class="nfc-row"><span class="nfc-label">WhatsApp</span><a id="personalWhatsapp" href="#" rel="noopener">Belum diisi</a></div>
+<div class="nfc-row"><span class="nfc-label">Email</span><a id="personalEmail" href="#">Belum diisi</a></div>
+</div></section>
 <section class="section alt"><span class="eyebrow">Travel tools</span><h3>Menu perjalanan</h3><div class="menu">
 <a data-page="itinerary.html"><span class="icon">🗓️</span><span><strong>Itinerary</strong><small>Jadwal perjalanan harian</small></span><span class="arrow">›</span></a>
 <a data-page="flight.html"><span class="icon">✈️</span><span><strong>Flight</strong><small>Detail penerbangan</small></span><span class="arrow">›</span></a>
@@ -11,6 +15,6 @@
 
 <a data-page="trip-info.html"><span class="icon">🇨🇳</span><span><strong>Trip Info</strong><small>Informasi penting selama di China</small></span><span class="arrow">›</span></a>
 <button id="emergencyBtn"><span class="icon">🆘</span><span><strong>Emergency</strong><small>Kontak penting perjalanan</small></span><span class="arrow">›</span></button>
-</div></section><footer>China Trip 2027 • Hosted on Vercel<br><a class="admin-footer-link" href="admin.html">Admin Portal</a></footer></main>
+</div></section><footer>China Trip 2027</footer></main>
 <div class="modal" id="emergencyModal" hidden><div class="modal-box"><button class="close" id="closeModal">×</button><span class="eyebrow">Emergency</span><h3>Kontak penting</h3><div class="card"><b>Ketua Rombongan</b><div class="meta">Septino<br>Nomor belum diisi</div></div><div class="card"><b>Polisi China</b><div class="meta">110</div></div><div class="card"><b>Ambulans China</b><div class="meta">120</div></div></div></div>
 <script src="assets/supabase-config.js"></script><script src="assets/supabase-data.js"></script><script src="assets/app.js"></script><script>initHome()</script></body></html>

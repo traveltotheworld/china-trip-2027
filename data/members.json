@@ -8,7 +8,8 @@
     "roommates": "Lina & Raelyn",
     "flightGroup": "group-a",
     "seat": "59H",
-    "itineraryGroup": "septino-lina-raelyn"
+    "itineraryGroup": "septino-lina-raelyn",
+    "whatsapp": ""
   },
   {
     "id": "lina",
@@ -19,7 +20,8 @@
     "roommates": "Septino & Raelyn",
     "flightGroup": "group-a",
     "seat": "59J",
-    "itineraryGroup": "septino-lina-raelyn"
+    "itineraryGroup": "septino-lina-raelyn",
+    "whatsapp": ""
   },
   {
     "id": "astina",
@@ -29,7 +31,8 @@
     "room": "Kamar 2",
     "roommates": "Cindy & Devia",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "cindy",
@@ -39,7 +42,8 @@
     "room": "Kamar 2",
     "roommates": "Astina & Devia",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "rico",
@@ -49,7 +53,8 @@
     "room": "Belum diisi",
     "roommates": "Belum diisi",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "devia",
@@ -59,7 +64,8 @@
     "room": "Kamar 2",
     "roommates": "Astina & Cindy",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "yongki",
@@ -69,7 +75,8 @@
     "room": "Kamar 3",
     "roommates": "Prianto",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "prianto",
@@ -79,7 +86,8 @@
     "room": "Kamar 3",
     "roommates": "Yongki",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "fredy",
@@ -89,7 +97,8 @@
     "room": "Kamar 5",
     "roommates": "Lg Tan",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "apryanto",
@@ -99,7 +108,8 @@
     "room": "Kamar 4",
     "roommates": "Irin",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   },
   {
     "id": "raelyn",
@@ -110,7 +120,8 @@
     "roommates": "Septino & Lina",
     "flightGroup": "group-a",
     "seat": "59K",
-    "itineraryGroup": "septino-lina-raelyn"
+    "itineraryGroup": "septino-lina-raelyn",
+    "whatsapp": ""
   },
   {
     "id": "irin",
@@ -120,6 +131,7 @@
     "room": "Kamar 4",
     "roommates": "Apryanto",
     "flightGroup": "group-b",
-    "itineraryGroup": "main-group"
+    "itineraryGroup": "main-group",
+    "whatsapp": ""
   }
 ]
