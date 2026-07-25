@@ -1,23 +1,23 @@
 [
   {
     "city": "Shanghai",
-    "name": "Belum diisi",
-    "dates": "07–10 Mar 2027",
-    "address": "Belum diisi",
-    "mapsQuery": "上海酒店"
+    "name": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+    "dates": "04–09 Mar 2027",
+    "address": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
+    "mapsQuery": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）"
   },
   {
     "city": "Suzhou",
     "name": "Madison Hotel Suzhou Railway Station",
-    "dates": "10–12 Mar 2027",
-    "address": "Belum diisi",
+    "dates": "09–11 Mar 2027",
+    "address": "苏州火车站美仑酒店",
     "mapsQuery": "苏州火车站美仑酒店"
   },
   {
     "city": "Hangzhou",
-    "name": "Belum diisi",
-    "dates": "12–14 Mar 2027",
-    "address": "Belum diisi",
-    "mapsQuery": "杭州酒店"
+    "name": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
+    "dates": "11–14 Mar 2027",
+    "address": "Nama hotel mengikuti jadwal revisi terbaru",
+    "mapsQuery": "杭州憶公寓（浙大紫金港店）"
   }
 ]

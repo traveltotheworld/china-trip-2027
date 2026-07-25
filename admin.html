@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111820">
+<link rel="stylesheet" href="assets/style.css">
+<title>Admin Portal — China Trip 2027</title>
+</head>
+<body class="admin-body">
+<main class="admin-shell">
+  <section id="loginPanel" class="admin-login-card">
+    <span class="eyebrow">China Trip 2027</span>
+    <h1>Admin Portal</h1>
+    <p class="lead">Masukkan password admin untuk mengubah data perjalanan.</p>
+    <form id="loginForm" class="admin-form">
+      <label>Password
+        <input id="adminPassword" type="password" autocomplete="current-password" required>
+      </label>
+      <button class="admin-primary" type="submit">Masuk</button>
+      <p id="loginError" class="admin-error" hidden>Password tidak sesuai.</p>
+    </form>
+  </section>
+
+  <section id="adminPanel" hidden>
+    <header class="admin-header">
+      <div>
+        <span class="eyebrow">China Trip 2027</span>
+        <h1>Admin Portal</h1>
+        <p class="lead">Edit data, simpan, lalu buka website untuk melihat perubahan.</p>
+      </div>
+      <div class="admin-header-actions">
+        <a href="index.html" class="admin-secondary">Lihat Website</a>
+        <button id="logoutBtn" class="admin-secondary">Keluar</button>
+      </div>
+    </header>
+
+    <section class="admin-notice">
+      <strong>Penyimpanan lokal browser</strong>
+      <p>Perubahan langsung terlihat pada browser dan perangkat ini. Gunakan tombol Export untuk mencadangkan atau memindahkan perubahan ke perangkat lain.</p>
+    </section>
+
+    <nav id="adminTabs" class="admin-tabs"></nav>
+
+    <section class="admin-editor-card">
+      <div class="admin-editor-head">
+        <div>
+          <span class="eyebrow" id="editorCategory">Data</span>
+          <h2 id="editorTitle">Editor</h2>
+        </div>
+        <span id="saveStatus" class="save-status">Belum ada perubahan</span>
+      </div>
+      <textarea id="jsonEditor" spellcheck="false"></textarea>
+      <div class="admin-actions">
+        <button id="saveBtn" class="admin-primary">Simpan Perubahan</button>
+        <button id="reloadBtn" class="admin-secondary">Muat Ulang</button>
+        <button id="resetCurrentBtn" class="admin-danger">Reset Bagian Ini</button>
+      </div>
+      <p id="editorError" class="admin-error" hidden></p>
+    </section>
+
+    <section class="admin-tools-card">
+      <h2>Backup & Pemindahan Data</h2>
+      <div class="admin-actions">
+        <button id="exportBtn" class="admin-primary">Export Semua Data</button>
+        <label class="admin-secondary file-button">Import Backup
+          <input id="importInput" type="file" accept=".json,application/json" hidden>
+        </label>
+        <button id="resetAllBtn" class="admin-danger">Reset Semua Perubahan</button>
+      </div>
+    </section>
+  </section>
+</main>
+<script src="assets/admin.js"></script>
+</body>
+</html>

@@ -25,13 +25,13 @@
         {
           "from": "15:30",
           "to": "17:00",
-          "activity": "Menunggu boarding ferry (rekomendasi ferry pukul 17:30)",
+          "activity": "Menunggu boarding ferry",
           "baiduMap": false
         },
         {
           "from": "17:00",
           "to": "19:00",
-          "activity": "Batam Centre - Singapore Tanah Merah via Majestic",
+          "activity": "Batam Centre - Singapore Tanah Merah (Majestic Ferry)",
           "baiduMap": false
         },
         {
@@ -43,7 +43,7 @@
         {
           "from": "20:35",
           "to": "21:35",
-          "activity": "HarbourFront - Changi Airport Terminal 3",
+          "activity": "Tanah Merah - Changi Airport Terminal 3",
           "baiduMap": false
         },
         {
@@ -73,7 +73,7 @@
         {
           "from": "08:00",
           "to": "10:00",
-          "activity": "Shanghai Pudong Airport - Shanghai Hongqiao International",
+          "activity": "Shanghai Pudong Airport - Shanghai Hongqiao Railway Station",
           "baiduMap": true,
           "route": {
             "originZh": "上海浦东国际机场",
@@ -96,7 +96,7 @@
           "route": {
             "originZh": "上海虹桥站",
             "destinationZh": "上饶站",
-            "regionZh": "",
+            "regionZh": "中国",
             "mode": "transit"
           }
         },
@@ -210,18 +210,18 @@
           "route": {
             "originZh": "上饶站",
             "destinationZh": "上海虹桥站",
-            "regionZh": "",
+            "regionZh": "中国",
             "mode": "transit"
           }
         },
         {
           "from": "16:50",
           "to": "18:00",
-          "activity": "Shanghai Hongqiao Railway Station - Hotel",
+          "activity": "Shanghai Hongqiao Railway Station - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "上海虹桥站",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "regionZh": "上海",
             "mode": "transit"
           }
@@ -229,42 +229,42 @@
         {
           "from": "18:00",
           "to": "18:15",
-          "activity": "Check-in hotel",
+          "activity": "Check-in Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": false
         },
         {
           "from": "18:15",
-          "to": "19:15",
-          "activity": "Hotel - Sijing Night Market",
+          "to": "20:15",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Sijing Night Market",
           "baiduMap": true,
           "route": {
-            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "泗泾夜市",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "19:15",
-          "to": "21:00",
+          "from": "20:15",
+          "to": "22:00",
           "activity": "Jalan-jalan",
           "baiduMap": false
         },
         {
-          "from": "21:00",
-          "to": "22:00",
-          "activity": "Sijing Night Market - Hotel",
+          "from": "22:00",
+          "to": "00:00",
+          "activity": "Sijing Night Market - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "泗泾夜市",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "22:00",
-          "to": "23:00",
+          "from": "00:00",
+          "to": "07:00",
           "activity": "Mandi dan istirahat",
           "baiduMap": false
         }
@@ -288,67 +288,37 @@
         },
         {
           "from": "09:00",
-          "to": "10:00",
-          "activity": "Hotel - Hongqiao Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
-            "destinationZh": "上海虹桥站",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "10:00",
-          "to": "11:00",
-          "activity": "Menunggu boarding HSR",
-          "baiduMap": false
-        },
-        {
-          "from": "11:00",
           "to": "12:00",
-          "activity": "Hongqiao Railway Station - Jinshan North Station",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - LEGOLAND Shanghai",
           "baiduMap": true,
           "route": {
-            "originZh": "上海虹桥站",
-            "destinationZh": "金山北站",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "12:00",
-          "to": "12:30",
-          "activity": "Jinshan North Station - LEGOLAND Shanghai",
-          "baiduMap": true,
-          "route": {
-            "originZh": "金山北站",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "上海乐高乐园度假区",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "12:30",
-          "to": "18:00",
+          "from": "12:00",
+          "to": "20:00",
           "activity": "Jalan-jalan, makan siang dan makan malam",
           "baiduMap": false
         },
         {
-          "from": "18:00",
-          "to": "18:30",
-          "activity": "LEGOLAND Shanghai - Hotel",
+          "from": "20:00",
+          "to": "23:00",
+          "activity": "LEGOLAND Shanghai - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "上海乐高乐园度假区",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "18:30",
-          "to": "19:30",
+          "from": "23:00",
+          "to": "07:00",
           "activity": "Mandi dan istirahat",
           "baiduMap": false
         }
@@ -372,56 +342,56 @@
         },
         {
           "from": "09:00",
-          "to": "10:00",
-          "activity": "Hotel - Shanghai Wild Animal Park",
+          "to": "11:00",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Shanghai Wild Animal Park",
           "baiduMap": true,
           "route": {
-            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "上海野生动物园",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "10:00",
-          "to": "11:00",
-          "activity": "Jalan-jalan, makan siang dan makan malam",
+          "from": "11:00",
+          "to": "17:00",
+          "activity": "Jalan-jalan dan makan siang",
           "baiduMap": false
         },
         {
-          "from": "11:00",
-          "to": "12:00",
-          "activity": "Shanghai Wild Animal Park - Shanghai Pudong Airport",
+          "from": "17:00",
+          "to": "18:30",
+          "activity": "Shanghai Wild Animal Park - Shanghai Disneytown",
           "baiduMap": true,
           "route": {
             "originZh": "上海野生动物园",
-            "destinationZh": "上海浦东国际机场",
+            "destinationZh": "上海迪士尼小镇",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "12:00",
-          "to": "13:00",
-          "activity": "Menunggu proses imigrasi grup",
+          "from": "18:30",
+          "to": "20:30",
+          "activity": "Jalan-jalan dan makan malam",
           "baiduMap": false
         },
         {
-          "from": "13:00",
-          "to": "14:00",
-          "activity": "Shanghai Pudong Airport - Hotel",
+          "from": "20:30",
+          "to": "21:30",
+          "activity": "Shanghai Disneytown - Shanghai Pudong Airport Terminal 2",
           "baiduMap": true,
           "route": {
-            "originZh": "上海浦东国际机场",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "originZh": "上海迪士尼小镇",
+            "destinationZh": "上海浦东国际机场T2航站楼",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "14:00",
-          "to": "08:00",
-          "activity": "Mandi dan istirahat",
+          "from": "21:30",
+          "to": "00:00",
+          "activity": "Menunggu rombongan selesai proses imigrasi",
           "baiduMap": false
         }
       ]

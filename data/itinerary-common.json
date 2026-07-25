@@ -9,11 +9,11 @@
         {
           "from": "00:00",
           "to": "02:00",
-          "activity": "Shanghai Pudong Airport Terminal 2 - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "activity": "Shanghai Pudong Airport - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "上海浦东国际机场T2航站楼",
-            "destinationZh": "艺龙安悦酒店（上海顾唐路地铁站店）",
+            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "regionZh": "上海",
             "mode": "transit"
           }
@@ -21,42 +21,36 @@
         {
           "from": "02:00",
           "to": "02:15",
-          "activity": "Check-in Yilong Anyue Hotel",
+          "activity": "Mandi dan persiapan istirahat",
           "baiduMap": false
         },
         {
           "from": "02:15",
-          "to": "09:30",
+          "to": "09:00",
           "activity": "Istirahat",
           "baiduMap": false
         },
         {
-          "from": "09:30",
+          "from": "09:00",
           "to": "10:00",
-          "activity": "Bangun, mandi dan sarapan",
-          "baiduMap": false
-        },
-        {
-          "from": "10:00",
-          "to": "11:00",
-          "activity": "Yilong Anyue Hotel - Jing'an Temple",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Jing'an Temple",
           "baiduMap": true,
           "route": {
-            "originZh": "艺龙安悦酒店（上海顾唐路地铁站店）",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "静安寺",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "11:00",
-          "to": "12:00",
+          "from": "10:00",
+          "to": "11:00",
           "activity": "Jalan-jalan",
           "baiduMap": false
         },
         {
-          "from": "12:00",
-          "to": "13:00",
+          "from": "11:00",
+          "to": "12:00",
           "activity": "Jing'an Temple - Wukang Road",
           "baiduMap": true,
           "route": {
@@ -67,14 +61,14 @@
           }
         },
         {
-          "from": "13:00",
-          "to": "14:30",
+          "from": "12:00",
+          "to": "13:30",
           "activity": "Jalan-jalan dan makan siang",
           "baiduMap": false
         },
         {
-          "from": "14:30",
-          "to": "15:30",
+          "from": "13:30",
+          "to": "14:30",
           "activity": "Jing'an Temple - Xintiandi",
           "baiduMap": true,
           "route": {
@@ -85,14 +79,14 @@
           }
         },
         {
-          "from": "15:30",
-          "to": "17:00",
+          "from": "14:30",
+          "to": "16:00",
           "activity": "Jalan-jalan",
           "baiduMap": false
         },
         {
-          "from": "17:00",
-          "to": "18:00",
+          "from": "16:00",
+          "to": "17:00",
           "activity": "Xintiandi - Tianzifang",
           "baiduMap": true,
           "route": {
@@ -103,14 +97,14 @@
           }
         },
         {
-          "from": "18:00",
-          "to": "19:30",
+          "from": "17:00",
+          "to": "18:30",
           "activity": "Jalan-jalan dan makan malam",
           "baiduMap": false
         },
         {
-          "from": "19:30",
-          "to": "20:30",
+          "from": "18:30",
+          "to": "19:30",
           "activity": "Tianzifang - The Bund, Lujiazui dan Oriental Pearl Tower",
           "baiduMap": true,
           "route": {
@@ -121,25 +115,25 @@
           }
         },
         {
-          "from": "20:30",
-          "to": "21:30",
+          "from": "19:30",
+          "to": "20:30",
           "activity": "Jalan-jalan",
           "baiduMap": false
         },
         {
-          "from": "21:30",
-          "to": "23:00",
-          "activity": "The Bund, Lujiazui dan Oriental Pearl Tower - Jian Home Apartment",
+          "from": "20:30",
+          "to": "22:00",
+          "activity": "The Bund, Lujiazui dan Oriental Pearl Tower - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "东方明珠广播电视塔",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "regionZh": "上海",
             "mode": "transit"
           }
         },
         {
-          "from": "23:00",
+          "from": "22:00",
           "to": "06:00",
           "activity": "Mandi dan istirahat",
           "baiduMap": false
@@ -165,10 +159,10 @@
         {
           "from": "08:00",
           "to": "09:00",
-          "activity": "Jian Home Apartment - Yuyuan Garden",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Yuyuan Garden",
           "baiduMap": true,
           "route": {
-            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "豫园",
             "regionZh": "上海",
             "mode": "transit"
@@ -237,11 +231,11 @@
         {
           "from": "21:00",
           "to": "22:30",
-          "activity": "Shanghai Romance Park - Jian Home Apartment",
+          "activity": "Shanghai Romance Park - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "上海千古情景区",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "regionZh": "上海",
             "mode": "transit"
           }
@@ -273,10 +267,10 @@
         {
           "from": "08:30",
           "to": "11:00",
-          "activity": "Jian Home Apartment - Zhujiajiao 朱家角古镇旅游区",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Zhujiajiao 朱家角古镇旅游区",
           "baiduMap": true,
           "route": {
-            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "朱家角古镇旅游区",
             "regionZh": "上海",
             "mode": "transit"
@@ -309,10 +303,10 @@
         {
           "from": "16:15",
           "to": "17:45",
-          "activity": "Jian Home Apartment - Shanghai Hongqiao Railway Station",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Shanghai Hongqiao Railway Station",
           "baiduMap": true,
           "route": {
-            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
             "destinationZh": "上海虹桥站",
             "regionZh": "上海",
             "mode": "transit"
@@ -328,7 +322,13 @@
           "from": "19:52",
           "to": "20:18",
           "activity": "Shanghai Hongqiao Railway Station - Suzhou Station",
-          "baiduMap": false
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "苏州站",
+            "regionZh": "中国",
+            "mode": "transit"
+          }
         },
         {
           "from": "20:18",
@@ -381,7 +381,7 @@
         {
           "from": "09:00",
           "to": "10:00",
-          "activity": "Hotel - Tiger Hill Pagoda",
+          "activity": "Madison Hotel Suzhou Railway Station - Tiger Hill Pagoda",
           "baiduMap": true,
           "route": {
             "originZh": "苏州火车站美仑酒店",
@@ -453,7 +453,7 @@
         {
           "from": "20:30",
           "to": "22:00",
-          "activity": "Pingjiang Road - Hotel",
+          "activity": "Pingjiang Road - Madison Hotel Suzhou Railway Station",
           "baiduMap": true,
           "route": {
             "originZh": "平江路历史街区",
@@ -489,7 +489,7 @@
         {
           "from": "09:00",
           "to": "10:30",
-          "activity": "Hotel - Hanshan Temple",
+          "activity": "Madison Hotel Suzhou Railway Station - Hanshan Temple",
           "baiduMap": true,
           "route": {
             "originZh": "苏州火车站美仑酒店",
@@ -525,7 +525,7 @@
         {
           "from": "15:30",
           "to": "16:00",
-          "activity": "Shantang Street - Hotel",
+          "activity": "Shantang Street - Madison Hotel Suzhou Railway Station",
           "baiduMap": true,
           "route": {
             "originZh": "七里山塘景区",
@@ -543,7 +543,7 @@
         {
           "from": "16:30",
           "to": "17:30",
-          "activity": "Hotel - Suzhou Railway Station",
+          "activity": "Madison Hotel Suzhou Railway Station - Suzhou Railway Station",
           "baiduMap": true,
           "route": {
             "originZh": "苏州火车站美仑酒店",
@@ -562,7 +562,13 @@
           "from": "18:52",
           "to": "20:25",
           "activity": "Suzhou South Railway Station - Hangzhou West Railway Station",
-          "baiduMap": false
+          "baiduMap": true,
+          "route": {
+            "originZh": "苏州南站",
+            "destinationZh": "杭州西站",
+            "regionZh": "中国",
+            "mode": "transit"
+          }
         },
         {
           "from": "20:25",
@@ -573,11 +579,11 @@
         {
           "from": "20:40",
           "to": "22:00",
-          "activity": "Hangzhou West Railway Station - Hotel Hangzhou",
+          "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "杭州西站",
-            "destinationZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "destinationZh": "杭州憶公寓（浙大紫金港店）",
             "regionZh": "杭州",
             "mode": "transit"
           }
@@ -615,10 +621,10 @@
         {
           "from": "08:30",
           "to": "10:00",
-          "activity": "Hotel - Lingyin Temple dan Feilai Feng",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch) - Lingyin Temple dan Feilai Feng",
           "baiduMap": true,
           "route": {
-            "originZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "originZh": "杭州憶公寓（浙大紫金港店）",
             "destinationZh": "灵隐寺飞来峰景区",
             "regionZh": "杭州",
             "mode": "transit"
@@ -687,11 +693,11 @@
         {
           "from": "20:30",
           "to": "21:30",
-          "activity": "Wulin Road Night Market - Hotel",
+          "activity": "Wulin Road Night Market - Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "武林夜市",
-            "destinationZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "destinationZh": "杭州憶公寓（浙大紫金港店）",
             "regionZh": "杭州",
             "mode": "transit"
           }
@@ -723,10 +729,10 @@
         {
           "from": "09:30",
           "to": "10:30",
-          "activity": "Hotel - Xixi Wetland",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch) - Xixi Wetland",
           "baiduMap": true,
           "route": {
-            "originZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "originZh": "杭州憶公寓（浙大紫金港店）",
             "destinationZh": "西溪国家湿地公园",
             "regionZh": "杭州",
             "mode": "transit"
@@ -759,18 +765,18 @@
         {
           "from": "21:30",
           "to": "22:30",
-          "activity": "Song Dynasty Town - Hotel",
+          "activity": "Song Dynasty Town - Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
           "baiduMap": true,
           "route": {
             "originZh": "杭州宋城",
-            "destinationZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "destinationZh": "杭州憶公寓（浙大紫金港店）",
             "regionZh": "杭州",
             "mode": "transit"
           }
         },
         {
           "from": "22:30",
-          "to": "02:30",
+          "to": "03:30",
           "activity": "Mandi dan istirahat",
           "baiduMap": false
         }
@@ -781,25 +787,25 @@
       "label": "Minggu, 14 Maret 2027",
       "items": [
         {
-          "from": "02:30",
-          "to": "03:30",
+          "from": "03:30",
+          "to": "04:30",
           "activity": "Bangun, mandi dan check-out",
           "baiduMap": false
         },
         {
-          "from": "03:30",
-          "to": "05:00",
-          "activity": "Hotel - Hangzhou Xiaoshan International Airport Terminal 4",
+          "from": "04:30",
+          "to": "06:00",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch) - Hangzhou Xiaoshan International Airport Terminal 4",
           "baiduMap": true,
           "route": {
-            "originZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "originZh": "杭州憶公寓（浙大紫金港店）",
             "destinationZh": "杭州萧山国际机场T4航站楼",
             "regionZh": "杭州",
             "mode": "transit"
           }
         },
         {
-          "from": "05:00",
+          "from": "06:00",
           "to": "08:20",
           "activity": "Menunggu boarding pesawat dan sarapan",
           "baiduMap": false
@@ -807,7 +813,7 @@
         {
           "from": "08:20",
           "to": "13:50",
-          "activity": "Hangzhou Xiaoshan International Airport - Singapore Changi Airport Terminal 3",
+          "activity": "Hangzhou Xiaoshan International Airport - Singapore Changi Airport Terminal 3 via Xiamen Airlines MF8703",
           "baiduMap": false
         },
         {
@@ -819,7 +825,7 @@
         {
           "from": "16:05",
           "to": "17:05",
-          "activity": "Changi Airport - Tanah Merah",
+          "activity": "Changi Airport - HarbourFront Centre",
           "baiduMap": false
         },
         {

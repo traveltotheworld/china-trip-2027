@@ -1,6 +1,15 @@
 
 const $=s=>document.querySelector(s);
-async function getJSON(path){const r=await fetch(path);if(!r.ok)throw new Error(path);return r.json()}
+async function getJSON(path){
+ const key="china_trip_override:"+path;
+ const saved=localStorage.getItem(key);
+ if(saved){
+   try{return JSON.parse(saved)}catch(e){console.warn("Invalid local override",path,e)}
+ }
+ const r=await fetch(path,{cache:"no-store"});
+ if(!r.ok)throw new Error(path);
+ return r.json();
+}
 function getMemberId(){return (new URLSearchParams(location.search).get("id")||localStorage.getItem("trip_member")||"septino").toLowerCase()}
 function keepId(link){const id=getMemberId();if(link.includes("?"))return link+"&id="+id;return link+"?id="+id}
 async function initHome(){
@@ -270,7 +279,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=19",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=20",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
