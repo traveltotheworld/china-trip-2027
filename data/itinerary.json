@@ -1,169 +1,984 @@
-[
-  {
-    "day": "Day 1",
-    "date": "06 Mar 2027",
-    "city": "Batam → Singapore",
-    "items": [
-      {
-        "text": "15:30 Berkumpul di Batam Centre",
-        "locationId": null
-      },
-      {
-        "text": "17:30 Ferry menuju Singapore",
-        "locationId": null
-      },
-      {
-        "text": "20:35 Perjalanan menuju Changi Airport",
-        "locationId": null
-      }
-    ]
-  },
-  {
-    "day": "Day 2",
-    "date": "07 Mar 2027",
-    "city": "Singapore → Shanghai",
-    "items": [
-      {
-        "text": "00:25 Penerbangan menuju Shanghai",
-        "locationId": null
-      },
-      {
-        "text": "05:40 Tiba di Pudong",
-        "locationId": null
-      },
-      {
-        "text": "Transfer ke hotel dan mulai city tour",
-        "locationId": null
-      }
-    ]
-  },
-  {
-    "day": "Day 3",
-    "date": "08 Mar 2027",
-    "city": "Shanghai",
-    "items": [
-      {
-        "text": "Jing’an Temple",
-        "locationId": "jingan-temple"
-      },
-      {
-        "text": "Wukang Road",
-        "locationId": "wukang-road"
-      },
-      {
-        "text": "The Bund & Nanjing Road",
-        "locationId": "the-bund"
-      }
-    ]
-  },
-  {
-    "day": "Day 4",
-    "date": "09 Mar 2027",
-    "city": "Shanghai",
-    "items": [
-      {
-        "text": "Shanghai Disneyland / Legoland plan",
-        "locationId": "shanghai-disneyland"
-      },
-      {
-        "text": "Sijing Night Market",
-        "locationId": "sijing-night-market"
-      }
-    ]
-  },
-  {
-    "day": "Day 5",
-    "date": "10 Mar 2027",
-    "city": "Shanghai → Suzhou",
-    "items": [
-      {
-        "text": "Shanghai Wild Animal Park / city activity",
-        "locationId": "wild-animal-park"
-      },
-      {
-        "text": "HSR menuju Suzhou",
-        "locationId": "suzhou-railway-station"
-      },
-      {
-        "text": "Check-in hotel",
-        "locationId": null
-      }
-    ]
-  },
-  {
-    "day": "Day 6",
-    "date": "11 Mar 2027",
-    "city": "Suzhou",
-    "items": [
-      {
-        "text": "Humble Administrator’s Garden",
-        "locationId": "humble-garden"
-      },
-      {
-        "text": "Pingjiang Road",
-        "locationId": "pingjiang-road"
-      },
-      {
-        "text": "Shantang Street",
-        "locationId": "shantang-street"
-      }
-    ]
-  },
-  {
-    "day": "Day 7",
-    "date": "12 Mar 2027",
-    "city": "Suzhou → Hangzhou",
-    "items": [
-      {
-        "text": "Tiger Hill / Hanshan Temple",
-        "locationId": "tiger-hill"
-      },
-      {
-        "text": "HSR menuju Hangzhou",
-        "locationId": "hangzhou-east"
-      },
-      {
-        "text": "Check-in hotel",
-        "locationId": null
-      }
-    ]
-  },
-  {
-    "day": "Day 8",
-    "date": "13 Mar 2027",
-    "city": "Hangzhou",
-    "items": [
-      {
-        "text": "West Lake",
-        "locationId": "west-lake"
-      },
-      {
-        "text": "Lingyin Temple",
-        "locationId": "lingyin-temple"
-      },
-      {
-        "text": "Qinghefang Street",
-        "locationId": "qinghefang"
-      }
-    ]
-  },
-  {
-    "day": "Day 9",
-    "date": "14 Mar 2027",
-    "city": "Hangzhou → Singapore",
-    "items": [
-      {
-        "text": "Check-out hotel",
-        "locationId": null
-      },
-      {
-        "text": "Perjalanan menuju airport",
-        "locationId": null
-      },
-      {
-        "text": "Penerbangan pulang",
-        "locationId": null
-      }
-    ]
-  }
-]
+{
+  "days": [
+    {
+      "date": "2027-03-02",
+      "label": "Selasa, 02 Maret 2027",
+      "items": [
+        {
+          "from": "12:30",
+          "to": "13:30",
+          "activity": "Persiapan keberangkatan",
+          "baiduMap": false
+        },
+        {
+          "from": "13:30",
+          "to": "15:30",
+          "activity": "Perjalanan menuju Batam Centre",
+          "baiduMap": false
+        },
+        {
+          "from": "15:30",
+          "to": "17:00",
+          "activity": "Menunggu boarding ferry (rekomendasi ferry pukul 17:30)",
+          "baiduMap": false
+        },
+        {
+          "from": "17:00",
+          "to": "19:00",
+          "activity": "Batam Centre - Singapore Tanah Merah via Majestic",
+          "baiduMap": false
+        },
+        {
+          "from": "19:00",
+          "to": "20:35",
+          "activity": "Proses imigrasi",
+          "baiduMap": false
+        },
+        {
+          "from": "20:35",
+          "to": "21:35",
+          "activity": "HarbourFront - Changi Airport Terminal 3",
+          "baiduMap": false
+        },
+        {
+          "from": "21:35",
+          "to": "01:15",
+          "activity": "Menunggu boarding pesawat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-03",
+      "label": "Rabu, 03 Maret 2027",
+      "items": [
+        {
+          "from": "01:15",
+          "to": "06:30",
+          "activity": "Singapore - Shanghai via Singapore Airlines SQ826",
+          "baiduMap": false
+        },
+        {
+          "from": "06:30",
+          "to": "08:00",
+          "activity": "Proses imigrasi",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "10:00",
+          "activity": "Shanghai Pudong Airport - Shanghai Hongqiao International",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Hongqiao Railway Station"
+        },
+        {
+          "from": "10:00",
+          "to": "12:19",
+          "activity": "Menunggu boarding HSR dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "12:19",
+          "to": "15:05",
+          "activity": "Shanghai Hongqiao Railway Station - Shangrao Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Shangrao Railway Station"
+        },
+        {
+          "from": "15:05",
+          "to": "16:15",
+          "activity": "Proses keluar stasiun",
+          "baiduMap": false
+        },
+        {
+          "from": "16:15",
+          "to": "17:15",
+          "activity": "Shangrao Railway Station - Wangxiangu Zhonglou Homestay",
+          "baiduMap": true,
+          "mapQuery": "Wangxiangu Zhonglou Homestay"
+        },
+        {
+          "from": "17:15",
+          "to": "18:30",
+          "activity": "Check-in Wangxiangu Zhonglou Homestay",
+          "baiduMap": false
+        },
+        {
+          "from": "18:30",
+          "to": "18:45",
+          "activity": "Wangxiangu Zhonglou Homestay - Wangxian Valley",
+          "baiduMap": true,
+          "mapQuery": "Wangxian Valley Scenic Area"
+        },
+        {
+          "from": "18:45",
+          "to": "23:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "23:00",
+          "to": "23:15",
+          "activity": "Wangxian Valley - Wangxiangu Zhonglou Homestay",
+          "baiduMap": true,
+          "mapQuery": "Wangxiangu Zhonglou Homestay"
+        },
+        {
+          "from": "23:15",
+          "to": "07:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-04",
+      "label": "Kamis, 04 Maret 2027",
+      "items": [
+        {
+          "from": "07:30",
+          "to": "09:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "11:00",
+          "activity": "Jalan-jalan sekitar dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "11:15",
+          "activity": "Check-out",
+          "baiduMap": false
+        },
+        {
+          "from": "11:15",
+          "to": "12:30",
+          "activity": "Wangxiangu Zhonglou Homestay - Shangrao Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Shangrao Railway Station"
+        },
+        {
+          "from": "12:30",
+          "to": "14:35",
+          "activity": "Menunggu boarding HSR dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "14:35",
+          "to": "16:50",
+          "activity": "Shangrao Railway Station - Shanghai Hongqiao Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Hongqiao Railway Station"
+        },
+        {
+          "from": "16:50",
+          "to": "18:00",
+          "activity": "Shanghai Hongqiao Railway Station - Hotel",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "18:00",
+          "to": "18:15",
+          "activity": "Check-in hotel",
+          "baiduMap": false
+        },
+        {
+          "from": "18:15",
+          "to": "19:15",
+          "activity": "Hotel - Sijing Night Market",
+          "baiduMap": true,
+          "mapQuery": "Sijing Night Market Shanghai"
+        },
+        {
+          "from": "19:15",
+          "to": "21:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "21:00",
+          "to": "22:00",
+          "activity": "Sijing Night Market - Hotel",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "22:00",
+          "to": "23:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-05",
+      "label": "Jumat, 05 Maret 2027",
+      "items": [
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Jalan-jalan sekitar dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:00",
+          "activity": "Hotel - Hongqiao Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Hongqiao Railway Station"
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Menunggu boarding HSR",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "12:00",
+          "activity": "Hongqiao Railway Station - Jinshan North Station",
+          "baiduMap": true,
+          "mapQuery": "Jinshan North Railway Station"
+        },
+        {
+          "from": "12:00",
+          "to": "12:30",
+          "activity": "Jinshan North Station - LEGOLAND Shanghai",
+          "baiduMap": true,
+          "mapQuery": "LEGOLAND Shanghai Resort"
+        },
+        {
+          "from": "12:30",
+          "to": "18:00",
+          "activity": "Jalan-jalan, makan siang dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "18:00",
+          "to": "18:30",
+          "activity": "LEGOLAND Shanghai - Hotel",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "18:30",
+          "to": "19:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-06",
+      "label": "Sabtu, 06 Maret 2027",
+      "items": [
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Jalan-jalan sekitar dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:00",
+          "activity": "Hotel - Shanghai Wild Animal Park",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Wild Animal Park"
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Jalan-jalan, makan siang dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "12:00",
+          "activity": "Shanghai Wild Animal Park - Shanghai Pudong Airport",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Pudong International Airport"
+        },
+        {
+          "from": "12:00",
+          "to": "13:00",
+          "activity": "Menunggu proses imigrasi grup",
+          "baiduMap": false
+        },
+        {
+          "from": "13:00",
+          "to": "14:00",
+          "activity": "Shanghai Pudong Airport - Hotel",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "14:00",
+          "to": "08:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-07",
+      "label": "Minggu, 07 Maret 2027",
+      "items": [
+        {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Jian Home Apartment - Jing'an Temple",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Jing'an Temple - Wukang Road",
+          "baiduMap": true,
+          "mapQuery": "Wukang Road Shanghai"
+        },
+        {
+          "from": "11:00",
+          "to": "12:30",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "12:30",
+          "to": "13:30",
+          "activity": "Jing'an Temple - Xintiandi",
+          "baiduMap": true,
+          "mapQuery": "Xintiandi Shanghai"
+        },
+        {
+          "from": "13:30",
+          "to": "15:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "15:00",
+          "to": "16:00",
+          "activity": "Xintiandi - Tianzifang",
+          "baiduMap": true,
+          "mapQuery": "Tianzifang Shanghai"
+        },
+        {
+          "from": "16:00",
+          "to": "17:30",
+          "activity": "Jalan-jalan dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "17:30",
+          "to": "18:30",
+          "activity": "Tianzifang - The Bund, Lujiazui dan Oriental Pearl Tower",
+          "baiduMap": true,
+          "mapQuery": "The Bund Shanghai"
+        },
+        {
+          "from": "18:30",
+          "to": "19:30",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "19:30",
+          "to": "21:00",
+          "activity": "The Bund, Lujiazui dan Oriental Pearl Tower - Jian Home Apartment",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "21:00",
+          "to": "04:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-08",
+      "label": "Senin, 08 Maret 2027",
+      "items": [
+        {
+          "from": "04:00",
+          "to": "05:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "05:00",
+          "to": "06:00",
+          "activity": "Sarapan di sekitar atau 饿了么",
+          "baiduMap": false
+        },
+        {
+          "from": "06:00",
+          "to": "07:00",
+          "activity": "Jian Home Apartment - Yuyuan Garden",
+          "baiduMap": true,
+          "mapQuery": "Yuyuan Garden Shanghai"
+        },
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "08:15",
+          "activity": "Yuyuan Garden - Chenghuangmiao No.1 Shopping Center",
+          "baiduMap": true,
+          "mapQuery": "Chenghuangmiao No.1 Shopping Center Shanghai"
+        },
+        {
+          "from": "08:15",
+          "to": "10:30",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "10:30",
+          "to": "12:00",
+          "activity": "Chenghuangmiao - Nanjing Road Pedestrian Street",
+          "baiduMap": true,
+          "mapQuery": "Nanjing Road Pedestrian Street Shanghai"
+        },
+        {
+          "from": "12:00",
+          "to": "14:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "14:00",
+          "to": "15:00",
+          "activity": "Nanjing Road Pedestrian Street - Shanghai Romance Park",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Romance Park"
+        },
+        {
+          "from": "15:00",
+          "to": "19:00",
+          "activity": "Jalan-jalan dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "19:00",
+          "to": "20:30",
+          "activity": "Shanghai Romance Park - Jian Home Apartment",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "20:30",
+          "to": "04:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-09",
+      "label": "Selasa, 09 Maret 2027",
+      "items": [
+        {
+          "from": "04:30",
+          "to": "05:30",
+          "activity": "Bangun, mandi dan check-out",
+          "baiduMap": false
+        },
+        {
+          "from": "05:30",
+          "to": "06:30",
+          "activity": "Sarapan di sekitar atau 饿了么",
+          "baiduMap": false
+        },
+        {
+          "from": "06:30",
+          "to": "09:00",
+          "activity": "Jian Home Apartment - Zhujiajiao 朱家角古镇旅游区",
+          "baiduMap": true,
+          "mapQuery": "Zhujiajiao Ancient Town Shanghai"
+        },
+        {
+          "from": "09:00",
+          "to": "11:30",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "11:30",
+          "to": "14:00",
+          "activity": "Zhujiajiao 朱家角古镇旅游区 - Jian Home Apartment",
+          "baiduMap": true,
+          "mapQuery": "Jian Home Serviced Apartment Shanghai"
+        },
+        {
+          "from": "14:00",
+          "to": "14:15",
+          "activity": "Ambil bagasi",
+          "baiduMap": false
+        },
+        {
+          "from": "14:15",
+          "to": "15:45",
+          "activity": "Jian Home Apartment - Shanghai Hongqiao Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Shanghai Hongqiao Railway Station"
+        },
+        {
+          "from": "15:45",
+          "to": "17:52",
+          "activity": "Menunggu boarding HSR",
+          "baiduMap": false
+        },
+        {
+          "from": "17:52",
+          "to": "18:18",
+          "activity": "Shanghai Hongqiao Railway Station - Suzhou Station",
+          "baiduMap": false
+        },
+        {
+          "from": "18:18",
+          "to": "18:30",
+          "activity": "Proses keluar stasiun",
+          "baiduMap": false
+        },
+        {
+          "from": "18:30",
+          "to": "19:30",
+          "activity": "Suzhou Station - Madison Hotel Suzhou Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Madison Hotel Suzhou Railway Station"
+        },
+        {
+          "from": "19:30",
+          "to": "20:00",
+          "activity": "Check-in",
+          "baiduMap": false
+        },
+        {
+          "from": "20:00",
+          "to": "05:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-10",
+      "label": "Rabu, 10 Maret 2027",
+      "items": [
+        {
+          "from": "05:00",
+          "to": "06:00",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "06:00",
+          "to": "07:00",
+          "activity": "Sarapan di sekitar atau 饿了么",
+          "baiduMap": false
+        },
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Hefeng Homestay - Tiger Hill Pagoda",
+          "baiduMap": true,
+          "mapQuery": "Tiger Hill Suzhou"
+        },
+        {
+          "from": "08:00",
+          "to": "10:00",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Tiger Hill Pagoda - Lion Grove Garden",
+          "baiduMap": true,
+          "mapQuery": "Lion Grove Garden Suzhou"
+        },
+        {
+          "from": "11:00",
+          "to": "13:00",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "13:00",
+          "to": "13:15",
+          "activity": "Lion Grove Garden - Pingjiang Road",
+          "baiduMap": true,
+          "mapQuery": "Pingjiang Road Suzhou"
+        },
+        {
+          "from": "13:15",
+          "to": "15:30",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "15:30",
+          "to": "16:00",
+          "activity": "Humble Administrator Garden - Pingjiang Road",
+          "baiduMap": true,
+          "mapQuery": "Pingjiang Road Suzhou"
+        },
+        {
+          "from": "16:00",
+          "to": "18:30",
+          "activity": "Jalan-jalan dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "18:30",
+          "to": "20:00",
+          "activity": "Pingjiang Road - Hefeng Homestay",
+          "baiduMap": true,
+          "mapQuery": "Hefeng Homestay Suzhou"
+        },
+        {
+          "from": "20:00",
+          "to": "05:00",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-11",
+      "label": "Kamis, 11 Maret 2027",
+      "items": [
+        {
+          "from": "05:00",
+          "to": "06:00",
+          "activity": "Bangun, mandi dan check-out",
+          "baiduMap": false
+        },
+        {
+          "from": "06:00",
+          "to": "07:00",
+          "activity": "Sarapan di sekitar atau 饿了么",
+          "baiduMap": false
+        },
+        {
+          "from": "07:00",
+          "to": "08:30",
+          "activity": "Hefeng Homestay - Hanshan Temple",
+          "baiduMap": true,
+          "mapQuery": "Hanshan Temple Suzhou"
+        },
+        {
+          "from": "08:30",
+          "to": "10:30",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "10:30",
+          "to": "11:30",
+          "activity": "Hanshan Temple - Qili Shantang Street",
+          "baiduMap": true,
+          "mapQuery": "Shantang Street Suzhou"
+        },
+        {
+          "from": "11:30",
+          "to": "13:30",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "13:30",
+          "to": "14:00",
+          "activity": "Shantang Street - Hefeng Homestay",
+          "baiduMap": true,
+          "mapQuery": "Hefeng Homestay Suzhou"
+        },
+        {
+          "from": "14:00",
+          "to": "14:30",
+          "activity": "Ambil bagasi",
+          "baiduMap": false
+        },
+        {
+          "from": "14:30",
+          "to": "15:30",
+          "activity": "Hefeng Homestay - Suzhou Railway Station",
+          "baiduMap": true,
+          "mapQuery": "Suzhou Railway Station"
+        },
+        {
+          "from": "15:30",
+          "to": "16:52",
+          "activity": "Menunggu boarding HSR dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "16:52",
+          "to": "18:25",
+          "activity": "Suzhou South Railway Station - Hangzhou West Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "18:25",
+          "to": "18:40",
+          "activity": "Proses keluar stasiun",
+          "baiduMap": false
+        },
+        {
+          "from": "18:40",
+          "to": "20:00",
+          "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment / Zunteng Wanguo Hotel",
+          "baiduMap": true,
+          "mapQuery": "Hangzhou Yi Apartment Zheda Zijingang Branch"
+        },
+        {
+          "from": "20:00",
+          "to": "20:30",
+          "activity": "Check-in hotel",
+          "baiduMap": false
+        },
+        {
+          "from": "20:30",
+          "to": "04:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-12",
+      "label": "Jumat, 12 Maret 2027",
+      "items": [
+        {
+          "from": "04:30",
+          "to": "05:30",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "05:30",
+          "to": "06:30",
+          "activity": "Sarapan di sekitar atau 饿了么",
+          "baiduMap": false
+        },
+        {
+          "from": "06:30",
+          "to": "08:00",
+          "activity": "Elong Hotel Hangzhou West Lake - Lingyin Temple dan Feilai Feng",
+          "baiduMap": true,
+          "mapQuery": "Lingyin Temple Hangzhou"
+        },
+        {
+          "from": "08:00",
+          "to": "10:30",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "10:30",
+          "to": "11:30",
+          "activity": "Feilai Feng - West Lake",
+          "baiduMap": true,
+          "mapQuery": "West Lake Hangzhou"
+        },
+        {
+          "from": "11:30",
+          "to": "15:30",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "11:30",
+          "to": "12:30",
+          "activity": "West Lake - Qinghefang 清河坊历史文化特色街区 dan Hefang Street",
+          "baiduMap": true,
+          "mapQuery": "Qinghefang Ancient Street Hangzhou"
+        },
+        {
+          "from": "12:30",
+          "to": "14:30",
+          "activity": "Jalan-jalan",
+          "baiduMap": false
+        },
+        {
+          "from": "14:30",
+          "to": "15:30",
+          "activity": "Qinghefang dan Hefang Street - Wulin Road Night Market",
+          "baiduMap": true,
+          "mapQuery": "Wulin Road Night Market Hangzhou"
+        },
+        {
+          "from": "15:30",
+          "to": "18:30",
+          "activity": "Jalan-jalan dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "18:30",
+          "to": "19:30",
+          "activity": "Wulin Road Night Market - Elong Hotel Hangzhou West Lake",
+          "baiduMap": true,
+          "mapQuery": "Elong Hotel Hangzhou West Lake"
+        },
+        {
+          "from": "19:30",
+          "to": "04:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-13",
+      "label": "Sabtu, 13 Maret 2027",
+      "items": [
+        {
+          "from": "04:30",
+          "to": "06:30",
+          "activity": "Bangun dan mandi",
+          "baiduMap": false
+        },
+        {
+          "from": "06:30",
+          "to": "07:30",
+          "activity": "Sarapan di sekitar atau 饿了么",
+          "baiduMap": false
+        },
+        {
+          "from": "07:30",
+          "to": "08:30",
+          "activity": "Elong Hotel Hangzhou West Lake - Xixi Wetland",
+          "baiduMap": true,
+          "mapQuery": "Xixi National Wetland Park Hangzhou"
+        },
+        {
+          "from": "08:30",
+          "to": "11:30",
+          "activity": "Jalan-jalan dan makan siang",
+          "baiduMap": false
+        },
+        {
+          "from": "11:30",
+          "to": "13:30",
+          "activity": "Xixi Wetland - Song Dynasty Town",
+          "baiduMap": true,
+          "mapQuery": "Songcheng Hangzhou"
+        },
+        {
+          "from": "13:30",
+          "to": "19:30",
+          "activity": "Jalan-jalan dan makan malam",
+          "baiduMap": false
+        },
+        {
+          "from": "19:30",
+          "to": "20:30",
+          "activity": "Song Dynasty Town - Elong Hotel Hangzhou West Lake",
+          "baiduMap": true,
+          "mapQuery": "Elong Hotel Hangzhou West Lake"
+        },
+        {
+          "from": "20:30",
+          "to": "01:30",
+          "activity": "Mandi dan istirahat",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-14",
+      "label": "Minggu, 14 Maret 2027",
+      "items": [
+        {
+          "from": "01:30",
+          "to": "02:30",
+          "activity": "Bangun, mandi dan check-out",
+          "baiduMap": false
+        },
+        {
+          "from": "02:30",
+          "to": "04:00",
+          "activity": "Elong Hotel Hangzhou West Lake - Hangzhou Xiaoshan International Airport Terminal 4",
+          "baiduMap": true,
+          "mapQuery": "Hangzhou Xiaoshan International Airport Terminal 4"
+        },
+        {
+          "from": "04:00",
+          "to": "07:15",
+          "activity": "Menunggu boarding pesawat dan sarapan",
+          "baiduMap": false
+        },
+        {
+          "from": "07:15",
+          "to": "12:45",
+          "activity": "Hangzhou Xiaoshan International Airport - Singapore Changi Airport Terminal 3",
+          "baiduMap": false
+        },
+        {
+          "from": "12:45",
+          "to": "15:00",
+          "activity": "Proses imigrasi",
+          "baiduMap": false
+        },
+        {
+          "from": "15:00",
+          "to": "16:00",
+          "activity": "Changi Airport - HarbourFront Centre",
+          "baiduMap": false
+        },
+        {
+          "from": "16:00",
+          "to": "18:15",
+          "activity": "Menunggu boarding ferry",
+          "baiduMap": false
+        },
+        {
+          "from": "18:15",
+          "to": "18:15",
+          "activity": "Tanah Merah - Batam Centre",
+          "baiduMap": false
+        },
+        {
+          "from": "18:15",
+          "to": "19:30",
+          "activity": "Proses imigrasi",
+          "baiduMap": false
+        },
+        {
+          "from": "19:30",
+          "to": "20:00",
+          "activity": "Perjalanan selesai",
+          "baiduMap": false
+        }
+      ]
+    }
+  ]
+}

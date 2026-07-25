@@ -1,4 +1,4 @@
-const CACHE="china-trip-v14";
+const CACHE="china-trip-v15";
 const ASSETS=[
   "/",
   "/index.html",

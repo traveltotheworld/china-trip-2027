@@ -118,12 +118,9 @@ async function renderItinerary(){
          <div class="timeline-time">${item.from}–${item.to}</div>
          <div class="timeline-content">
            <strong>${item.activity}</strong>
-           ${(()=>{
-             const locationQuery=item.locationId||itineraryLocation(item.activity);
-             return locationQuery
-               ? `<a class="map-btn" href="${baiduLink(locationQuery)}" target="_blank" rel="noopener">📍 Baidu Maps</a>`
-               : "";
-           })()}
+           ${item.baiduMap===true && item.mapQuery
+             ? `<a class="map-btn" href="${baiduLink(item.mapQuery)}" target="_blank" rel="noopener">📍 Baidu Maps</a>`
+             : ""}
          </div>
        </div>
      `).join("")}
@@ -240,7 +237,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=14",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=15",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
