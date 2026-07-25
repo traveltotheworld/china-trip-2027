@@ -107,7 +107,14 @@ async function renderHSR(){
 async function renderMembers(){
  const d=await getJSON("data/members.json");$("#content").innerHTML=d.map(x=>`<article class="card"><span class="eyebrow">Member ${String(x.member).padStart(2,"0")}</span><h4>${x.name}</h4><div class="meta">${x.email||"Email belum diisi"}<br>${x.room} • ${x.roommates}</div></article>`).join("");
 }
-if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
+if("serviceWorker" in navigator){
+ window.addEventListener("load",async()=>{
+   try{
+     const reg=await navigator.serviceWorker.register("/sw.js?v=10",{updateViaCache:"none"});
+     await reg.update();
+   }catch(e){console.warn("Service worker update failed",e);}
+ });
+}
 
 async function renderTripInfo(){
  const d=await getJSON("data/trip-info.json");
@@ -116,9 +123,4 @@ async function renderTripInfo(){
 
 function baiduLink(query,region){
  return `baidumap://map/place/search?query=${encodeURIComponent(query)}&region=${encodeURIComponent(region||"中国")}&src=webapp.chinatrip2027`;
-}
-async function renderMaps(){
- const data=await getJSON("data/locations.json");
- const cities=[...new Set(data.map(x=>x.city))];
- $("#content").innerHTML=cities.map(city=>`<section class="map-city"><span class="eyebrow">${city}</span><h3>Lokasi perjalanan</h3>${data.filter(x=>x.city===city).map(x=>`<article class="location-row"><div><strong>${x.name}</strong><small>${x.cn}</small></div><a class="nav-btn" href="${baiduLink(x.query,x.city)}">Buka di Baidu Maps</a></article>`).join("")}</section>`).join("");
 }
