@@ -4,12 +4,11 @@
 1. Extract ZIP.
 2. Upload folder ini ke GitHub.
 3. Import repository ke Vercel.
-4. Setelah URL Vercel jadi, ganti semua teks `NAMA-PROJECT` pada folder `qr`.
-5. Generate ulang QR Code sesuai URL final.
+4. Setelah URL Vercel jadi, 5. Generate ulang QR Code sesuai URL final.
 
 ## URL peserta
 Format:
-`https://nama-project.vercel.app/?id=septino`
+`https://china-trip-2027.vercel.app/?id=septino`
 
 Daftar ID:
 septino, lina, astina, cindy, rico, devia, yongki, prianto, fredy, apryanto, raelyn, irin
