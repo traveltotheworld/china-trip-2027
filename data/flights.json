@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "id": "SQ826",
+      "travellers": [
+        "Septino",
+        "Lina",
+        "Raelyn"
+      ],
+      "airline": "Singapore Airlines",
+      "flight": "SQ826",
+      "aircraft": "Airbus A350-900",
+      "date": "03 March 2027",
+      "departure": {
+        "airport": "Singapore Changi Airport",
+        "terminal": "Terminal 3",
+        "time": "01:15"
+      },
+      "arrival": {
+        "airport": "Shanghai Pudong International Airport",
+        "terminal": "Terminal 2",
+        "time": "06:30"
+      },
+      "referenceCode": "F33ICV",
+      "baggage": {
+        "personalItem": "1 pcs",
+        "cabin": "1 × 7 kg",
+        "checked": "Total 30 kg"
+      }
+    }
+  ]
+}

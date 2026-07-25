@@ -1,0 +1,9 @@
+{
+  "name": "China Trip 2027",
+  "short_name": "China Trip",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111820",
+  "icons": []
+}

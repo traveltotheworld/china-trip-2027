@@ -1,0 +1,169 @@
+[
+  {
+    "day": "Day 1",
+    "date": "06 Mar 2027",
+    "city": "Batam → Singapore",
+    "items": [
+      {
+        "text": "15:30 Berkumpul di Batam Centre",
+        "locationId": null
+      },
+      {
+        "text": "17:30 Ferry menuju Singapore",
+        "locationId": null
+      },
+      {
+        "text": "20:35 Perjalanan menuju Changi Airport",
+        "locationId": null
+      }
+    ]
+  },
+  {
+    "day": "Day 2",
+    "date": "07 Mar 2027",
+    "city": "Singapore → Shanghai",
+    "items": [
+      {
+        "text": "00:25 Penerbangan menuju Shanghai",
+        "locationId": null
+      },
+      {
+        "text": "05:40 Tiba di Pudong",
+        "locationId": null
+      },
+      {
+        "text": "Transfer ke hotel dan mulai city tour",
+        "locationId": null
+      }
+    ]
+  },
+  {
+    "day": "Day 3",
+    "date": "08 Mar 2027",
+    "city": "Shanghai",
+    "items": [
+      {
+        "text": "Jing’an Temple",
+        "locationId": "jingan-temple"
+      },
+      {
+        "text": "Wukang Road",
+        "locationId": "wukang-road"
+      },
+      {
+        "text": "The Bund & Nanjing Road",
+        "locationId": "the-bund"
+      }
+    ]
+  },
+  {
+    "day": "Day 4",
+    "date": "09 Mar 2027",
+    "city": "Shanghai",
+    "items": [
+      {
+        "text": "Shanghai Disneyland / Legoland plan",
+        "locationId": "shanghai-disneyland"
+      },
+      {
+        "text": "Sijing Night Market",
+        "locationId": "sijing-night-market"
+      }
+    ]
+  },
+  {
+    "day": "Day 5",
+    "date": "10 Mar 2027",
+    "city": "Shanghai → Suzhou",
+    "items": [
+      {
+        "text": "Shanghai Wild Animal Park / city activity",
+        "locationId": "wild-animal-park"
+      },
+      {
+        "text": "HSR menuju Suzhou",
+        "locationId": "suzhou-railway-station"
+      },
+      {
+        "text": "Check-in hotel",
+        "locationId": null
+      }
+    ]
+  },
+  {
+    "day": "Day 6",
+    "date": "11 Mar 2027",
+    "city": "Suzhou",
+    "items": [
+      {
+        "text": "Humble Administrator’s Garden",
+        "locationId": "humble-garden"
+      },
+      {
+        "text": "Pingjiang Road",
+        "locationId": "pingjiang-road"
+      },
+      {
+        "text": "Shantang Street",
+        "locationId": "shantang-street"
+      }
+    ]
+  },
+  {
+    "day": "Day 7",
+    "date": "12 Mar 2027",
+    "city": "Suzhou → Hangzhou",
+    "items": [
+      {
+        "text": "Tiger Hill / Hanshan Temple",
+        "locationId": "tiger-hill"
+      },
+      {
+        "text": "HSR menuju Hangzhou",
+        "locationId": "hangzhou-east"
+      },
+      {
+        "text": "Check-in hotel",
+        "locationId": null
+      }
+    ]
+  },
+  {
+    "day": "Day 8",
+    "date": "13 Mar 2027",
+    "city": "Hangzhou",
+    "items": [
+      {
+        "text": "West Lake",
+        "locationId": "west-lake"
+      },
+      {
+        "text": "Lingyin Temple",
+        "locationId": "lingyin-temple"
+      },
+      {
+        "text": "Qinghefang Street",
+        "locationId": "qinghefang"
+      }
+    ]
+  },
+  {
+    "day": "Day 9",
+    "date": "14 Mar 2027",
+    "city": "Hangzhou → Singapore",
+    "items": [
+      {
+        "text": "Check-out hotel",
+        "locationId": null
+      },
+      {
+        "text": "Perjalanan menuju airport",
+        "locationId": null
+      },
+      {
+        "text": "Penerbangan pulang",
+        "locationId": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "septino",
+    "name": "Septino",
+    "email": "septinogao@gmail.com",
+    "member": 1,
+    "room": "Kamar 1",
+    "roommates": "Lina & Raelyn",
+    "flightGroup": "SQ826",
+    "seat": "59H"
+  },
+  {
+    "id": "lina",
+    "name": "Lina",
+    "email": "sightniner@gmail.com",
+    "member": 2,
+    "room": "Kamar 1",
+    "roommates": "Septino & Raelyn",
+    "flightGroup": "SQ826",
+    "seat": "59J"
+  },
+  {
+    "id": "astina",
+    "name": "Astina",
+    "email": "",
+    "member": 3,
+    "room": "Kamar 2",
+    "roommates": "Cindy & Devia"
+  },
+  {
+    "id": "cindy",
+    "name": "Cindy",
+    "email": "",
+    "member": 4,
+    "room": "Kamar 2",
+    "roommates": "Astina & Devia"
+  },
+  {
+    "id": "rico",
+    "name": "Rico",
+    "email": "",
+    "member": 5,
+    "room": "Belum diisi",
+    "roommates": "Belum diisi"
+  },
+  {
+    "id": "devia",
+    "name": "Devia",
+    "email": "",
+    "member": 6,
+    "room": "Kamar 2",
+    "roommates": "Astina & Cindy"
+  },
+  {
+    "id": "yongki",
+    "name": "Yongki",
+    "email": "",
+    "member": 7,
+    "room": "Kamar 3",
+    "roommates": "Prianto"
+  },
+  {
+    "id": "prianto",
+    "name": "Prianto",
+    "email": "",
+    "member": 8,
+    "room": "Kamar 3",
+    "roommates": "Yongki"
+  },
+  {
+    "id": "fredy",
+    "name": "Fredy",
+    "email": "",
+    "member": 9,
+    "room": "Kamar 5",
+    "roommates": "Lg Tan"
+  },
+  {
+    "id": "apryanto",
+    "name": "Apryanto",
+    "email": "",
+    "member": 10,
+    "room": "Kamar 4",
+    "roommates": "Irin"
+  },
+  {
+    "id": "raelyn",
+    "name": "Raelyn",
+    "email": "jayanthiraelynxenaria@gmail.com",
+    "member": 11,
+    "room": "Kamar 1",
+    "roommates": "Septino & Lina",
+    "flightGroup": "SQ826",
+    "seat": "59K"
+  },
+  {
+    "id": "irin",
+    "name": "Irin",
+    "email": "",
+    "member": 12,
+    "room": "Kamar 4",
+    "roommates": "Apryanto"
+  }
+]

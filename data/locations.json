@@ -1,0 +1,135 @@
+[
+  {
+    "id": "pudong-airport",
+    "city": "Shanghai",
+    "name": "Pudong International Airport",
+    "cn": "上海浦东国际机场",
+    "query": "上海浦东国际机场"
+  },
+  {
+    "id": "jingan-temple",
+    "city": "Shanghai",
+    "name": "Jing'an Temple",
+    "cn": "静安寺",
+    "query": "上海静安寺"
+  },
+  {
+    "id": "wukang-road",
+    "city": "Shanghai",
+    "name": "Wukang Road",
+    "cn": "武康路",
+    "query": "上海武康路"
+  },
+  {
+    "id": "the-bund",
+    "city": "Shanghai",
+    "name": "The Bund",
+    "cn": "外滩",
+    "query": "上海外滩"
+  },
+  {
+    "id": "nanjing-road",
+    "city": "Shanghai",
+    "name": "Nanjing Road",
+    "cn": "南京路步行街",
+    "query": "上海南京路步行街"
+  },
+  {
+    "id": "shanghai-disneyland",
+    "city": "Shanghai",
+    "name": "Shanghai Disneyland",
+    "cn": "上海迪士尼度假区",
+    "query": "上海迪士尼度假区"
+  },
+  {
+    "id": "sijing-night-market",
+    "city": "Shanghai",
+    "name": "Sijing Night Market",
+    "cn": "泗泾夜市",
+    "query": "上海泗泾夜市"
+  },
+  {
+    "id": "wild-animal-park",
+    "city": "Shanghai",
+    "name": "Shanghai Wild Animal Park",
+    "cn": "上海野生动物园",
+    "query": "上海野生动物园"
+  },
+  {
+    "id": "suzhou-railway-station",
+    "city": "Suzhou",
+    "name": "Suzhou Railway Station",
+    "cn": "苏州站",
+    "query": "苏州站"
+  },
+  {
+    "id": "madison-suzhou",
+    "city": "Suzhou",
+    "name": "Madison Hotel Suzhou Railway Station",
+    "cn": "苏州火车站美仑酒店",
+    "query": "苏州火车站美仑酒店"
+  },
+  {
+    "id": "humble-garden",
+    "city": "Suzhou",
+    "name": "Humble Administrator's Garden",
+    "cn": "拙政园",
+    "query": "苏州拙政园"
+  },
+  {
+    "id": "pingjiang-road",
+    "city": "Suzhou",
+    "name": "Pingjiang Road",
+    "cn": "平江路",
+    "query": "苏州平江路"
+  },
+  {
+    "id": "shantang-street",
+    "city": "Suzhou",
+    "name": "Shantang Street",
+    "cn": "山塘街",
+    "query": "苏州山塘街"
+  },
+  {
+    "id": "tiger-hill",
+    "city": "Suzhou",
+    "name": "Tiger Hill",
+    "cn": "虎丘山风景名胜区",
+    "query": "苏州虎丘山风景名胜区"
+  },
+  {
+    "id": "hanshan-temple",
+    "city": "Suzhou",
+    "name": "Hanshan Temple",
+    "cn": "寒山寺",
+    "query": "苏州寒山寺"
+  },
+  {
+    "id": "hangzhou-east",
+    "city": "Hangzhou",
+    "name": "Hangzhou East Railway Station",
+    "cn": "杭州东站",
+    "query": "杭州东站"
+  },
+  {
+    "id": "west-lake",
+    "city": "Hangzhou",
+    "name": "West Lake",
+    "cn": "西湖风景名胜区",
+    "query": "杭州西湖风景名胜区"
+  },
+  {
+    "id": "lingyin-temple",
+    "city": "Hangzhou",
+    "name": "Lingyin Temple",
+    "cn": "灵隐寺",
+    "query": "杭州灵隐寺"
+  },
+  {
+    "id": "qinghefang",
+    "city": "Hangzhou",
+    "name": "Qinghefang Street",
+    "cn": "清河坊街",
+    "query": "杭州清河坊街"
+  }
+]

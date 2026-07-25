@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Internet & Roaming",
+    "icon": "📶",
+    "items": [
+      "Aktifkan paket roaming sebelum keberangkatan.",
+      "Simpan screenshot alamat hotel dan itinerary untuk kondisi tanpa internet.",
+      "Pastikan aplikasi komunikasi utama sudah login sebelum tiba di China."
+    ]
+  },
+  {
+    "title": "Pembayaran",
+    "icon": "💳",
+    "items": [
+      "Gunakan Alipay atau WeChat Pay sesuai akun yang sudah disiapkan.",
+      "Simpan sedikit uang tunai RMB sebagai cadangan.",
+      "Periksa metode pembayaran sebelum memesan makanan atau kendaraan."
+    ]
+  },
+  {
+    "title": "Metro & Transportasi",
+    "icon": "🚇",
+    "items": [
+      "Gunakan peta metro yang sudah disimpan secara offline.",
+      "Pastikan nama stasiun tujuan tersedia dalam bahasa Mandarin.",
+      "Untuk taksi atau Didi, tunjukkan alamat lengkap dalam bahasa Mandarin."
+    ]
+  },
+  {
+    "title": "Perlengkapan",
+    "icon": "🔌",
+    "items": [
+      "Bawa adaptor universal.",
+      "Bawa power bank dan kabel pengisi daya.",
+      "Gunakan sepatu yang nyaman untuk berjalan jauh."
+    ]
+  },
+  {
+    "title": "Keamanan",
+    "icon": "🛡️",
+    "items": [
+      "Jangan berjalan sendiri tanpa memberi tahu ketua rombongan.",
+      "Simpan paspor dan dokumen penting di tempat aman.",
+      "Gunakan tombol Emergency pada halaman utama saat membutuhkan bantuan."
+    ]
+  }
+]

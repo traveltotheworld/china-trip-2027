@@ -1,0 +1,23 @@
+[
+  {
+    "city": "Shanghai",
+    "name": "Belum diisi",
+    "dates": "07–10 Mar 2027",
+    "address": "Belum diisi",
+    "mapsQuery": "上海酒店"
+  },
+  {
+    "city": "Suzhou",
+    "name": "Madison Hotel Suzhou Railway Station",
+    "dates": "10–12 Mar 2027",
+    "address": "Belum diisi",
+    "mapsQuery": "苏州火车站美仑酒店"
+  },
+  {
+    "city": "Hangzhou",
+    "name": "Belum diisi",
+    "dates": "12–14 Mar 2027",
+    "address": "Belum diisi",
+    "mapsQuery": "杭州酒店"
+  }
+]
