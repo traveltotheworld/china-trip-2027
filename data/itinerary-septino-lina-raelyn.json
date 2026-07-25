@@ -76,12 +76,12 @@
           "to": "10:00",
           "activity": "Shanghai Pudong Airport - Shanghai Hongqiao International",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shanghai Pudong Airport",
-          "destinationDisplay": "Shanghai Hongqiao International",
-          "originZh": "上海浦东国际机场",
-          "destinationZh": "上海虹桥站",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海浦东国际机场",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "10:00",
@@ -94,12 +94,12 @@
           "to": "15:05",
           "activity": "Shanghai Hongqiao Railway Station - Shangrao Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shanghai Hongqiao Railway Station",
-          "destinationDisplay": "Shangrao Railway Station",
-          "originZh": "上海虹桥站",
-          "destinationZh": "上饶站",
-          "mode": "transit"
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "上饶站",
+            "regionZh": "",
+            "mode": "transit"
+          }
         },
         {
           "from": "15:05",
@@ -112,12 +112,12 @@
           "to": "17:15",
           "activity": "Shangrao Railway Station - Wangxiangu Zhonglou Homestay",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shangrao Railway Station",
-          "destinationDisplay": "Wangxiangu Zhonglou Homestay",
-          "originZh": "上饶站",
-          "destinationZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "上饶站",
+            "destinationZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "regionZh": "上饶",
+            "mode": "transit"
+          }
         },
         {
           "from": "17:15",
@@ -130,12 +130,12 @@
           "to": "18:45",
           "activity": "Wangxiangu Zhonglou Homestay - Wangxian Valley",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Wangxiangu Zhonglou Homestay",
-          "destinationDisplay": "Wangxian Valley",
-          "originZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
-          "destinationZh": "望仙谷",
-          "mode": "driving"
+          "route": {
+            "originZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "destinationZh": "望仙谷景区",
+            "regionZh": "上饶",
+            "mode": "walking"
+          }
         },
         {
           "from": "18:45",
@@ -148,12 +148,12 @@
           "to": "23:15",
           "activity": "Wangxian Valley - Wangxiangu Zhonglou Homestay",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Wangxian Valley",
-          "destinationDisplay": "Wangxiangu Zhonglou Homestay",
-          "originZh": "望仙谷",
-          "destinationZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "望仙谷景区",
+            "destinationZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "regionZh": "上饶",
+            "mode": "walking"
+          }
         },
         {
           "from": "23:15",
@@ -190,12 +190,12 @@
           "to": "12:30",
           "activity": "Wangxiangu Zhonglou Homestay - Shangrao Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Wangxiangu Zhonglou Homestay",
-          "destinationDisplay": "Shangrao Railway Station",
-          "originZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
-          "destinationZh": "上饶站",
-          "mode": "driving"
+          "route": {
+            "originZh": "谷中樓·Mist Villa輕奢山野度假美宿（上饒望仙穀風景區店）",
+            "destinationZh": "上饶站",
+            "regionZh": "上饶",
+            "mode": "transit"
+          }
         },
         {
           "from": "12:30",
@@ -208,24 +208,24 @@
           "to": "16:50",
           "activity": "Shangrao Railway Station - Shanghai Hongqiao Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shangrao Railway Station",
-          "destinationDisplay": "Shanghai Hongqiao Railway Station",
-          "originZh": "上饶站",
-          "destinationZh": "上海虹桥站",
-          "mode": "transit"
+          "route": {
+            "originZh": "上饶站",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "",
+            "mode": "transit"
+          }
         },
         {
           "from": "16:50",
           "to": "18:00",
           "activity": "Shanghai Hongqiao Railway Station - Hotel",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shanghai Hongqiao Railway Station",
-          "destinationDisplay": "Hotel",
-          "originZh": "上海虹桥站",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "18:00",
@@ -238,12 +238,12 @@
           "to": "19:15",
           "activity": "Hotel - Sijing Night Market",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hotel",
-          "destinationDisplay": "Sijing Night Market",
-          "originZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "destinationZh": "泗泾夜市",
-          "mode": "driving"
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "泗泾夜市",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "19:15",
@@ -256,12 +256,12 @@
           "to": "22:00",
           "activity": "Sijing Night Market - Hotel",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Sijing Night Market",
-          "destinationDisplay": "Hotel",
-          "originZh": "泗泾夜市",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "泗泾夜市",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "22:00",
@@ -292,12 +292,12 @@
           "to": "10:00",
           "activity": "Hotel - Hongqiao Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hotel",
-          "destinationDisplay": "Hongqiao Railway Station",
-          "originZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "destinationZh": "上海虹桥站",
-          "mode": "driving"
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "10:00",
@@ -310,24 +310,24 @@
           "to": "12:00",
           "activity": "Hongqiao Railway Station - Jinshan North Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hongqiao Railway Station",
-          "destinationDisplay": "Jinshan North Station",
-          "originZh": "上海虹桥站",
-          "destinationZh": "金山北站",
-          "mode": "transit"
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "金山北站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "12:00",
           "to": "12:30",
           "activity": "Jinshan North Station - LEGOLAND Shanghai",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Jinshan North Station",
-          "destinationDisplay": "LEGOLAND Shanghai",
-          "originZh": "金山北站",
-          "destinationZh": "上海乐高乐园度假区",
-          "mode": "driving"
+          "route": {
+            "originZh": "金山北站",
+            "destinationZh": "上海乐高乐园度假区",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "12:30",
@@ -340,12 +340,12 @@
           "to": "18:30",
           "activity": "LEGOLAND Shanghai - Hotel",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "LEGOLAND Shanghai",
-          "destinationDisplay": "Hotel",
-          "originZh": "上海乐高乐园度假区",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海乐高乐园度假区",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "18:30",
@@ -376,12 +376,12 @@
           "to": "10:00",
           "activity": "Hotel - Shanghai Wild Animal Park",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hotel",
-          "destinationDisplay": "Shanghai Wild Animal Park",
-          "originZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "destinationZh": "上海野生动物园",
-          "mode": "driving"
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "上海野生动物园",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "10:00",
@@ -394,12 +394,12 @@
           "to": "12:00",
           "activity": "Shanghai Wild Animal Park - Shanghai Pudong Airport",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shanghai Wild Animal Park",
-          "destinationDisplay": "Shanghai Pudong Airport",
-          "originZh": "上海野生动物园",
-          "destinationZh": "上海浦东国际机场",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海野生动物园",
+            "destinationZh": "上海浦东国际机场",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "12:00",
@@ -412,12 +412,12 @@
           "to": "14:00",
           "activity": "Shanghai Pudong Airport - Hotel",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shanghai Pudong Airport",
-          "destinationDisplay": "Hotel",
-          "originZh": "上海浦东国际机场",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海浦东国际机场",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "14:00",
@@ -448,12 +448,12 @@
           "to": "11:00",
           "activity": "Jing'an Temple - Wukang Road",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Jing'an Temple",
-          "destinationDisplay": "Wukang Road",
-          "originZh": "静安寺",
-          "destinationZh": "武康路",
-          "mode": "driving"
+          "route": {
+            "originZh": "静安寺",
+            "destinationZh": "武康路",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "11:00",
@@ -466,12 +466,12 @@
           "to": "13:30",
           "activity": "Jing'an Temple - Xintiandi",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Jing'an Temple",
-          "destinationDisplay": "Xintiandi",
-          "originZh": "静安寺",
-          "destinationZh": "上海新天地",
-          "mode": "driving"
+          "route": {
+            "originZh": "静安寺",
+            "destinationZh": "上海新天地",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "13:30",
@@ -484,12 +484,12 @@
           "to": "16:00",
           "activity": "Xintiandi - Tianzifang",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Xintiandi",
-          "destinationDisplay": "Tianzifang",
-          "originZh": "上海新天地",
-          "destinationZh": "田子坊",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海新天地",
+            "destinationZh": "田子坊",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "16:00",
@@ -502,12 +502,12 @@
           "to": "18:30",
           "activity": "Tianzifang - The Bund, Lujiazui dan Oriental Pearl Tower",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Tianzifang",
-          "destinationDisplay": "The Bund, Lujiazui dan Oriental Pearl Tower",
-          "originZh": "田子坊",
-          "destinationZh": "上海外滩",
-          "mode": "driving"
+          "route": {
+            "originZh": "田子坊",
+            "destinationZh": "外滩",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "18:30",
@@ -520,12 +520,12 @@
           "to": "21:00",
           "activity": "The Bund, Lujiazui dan Oriental Pearl Tower - Jian Home Apartment",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "The Bund, Lujiazui dan Oriental Pearl Tower",
-          "destinationDisplay": "Jian Home Apartment",
-          "originZh": "上海外滩",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "东方明珠广播电视塔",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "21:00",
@@ -556,12 +556,12 @@
           "to": "07:00",
           "activity": "Jian Home Apartment - Yuyuan Garden",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Jian Home Apartment",
-          "destinationDisplay": "Yuyuan Garden",
-          "originZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "destinationZh": "豫园",
-          "mode": "driving"
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "豫园",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "07:00",
@@ -574,12 +574,12 @@
           "to": "08:15",
           "activity": "Yuyuan Garden - Chenghuangmiao No.1 Shopping Center",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Yuyuan Garden",
-          "destinationDisplay": "Chenghuangmiao No.1 Shopping Center",
-          "originZh": "豫园",
-          "destinationZh": "城隍庙第一购物中心",
-          "mode": "driving"
+          "route": {
+            "originZh": "豫园",
+            "destinationZh": "城隍庙第一购物中心",
+            "regionZh": "上海",
+            "mode": "walking"
+          }
         },
         {
           "from": "08:15",
@@ -592,12 +592,12 @@
           "to": "12:00",
           "activity": "Chenghuangmiao - Nanjing Road Pedestrian Street",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Chenghuangmiao",
-          "destinationDisplay": "Nanjing Road Pedestrian Street",
-          "originZh": "上海城隍庙",
-          "destinationZh": "南京路步行街",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海城隍庙",
+            "destinationZh": "南京路步行街",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "12:00",
@@ -610,12 +610,12 @@
           "to": "15:00",
           "activity": "Nanjing Road Pedestrian Street - Shanghai Romance Park",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Nanjing Road Pedestrian Street",
-          "destinationDisplay": "Shanghai Romance Park",
-          "originZh": "南京路步行街",
-          "destinationZh": "上海千古情景区",
-          "mode": "driving"
+          "route": {
+            "originZh": "南京路步行街",
+            "destinationZh": "上海千古情景区",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "15:00",
@@ -628,12 +628,12 @@
           "to": "20:30",
           "activity": "Shanghai Romance Park - Jian Home Apartment",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shanghai Romance Park",
-          "destinationDisplay": "Jian Home Apartment",
-          "originZh": "上海千古情景区",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "上海千古情景区",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "20:30",
@@ -664,12 +664,12 @@
           "to": "09:00",
           "activity": "Jian Home Apartment - Zhujiajiao 朱家角古镇旅游区",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Jian Home Apartment",
-          "destinationDisplay": "Zhujiajiao 朱家角古镇旅游区",
-          "originZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "destinationZh": "朱家角古镇",
-          "mode": "driving"
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "朱家角古镇旅游区",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "09:00",
@@ -682,12 +682,12 @@
           "to": "14:00",
           "activity": "Zhujiajiao 朱家角古镇旅游区 - Jian Home Apartment",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Zhujiajiao 朱家角古镇旅游区",
-          "destinationDisplay": "Jian Home Apartment",
-          "originZh": "朱家角古镇",
-          "destinationZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "朱家角古镇旅游区",
+            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "14:00",
@@ -700,12 +700,12 @@
           "to": "15:45",
           "activity": "Jian Home Apartment - Shanghai Hongqiao Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Jian Home Apartment",
-          "destinationDisplay": "Shanghai Hongqiao Railway Station",
-          "originZh": "简寓Home公寓酒店（上海徐汇交大店）",
-          "destinationZh": "上海虹桥站",
-          "mode": "driving"
+          "route": {
+            "originZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
+            "destinationZh": "上海虹桥站",
+            "regionZh": "上海",
+            "mode": "transit"
+          }
         },
         {
           "from": "15:45",
@@ -730,12 +730,12 @@
           "to": "19:30",
           "activity": "Suzhou Station - Madison Hotel Suzhou Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Suzhou Station",
-          "destinationDisplay": "Madison Hotel Suzhou Railway Station",
-          "originZh": "苏州站",
-          "destinationZh": "Madison Hotel苏州火车站店",
-          "mode": "transit"
+          "route": {
+            "originZh": "苏州站",
+            "destinationZh": "苏州火车站美仑酒店",
+            "regionZh": "苏州",
+            "mode": "walking"
+          }
         },
         {
           "from": "19:30",
@@ -772,12 +772,12 @@
           "to": "08:00",
           "activity": "Hefeng Homestay - Tiger Hill Pagoda",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hefeng Homestay",
-          "destinationDisplay": "Tiger Hill Pagoda",
-          "originZh": "和风民宿（苏州店）",
-          "destinationZh": "虎丘塔",
-          "mode": "driving"
+          "route": {
+            "originZh": "苏州火车站美仑酒店",
+            "destinationZh": "虎丘塔",
+            "regionZh": "苏州",
+            "mode": "transit"
+          }
         },
         {
           "from": "08:00",
@@ -790,12 +790,12 @@
           "to": "11:00",
           "activity": "Tiger Hill Pagoda - Lion Grove Garden",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Tiger Hill Pagoda",
-          "destinationDisplay": "Lion Grove Garden",
-          "originZh": "虎丘塔",
-          "destinationZh": "狮子林",
-          "mode": "driving"
+          "route": {
+            "originZh": "虎丘塔",
+            "destinationZh": "狮子林",
+            "regionZh": "苏州",
+            "mode": "transit"
+          }
         },
         {
           "from": "11:00",
@@ -808,12 +808,12 @@
           "to": "13:15",
           "activity": "Lion Grove Garden - Pingjiang Road",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Lion Grove Garden",
-          "destinationDisplay": "Pingjiang Road",
-          "originZh": "狮子林",
-          "destinationZh": "平江路历史街区",
-          "mode": "driving"
+          "route": {
+            "originZh": "狮子林",
+            "destinationZh": "平江路历史街区",
+            "regionZh": "苏州",
+            "mode": "walking"
+          }
         },
         {
           "from": "13:15",
@@ -826,12 +826,12 @@
           "to": "16:00",
           "activity": "Humble Administrator Garden - Pingjiang Road",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Humble Administrator Garden",
-          "destinationDisplay": "Pingjiang Road",
-          "originZh": "拙政园",
-          "destinationZh": "平江路历史街区",
-          "mode": "driving"
+          "route": {
+            "originZh": "拙政园",
+            "destinationZh": "平江路历史街区",
+            "regionZh": "苏州",
+            "mode": "walking"
+          }
         },
         {
           "from": "16:00",
@@ -844,12 +844,12 @@
           "to": "20:00",
           "activity": "Pingjiang Road - Hefeng Homestay",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Pingjiang Road",
-          "destinationDisplay": "Hefeng Homestay",
-          "originZh": "平江路历史街区",
-          "destinationZh": "和风民宿（苏州店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "平江路历史街区",
+            "destinationZh": "苏州火车站美仑酒店",
+            "regionZh": "苏州",
+            "mode": "transit"
+          }
         },
         {
           "from": "20:00",
@@ -880,12 +880,12 @@
           "to": "08:30",
           "activity": "Hefeng Homestay - Hanshan Temple",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hefeng Homestay",
-          "destinationDisplay": "Hanshan Temple",
-          "originZh": "和风民宿（苏州店）",
-          "destinationZh": "寒山寺",
-          "mode": "driving"
+          "route": {
+            "originZh": "苏州火车站美仑酒店",
+            "destinationZh": "寒山寺",
+            "regionZh": "苏州",
+            "mode": "transit"
+          }
         },
         {
           "from": "08:30",
@@ -898,12 +898,12 @@
           "to": "11:30",
           "activity": "Hanshan Temple - Qili Shantang Street",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hanshan Temple",
-          "destinationDisplay": "Qili Shantang Street",
-          "originZh": "寒山寺",
-          "destinationZh": "七里山塘景区",
-          "mode": "driving"
+          "route": {
+            "originZh": "寒山寺",
+            "destinationZh": "七里山塘景区",
+            "regionZh": "苏州",
+            "mode": "transit"
+          }
         },
         {
           "from": "11:30",
@@ -916,12 +916,12 @@
           "to": "14:00",
           "activity": "Shantang Street - Hefeng Homestay",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Shantang Street",
-          "destinationDisplay": "Hefeng Homestay",
-          "originZh": "七里山塘景区",
-          "destinationZh": "和风民宿（苏州店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "七里山塘景区",
+            "destinationZh": "苏州火车站美仑酒店",
+            "regionZh": "苏州",
+            "mode": "transit"
+          }
         },
         {
           "from": "14:00",
@@ -934,12 +934,12 @@
           "to": "15:30",
           "activity": "Hefeng Homestay - Suzhou Railway Station",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hefeng Homestay",
-          "destinationDisplay": "Suzhou Railway Station",
-          "originZh": "和风民宿（苏州店）",
-          "destinationZh": "苏州站",
-          "mode": "driving"
+          "route": {
+            "originZh": "苏州火车站美仑酒店",
+            "destinationZh": "苏州站",
+            "regionZh": "苏州",
+            "mode": "walking"
+          }
         },
         {
           "from": "15:30",
@@ -964,12 +964,12 @@
           "to": "20:00",
           "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment / Zunteng Wanguo Hotel",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Hangzhou West Railway Station",
-          "destinationDisplay": "Hangzhou Yi Apartment / Zunteng Wanguo Hotel",
-          "originZh": "杭州西站",
-          "destinationZh": "杭州仟陌公寓（浙大紫金港店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "杭州西站",
+            "destinationZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "20:00",
@@ -1006,12 +1006,12 @@
           "to": "08:00",
           "activity": "Elong Hotel Hangzhou West Lake - Lingyin Temple dan Feilai Feng",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Elong Hotel Hangzhou West Lake",
-          "destinationDisplay": "Lingyin Temple dan Feilai Feng",
-          "originZh": "艺龙酒店（杭州西湖店）",
-          "destinationZh": "飞来峰",
-          "mode": "driving"
+          "route": {
+            "originZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "destinationZh": "灵隐寺飞来峰景区",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "08:00",
@@ -1024,12 +1024,12 @@
           "to": "11:30",
           "activity": "Feilai Feng - West Lake",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Feilai Feng",
-          "destinationDisplay": "West Lake",
-          "originZh": "飞来峰",
-          "destinationZh": "杭州西湖风景名胜区",
-          "mode": "driving"
+          "route": {
+            "originZh": "飞来峰",
+            "destinationZh": "西湖风景名胜区",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "11:30",
@@ -1041,7 +1041,13 @@
           "from": "11:30",
           "to": "12:30",
           "activity": "West Lake - Qinghefang 清河坊历史文化特色街区 dan Hefang Street",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "西湖风景名胜区",
+            "destinationZh": "清河坊历史文化特色街区",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "12:30",
@@ -1053,7 +1059,13 @@
           "from": "14:30",
           "to": "15:30",
           "activity": "Qinghefang dan Hefang Street - Wulin Road Night Market",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "清河坊历史文化特色街区",
+            "destinationZh": "武林夜市",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "15:30",
@@ -1066,12 +1078,12 @@
           "to": "19:30",
           "activity": "Wulin Road Night Market - Elong Hotel Hangzhou West Lake",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Wulin Road Night Market",
-          "destinationDisplay": "Elong Hotel Hangzhou West Lake",
-          "originZh": "武林夜市",
-          "destinationZh": "艺龙酒店（杭州西湖店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "武林夜市",
+            "destinationZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "19:30",
@@ -1102,12 +1114,12 @@
           "to": "08:30",
           "activity": "Elong Hotel Hangzhou West Lake - Xixi Wetland",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Elong Hotel Hangzhou West Lake",
-          "destinationDisplay": "Xixi Wetland",
-          "originZh": "艺龙酒店（杭州西湖店）",
-          "destinationZh": "西溪国家湿地公园",
-          "mode": "driving"
+          "route": {
+            "originZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "destinationZh": "西溪国家湿地公园",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "08:30",
@@ -1120,12 +1132,12 @@
           "to": "13:30",
           "activity": "Xixi Wetland - Song Dynasty Town",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Xixi Wetland",
-          "destinationDisplay": "Song Dynasty Town",
-          "originZh": "西溪国家湿地公园",
-          "destinationZh": "杭州宋城",
-          "mode": "driving"
+          "route": {
+            "originZh": "西溪国家湿地公园",
+            "destinationZh": "杭州宋城",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "13:30",
@@ -1138,12 +1150,12 @@
           "to": "20:30",
           "activity": "Song Dynasty Town - Elong Hotel Hangzhou West Lake",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Song Dynasty Town",
-          "destinationDisplay": "Elong Hotel Hangzhou West Lake",
-          "originZh": "杭州宋城",
-          "destinationZh": "艺龙酒店（杭州西湖店）",
-          "mode": "driving"
+          "route": {
+            "originZh": "杭州宋城",
+            "destinationZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "20:30",
@@ -1168,12 +1180,12 @@
           "to": "04:00",
           "activity": "Elong Hotel Hangzhou West Lake - Hangzhou Xiaoshan International Airport Terminal 4",
           "baiduMap": true,
-          "navigation": true,
-          "originDisplay": "Elong Hotel Hangzhou West Lake",
-          "destinationDisplay": "Hangzhou Xiaoshan International Airport Terminal 4",
-          "originZh": "艺龙酒店（杭州西湖店）",
-          "destinationZh": "杭州萧山国际机场4号航站楼",
-          "mode": "driving"
+          "route": {
+            "originZh": "艺龙酒店（杭州西湖湖滨武林广场店）",
+            "destinationZh": "杭州萧山国际机场T4航站楼",
+            "regionZh": "杭州",
+            "mode": "transit"
+          }
         },
         {
           "from": "04:00",

@@ -86,3 +86,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
  font-weight:700;
  text-decoration:none;
 }
+
+.navigate-btn{
+ gap:5px;
+}

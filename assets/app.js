@@ -98,11 +98,6 @@ function itineraryLocation(activity){
  return null;
 }
 
-function baiduDirectionLink(origin,destination,mode="driving"){
- const params=new URLSearchParams({origin,destination,mode,output:"html",src:"webapp.chinatrip2027.travel"});
- return `https://api.map.baidu.com/direction?${params.toString()}`;
-}
-
 async function renderItinerary(){
  const members=await getJSON("data/members.json");
  const me=members.find(x=>x.id===getMemberId());
@@ -123,11 +118,12 @@ async function renderItinerary(){
          <div class="timeline-time">${item.from}–${item.to}</div>
          <div class="timeline-content">
            <strong>${item.activity}</strong>
-           ${item.navigation===true && item.originZh && item.destinationZh
-             ? `<a class="map-btn direction-btn" href="${baiduDirectionLink(item.originZh,item.destinationZh,item.mode||"driving")}" target="_blank" rel="noopener">🧭 Navigate</a>`
-             : ""}
-           ${item.baiduMap===true && item.mapQuery
-             ? `<a class="map-btn" href="${baiduLink(item.mapQuery)}" target="_blank" rel="noopener">📍 Baidu Maps</a>`
+           ${item.baiduMap===true && item.route
+             ? `<a class="map-btn navigate-btn"
+                    href="${baiduDirectionLink(item.route)}"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Buka rute di Baidu Maps">🧭 Navigate</a>`
              : ""}
          </div>
        </div>
@@ -254,6 +250,15 @@ if("serviceWorker" in navigator){
 async function renderTripInfo(){
  const d=await getJSON("data/trip-info.json");
  $("#content").innerHTML=d.map(x=>`<article class="card"><span class="eyebrow">${x.icon} Trip Info</span><h4>${x.title}</h4><ul class="list">${x.items.map(i=>`<li>${i}</li>`).join("")}</ul></article>`).join("");
+}
+
+
+function baiduDirectionLink(route){
+ const origin=encodeURIComponent(route.originZh);
+ const destination=encodeURIComponent(route.destinationZh);
+ const mode=encodeURIComponent(route.mode||"transit");
+ const region=encodeURIComponent(route.regionZh||"中国");
+ return `https://api.map.baidu.com/direction?origin=${origin}&destination=${destination}&mode=${mode}&region=${region}&output=html&src=webapp.chinatrip2027`;
 }
 
 function baiduLink(query,region){
