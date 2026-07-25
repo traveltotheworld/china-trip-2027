@@ -12,6 +12,92 @@ async function initHome(){
  document.querySelectorAll("[data-page]").forEach(a=>a.href=keepId(a.getAttribute("data-page")));
  $("#emergencyBtn").onclick=()=>$("#emergencyModal").hidden=false;$("#closeModal").onclick=()=>$("#emergencyModal").hidden=true;
 }
+
+const ITINERARY_LOCATION_RULES=[
+ ["Batam Centre","Batam Centre Ferry Terminal"],
+ ["Tanah Merah","Tanah Merah Ferry Terminal Singapore"],
+ ["HarbourFront","HarbourFront Centre Singapore"],
+ ["Changi Airport Terminal 3","Singapore Changi Airport Terminal 3"],
+ ["Changi Airport","Singapore Changi Airport"],
+ ["Shanghai Pudong Airport","Shanghai Pudong International Airport"],
+ ["Shanghai Hongqiao Railway Station","Shanghai Hongqiao Railway Station"],
+ ["Hongqiao Railway Station","Shanghai Hongqiao Railway Station"],
+ ["Shangrao Railway Station","Shangrao Railway Station"],
+ ["Wangxiangu Zhonglou Homestay","Wangxiangu Zhonglou Homestay"],
+ ["Wangxian Valley","Wangxian Valley Scenic Area"],
+ ["Sijing Night Market","Sijing Night Market Shanghai"],
+ ["Jinshan North Station","Jinshan North Railway Station"],
+ ["LEGOLAND Shanghai","LEGOLAND Shanghai Resort"],
+ ["Shanghai Wild Animal Park","Shanghai Wild Animal Park"],
+ ["Jian Home Apartment","Jian Home Serviced Apartment Shanghai"],
+ ["Jing'an Temple","Jing'an Temple Shanghai"],
+ ["Wukang Road","Wukang Road Shanghai"],
+ ["Xintiandi","Xintiandi Shanghai"],
+ ["Tianzifang","Tianzifang Shanghai"],
+ ["The Bund","The Bund Shanghai"],
+ ["Lujiazui","Lujiazui Shanghai"],
+ ["Oriental Pearl Tower","Oriental Pearl Tower Shanghai"],
+ ["Yuyuan Garden","Yuyuan Garden Shanghai"],
+ ["Chenghuangmiao No.1 Shopping Center","Chenghuangmiao No.1 Shopping Center Shanghai"],
+ ["Chenghuangmiao","Shanghai City God Temple"],
+ ["Nanjing Road Pedestrian Street","Nanjing Road Pedestrian Street Shanghai"],
+ ["Nanjing Road","Nanjing Road Pedestrian Street Shanghai"],
+ ["Shanghai Romance Park","Shanghai Romance Park"],
+ ["Zhujiajiao Ancient Town","Zhujiajiao Ancient Town Shanghai"],
+ ["Zhujiajiao","Zhujiajiao Ancient Town Shanghai"],
+ ["Suzhou South Railway Station","Suzhou South Railway Station"],
+ ["Suzhou Railway Station","Suzhou Railway Station"],
+ ["Suzhou Station","Suzhou Railway Station"],
+ ["Madison Hotel Suzhou Railway Station","Madison Hotel Suzhou Railway Station"],
+ ["Tiger Hill Pagoda","Tiger Hill Suzhou"],
+ ["Tiger Hill","Tiger Hill Suzhou"],
+ ["Lion Grove Garden","Lion Grove Garden Suzhou"],
+ ["Pingjiang Road","Pingjiang Road Suzhou"],
+ ["Humble Administrator's Garden","Humble Administrator's Garden Suzhou"],
+ ["Hanshan Temple","Hanshan Temple Suzhou"],
+ ["Qili Shantang Street","Shantang Street Suzhou"],
+ ["Shantang Street","Shantang Street Suzhou"],
+ ["Hangzhou West Railway Station","Hangzhou West Railway Station"],
+ ["Lingyin Temple","Lingyin Temple Hangzhou"],
+ ["Feilai Feng","Feilai Peak Hangzhou"],
+ ["West Lake","West Lake Hangzhou"],
+ ["Qinghefang","Qinghefang Ancient Street Hangzhou"],
+ ["Hefang Street","Hefang Street Hangzhou"],
+ ["Wulin Road Night Market","Wulin Road Night Market Hangzhou"],
+ ["Xixi Wetland","Xixi National Wetland Park Hangzhou"],
+ ["Song Dynasty Town","Songcheng Hangzhou"],
+ ["Hangzhou Xiaoshan International Airport","Hangzhou Xiaoshan International Airport"],
+ ["Hotel Hangzhou","Hangzhou"]
+];
+
+function itineraryLocation(activity){
+ if(!activity)return null;
+ const lower=activity.toLowerCase();
+
+ // Tidak menampilkan tautan peta untuk perjalanan pesawat
+ const isFlight=
+   lower.includes("singapore airlines") ||
+   lower.includes("pesawat") ||
+   (lower.includes("airport") && lower.includes(" → ") &&
+    (lower.includes("singapore → shanghai") ||
+     lower.includes("hangzhou xiaoshan international airport → singapore")));
+
+ if(isFlight)return null;
+
+ // Ambil lokasi tujuan pada rute, atau lokasi yang disebut dalam aktivitas
+ const destination=activity.includes("→")
+   ? activity.split("→").pop().trim()
+   : activity;
+
+ for(const [keyword,query] of ITINERARY_LOCATION_RULES){
+   if(destination.toLowerCase().includes(keyword.toLowerCase()) ||
+      activity.toLowerCase().includes(keyword.toLowerCase())){
+     return query;
+   }
+ }
+ return null;
+}
+
 async function renderItinerary(){
  const members=await getJSON("data/members.json");
  const me=members.find(x=>x.id===getMemberId());
@@ -32,7 +118,12 @@ async function renderItinerary(){
          <div class="timeline-time">${item.from}–${item.to}</div>
          <div class="timeline-content">
            <strong>${item.activity}</strong>
-           ${item.locationId?`<a class="map-btn" href="${baiduLink(item.locationId)}">Buka Baidu Maps</a>`:""}
+           ${(()=>{
+             const locationQuery=item.locationId||itineraryLocation(item.activity);
+             return locationQuery
+               ? `<a class="map-btn" href="${baiduLink(locationQuery)}" target="_blank" rel="noopener">📍 Baidu Maps</a>`
+               : "";
+           })()}
          </div>
        </div>
      `).join("")}
@@ -149,7 +240,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=10",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=14",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
@@ -161,5 +252,5 @@ async function renderTripInfo(){
 }
 
 function baiduLink(query,region){
- return `baidumap://map/place/search?query=${encodeURIComponent(query)}&region=${encodeURIComponent(region||"中国")}&src=webapp.chinatrip2027`;
+ return `https://map.baidu.com/search/${encodeURIComponent(query)}/@?querytype=s&wd=${encodeURIComponent(query)}`;
 }
