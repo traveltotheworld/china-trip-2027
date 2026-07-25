@@ -1,0 +1,28 @@
+CHINA TRIP 2027 V22 — MEMBUAT AKUN ADMIN SUPABASE AUTH
+
+Database app_data sudah berhasil dibuat.
+
+Agar Admin Portal dapat menyimpan data, buat satu pengguna admin:
+
+1. Buka Supabase Dashboard.
+2. Pilih Authentication.
+3. Buka Users.
+4. Klik Add user.
+5. Pilih Create new user.
+6. Isi:
+   Email: septinogao@gmail.com
+   Password: Lina16894
+7. Aktifkan Auto Confirm User bila tersedia.
+8. Klik Create user.
+
+Setelah V22 di-deploy, buka:
+https://domain-anda.vercel.app/admin.html
+
+Login:
+Email: septinogao@gmail.com
+Password: Lina16894
+
+PENTING:
+- Password tidak ditanam di kode website.
+- Password disimpan dan diverifikasi oleh Supabase Auth.
+- Publishable key memang digunakan di browser; akses tulis tetap dilindungi login dan RLS.

@@ -14,11 +14,14 @@
     <h1>Admin Portal</h1>
     <p class="lead">Masukkan password admin.</p>
     <form id="loginForm" class="admin-form">
+      <label>Email Admin
+        <input id="adminEmail" type="email" autocomplete="username" value="septinogao@gmail.com" required>
+      </label>
       <label>Password
         <input id="adminPassword" type="password" autocomplete="current-password" required>
       </label>
       <button class="admin-primary" type="submit">Masuk</button>
-      <p id="loginError" class="admin-error" hidden>Password tidak sesuai.</p>
+      <p id="loginError" class="admin-error" hidden>Login gagal. Periksa email, password, dan akun Supabase Auth.</p>
     </form>
   </section>
 
@@ -37,7 +40,7 @@
 
     <section class="admin-notice">
       <strong>Data admin siap digunakan</strong>
-      <p>Data bawaan ditanam langsung di portal ini, sehingga halaman tidak lagi kosong walaupun file JSON gagal dimuat. Perubahan disimpan di browser/perangkat ini.</p>
+      <p>Data dibaca dan disimpan langsung melalui Supabase. Setelah disimpan, perubahan dapat dilihat seluruh peserta tanpa deploy ulang.</p>
     </section>
 
     <nav id="adminTabs" class="admin-tabs"></nav>
@@ -71,6 +74,8 @@
   </section>
 </main>
 <script src="assets/admin-defaults.js"></script>
+<script src="assets/supabase-config.js"></script>
+<script src="assets/supabase-data.js"></script>
 <script src="assets/admin.js"></script>
 </body>
 </html>

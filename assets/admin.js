@@ -1,18 +1,14 @@
 
-const ADMIN_PASSWORD_DEFAULT="Admin2027!";
-const STORAGE_PREFIX="china_trip_override:";
-const SESSION_KEY="china_trip_admin_session";
-
 const DATASETS=[
- {id:"itinerary-a",title:"Itinerary Grup A — 2–6 Maret",category:"Itinerary",path:"data/itinerary-group-a-early.json",type:"itinerary"},
- {id:"itinerary-b",title:"Itinerary Grup B — 6 Maret",category:"Itinerary",path:"data/itinerary-group-b-early.json",type:"itinerary"},
- {id:"itinerary-common",title:"Itinerary Bersama — 7–14 Maret",category:"Itinerary",path:"data/itinerary-common.json",type:"itinerary"},
- {id:"flights",title:"Penerbangan",category:"Transportasi",path:"data/flights.json",type:"flights"},
- {id:"hotels",title:"Hotel",category:"Akomodasi",path:"data/hotels.json",type:"hotels"},
- {id:"hsr",title:"High Speed Rail",category:"Transportasi",path:"data/hsr.json",type:"hsr"},
- {id:"members",title:"Peserta",category:"Peserta",path:"data/members.json",type:"members"},
- {id:"rooms",title:"Pembagian Kamar",category:"Peserta",path:"data/room-groups.json",type:"rooms"},
- {id:"trip-info",title:"Informasi Perjalanan",category:"Informasi",path:"data/trip-info.json",type:"tripinfo"}
+ {id:"itinerary-a",title:"Itinerary Grup A — 2–6 Maret",category:"Itinerary",path:"data/itinerary-group-a-early.json",key:"itinerary_group_a_early",description:"Itinerary awal Grup A, 2–6 Maret 2027",type:"itinerary"},
+ {id:"itinerary-b",title:"Itinerary Grup B — 6 Maret",category:"Itinerary",path:"data/itinerary-group-b-early.json",key:"itinerary_group_b_early",description:"Itinerary awal Grup B, 6 Maret 2027",type:"itinerary"},
+ {id:"itinerary-common",title:"Itinerary Bersama — 7–14 Maret",category:"Itinerary",path:"data/itinerary-common.json",key:"itinerary_common",description:"Itinerary bersama, 7–14 Maret 2027",type:"itinerary"},
+ {id:"flights",title:"Penerbangan",category:"Transportasi",path:"data/flights.json",key:"flights",description:"Data penerbangan Grup A dan Grup B",type:"flights"},
+ {id:"hotels",title:"Hotel",category:"Akomodasi",path:"data/hotels.json",key:"hotels",description:"Daftar hotel",type:"hotels"},
+ {id:"hsr",title:"High Speed Rail",category:"Transportasi",path:"data/hsr.json",key:"hsr",description:"Jadwal High Speed Rail",type:"hsr"},
+ {id:"members",title:"Peserta",category:"Peserta",path:"data/members.json",key:"members",description:"Data peserta",type:"members"},
+ {id:"rooms",title:"Pembagian Kamar",category:"Peserta",path:"data/room-groups.json",key:"room_groups",description:"Pembagian kamar",type:"rooms"},
+ {id:"trip-info",title:"Informasi Perjalanan",category:"Informasi",path:"data/trip-info.json",key:"trip_info",description:"Informasi perjalanan",type:"tripinfo"}
 ];
 
 let activeDataset=DATASETS[0];
@@ -20,31 +16,33 @@ let workingData=null;
 const $=s=>document.querySelector(s);
 const clone=v=>JSON.parse(JSON.stringify(v));
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-
-function getAdminPassword(){return localStorage.getItem("china_trip_admin_password")||ADMIN_PASSWORD_DEFAULT}
 function baseData(path){return clone(window.CHINA_TRIP_DEFAULTS[path])}
-function currentData(path){
- const saved=localStorage.getItem(STORAGE_PREFIX+path);
- if(saved){try{return JSON.parse(saved)}catch(e){}}
- return baseData(path);
-}
 function markChanged(){setStatus("Ada perubahan belum disimpan")}
 function setStatus(text){$("#saveStatus").textContent=text}
-function showAdmin(){
- $("#loginPanel").hidden=true;$("#adminPanel").hidden=false;buildTabs();selectDataset(DATASETS[0].id)
+async function currentData(dataset){
+ try{return await window.ChinaTripDB.readKey(dataset.key)}
+ catch(err){console.warn(err);return baseData(dataset.path)}
+}
+async function showAdmin(){
+ $("#loginPanel").hidden=true;$("#adminPanel").hidden=false;buildTabs();await selectDataset(DATASETS[0].id)
 }
 function buildTabs(){
  $("#adminTabs").innerHTML=DATASETS.map(d=>`<button data-id="${d.id}" class="${d.id===activeDataset.id?"active":""}"><small>${d.category}</small><strong>${d.title}</strong></button>`).join("");
  $("#adminTabs").querySelectorAll("button").forEach(b=>b.onclick=()=>selectDataset(b.dataset.id))
 }
-function selectDataset(id){
+async function selectDataset(id){
  activeDataset=DATASETS.find(d=>d.id===id)||DATASETS[0];
- workingData=currentData(activeDataset.path);
  buildTabs();
  $("#editorCategory").textContent=activeDataset.category;
  $("#editorTitle").textContent=activeDataset.title;
- setStatus(localStorage.getItem(STORAGE_PREFIX+activeDataset.path)?"Versi admin aktif":"Menggunakan data bawaan");
- renderEditor();
+ setStatus("Memuat dari Supabase…");
+ try{
+  workingData=await currentData(activeDataset);
+  setStatus("Terhubung ke Supabase");
+  renderEditor();
+ }catch(err){
+  setStatus("Gagal memuat: "+err.message);
+ }
 }
 function field(label,value,path,type="text",placeholder=""){
  return `<label class="cms-field"><span>${label}</span><input type="${type}" value="${esc(value)}" data-path="${path}" placeholder="${esc(placeholder)}"></label>`
@@ -228,46 +226,83 @@ function handleAction(e){
  if(a==="delete-room"){if(confirm("Hapus kamar ini?"))workingData.regions[+e.currentTarget.dataset.region].rooms.splice(+e.currentTarget.dataset.room,1)}
  renderEditor();markChanged()
 }
-function saveCurrent(){
- // Remove helper route objects when Baidu Map is disabled only if empty
- if(activeDataset.type==="itinerary"){
-  workingData.days.forEach(d=>d.items.forEach(it=>{
-   if(!it.baiduMap && it.route && !Object.values(it.route).some(Boolean))delete it.route
-  }))
+async function saveCurrent(){
+ try{
+  setStatus("Menyimpan ke Supabase…");
+  if(activeDataset.type==="itinerary"){
+   workingData.days.forEach(d=>d.items.forEach(it=>{
+    if(!it.baiduMap && it.route && !Object.values(it.route).some(Boolean))delete it.route
+   }))
+  }
+  await window.ChinaTripDB.writeKey(activeDataset.key,workingData,activeDataset.description);
+  setStatus("Tersimpan online");
+ }catch(err){
+  setStatus("Gagal menyimpan");
+  alert("Gagal menyimpan ke Supabase: "+err.message);
+  if(/sesi|login|jwt|token/i.test(err.message)){await window.ChinaTripDB.signOut();location.reload()}
  }
- localStorage.setItem(STORAGE_PREFIX+activeDataset.path,JSON.stringify(workingData));
- setStatus("Tersimpan")
 }
-function resetCurrent(){
- if(!confirm("Reset bagian ini ke data bawaan?"))return;
- localStorage.removeItem(STORAGE_PREFIX+activeDataset.path);selectDataset(activeDataset.id)
+async function resetCurrent(){
+ if(!confirm("Reset bagian ini ke data bawaan dan simpan ke Supabase?"))return;
+ try{
+  workingData=baseData(activeDataset.path);
+  await window.ChinaTripDB.writeKey(activeDataset.key,workingData,activeDataset.description);
+  renderEditor();setStatus("Data bawaan tersimpan online")
+ }catch(err){alert("Reset gagal: "+err.message)}
 }
 async function exportAll(){
- const payload={app:"China Trip 2027",version:21,exportedAt:new Date().toISOString(),data:{}};
- DATASETS.forEach(d=>payload.data[d.path]=currentData(d.path));
- const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download="china-trip-2027-admin-backup.json";a.click();URL.revokeObjectURL(url)
+ try{
+  setStatus("Menyiapkan backup…");
+  const payload={app:"China Trip 2027",version:22,exportedAt:new Date().toISOString(),data:{}};
+  for(const d of DATASETS)payload.data[d.path]=await currentData(d);
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="china-trip-2027-supabase-backup.json";a.click();URL.revokeObjectURL(url);
+  setStatus("Backup selesai")
+ }catch(err){alert("Export gagal: "+err.message)}
 }
 async function importBackup(file){
  try{
   const p=JSON.parse(await file.text());
   if(!p.data)throw new Error("File backup tidak dikenali");
-  let n=0;DATASETS.forEach(d=>{if(p.data[d.path]){localStorage.setItem(STORAGE_PREFIX+d.path,JSON.stringify(p.data[d.path]));n++}});
-  alert(n+" bagian data berhasil diimpor.");selectDataset(activeDataset.id)
+  let n=0;
+  for(const d of DATASETS){
+   if(p.data[d.path]!==undefined){
+    await window.ChinaTripDB.writeKey(d.key,p.data[d.path],d.description);n++
+   }
+  }
+  alert(n+" bagian data berhasil diimpor ke Supabase.");
+  await selectDataset(activeDataset.id)
  }catch(e){alert("Import gagal: "+e.message)}
 }
-function resetAll(){
- if(!confirm("Hapus seluruh perubahan admin di perangkat ini?"))return;
- DATASETS.forEach(d=>localStorage.removeItem(STORAGE_PREFIX+d.path));selectDataset(activeDataset.id)
+async function resetAll(){
+ if(!confirm("Reset seluruh data Supabase ke data bawaan V22?"))return;
+ try{
+  for(const d of DATASETS)await window.ChinaTripDB.writeKey(d.key,baseData(d.path),d.description);
+  alert("Semua data berhasil direset.");await selectDataset(activeDataset.id)
+ }catch(err){alert("Reset semua gagal: "+err.message)}
 }
 
-$("#loginForm").addEventListener("submit",e=>{e.preventDefault();if($("#adminPassword").value===getAdminPassword()){sessionStorage.setItem(SESSION_KEY,"1");showAdmin()}else $("#loginError").hidden=false});
-$("#logoutBtn").onclick=()=>{sessionStorage.removeItem(SESSION_KEY);location.reload()};
+$("#loginForm").addEventListener("submit",async e=>{
+ e.preventDefault();$("#loginError").hidden=true;
+ const btn=e.submitter;btn.disabled=true;btn.textContent="Masuk…";
+ try{
+  await window.ChinaTripDB.login($("#adminEmail").value.trim(),$("#adminPassword").value);
+  await showAdmin()
+ }catch(err){
+  $("#loginError").hidden=false;
+  $("#loginError").textContent="Login gagal: "+err.message
+ }finally{btn.disabled=false;btn.textContent="Masuk"}
+});
+$("#logoutBtn").onclick=async()=>{await window.ChinaTripDB.signOut();location.reload()};
 $("#saveBtn").onclick=saveCurrent;
 $("#reloadBtn").onclick=()=>selectDataset(activeDataset.id);
 $("#resetCurrentBtn").onclick=resetCurrent;
 $("#exportBtn").onclick=exportAll;
 $("#importInput").onchange=e=>{const f=e.target.files?.[0];if(f)importBackup(f);e.target.value=""};
 $("#resetAllBtn").onclick=resetAll;
-if(sessionStorage.getItem(SESSION_KEY)==="1")showAdmin();
+
+(async()=>{
+ const session=await window.ChinaTripDB.validSession();
+ if(session)await showAdmin()
+})();

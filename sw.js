@@ -1,5 +1,7 @@
-const CACHE="china-trip-v21";
+const CACHE="china-trip-v22";
 const ASSETS=[
+  "/assets/supabase-data.js",
+  "/assets/supabase-config.js",
   "/admin.html",
   "/assets/admin.js",
   "/assets/admin-defaults.js",

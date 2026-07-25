@@ -1,11 +1,8 @@
 
 const $=s=>document.querySelector(s);
 async function getJSON(path){
- const key="china_trip_override:"+path;
- const saved=localStorage.getItem(key);
- if(saved){
-   try{return JSON.parse(saved)}catch(e){console.warn("Invalid local override",path,e)}
- }
+ const online=window.ChinaTripDB ? await window.ChinaTripDB.readPath(path) : null;
+ if(online!==null)return online;
  const r=await fetch(path,{cache:"no-store"});
  if(!r.ok)throw new Error(path);
  return r.json();
@@ -279,7 +276,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=21",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=22",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
