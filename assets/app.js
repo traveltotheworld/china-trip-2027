@@ -98,6 +98,11 @@ function itineraryLocation(activity){
  return null;
 }
 
+function baiduDirectionLink(origin,destination,mode="driving"){
+ const params=new URLSearchParams({origin,destination,mode,output:"html",src:"webapp.chinatrip2027.travel"});
+ return `https://api.map.baidu.com/direction?${params.toString()}`;
+}
+
 async function renderItinerary(){
  const members=await getJSON("data/members.json");
  const me=members.find(x=>x.id===getMemberId());
@@ -118,6 +123,9 @@ async function renderItinerary(){
          <div class="timeline-time">${item.from}–${item.to}</div>
          <div class="timeline-content">
            <strong>${item.activity}</strong>
+           ${item.navigation===true && item.originZh && item.destinationZh
+             ? `<a class="map-btn direction-btn" href="${baiduDirectionLink(item.originZh,item.destinationZh,item.mode||"driving")}" target="_blank" rel="noopener">🧭 Navigate</a>`
+             : ""}
            ${item.baiduMap===true && item.mapQuery
              ? `<a class="map-btn" href="${baiduLink(item.mapQuery)}" target="_blank" rel="noopener">📍 Baidu Maps</a>`
              : ""}
@@ -237,7 +245,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=15",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=16",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
