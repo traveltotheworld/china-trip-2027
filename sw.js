@@ -1,5 +1,11 @@
-const CACHE="china-trip-v20";
+const CACHE="china-trip-v21";
 const ASSETS=[
+  "/admin.html",
+  "/assets/admin.js",
+  "/assets/admin-defaults.js",
+  "/data/itinerary-group-a-early.json",
+  "/data/itinerary-group-b-early.json",
+  "/data/itinerary-common.json",
   "/",
   "/index.html",
   "/itinerary.html",

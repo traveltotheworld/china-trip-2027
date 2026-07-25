@@ -12,7 +12,7 @@
   <section id="loginPanel" class="admin-login-card">
     <span class="eyebrow">China Trip 2027</span>
     <h1>Admin Portal</h1>
-    <p class="lead">Masukkan password admin untuk mengubah data perjalanan.</p>
+    <p class="lead">Masukkan password admin.</p>
     <form id="loginForm" class="admin-form">
       <label>Password
         <input id="adminPassword" type="password" autocomplete="current-password" required>
@@ -27,7 +27,7 @@
       <div>
         <span class="eyebrow">China Trip 2027</span>
         <h1>Admin Portal</h1>
-        <p class="lead">Edit data, simpan, lalu buka website untuk melihat perubahan.</p>
+        <p class="lead">Ubah data menggunakan formulir, lalu tekan Simpan.</p>
       </div>
       <div class="admin-header-actions">
         <a href="index.html" class="admin-secondary">Lihat Website</a>
@@ -36,27 +36,26 @@
     </header>
 
     <section class="admin-notice">
-      <strong>Penyimpanan lokal browser</strong>
-      <p>Perubahan langsung terlihat pada browser dan perangkat ini. Gunakan tombol Export untuk mencadangkan atau memindahkan perubahan ke perangkat lain.</p>
+      <strong>Data admin siap digunakan</strong>
+      <p>Data bawaan ditanam langsung di portal ini, sehingga halaman tidak lagi kosong walaupun file JSON gagal dimuat. Perubahan disimpan di browser/perangkat ini.</p>
     </section>
 
     <nav id="adminTabs" class="admin-tabs"></nav>
 
-    <section class="admin-editor-card">
+    <section class="admin-editor-card cms-editor-card">
       <div class="admin-editor-head">
         <div>
           <span class="eyebrow" id="editorCategory">Data</span>
           <h2 id="editorTitle">Editor</h2>
         </div>
-        <span id="saveStatus" class="save-status">Belum ada perubahan</span>
+        <span id="saveStatus" class="save-status">Menggunakan data bawaan</span>
       </div>
-      <textarea id="jsonEditor" spellcheck="false"></textarea>
-      <div class="admin-actions">
+      <div id="formEditor" class="cms-form-editor"></div>
+      <div class="admin-actions sticky-admin-actions">
         <button id="saveBtn" class="admin-primary">Simpan Perubahan</button>
         <button id="reloadBtn" class="admin-secondary">Muat Ulang</button>
         <button id="resetCurrentBtn" class="admin-danger">Reset Bagian Ini</button>
       </div>
-      <p id="editorError" class="admin-error" hidden></p>
     </section>
 
     <section class="admin-tools-card">
@@ -71,6 +70,7 @@
     </section>
   </section>
 </main>
+<script src="assets/admin-defaults.js"></script>
 <script src="assets/admin.js"></script>
 </body>
 </html>

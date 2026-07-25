@@ -342,3 +342,45 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
  #jsonEditor{height:430px;font-size:12px}
  .admin-actions>*{flex:1 1 100%;text-align:center}
 }
+
+
+/* V21 Form-based Admin CMS */
+.cms-form-editor{padding:18px;background:#f7f9fb;display:grid;gap:16px}
+.cms-day-card,.cms-record-card,.cms-flight-section{
+ background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px
+}
+.cms-day-card{display:grid;gap:15px}
+.cms-record-card{margin-bottom:12px}
+.cms-flight-section{margin-top:14px;background:#fbfcfd}
+.cms-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.cms-card-head h3,.cms-card-head h4{margin:0}
+.cms-grid{display:grid;gap:12px}
+.cms-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cms-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cms-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cms-grid.time-grid{grid-template-columns:repeat(2,minmax(110px,180px))}
+.cms-grid.route-grid{grid-template-columns:2fr 2fr 1fr 1fr}
+.cms-field{display:grid;gap:6px;font-size:12px;font-weight:800;color:#4b5661}
+.cms-field input,.cms-field textarea{
+ width:100%;border:1px solid #dfe4e8;border-radius:11px;padding:11px 12px;background:#fff;color:var(--ink);font:inherit;font-weight:600;outline:none
+}
+.cms-field input:focus,.cms-field textarea:focus{border-color:#b88b42;box-shadow:0 0 0 3px rgba(212,168,91,.16)}
+.cms-field textarea{min-height:78px;resize:vertical;line-height:1.5}
+.cms-field-wide{grid-column:1/-1}
+.cms-check{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:800}
+.cms-check input{width:18px;height:18px}
+.cms-activity-list{display:grid;gap:12px}
+.cms-activity-card{border:1px solid #e4e8ec;border-radius:15px;padding:14px;background:#fafbfd;display:grid;gap:12px}
+.cms-activity-number{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.09em;color:#9a6d28}
+.small-action{padding:7px 10px;font-size:11px}
+.sticky-admin-actions{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);z-index:5}
+.cms-editor-card{overflow:visible}
+@media(max-width:850px){
+ .cms-grid.three,.cms-grid.four,.cms-grid.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .cms-grid.two,.cms-grid.three,.cms-grid.four,.cms-grid.route-grid,.cms-grid.time-grid{grid-template-columns:1fr}
+ .cms-form-editor{padding:10px}
+ .cms-day-card,.cms-record-card,.cms-flight-section{padding:13px;border-radius:14px}
+ .cms-card-head{align-items:flex-start}
+}
