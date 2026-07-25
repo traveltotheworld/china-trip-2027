@@ -406,3 +406,36 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
 @media(max-width:480px){
  .nfc-row{grid-template-columns:88px minmax(0,1fr);padding:15px}
 }
+
+/* V24: reveal travel menu after tapping the profile card */
+.profile-trigger{
+ width:100%;
+ border:1px solid rgba(255,255,255,.18);
+ color:inherit;
+ text-align:left;
+ cursor:pointer;
+ appearance:none;
+ -webkit-appearance:none;
+ font:inherit;
+}
+.profile-trigger:focus-visible{
+ outline:3px solid rgba(255,210,123,.7);
+ outline-offset:3px;
+}
+.profile-chevron{
+ margin-left:auto;
+ font-size:22px;
+ line-height:1;
+ color:rgba(255,255,255,.8);
+ transition:transform .22s ease;
+}
+.profile-trigger.is-open .profile-chevron{transform:rotate(180deg)}
+.travel-menu-section[hidden]{display:none!important}
+.travel-menu-section{
+ animation:travelMenuReveal .28s ease both;
+ scroll-margin-top:12px;
+}
+@keyframes travelMenuReveal{
+ from{opacity:0;transform:translateY(-10px)}
+ to{opacity:1;transform:translateY(0)}
+}

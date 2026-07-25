@@ -23,6 +23,21 @@ async function initHome(){
  if(m.email){$("#personalEmail").href="mailto:"+m.email}else{$("#personalEmail").removeAttribute("href")}
  document.title=m.name+" — "+trip.title;
  document.querySelectorAll("[data-page]").forEach(a=>a.href=keepId(a.getAttribute("data-page")));
+
+ const profileTrigger=$("#profileMenuTrigger");
+ const travelMenu=$("#travelMenuSection");
+ if(profileTrigger&&travelMenu){
+  profileTrigger.onclick=()=>{
+   const willOpen=travelMenu.hidden;
+   travelMenu.hidden=!willOpen;
+   profileTrigger.setAttribute("aria-expanded",String(willOpen));
+   profileTrigger.classList.toggle("is-open",willOpen);
+   if(willOpen){
+    requestAnimationFrame(()=>travelMenu.scrollIntoView({behavior:"smooth",block:"start"}));
+   }
+  };
+ }
+
  $("#emergencyBtn").onclick=()=>$("#emergencyModal").hidden=false;$("#closeModal").onclick=()=>$("#emergencyModal").hidden=true;
 }
 
@@ -283,7 +298,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=23",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=24",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
