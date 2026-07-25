@@ -126,41 +126,20 @@ async function renderHSR(){
  const d=await getJSON("data/hsr.json");$("#content").innerHTML=d.map(x=>`<article class="card"><span class="eyebrow">${x.date}</span><h4>${x.route}</h4><div class="meta">Kereta: ${x.train}<br>Waktu: ${x.time}<br>Stasiun: ${x.station}</div></article>`).join("");
 }
 async function renderMembers(){
- const [members,roomData]=await Promise.all([
-   getJSON("data/members.json"),
-   getJSON("data/room-groups.json")
- ]);
-
- const memberByName=name=>members.find(m=>m.name.toLowerCase()===name.toLowerCase());
+ const roomData=await getJSON("data/room-groups.json");
 
  $("#content").innerHTML=roomData.regions.map(region=>`
-   <section class="room-region">
-     <div class="region-header">
+   <section class="simple-room-region">
+     <div class="simple-region-title">
        <span class="eyebrow">Pembagian Kamar</span>
        <h2>${region.name}</h2>
      </div>
 
-     <div class="room-list">
-       ${region.rooms.map((room,index)=>`
-         <article class="room-card">
-           <div class="room-number">${String(index+1).padStart(2,"0")}</div>
-           <div class="room-main">
-             <span class="eyebrow">${room.room}</span>
-             <div class="room-members">
-               ${room.members.map(name=>{
-                 const member=memberByName(name);
-                 const initial=name.split(" ").map(x=>x[0]).join("").slice(0,2).toUpperCase();
-                 return `
-                   <div class="room-member">
-                     <div class="room-avatar">${initial}</div>
-                     <div>
-                       <strong>${name}</strong>
-                       ${member?.email?`<small>${member.email}</small>`:""}
-                     </div>
-                   </div>`;
-               }).join("")}
-             </div>
-           </div>
+     <div class="simple-room-list">
+       ${region.rooms.map(room=>`
+         <article class="simple-room-card">
+           <strong>${room.room}</strong>
+           <span>${room.members.join(" - ")}</span>
          </article>
        `).join("")}
      </div>

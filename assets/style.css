@@ -52,3 +52,11 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
  .room-card{grid-template-columns:48px 1fr;padding:15px}
  .room-number{width:44px;height:44px;border-radius:14px;font-size:14px}
 }
+
+.simple-room-region{margin-top:2px}
+.simple-region-title{margin-bottom:14px}
+.simple-region-title h2{margin:3px 0 0;font-size:26px}
+.simple-room-list{display:grid;gap:10px}
+.simple-room-card{padding:14px 16px;border:1px solid var(--line);border-radius:15px;background:#fff}
+.simple-room-card strong{display:block;font-size:15px;margin-bottom:5px}
+.simple-room-card span{display:block;color:var(--muted);font-size:13px;line-height:1.5}
