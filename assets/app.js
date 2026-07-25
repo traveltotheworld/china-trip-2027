@@ -13,10 +13,31 @@ async function initHome(){
  $("#emergencyBtn").onclick=()=>$("#emergencyModal").hidden=false;$("#closeModal").onclick=()=>$("#emergencyModal").hidden=true;
 }
 async function renderItinerary(){
- const [data,locations]=await Promise.all([getJSON("data/itinerary.json"),getJSON("data/locations.json")]);
- const byId=Object.fromEntries(locations.map(x=>[x.id,x]));
- const box=$("#content");
- box.innerHTML=data.map(d=>`<article class="card"><span class="eyebrow">${d.day} • ${d.date}</span><h4>${d.city}</h4><div class="route-list">${d.items.map(i=>{const item=typeof i==="string"?{text:i}:i;const loc=item.locationId?byId[item.locationId]:null;return `<div class="route-item"><div><strong>${item.text}</strong>${loc?`<small>${loc.cn}</small>`:""}</div>${loc?`<a class="nav-btn" href="${baiduLink(loc.query,loc.city)}">Buka Baidu Maps</a>`:""}</div>`}).join("")}</div></article>`).join("");
+ const members=await getJSON("data/members.json");
+ const me=members.find(x=>x.id===getMemberId());
+ let data;
+
+ if(me?.itineraryGroup==="septino-lina-raelyn"){
+   data=await getJSON("data/itinerary-septino-lina-raelyn.json");
+ }else{
+   data=await getJSON("data/itinerary.json");
+ }
+
+ const days=data.days||data;
+ $("#content").innerHTML=days.map(day=>`
+   <section class="itinerary-day card">
+     <span class="eyebrow">${day.label||day.date}</span>
+     ${(day.items||[]).map(item=>`
+       <div class="timeline-item">
+         <div class="timeline-time">${item.from}–${item.to}</div>
+         <div class="timeline-content">
+           <strong>${item.activity}</strong>
+           ${item.locationId?`<a class="map-btn" href="${baiduLink(item.locationId)}">Buka Baidu Maps</a>`:""}
+         </div>
+       </div>
+     `).join("")}
+   </section>
+ `).join("");
 }
 async function renderFlights(){
  const [members,data]=await Promise.all([getJSON("data/members.json"),getJSON("data/flights.json")]);

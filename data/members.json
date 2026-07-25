@@ -7,7 +7,8 @@
     "room": "Kamar 1",
     "roommates": "Lina & Raelyn",
     "flightGroup": "SQ826",
-    "seat": "59H"
+    "seat": "59H",
+    "itineraryGroup": "septino-lina-raelyn"
   },
   {
     "id": "lina",
@@ -17,7 +18,8 @@
     "room": "Kamar 1",
     "roommates": "Septino & Raelyn",
     "flightGroup": "SQ826",
-    "seat": "59J"
+    "seat": "59J",
+    "itineraryGroup": "septino-lina-raelyn"
   },
   {
     "id": "astina",
@@ -91,7 +93,8 @@
     "room": "Kamar 1",
     "roommates": "Septino & Lina",
     "flightGroup": "SQ826",
-    "seat": "59K"
+    "seat": "59K",
+    "itineraryGroup": "septino-lina-raelyn"
   },
   {
     "id": "irin",
