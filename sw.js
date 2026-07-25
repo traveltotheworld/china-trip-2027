@@ -1,4 +1,4 @@
-const CACHE="china-trip-v11";
+const CACHE="china-trip-v12";
 const ASSETS=[
   "/",
   "/index.html",
@@ -11,6 +11,7 @@ const ASSETS=[
   "/assets/style.css",
   "/assets/app.js",
   "/data/members.json",
+  "/data/room-groups.json",
   "/data/trip.json",
   "/data/itinerary.json",
   "/data/itinerary-septino-lina-raelyn.json",

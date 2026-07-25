@@ -1,0 +1,47 @@
+{
+  "regions": [
+    {
+      "id": "shanghai",
+      "name": "Shanghai",
+      "rooms": [
+        {
+          "room": "Kamar 1",
+          "members": [
+            "Septino",
+            "Lina",
+            "Raelyn"
+          ]
+        },
+        {
+          "room": "Kamar 2",
+          "members": [
+            "Irin",
+            "Apryanto"
+          ]
+        },
+        {
+          "room": "Kamar 3",
+          "members": [
+            "Yongki",
+            "Prianto"
+          ]
+        },
+        {
+          "room": "Kamar 4",
+          "members": [
+            "Rico",
+            "Fredy"
+          ]
+        },
+        {
+          "room": "Kamar 5",
+          "members": [
+            "Astina",
+            "Devia",
+            "Cindy"
+          ]
+        }
+      ]
+    }
+  ]
+}
