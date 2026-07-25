@@ -1,31 +1,133 @@
 {
   "groups": [
     {
-      "id": "SQ826",
+      "id": "group-a",
       "travellers": [
         "Septino",
         "Lina",
         "Raelyn"
       ],
-      "airline": "Singapore Airlines",
-      "flight": "SQ826",
-      "aircraft": "Airbus A350-900",
-      "date": "03 March 2027",
-      "departure": {
-        "airport": "Singapore Changi Airport",
-        "terminal": "Terminal 3",
-        "time": "01:15"
+      "outbound": {
+        "type": "Departure",
+        "airline": "Singapore Airlines",
+        "flight": "SQ826",
+        "aircraft": "Airbus A350-900",
+        "date": "03 March 2027",
+        "departure": {
+          "code": "SIN",
+          "airport": "Singapore Changi Airport",
+          "terminal": "Terminal 3",
+          "time": "01:15"
+        },
+        "arrival": {
+          "code": "PVG",
+          "airport": "Shanghai Pudong International Airport",
+          "terminal": "Terminal 2",
+          "time": "06:30"
+        },
+        "referenceCode": "F33ICV",
+        "baggage": {
+          "personalItem": "1 pcs",
+          "cabin": "1 × 7 kg",
+          "checked": "Total 30 kg"
+        },
+        "seats": {
+          "septino": "59H",
+          "lina": "59J",
+          "raelyn": "59K"
+        }
       },
-      "arrival": {
-        "airport": "Shanghai Pudong International Airport",
-        "terminal": "Terminal 2",
-        "time": "06:30"
+      "return": {
+        "type": "Return",
+        "airline": "Xiamen Airlines",
+        "flight": "MF8703",
+        "aircraft": "Boeing 737-800",
+        "date": "14 March 2027",
+        "departure": {
+          "code": "HGH",
+          "airport": "Hangzhou Xiaoshan International Airport",
+          "terminal": "Terminal 4",
+          "time": "08:20"
+        },
+        "arrival": {
+          "code": "SIN",
+          "airport": "Singapore Changi Airport",
+          "terminal": "Terminal 3",
+          "time": "13:50"
+        },
+        "referenceCode": "Belum diisi",
+        "baggage": {
+          "personalItem": "Belum diisi",
+          "cabin": "Belum diisi",
+          "checked": "Belum diisi"
+        },
+        "seats": {}
+      }
+    },
+    {
+      "id": "group-b",
+      "travellers": [
+        "Astina",
+        "Cindy",
+        "Rico",
+        "Devia",
+        "Yongki",
+        "Prianto",
+        "Fredy",
+        "Apryanto",
+        "Irin"
+      ],
+      "outbound": {
+        "type": "Departure",
+        "airline": "Spring Airlines",
+        "flight": "9C7678",
+        "aircraft": "Airbus A320",
+        "date": "06 March 2027",
+        "departure": {
+          "code": "SIN",
+          "airport": "Singapore Changi Airport",
+          "terminal": "Terminal 4",
+          "time": "17:40"
+        },
+        "arrival": {
+          "code": "PVG",
+          "airport": "Shanghai Pudong International Airport",
+          "terminal": "Terminal 2",
+          "time": "22:55"
+        },
+        "referenceCode": "Belum diisi",
+        "baggage": {
+          "personalItem": "Belum diisi",
+          "cabin": "Belum diisi",
+          "checked": "Belum diisi"
+        },
+        "seats": {}
       },
-      "referenceCode": "F33ICV",
-      "baggage": {
-        "personalItem": "1 pcs",
-        "cabin": "1 × 7 kg",
-        "checked": "Total 30 kg"
+      "return": {
+        "type": "Return",
+        "airline": "Xiamen Airlines",
+        "flight": "MF8703",
+        "aircraft": "Boeing 737-800",
+        "date": "14 March 2027",
+        "departure": {
+          "code": "HGH",
+          "airport": "Hangzhou Xiaoshan International Airport",
+          "terminal": "Terminal 4",
+          "time": "08:20"
+        },
+        "arrival": {
+          "code": "SIN",
+          "airport": "Singapore Changi Airport",
+          "terminal": "Terminal 3",
+          "time": "13:50"
+        },
+        "referenceCode": "Belum diisi",
+        "baggage": {
+          "personalItem": "Belum diisi",
+          "cabin": "Belum diisi",
+          "checked": "Belum diisi"
+        },
+        "seats": {}
       }
     }
   ]

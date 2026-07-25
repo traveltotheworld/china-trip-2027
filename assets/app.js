@@ -133,83 +133,77 @@ async function renderItinerary(){
 }
 async function renderFlights(){
  const [members,data]=await Promise.all([getJSON("data/members.json"),getJSON("data/flights.json")]);
- const me=members.find(x=>x.id===getMemberId());
- const grp=data.groups.find(g=>g.id===me?.flightGroup);
- if(!grp){$("#content").innerHTML="<div class='card'>Belum ada data penerbangan.</div>";return;}
+ const me=members.find(x=>x.id===getMemberId())||members[0];
+ const grp=data.groups.find(g=>g.id===me.flightGroup);
 
- const seat=me?.seat||"-";
- const initials=(me?.name||"Traveler").split(" ").map(x=>x[0]).join("").slice(0,2).toUpperCase();
+ if(!grp){
+   $("#content").innerHTML="<div class='card'>Belum ada data penerbangan.</div>";
+   return;
+ }
 
- $("#content").innerHTML=`
- <section class="boarding-pass">
-   <div class="bp-top">
-     <div class="airline-mark">
-       <div class="airline-logo">✦</div>
-       <div>
-         <span class="eyebrow light">Singapore Airlines</span>
-         <h2>${grp.flight}</h2>
+ function flightCard(flight){
+   const seat=flight.seats?.[me.id]||"Belum diisi";
+   const baggage=flight.baggage||{};
+   return `
+   <section class="boarding-pass flight-card">
+     <div class="bp-top">
+       <div class="airline-mark">
+         <div class="airline-logo">✦</div>
+         <div>
+           <span class="eyebrow light">${flight.type}</span>
+           <h2>${flight.airline} · ${flight.flight}</h2>
+         </div>
+       </div>
+       <div class="aircraft-tag">${flight.aircraft}</div>
+     </div>
+
+     <div class="bp-route">
+       <div class="airport-block">
+         <strong>${flight.departure.code}</strong>
+         <span>${flight.departure.time}</span>
+         <small>${flight.departure.airport}</small>
+         <em>${flight.departure.terminal}</em>
+       </div>
+       <div class="flight-line"><span></span><b>✈</b><span></span></div>
+       <div class="airport-block right">
+         <strong>${flight.arrival.code}</strong>
+         <span>${flight.arrival.time}</span>
+         <small>${flight.arrival.airport}</small>
+         <em>${flight.arrival.terminal}</em>
        </div>
      </div>
-     <div class="aircraft-tag">${grp.aircraft}</div>
+
+     <div class="bp-date">${flight.date}</div>
+
+     <div class="bp-grid">
+       <div class="bp-info"><small>Passenger</small><strong>${me.name}</strong></div>
+       <div class="bp-info"><small>Seat</small><strong>${seat}</strong></div>
+       <div class="bp-info"><small>Booking Reference</small><strong>${flight.referenceCode||"Belum diisi"}</strong></div>
+       <div class="bp-info"><small>Flight</small><strong>${flight.flight}</strong></div>
+     </div>
+
+     <div class="bp-divider"><span></span><b>••••••••••••••••••••••</b><span></span></div>
+
+     <div class="bp-bottom">
+       <div class="passenger-avatar">${me.name.slice(0,2).toUpperCase()}</div>
+       <div class="baggage-list">
+         <div><span>Personal Item</span><strong>${baggage.personalItem||"Belum diisi"}</strong></div>
+         <div><span>Cabin Baggage</span><strong>${baggage.cabin||"Belum diisi"}</strong></div>
+         <div><span>Checked Baggage</span><strong>${baggage.checked||"Belum diisi"}</strong></div>
+       </div>
+     </div>
+   </section>`;
+ }
+
+ $("#content").innerHTML=`
+   <div class="flight-list">
+     ${flightCard(grp.outbound)}
+     ${flightCard(grp.return)}
    </div>
-
-   <div class="bp-route">
-     <div class="airport-block">
-       <strong>SIN</strong>
-       <span>${grp.departure.time}</span>
-       <small>${grp.departure.airport}</small>
-       <em>${grp.departure.terminal}</em>
-     </div>
-     <div class="flight-line">
-       <span></span>
-       <b>✈</b>
-       <span></span>
-     </div>
-     <div class="airport-block right">
-       <strong>PVG</strong>
-       <span>${grp.arrival.time}</span>
-       <small>${grp.arrival.airport}</small>
-       <em>${grp.arrival.terminal}</em>
-     </div>
-   </div>
-
-   <div class="bp-date">${grp.date}</div>
-
-   <div class="bp-grid">
-     <div class="bp-info">
-       <small>Passenger</small>
-       <strong>${me?.name||"Traveler"}</strong>
-     </div>
-     <div class="bp-info">
-       <small>Seat</small>
-       <strong>${seat}</strong>
-     </div>
-     <div class="bp-info">
-       <small>Booking Reference</small>
-       <strong>${grp.referenceCode}</strong>
-     </div>
-     <div class="bp-info">
-       <small>Flight</small>
-       <strong>${grp.flight}</strong>
-     </div>
-   </div>
-
-   <div class="bp-divider"><span></span><b>••••••••••••••••••••••</b><span></span></div>
-
-   <div class="bp-bottom">
-     <div class="passenger-avatar">${initials}</div>
-     <div class="baggage-list">
-       <div><span>Personal Item</span><strong>${grp.baggage.personalItem}</strong></div>
-       <div><span>Cabin Baggage</span><strong>${grp.baggage.cabin}</strong></div>
-       <div><span>Checked Baggage</span><strong>${grp.baggage.checked}</strong></div>
-     </div>
-   </div>
- </section>
-
- <section class="section-note">
-   <span class="eyebrow">Travel note</span>
-   <p class="lead">Data ini adalah ringkasan perjalanan dan bukan boarding pass resmi maskapai.</p>
- </section>`;
+   <section class="section-note">
+     <span class="eyebrow">Travel note</span>
+     <p class="lead">Data ini adalah ringkasan perjalanan dan bukan boarding pass resmi maskapai.</p>
+   </section>`;
 }
 async function renderHotels(){
  const d=await getJSON("data/hotels.json");$("#content").innerHTML=d.map(x=>`<article class="card"><span class="eyebrow">${x.city} • ${x.dates}</span><h4>${x.name}</h4><div class="meta">${x.address}</div><a class="btn" href="${baiduLink(x.mapsQuery||x.name,x.city)}">Buka Baidu Maps</a></article>`).join("");
@@ -241,7 +235,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=16",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=17",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });

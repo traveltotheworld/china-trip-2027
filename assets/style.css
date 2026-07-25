@@ -90,3 +90,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
 .navigate-btn{
  gap:5px;
 }
+
+.flight-list{display:grid;gap:18px}
+.flight-card{margin:0}
