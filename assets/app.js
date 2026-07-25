@@ -110,26 +110,56 @@ async function renderItinerary(){
  }
 
  const days=data.days||data;
- $("#content").innerHTML=days.map(day=>`
-   <section class="itinerary-day card">
-     <span class="eyebrow">${day.label||day.date}</span>
-     ${(day.items||[]).map(item=>`
-       <div class="timeline-item">
-         <div class="timeline-time">${item.from}–${item.to}</div>
-         <div class="timeline-content">
-           <strong>${item.activity}</strong>
-           ${item.baiduMap===true && item.route
-             ? `<a class="map-btn navigate-btn"
-                    href="${baiduDirectionLink(item.route)}"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Buka rute di Baidu Maps">🧭 Navigate</a>`
-             : ""}
+
+ $("#content").innerHTML=`
+   <div class="itinerary-table-list">
+     ${days.map((day,dayIndex)=>`
+       <section class="itinerary-table-card">
+         <div class="itinerary-day-header">
+           <div>
+             <span class="eyebrow">Hari ${dayIndex+1}</span>
+             <h3>${day.label||day.date}</h3>
+           </div>
+           <span class="activity-count">${(day.items||[]).length} aktivitas</span>
          </div>
-       </div>
+
+         <div class="itinerary-table-wrap">
+           <table class="itinerary-table">
+             <thead>
+               <tr>
+                 <th>Waktu</th>
+                 <th>Aktivitas</th>
+                 <th>Aksi</th>
+               </tr>
+             </thead>
+             <tbody>
+               ${(day.items||[]).map(item=>`
+                 <tr>
+                   <td data-label="Waktu">
+                     <span class="time-pill">${item.from}</span>
+                     <span class="time-arrow">→</span>
+                     <span class="time-pill">${item.to}</span>
+                   </td>
+                   <td data-label="Aktivitas">
+                     <div class="activity-text">${item.activity}</div>
+                   </td>
+                   <td data-label="Aksi">
+                     ${item.baiduMap===true && item.route
+                       ? `<a class="map-btn navigate-btn compact-map-btn"
+                              href="${baiduDirectionLink(item.route)}"
+                              target="_blank"
+                              rel="noopener"
+                              aria-label="Buka rute di Baidu Maps">🧭 Navigate</a>`
+                       : `<span class="no-action">—</span>`}
+                   </td>
+                 </tr>
+               `).join("")}
+             </tbody>
+           </table>
+         </div>
+       </section>
      `).join("")}
-   </section>
- `).join("");
+   </div>`;
 }
 async function renderFlights(){
  const [members,data]=await Promise.all([getJSON("data/members.json"),getJSON("data/flights.json")]);
@@ -235,7 +265,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=17",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=18",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
