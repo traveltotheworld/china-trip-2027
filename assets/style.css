@@ -529,13 +529,13 @@ footer,
   display:block;
   overflow:hidden;
   background:
-    url("../assets/china-trip-hero-v27.png") center center / cover no-repeat;
+    url("../assets/china-trip-hero-v28.jpg") center center / cover no-repeat;
 }
 .hero-v27 .hero-overlay{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg,rgba(5,11,17,.12) 0%,rgba(5,11,17,.08) 28%,rgba(5,11,17,.48) 62%,rgba(5,11,17,.92) 100%),
+    linear-gradient(180deg,rgba(5,11,17,.10) 0%,rgba(5,11,17,.12) 30%,rgba(5,11,17,.52) 65%,rgba(5,11,17,.94) 100%),
     linear-gradient(90deg,rgba(5,11,17,.34),rgba(5,11,17,.05) 62%,rgba(5,11,17,.16));
 }
 .hero-v27 .hero-content{
