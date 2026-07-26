@@ -25,7 +25,7 @@
   },
   {
     "id": "astina",
-    "name": "Astina",
+    "name": "Astina Fanfani",
     "email": "",
     "member": 3,
     "room": "Kamar 2",
@@ -36,7 +36,7 @@
   },
   {
     "id": "cindy",
-    "name": "Cindy",
+    "name": "Cindy Amelia",
     "email": "",
     "member": 4,
     "room": "Kamar 2",
@@ -47,8 +47,8 @@
   },
   {
     "id": "rico",
-    "name": "Rico",
-    "email": "",
+    "name": "Rikko Supriyadi",
+    "email": "rikkosupryadi26@gmail.com",
     "member": 5,
     "room": "Belum diisi",
     "roommates": "Belum diisi",
@@ -59,7 +59,7 @@
   {
     "id": "devia",
     "name": "Devia",
-    "email": "",
+    "email": "siladevidevia@gmail.com",
     "member": 6,
     "room": "Kamar 2",
     "roommates": "Astina & Cindy",
@@ -69,7 +69,7 @@
   },
   {
     "id": "yongki",
-    "name": "Yongki",
+    "name": "Yongki Wijaya",
     "email": "",
     "member": 7,
     "room": "Kamar 3",
@@ -125,8 +125,8 @@
   },
   {
     "id": "irin",
-    "name": "Irin",
-    "email": "",
+    "name": "Irin Enzelin",
+    "email": "irinenzelin20@gmail.com",
     "member": 12,
     "room": "Kamar 4",
     "roommates": "Apryanto",

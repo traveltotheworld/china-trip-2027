@@ -67,15 +67,15 @@
     {
       "id": "group-b",
       "travellers": [
-        "Astina",
-        "Cindy",
-        "Rico",
+        "Astina Fanfani",
+        "Cindy Amelia",
+        "Rikko Supriyadi",
         "Devia",
-        "Yongki",
+        "Yongki Wijaya",
         "Prianto",
         "Fredy",
         "Apryanto",
-        "Irin"
+        "Irin Enzelin"
       ],
       "outbound": {
         "type": "Departure",
