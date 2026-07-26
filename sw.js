@@ -1,4 +1,4 @@
-const CACHE="china-trip-v24-fullnames-astina";
+const CACHE="china-trip-v26-clean-profile";
 const ASSETS=[
   "/assets/supabase-data.js",
   "/assets/supabase-config.js",

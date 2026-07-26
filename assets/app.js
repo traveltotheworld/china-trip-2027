@@ -13,7 +13,10 @@ async function initHome(){
  const [members,trip]=await Promise.all([getJSON("data/members.json"),getJSON("data/trip.json")]);
  const id=getMemberId();const m=members.find(x=>x.id===id)||members[0];localStorage.setItem("trip_member",m.id);
  $("#travelerName").textContent=m.name;$("#travelerInitial").textContent=m.name[0].toUpperCase();
- $("#travelerEmail").textContent=m.email||"Email belum diisi";$("#memberNumber").textContent=String(m.member).padStart(2,"0")+" / "+String(members.length).padStart(2,"0");
+ $("#travelerEmail").textContent=m.email||"Email belum diisi";
+ const tripDate=m.flightGroup==="group-a"?"03–14 MARCH 2027":"06–14 MARCH 2027";
+ const heroTripDate=$("#heroTripDate");
+ if(heroTripDate) heroTripDate.textContent=tripDate;$("#memberNumber").textContent=String(m.member).padStart(2,"0")+" / "+String(members.length).padStart(2,"0");
  $("#personalName").textContent=m.name||"Belum diisi";
  const wa=(m.whatsapp||"").replace(/\D/g,"");
  const waText=m.whatsapp||"Belum diisi";
@@ -298,7 +301,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=24.2",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=26",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
