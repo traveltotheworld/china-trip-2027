@@ -1,5 +1,6 @@
-const CACHE="china-trip-v26-clean-profile";
+const CACHE="china-trip-v27-hero-refresh";
 const ASSETS=[
+  "/assets/china-trip-hero-v27.png",
   "/assets/supabase-data.js",
   "/assets/supabase-config.js",
   "/admin.html",

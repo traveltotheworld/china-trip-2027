@@ -301,7 +301,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=26",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=27",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
