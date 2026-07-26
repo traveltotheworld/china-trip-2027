@@ -1,6 +1,6 @@
-const CACHE="china-trip-v28-clean-background";
+const CACHE="china-trip-v29-sync-background";
 const ASSETS=[
-  "/assets/china-trip-hero-v28.jpg",
+  "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",
   "/assets/supabase-config.js",
   "/admin.html",

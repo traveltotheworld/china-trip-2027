@@ -16,14 +16,16 @@ async function initHome(){
  $("#travelerEmail").textContent=m.email||"Email belum diisi";
  const tripDate=m.flightGroup==="group-a"?"03–14 MARCH 2027":"06–14 MARCH 2027";
  const heroTripDate=$("#heroTripDate");
- if(heroTripDate) heroTripDate.textContent=tripDate;$("#memberNumber").textContent=String(m.member).padStart(2,"0")+" / "+String(members.length).padStart(2,"0");
- $("#personalName").textContent=m.name||"Belum diisi";
+ if(heroTripDate) heroTripDate.textContent=tripDate;
+ const memberNumber=$("#memberNumber");
+ if(memberNumber) memberNumber.textContent=String(m.member).padStart(2,"0")+" / "+String(members.length).padStart(2,"0");
+ if($("#personalName")) $("#personalName").textContent=m.name||"Belum diisi";
  const wa=(m.whatsapp||"").replace(/\D/g,"");
  const waText=m.whatsapp||"Belum diisi";
- $("#personalWhatsapp").textContent=waText;
- if(wa){$("#personalWhatsapp").href="https://wa.me/"+wa}else{$("#personalWhatsapp").removeAttribute("href")}
- $("#personalEmail").textContent=m.email||"Belum diisi";
- if(m.email){$("#personalEmail").href="mailto:"+m.email}else{$("#personalEmail").removeAttribute("href")}
+ if($("#personalWhatsapp")) $("#personalWhatsapp").textContent=waText;
+ if($("#personalWhatsapp")){if(wa){$("#personalWhatsapp").href="https://wa.me/"+wa}else{$("#personalWhatsapp").removeAttribute("href")}}
+ if($("#personalEmail")) $("#personalEmail").textContent=m.email||"Belum diisi";
+ if($("#personalEmail")){if(m.email){$("#personalEmail").href="mailto:"+m.email}else{$("#personalEmail").removeAttribute("href")}}
  document.title=m.name+" — "+trip.title;
  document.querySelectorAll("[data-page]").forEach(a=>a.href=keepId(a.getAttribute("data-page")));
 
@@ -301,7 +303,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=28",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=29",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
