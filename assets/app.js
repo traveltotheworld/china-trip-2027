@@ -202,76 +202,169 @@ async function renderFlights(){
  const [members,data]=await Promise.all([getJSON("data/members.json"),getJSON("data/flights.json")]);
  const me=members.find(x=>x.id===getMemberId())||members[0];
  const grp=data.groups.find(g=>g.id===me.flightGroup);
- if(!grp){$("#content").innerHTML="<div class='card'>Belum ada data penerbangan.</div>";return}
 
- function flightItem(flight,index){
+ if(!grp){
+  $("#content").innerHTML="<div class='card'>Belum ada data penerbangan.</div>";
+  return;
+ }
+
+ function flightCard(flight){
   const seat=flight.seats?.[me.id]||"Belum diisi";
   const baggage=flight.baggage||{};
-  return `<article class="travel-timeline-item flight-timeline-item">
-   <div class="travel-timeline-marker">${index===0?"↑":"↓"}</div>
-   <div class="travel-timeline-card">
-    <div class="timeline-card-top">
-     <div><span class="eyebrow">${flight.type||"Penerbangan"}</span><h2>${flight.airline} · ${flight.flight}</h2></div>
-     <span class="timeline-date">${flight.date||""}</span>
+  return `
+  <section class="boarding-pass flight-card">
+   <div class="bp-top">
+    <div class="airline-mark">
+     <div class="airline-logo">✦</div>
+     <div>
+      <span class="eyebrow light">${flight.type||"Penerbangan"}</span>
+      <h2>${flight.airline} · ${flight.flight}</h2>
+     </div>
     </div>
-    <div class="timeline-route">
-     <div><strong>${flight.departure.code}</strong><span>${flight.departure.time}</span><small>${flight.departure.airport}</small><em>${flight.departure.terminal||""}</em></div>
-     <div class="timeline-route-line"><span></span><b>✈</b><span></span></div>
-     <div class="right"><strong>${flight.arrival.code}</strong><span>${flight.arrival.time}</span><small>${flight.arrival.airport}</small><em>${flight.arrival.terminal||""}</em></div>
+    <div class="aircraft-tag">${flight.aircraft||"Pesawat belum diisi"}</div>
+   </div>
+
+   <div class="bp-route">
+    <div class="airport-block">
+     <strong>${flight.departure.code}</strong>
+     <span>${flight.departure.time}</span>
+     <small>${flight.departure.airport}</small>
+     <em>${flight.departure.terminal||""}</em>
     </div>
-    <div class="timeline-detail-grid">
-     <div><small>Penumpang</small><strong>${me.name}</strong></div>
-     <div><small>Kursi</small><strong>${seat}</strong></div>
-     <div><small>Kode Booking</small><strong>${flight.referenceCode||"Belum diisi"}</strong></div>
-     <div><small>Pesawat</small><strong>${flight.aircraft||"Belum diisi"}</strong></div>
-    </div>
-    <div class="timeline-baggage">
-     <span>🎒 ${baggage.personalItem||"—"}</span>
-     <span>🧳 ${baggage.cabin||"—"}</span>
-     <span>📦 ${baggage.checked||"—"}</span>
+    <div class="flight-line"><span></span><b>✈</b><span></span></div>
+    <div class="airport-block right">
+     <strong>${flight.arrival.code}</strong>
+     <span>${flight.arrival.time}</span>
+     <small>${flight.arrival.airport}</small>
+     <em>${flight.arrival.terminal||""}</em>
     </div>
    </div>
-  </article>`
+
+   <div class="bp-date">${flight.date||""}</div>
+
+   <div class="bp-grid">
+    <div class="bp-info"><small>Passenger</small><strong>${me.name}</strong></div>
+    <div class="bp-info"><small>Seat</small><strong>${seat}</strong></div>
+    <div class="bp-info"><small>Booking Reference</small><strong>${flight.referenceCode||"Belum diisi"}</strong></div>
+    <div class="bp-info"><small>Flight</small><strong>${flight.flight}</strong></div>
+   </div>
+
+   <div class="bp-divider"><span></span><b>••••••••••••••••••••••</b><span></span></div>
+
+   <div class="bp-bottom">
+    <div class="passenger-avatar">${me.name.slice(0,2).toUpperCase()}</div>
+    <div class="baggage-list">
+     <div><span>Personal Item</span><strong>${baggage.personalItem||"Belum diisi"}</strong></div>
+     <div><span>Cabin Baggage</span><strong>${baggage.cabin||"Belum diisi"}</strong></div>
+     <div><span>Checked Baggage</span><strong>${baggage.checked||"Belum diisi"}</strong></div>
+    </div>
+   </div>
+  </section>`;
  }
- $("#content").innerHTML=`<div class="travel-timeline">${flightItem(grp.outbound,0)}${flightItem(grp.return,1)}</div>
- <section class="section-note"><span class="eyebrow">Catatan</span><p class="lead">Data ini merupakan ringkasan perjalanan, bukan boarding pass resmi maskapai.</p></section>`;
+
+ $("#content").innerHTML=`
+  <div class="flight-list">
+   ${flightCard(grp.outbound)}
+   ${flightCard(grp.return)}
+  </div>
+  <section class="section-note">
+   <span class="eyebrow">Travel note</span>
+   <p class="lead">Data ini adalah ringkasan perjalanan dan bukan boarding pass resmi maskapai.</p>
+  </section>`;
 }
 async function renderHotels(){
- const [hotels,roomData,members]=await Promise.all([getJSON("data/hotels.json"),getJSON("data/room-groups.json"),getJSON("data/members.json")]);
+ const [hotels,roomData,members]=await Promise.all([
+  getJSON("data/hotels.json"),
+  getJSON("data/room-groups.json"),
+  getJSON("data/members.json")
+ ]);
+
  const currentMember=members.find(member=>member.id===getMemberId())||members[0];
  const currentGroup=currentMember.flightGroup||"group-b";
  const allRooms=(roomData.regions&&roomData.regions[0]&&roomData.regions[0].rooms)||[];
  const groupARooms=[{room:"Kamar 1",members:["Septino","Lina","Raelyn Xenaria Jayanthi"]}];
- const visibleHotels=hotels.filter(h=>!h.groupOnly||h.groupOnly===currentGroup);
 
- $("#content").innerHTML=`<div class="travel-timeline hotel-timeline">${visibleHotels.map((hotel,index)=>{
+ const visibleHotels=hotels.filter(hotel=>{
+  if(!hotel.groupOnly)return true;
+  return hotel.groupOnly===currentGroup;
+ });
+
+ $("#content").innerHTML=visibleHotels.map(hotel=>{
   const city=String(hotel.city||"").toLowerCase();
-  const dates=city==="shanghai"?(currentGroup==="group-a"?(hotel.datesGroupA||"04–09 Mar 2027"):(hotel.datesGroupB||"06–09 Mar 2027")):hotel.dates;
+  const displayDates=city==="shanghai"
+   ? (currentGroup==="group-a"
+      ? (hotel.datesGroupA||"04–09 Mar 2027")
+      : (hotel.datesGroupB||"06–09 Mar 2027"))
+   : hotel.dates;
   const rooms=city==="shangrao"?groupARooms:allRooms;
-  return `<article class="travel-timeline-item">
-   <div class="travel-timeline-marker">🏨</div>
-   <div class="travel-timeline-card">
-    <div class="timeline-card-top">
-     <div><span class="eyebrow">${hotel.city}</span><h2>${hotel.name}</h2></div>
-     <span class="timeline-date">${dates||""}</span>
+
+  return `
+  <section class="hotel-city-card">
+   <div class="hotel-city-head">
+    <div class="hotel-city-copy">
+     <span class="eyebrow">${hotel.city} • ${displayDates||""}</span>
+     <h2>${hotel.name}</h2>
+     <div class="hotel-address">${hotel.address||""}</div>
     </div>
-    <p class="timeline-address">${hotel.address||""}</p>
-    <a class="timeline-map-button" href="${baiduLink(hotel.mapsQuery||hotel.name,hotel.city)}" target="_blank" rel="noopener">📍 Buka Baidu Maps</a>
-    <details class="timeline-room-details">
-     <summary>Lihat pembagian kamar</summary>
-     <div class="hotel-room-grid">${rooms.map(room=>`<article class="hotel-room-card"><strong>${room.room}</strong><span class="room-count">${room.members.length} orang</span><ul>${room.members.map(name=>`<li>${name}</li>`).join("")}</ul></article>`).join("")}</div>
-    </details>
+    <a class="btn hotel-map-btn"
+       href="${baiduLink(hotel.mapsQuery||hotel.name,hotel.city)}"
+       target="_blank"
+       rel="noopener">
+     Buka Baidu Maps
+    </a>
    </div>
-  </article>`}).join("")}</div>`;
+
+   <div class="hotel-room-divider"></div>
+   <span class="hotel-room-label">Pembagian Kamar</span>
+
+   <div class="hotel-room-grid">
+    ${rooms.map(room=>`
+     <article class="hotel-room-card">
+      <strong>${room.room}</strong>
+      <span class="room-count">${room.members.length} Orang</span>
+      <ul>${room.members.map(name=>`<li>${name}</li>`).join("")}</ul>
+     </article>
+    `).join("")}
+   </div>
+  </section>`;
+ }).join("");
 }
 async function renderHSR(){
- const d=await getJSON("data/hsr.json");
- $("#content").innerHTML=`<div class="travel-timeline hsr-timeline">${d.map(x=>`
+ const [members,data]=await Promise.all([
+  getJSON("data/members.json"),
+  getJSON("data/hsr.json")
+ ]);
+ const me=members.find(x=>x.id===getMemberId())||members[0];
+ const group=me.flightGroup||"group-b";
+
+ const filtered=data.filter(item=>{
+  if(item.group){
+   if(Array.isArray(item.group))return item.group.includes(group);
+   return item.group===group||item.group==="all";
+  }
+  const dateText=String(item.date||"").toLowerCase();
+  const routeText=String(item.route||"").toLowerCase();
+  const earlyTrip=/03\s*mar|04\s*mar/.test(dateText)||routeText.includes("shangrao");
+  return group==="group-a" ? true : !earlyTrip;
+ });
+
+ if(!filtered.length){
+  $("#content").innerHTML="<div class='card'>Belum ada jadwal HSR untuk peserta ini.</div>";
+  return;
+ }
+
+ $("#content").innerHTML=`<div class="travel-timeline hsr-timeline">${filtered.map(x=>`
   <article class="travel-timeline-item">
    <div class="travel-timeline-marker">🚄</div>
    <div class="travel-timeline-card">
-    <div class="timeline-card-top"><div><span class="eyebrow">${x.date||""}</span><h2>${x.route||""}</h2></div><span class="timeline-date">${x.train||"HSR"}</span></div>
-    <div class="hsr-time-row"><strong>${x.time||"Waktu belum diisi"}</strong><span>${x.station||"Stasiun belum diisi"}</span></div>
+    <div class="timeline-card-top">
+     <div><span class="eyebrow">${x.date||""}</span><h2>${x.route||""}</h2></div>
+     <span class="timeline-date">${x.train||"Belum diisi"}</span>
+    </div>
+    <div class="hsr-time-row">
+     <strong>${x.time||"Waktu belum diisi"}</strong>
+     <span>${x.station||"Stasiun belum diisi"}</span>
+    </div>
    </div>
   </article>`).join("")}</div>`;
 }
@@ -299,7 +392,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=382",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=39",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });

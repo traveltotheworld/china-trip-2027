@@ -1,0 +1,10 @@
+CHINA TRIP 2027 V39
+
+Perubahan:
+- Boarding pass card pada halaman Flight dikembalikan.
+- Halaman Hotel kembali memakai hotel card.
+- HSR difilter berdasarkan grup peserta.
+- Peserta Group B tidak melihat HSR tanggal 03 dan 04 Maret atau rute Shangrao.
+- Tulisan petunjuk klik pada kartu profil dihapus.
+- Animasi ringan ditambahkan.
+- Supabase dan SQL tetap sama.

@@ -1064,16 +1064,14 @@ footer,
 .travel-menu-section>.lead{margin-bottom:4px}
 
 
-/* V38.2 — personal data first, menu opens on profile click */
-.profile-trigger::after{
-  content:"Klik untuk membuka menu perjalanan";
-  position:absolute;
-  left:64px;
-  bottom:7px;
-  font-size:9px;
-  font-weight:700;
-  opacity:.58;
-  letter-spacing:.01em
+
+
+/* V39 refinements */
+.flight-list{display:grid;gap:20px}
+.boarding-pass{animation:fadeUp .28s ease both}
+.hotel-city-card{animation:fadeUp .28s ease both}
+.travel-timeline-item{animation:fadeUp .28s ease both}
+@keyframes fadeUp{
+ from{opacity:0;transform:translateY(10px)}
+ to{opacity:1;transform:translateY(0)}
 }
-.profile-trigger{position:relative;padding-bottom:24px}
-.profile-trigger.is-open::after{content:"Klik untuk menutup menu perjalanan"}
