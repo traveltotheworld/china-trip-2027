@@ -9,7 +9,7 @@
     "flightGroup": "group-a",
     "seat": "59H",
     "itineraryGroup": "septino-lina-raelyn",
-    "whatsapp": ""
+    "whatsapp": "08116946999"
   },
   {
     "id": "lina",
@@ -21,7 +21,7 @@
     "flightGroup": "group-a",
     "seat": "59J",
     "itineraryGroup": "septino-lina-raelyn",
-    "whatsapp": ""
+    "whatsapp": "082284879722"
   },
   {
     "id": "astina",
@@ -32,18 +32,18 @@
     "roommates": "Cindy & Devia",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "081270566101"
   },
   {
     "id": "cindy",
-    "name": "Cindy Amelia",
-    "email": "",
+    "name": "Cindy Amelia Fortuna",
+    "email": "amelliaacin@gmail.com",
     "member": 4,
     "room": "Kamar 2",
     "roommates": "Astina & Devia",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "081261109667"
   },
   {
     "id": "rico",
@@ -65,7 +65,7 @@
     "roommates": "Astina & Cindy",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "085835294668"
   },
   {
     "id": "yongki",
@@ -76,7 +76,7 @@
     "roommates": "Prianto",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "081268419799"
   },
   {
     "id": "prianto",
@@ -87,29 +87,29 @@
     "roommates": "Yongki",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "081388885292"
   },
   {
     "id": "fredy",
-    "name": "Fredy",
-    "email": "",
+    "name": "Fredy Lim",
+    "email": "fredylim372@gmail.com",
     "member": 9,
     "room": "Kamar 5",
     "roommates": "Lg Tan",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "082255348259"
   },
   {
     "id": "apryanto",
     "name": "Apryanto",
-    "email": "",
+    "email": "apryanto.chen@gmail.com",
     "member": 10,
     "room": "Kamar 4",
     "roommates": "Irin",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "082170809390"
   },
   {
     "id": "raelyn",
@@ -121,7 +121,7 @@
     "flightGroup": "group-a",
     "seat": "59K",
     "itineraryGroup": "septino-lina-raelyn",
-    "whatsapp": ""
+    "whatsapp": "08116946999"
   },
   {
     "id": "irin",
@@ -132,6 +132,6 @@
     "roommates": "Apryanto",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": ""
+    "whatsapp": "081277122263"
   }
 ]
