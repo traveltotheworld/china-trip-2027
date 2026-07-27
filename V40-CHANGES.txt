@@ -1,0 +1,18 @@
+CHINA TRIP 2027 V40
+
+ADMIN FLIGHT:
+- Field kursi dihapus dari menu Peserta.
+- Kursi dipindahkan ke masing-masing penerbangan.
+- Penerbangan pergi memiliki pengaturan kursi sendiri.
+- Penerbangan pulang memiliki pengaturan kursi sendiri.
+- Daftar peserta otomatis mengikuti Flight Group pada menu Peserta.
+- Boarding pass tetap membaca kursi dari outbound.seats dan return.seats.
+
+PENGGUNAAN:
+1. Tentukan Flight Group peserta pada menu Peserta.
+2. Buka menu Penerbangan.
+3. Isi kursi pada bagian Pengaturan Kursi untuk penerbangan pergi.
+4. Isi kursi berbeda pada bagian penerbangan pulang.
+5. Simpan Draft lalu Publish.
+
+Supabase dan SQL tetap sama.

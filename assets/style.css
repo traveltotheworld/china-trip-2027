@@ -1075,3 +1075,27 @@ footer,
  from{opacity:0;transform:translateY(10px)}
  to{opacity:1;transform:translateY(0)}
 }
+
+
+/* V40 — Flight seat assignment */
+.flight-admin-group{overflow:visible}
+.flight-group-member-note{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 18px;padding:11px 13px;border-radius:13px;background:#f5f7f8;color:#68747e;font-size:12px}
+.flight-group-member-note strong{color:#17212b}
+.flight-section-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px}
+.flight-section-title h3{margin:4px 0 0}
+.flight-admin-badge{padding:7px 10px;border-radius:999px;background:#111820;color:#fff;font-size:11px;font-weight:850}
+.seat-assignment-panel{margin-top:18px;border:1px solid #e2e7eb;border-radius:16px;background:#fafbfc;overflow:hidden}
+.seat-assignment-panel summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;cursor:pointer;font-weight:850;background:#f3f6f8}
+.seat-assignment-panel summary small{font-weight:600;color:#75808a}
+.seat-assignment-list{display:grid;padding:8px 16px 14px}
+.seat-assignment-row{display:grid;grid-template-columns:minmax(0,1fr) 120px;align-items:center;gap:14px;padding:11px 0;border-top:1px solid #e7ebee}
+.seat-assignment-row:first-child{border-top:0}
+.seat-assignment-row span,.seat-assignment-row strong,.seat-assignment-row small{display:block}
+.seat-assignment-row small{margin-top:3px;color:#7a858e;font-size:11px}
+.seat-assignment-row input{width:100%;padding:10px 11px;border:1px solid #dce2e6;border-radius:11px;background:#fff;font:inherit;font-weight:800;text-align:center;text-transform:uppercase}
+.empty-seat-note{margin:8px 0 0;color:#7a858e}
+@media(max-width:600px){
+ .flight-section-title{display:block}.flight-admin-badge{display:inline-block;margin-top:9px}
+ .seat-assignment-panel summary{display:block}.seat-assignment-panel summary small{display:block;margin-top:4px}
+ .seat-assignment-row{grid-template-columns:minmax(0,1fr) 88px}
+}

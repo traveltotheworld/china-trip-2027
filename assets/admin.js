@@ -150,7 +150,7 @@ function renderEditor(){
  if(t==="dashboard")return renderDashboard();
  if(t==="trip")renderTrip();
  else if(t==="itinerary")renderItinerary();
- else if(t==="flights")renderFlights();
+ else if(t==="flights"){renderFlights();return}
  else if(t==="hotels")renderHotels();
  else if(t==="hsr")renderSimpleList("HSR",["route","date","train","time","station","group"]);
  else if(t==="members")renderMembers();
@@ -222,24 +222,49 @@ function renderItinerary(){
   workingData.members=rootMembers.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
  })
 }
-function renderFlights(){
+async function renderFlights(){
  if(!Array.isArray(workingData.groups))workingData.groups=[];
- $("#formEditor").innerHTML=workingData.groups.map((g,gi)=>`
- <section class="cms-day-card">
+ let members=[];
+ try{members=await window.ChinaTripDB.readKey("members")}
+ catch(err){members=baseData("data/members.json")}
+
+ $("#formEditor").innerHTML=workingData.groups.map((g,gi)=>{
+  const groupMembers=members.filter(m=>m.flightGroup===g.id);
+  return `
+ <section class="cms-day-card flight-admin-group">
   <div class="cms-card-head">
    <div><span class="eyebrow">Grup penerbangan</span><h3>${esc(g.name||g.id)}</h3></div>
    <button class="admin-danger small-action" data-action="delete-flight-group" data-group="${gi}">Hapus Grup</button>
   </div>
-  <div class="cms-grid three">
+
+  <div class="cms-grid two">
    ${field("ID grup",g.id||"",`groups.${gi}.id`)}
    ${field("Nama grup",g.name||"",`groups.${gi}.name`)}
-   ${field("Peserta (pisahkan koma)",(g.travellers||[]).join(", "),`groups.${gi}.__travellers`)}
   </div>
+
+  <div class="flight-group-member-note">
+   <strong>${groupMembers.length} peserta</strong>
+   <span>${groupMembers.map(m=>esc(m.name)).join(" • ")||"Belum ada peserta pada grup ini"}</span>
+  </div>
+
   ${["outbound","return"].map(type=>{
-   const f=g[type]||{departure:{},arrival:{},baggage:{}};
-   g[type]=f;f.departure=f.departure||{};f.arrival=f.arrival||{};f.baggage=f.baggage||{};
+   const f=g[type]||{departure:{},arrival:{},baggage:{},seats:{}};
+   g[type]=f;
+   f.departure=f.departure||{};
+   f.arrival=f.arrival||{};
+   f.baggage=f.baggage||{};
+   f.seats=f.seats||{};
+
    return `<article class="cms-flight-section">
-    <h3>${type==="outbound"?"Penerbangan Pergi":"Penerbangan Pulang"}</h3>
+    <div class="flight-section-title">
+     <div>
+      <span class="eyebrow">${type==="outbound"?"Departure":"Return"}</span>
+      <h3>${type==="outbound"?"Penerbangan Pergi":"Penerbangan Pulang"}</h3>
+     </div>
+     <span class="flight-admin-badge">${esc(f.airline||"Maskapai")} ${esc(f.flight||"")}</span>
+    </div>
+
+    <h4>Informasi Penerbangan</h4>
     <div class="cms-grid three">
      ${field("Maskapai",f.airline||"",`groups.${gi}.${type}.airline`)}
      ${field("Nomor penerbangan",f.flight||"",`groups.${gi}.${type}.flight`)}
@@ -247,6 +272,7 @@ function renderFlights(){
      ${field("Tanggal",f.date||"",`groups.${gi}.${type}.date`)}
      ${field("Kode booking",f.referenceCode||"",`groups.${gi}.${type}.referenceCode`)}
     </div>
+
     <h4>Keberangkatan</h4>
     <div class="cms-grid four">
      ${field("Kode bandara",f.departure.code||"",`groups.${gi}.${type}.departure.code`)}
@@ -254,6 +280,7 @@ function renderFlights(){
      ${field("Terminal",f.departure.terminal||"",`groups.${gi}.${type}.departure.terminal`)}
      ${field("Waktu",f.departure.time||"",`groups.${gi}.${type}.departure.time`,"time")}
     </div>
+
     <h4>Kedatangan</h4>
     <div class="cms-grid four">
      ${field("Kode bandara",f.arrival.code||"",`groups.${gi}.${type}.arrival.code`)}
@@ -261,22 +288,38 @@ function renderFlights(){
      ${field("Terminal",f.arrival.terminal||"",`groups.${gi}.${type}.arrival.terminal`)}
      ${field("Waktu",f.arrival.time||"",`groups.${gi}.${type}.arrival.time`,"time")}
     </div>
+
     <h4>Bagasi</h4>
     <div class="cms-grid three">
      ${field("Personal item",f.baggage.personalItem||"",`groups.${gi}.${type}.baggage.personalItem`)}
      ${field("Kabin",f.baggage.cabin||"",`groups.${gi}.${type}.baggage.cabin`)}
      ${field("Bagasi tercatat",f.baggage.checked||"",`groups.${gi}.${type}.baggage.checked`)}
     </div>
+
+    <details class="seat-assignment-panel" open>
+     <summary>
+      <span>💺 Pengaturan Kursi</span>
+      <small>${type==="outbound"?"Kursi penerbangan pergi":"Kursi penerbangan pulang"}</small>
+     </summary>
+     <div class="seat-assignment-list">
+      ${groupMembers.length?groupMembers.map(member=>`
+       <label class="seat-assignment-row">
+        <span>
+         <strong>${esc(member.name)}</strong>
+         <small>${esc(member.email||member.whatsapp||member.id)}</small>
+        </span>
+        <input type="text"
+          value="${esc(f.seats[member.id]||"")}"
+          data-path="groups.${gi}.${type}.seats.${member.id}"
+          placeholder="Contoh: 59H">
+       </label>`).join(""):`<p class="empty-seat-note">Tambahkan peserta ke ${esc(g.name||g.id)} melalui menu Peserta terlebih dahulu.</p>`}
+     </div>
+    </details>
    </article>`
   }).join("")}
- </section>`).join("")+`<button class="admin-primary" data-action="add-flight-group">+ Tambah Grup Penerbangan</button>`;
+ </section>`}).join("")+`<button class="admin-primary" data-action="add-flight-group">+ Tambah Grup Penerbangan</button>`;
 
- $("#formEditor").querySelectorAll('[data-path$=".__travellers"]').forEach(el=>{
-  el.addEventListener("input",()=>{
-   const gi=Number(el.dataset.path.split(".")[1]);
-   workingData.groups[gi].travellers=el.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
-  })
- })
+ bindFields()
 }
 function renderHotels(){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
@@ -296,7 +339,7 @@ function renderHotels(){
  </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Hotel</button>`;
 }
 function renderMembers(){
- const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","seat","itineraryGroup"];
+ const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","itineraryGroup"];
  $("#formEditor").innerHTML=`
  <div class="member-search-bar"><span>🔎</span><input id="memberSearch" type="search" placeholder="Cari nama, WhatsApp, email, kamar atau grup…"><b id="memberResultCount">${(workingData||[]).length} peserta</b></div>
  <div id="memberCards">${(workingData||[]).map((row,i)=>`
@@ -366,13 +409,13 @@ function handleAction(e){
  if(a==="delete-day"&&confirm("Hapus hari ini?"))workingData.days.splice(+e.currentTarget.dataset.day,1);
  if(a==="add-item")workingData.days[+e.currentTarget.dataset.day].items.push({from:"09:00",to:"10:00",activity:"Aktivitas baru",baiduMap:false,route:{originZh:"",destinationZh:"",regionZh:"",mode:"transit"}});
  if(a==="delete-item"&&confirm("Hapus aktivitas ini?"))workingData.days[+e.currentTarget.dataset.day].items.splice(+e.currentTarget.dataset.item,1);
- if(a==="add-flight-group")workingData.groups.push({id:"group-new",name:"Grup Baru",travellers:[],outbound:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""}},return:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""}}});
+ if(a==="add-flight-group")workingData.groups.push({id:"group-new",name:"Grup Baru",travellers:[],outbound:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""},seats:{}},return:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""},seats:{}}});
  if(a==="delete-flight-group"&&confirm("Hapus grup penerbangan ini?"))workingData.groups.splice(+e.currentTarget.dataset.group,1);
  if(a==="add-record"){
   const t=activeDataset.type;
   if(t==="hotels")workingData.push({city:"",name:"",dates:"",datesGroupA:"",datesGroupB:"",address:"",mapsQuery:"",groupOnly:"",sourceUrl:""});
   if(t==="hsr")workingData.push({route:"",date:"",train:"",time:"",station:"",group:""});
-  if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",seat:"",itineraryGroup:"main-group"});
+  if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",itineraryGroup:"main-group"});
   if(t==="tripinfo")workingData.push({title:"Informasi Baru",icon:"ℹ️",items:[]});
   if(t==="locations")workingData.push({id:"",city:"",name:"",cn:"",query:""})
  }
