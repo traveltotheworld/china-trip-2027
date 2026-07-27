@@ -20,7 +20,7 @@ async function initHome(){
  const memberNumber=$("#memberNumber");
  if(memberNumber) memberNumber.textContent=String(m.member).padStart(2,"0")+" / "+String(members.length).padStart(2,"0");
  if($("#personalName")) $("#personalName").textContent=m.name||"Belum diisi";
- const wa=(m.whatsapp||"").replace(/\D/g,"");
+ const wa=String(m.whatsapp||"").replace(/\D/g,"");
  const waText=m.whatsapp||"Belum diisi";
  if($("#personalWhatsapp")) $("#personalWhatsapp").textContent=waText;
  if($("#personalWhatsapp")){if(wa){$("#personalWhatsapp").href="https://wa.me/"+wa}else{$("#personalWhatsapp").removeAttribute("href")}}
@@ -303,7 +303,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=31",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=32",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
