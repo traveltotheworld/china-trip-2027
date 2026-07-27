@@ -730,3 +730,21 @@ footer,
     margin-top:auto!important;
   }
 }
+
+
+/* V33 — Group members moved into Hotel */
+.hotel-section-title{
+  margin:7px 0 16px;
+  font-size:25px;
+}
+.hotel-members-section{
+  margin-top:34px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.hotel-room-region + .hotel-room-region{
+  margin-top:30px;
+}
+.hotel-room-region .simple-region-title h2{
+  margin-top:7px;
+}

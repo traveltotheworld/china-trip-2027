@@ -1,4 +1,4 @@
-const CACHE="china-trip-v32-international-phone";
+const CACHE="china-trip-v33-members-inside-hotel";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",
