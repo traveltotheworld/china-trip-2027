@@ -748,3 +748,93 @@ footer,
 .hotel-room-region .simple-region-title h2{
   margin-top:7px;
 }
+
+
+/* V34 — Hotel and room members combined per city */
+.hotel-city-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 8px 24px rgba(17,24,32,.04);
+}
+.hotel-city-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.hotel-city-copy{
+  min-width:0;
+  flex:1;
+}
+.hotel-city-copy h2{
+  margin:7px 0 8px;
+  font-size:21px;
+  line-height:1.2;
+}
+.hotel-address{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+.hotel-map-btn{
+  flex:0 0 auto;
+  margin:0;
+  white-space:nowrap;
+}
+.hotel-room-divider{
+  height:1px;
+  background:var(--line);
+  margin:19px 0 15px;
+}
+.hotel-room-label{
+  display:block;
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+.hotel-room-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.hotel-room-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  background:#fbfcfd;
+}
+.hotel-room-card strong{
+  display:block;
+  font-size:15px;
+}
+.room-count{
+  display:block;
+  margin-top:4px;
+  font-size:12px;
+  color:var(--muted);
+}
+.hotel-room-card ul{
+  margin:10px 0 0;
+  padding-left:18px;
+}
+.hotel-room-card li{
+  margin:5px 0;
+  font-size:13px;
+  line-height:1.35;
+}
+@media(max-width:460px){
+  .hotel-city-head{
+    align-items:flex-start;
+    gap:12px;
+  }
+  .hotel-city-copy h2{
+    font-size:18px;
+  }
+  .hotel-map-btn{
+    padding:10px 11px;
+    font-size:11px;
+  }
+}

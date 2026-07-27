@@ -279,42 +279,37 @@ async function renderHotels(){
   getJSON("data/room-groups.json")
  ]);
 
- const hotelCards=hotels.map(x=>`
-  <article class="card">
-   <span class="eyebrow">${x.city} • ${x.dates}</span>
-   <h4>${x.name}</h4>
-   <div class="meta">${x.address}</div>
-   <a class="btn" href="${baiduLink(x.mapsQuery||x.name,x.city)}">Buka Baidu Maps</a>
-  </article>
- `).join("");
+ const defaultRooms=(roomData.regions&&roomData.regions[0]&&roomData.regions[0].rooms)||[];
 
- const roomSections=roomData.regions.map(region=>`
-  <section class="simple-room-region hotel-room-region">
-   <div class="simple-region-title">
-    <span class="eyebrow">Group Members & Pembagian Kamar</span>
-    <h2>${region.name}</h2>
+ $("#content").innerHTML=hotels.map(hotel=>`
+  <section class="hotel-city-card">
+   <div class="hotel-city-head">
+    <div class="hotel-city-copy">
+     <span class="eyebrow">${hotel.city} • ${hotel.dates}</span>
+     <h2>${hotel.name}</h2>
+     <div class="hotel-address">${hotel.address}</div>
+    </div>
+    <a class="btn hotel-map-btn" href="${baiduLink(hotel.mapsQuery||hotel.name,hotel.city)}">
+     Buka Baidu Maps
+    </a>
    </div>
-   <div class="simple-room-list">
-    ${region.rooms.map(room=>`
-     <article class="simple-room-card">
+
+   <div class="hotel-room-divider"></div>
+   <span class="hotel-room-label">Pembagian Kamar</span>
+
+   <div class="hotel-room-grid">
+    ${defaultRooms.map(room=>`
+     <article class="hotel-room-card">
       <strong>${room.room}</strong>
-      <span>${room.members.join(" - ")}</span>
+      <span class="room-count">${room.members.length} Orang</span>
+      <ul>
+       ${room.members.map(name=>`<li>${name}</li>`).join("")}
+      </ul>
      </article>
     `).join("")}
    </div>
   </section>
  `).join("");
-
- $("#content").innerHTML=`
-  <div class="hotel-list-section">
-   <span class="eyebrow">Akomodasi</span>
-   <h2 class="hotel-section-title">Hotel Perjalanan</h2>
-   ${hotelCards}
-  </div>
-  <div class="hotel-members-section">
-   ${roomSections}
-  </div>
- `;
 }
 async function renderHSR(){
  const d=await getJSON("data/hsr.json");$("#content").innerHTML=d.map(x=>`<article class="card"><span class="eyebrow">${x.date}</span><h4>${x.route}</h4><div class="meta">Kereta: ${x.train}<br>Waktu: ${x.time}<br>Stasiun: ${x.station}</div></article>`).join("");
@@ -343,7 +338,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=33",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=34",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
