@@ -121,9 +121,7 @@ async function renderDashboard(){
   </div>
   <section class="simple-quick-card">
    <h3>Edit Cepat</h3>
-   <div class="simple-quick-grid">
-    ${DATASETS.filter(d=>["members","flights","hotels","itinerary-common","trip-info","trip"].includes(d.id)).map(d=>`
-     <button data-open="${d.id}"><span>${d.icon}</span><strong>${d.title}</strong><small>${d.description}</small></button>`).join("")}
+   <div class="simple-quick-grid">${DATASETS.filter(d=>["members","flights","hotels","itinerary-common","trip-info","trip"].includes(d.id)).map(d=>`<button data-open="${d.id}"><span>${d.icon}</span><strong>${d.title}</strong><small>${d.description}</small></button>`).join("")}
    </div>
   </section>
   <section class="simple-help-card">
