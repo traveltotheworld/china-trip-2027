@@ -39,12 +39,24 @@ async function currentData(dataset){
  try{return await window.ChinaTripDB.readKey(dataset.key)}
  catch(err){console.warn(err);return baseData(dataset.path)}
 }
-function hideLoginPanel(){const p=$("#loginPanel");p.hidden=true;p.style.display="none"}
-function showLoginPanel(){const p=$("#loginPanel");p.hidden=false;p.style.display="flex"}
+function setAdminView(isLoggedIn){
+ const login=$("#loginPanel");
+ const admin=$("#adminPanel");
+ document.body.classList.toggle("admin-authenticated",Boolean(isLoggedIn));
+ document.body.classList.toggle("admin-guest",!isLoggedIn);
+ if(login){
+  login.hidden=Boolean(isLoggedIn);
+  login.setAttribute("aria-hidden",String(Boolean(isLoggedIn)));
+  login.style.display=isLoggedIn?"none":"block";
+ }
+ if(admin){
+  admin.hidden=!isLoggedIn;
+  admin.setAttribute("aria-hidden",String(!isLoggedIn));
+  admin.style.display=isLoggedIn?"grid":"none";
+ }
+}
 async function showAdmin(){
- hideLoginPanel();
- $("#adminPanel").hidden=false;
- $("#adminPanel").style.display="block";
+ setAdminView(true);
  buildTabs();updateDraftCount();
  await selectDataset("dashboard")
 }
@@ -506,13 +518,16 @@ $("#loginForm").addEventListener("submit",async e=>{
  const btn=e.submitter;btn.disabled=true;btn.textContent="Masuk…";
  try{
   await window.ChinaTripDB.login($("#adminEmail").value.trim(),$("#adminPassword").value);
-  hideLoginPanel();
   await showAdmin()
  }catch(err){
   $("#loginError").hidden=false;$("#loginError").textContent="Login gagal: "+err.message
  }finally{btn.disabled=false;btn.textContent="Masuk"}
 });
-$("#logoutBtn").onclick=async()=>{await window.ChinaTripDB.signOut();showLoginPanel();$("#adminPanel").hidden=true;location.reload()};
+$("#logoutBtn").onclick=async()=>{
+ await window.ChinaTripDB.signOut();
+ setAdminView(false);
+ $("#adminPassword").value="";
+};
 $("#saveBtn").onclick=saveCurrent;
 $("#publishBtn").onclick=publishAll;
 $("#reloadBtn").onclick=async()=>{
@@ -524,4 +539,14 @@ $("#reloadBtn").onclick=async()=>{
 };
 $("#exportBtn").onclick=exportAll;
 $("#importInput").onchange=e=>{const f=e.target.files?.[0];if(f)importBackup(f);e.target.value=""};
-(async()=>{const session=await window.ChinaTripDB.validSession();if(session){hideLoginPanel();await showAdmin()}else{showLoginPanel()}})();
+(async()=>{
+ setAdminView(false);
+ try{
+  const session=await window.ChinaTripDB.validSession();
+  if(session)await showAdmin();
+  else setAdminView(false);
+ }catch(err){
+  console.warn("Session check failed",err);
+  setAdminView(false);
+ }
+})();

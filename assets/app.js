@@ -314,18 +314,23 @@ async function renderHotels(){
     </a>
    </div>
 
-   <div class="hotel-room-divider"></div>
-   <span class="hotel-room-label">Pembagian Kamar</span>
-
-   <div class="hotel-room-grid">
-    ${rooms.map(room=>`
-     <article class="hotel-room-card">
-      <strong>${room.room}</strong>
-      <span class="room-count">${room.members.length} Orang</span>
-      <ul>${room.members.map(name=>`<li>${name}</li>`).join("")}</ul>
-     </article>
-    `).join("")}
-   </div>
+   <details class="hotel-room-dropdown">
+    <summary>
+     <span class="hotel-room-summary-title"><span aria-hidden="true">🛏️</span> Pembagian Kamar</span>
+     <span class="hotel-room-summary-meta">${rooms.length} kamar</span>
+    </summary>
+    <div class="hotel-room-dropdown-content">
+     <div class="hotel-room-grid">
+      ${rooms.map(room=>`
+       <article class="hotel-room-card">
+        <strong>${room.room}</strong>
+        <span class="room-count">${room.members.length} Orang</span>
+        <ul>${room.members.map(name=>`<li>${name}</li>`).join("")}</ul>
+       </article>
+      `).join("")}
+     </div>
+    </div>
+   </details>
   </section>`;
  }).join("");
 }
@@ -392,7 +397,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=40",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=41",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });

@@ -1,0 +1,9 @@
+CHINA TRIP 2027 — V41
+
+Perubahan:
+1. Memperbaiki panel login admin di Safari agar tidak bertumpuk dengan dashboard.
+2. Memperbaiki tata letak form login agar email, password, dan tombol tetap satu kolom.
+3. Session admin tetap diperiksa saat halaman dibuka.
+4. Logout langsung kembali ke form login tanpa overlay dashboard.
+5. Pembagian kamar pada halaman Hotel sekarang menjadi dropdown buka/tutup.
+6. Cache assets dan service worker dinaikkan ke versi 41.
