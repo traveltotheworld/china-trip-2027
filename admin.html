@@ -46,13 +46,17 @@
           <h1 id="editorTitle">Dashboard</h1>
           <p id="editorDescription" class="lead">Pilih bagian yang ingin diubah.</p>
         </div>
-        <span id="saveStatus" class="simple-save-status">Siap</span>
+        <div class="publish-area">
+ <span id="draftCount" class="draft-count" hidden>0 perubahan</span>
+ <button id="publishBtn" class="publish-button" type="button">Publish</button>
+ <span id="saveStatus" class="simple-save-status">Siap</span>
+</div>
       </header>
 
       <section class="simple-editor-card">
         <div id="formEditor" class="cms-form-editor"></div>
         <div id="editorActions" class="simple-sticky-actions">
-          <button id="saveBtn" class="admin-primary">Simpan</button>
+          <button id="saveBtn" class="admin-primary">Simpan Draft</button>
           <button id="reloadBtn" class="admin-secondary">Batalkan Perubahan</button>
         </div>
       </section>

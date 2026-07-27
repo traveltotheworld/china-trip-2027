@@ -18,18 +18,31 @@ let activeDataset=DATASETS[0];
 let workingData=null;
 const $=s=>document.querySelector(s);
 const clone=v=>JSON.parse(JSON.stringify(v));
+const DRAFT_PREFIX="china_trip_admin_draft:";
+function draftKey(key){return DRAFT_PREFIX+key}
+function getDraft(key){try{return JSON.parse(localStorage.getItem(draftKey(key))||"null")}catch(e){return null}}
+function saveDraft(key,value){localStorage.setItem(draftKey(key),JSON.stringify(value));updateDraftCount()}
+function removeDraft(key){localStorage.removeItem(draftKey(key));updateDraftCount()}
+function draftDatasets(){return DATASETS.filter(d=>d.key&&localStorage.getItem(draftKey(d.key))!==null)}
+function updateDraftCount(){
+ const n=draftDatasets().length;
+ const el=$("#draftCount");if(!el)return;
+ el.hidden=n===0;el.textContent=n+" perubahan";
+}
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 function baseData(path){return clone(window.CHINA_TRIP_DEFAULTS[path])}
 function markChanged(){setStatus("Belum disimpan");$("#saveStatus").classList.add("changed")}
 function setStatus(text){$("#saveStatus").textContent=text}
 async function currentData(dataset){
+ const draft=getDraft(dataset.key);
+ if(draft!==null)return clone(draft);
  try{return await window.ChinaTripDB.readKey(dataset.key)}
  catch(err){console.warn(err);return baseData(dataset.path)}
 }
 async function showAdmin(){
  $("#loginPanel").hidden=true;
  $("#adminPanel").hidden=false;
- buildTabs();
+ buildTabs();updateDraftCount();
  await selectDataset("dashboard")
 }
 function buildTabs(){
@@ -284,13 +297,22 @@ function renderHotels(){
 }
 function renderMembers(){
  const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","seat","itineraryGroup"];
- $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
- <article class="cms-record-card">
+ $("#formEditor").innerHTML=`
+ <div class="member-search-bar"><span>🔎</span><input id="memberSearch" type="search" placeholder="Cari nama, WhatsApp, email, kamar atau grup…"><b id="memberResultCount">${(workingData||[]).length} peserta</b></div>
+ <div id="memberCards">${(workingData||[]).map((row,i)=>`
+ <article class="cms-record-card member-admin-card" data-member-search="${esc([row.name,row.whatsapp,row.email,row.room,row.flightGroup].join(" ").toLowerCase())}">
   <div class="cms-card-head"><h3>${esc(row.name||"Peserta Baru")}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
   <div class="cms-grid two">
    ${keys.map(k=>field(k,row[k]??"",`${i}.${k}`,k==="member"?"number":"text")).join("")}
   </div>
- </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Peserta</button>`;
+ </article>`).join("")}</div>
+ <button class="admin-primary" data-action="add-record">+ Tambah Peserta</button>`;
+ const search=$("#memberSearch");
+ search.addEventListener("input",()=>{
+  const q=search.value.trim().toLowerCase();let visible=0;
+  $("#memberCards").querySelectorAll(".member-admin-card").forEach(card=>{const show=!q||card.dataset.memberSearch.includes(q);card.hidden=!show;if(show)visible++});
+  $("#memberResultCount").textContent=visible+" peserta"
+ })
 }
 function renderSimpleList(title,keys){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
@@ -363,19 +385,35 @@ function handleAction(e){
 }
 async function saveCurrent(){
  try{
-  setStatus("Menyimpan ke Supabase…");
   if(activeDataset.type==="itinerary"){
    workingData.days.forEach(d=>(d.items||[]).forEach(it=>{
     if(!it.baiduMap&&it.route&&!Object.values(it.route).some(Boolean))delete it.route
    }))
   }
-  await window.ChinaTripDB.writeKey(activeDataset.key,workingData,activeDataset.description);
-  setStatus("Berhasil disimpan");$("#saveStatus").classList.remove("changed");
+  saveDraft(activeDataset.key,workingData);
+  setStatus("Draft tersimpan");
+  $("#saveStatus").classList.remove("changed");
+ }catch(err){setStatus("Gagal menyimpan draft");alert("Draft gagal disimpan: "+err.message)}
+}
+async function publishAll(){
+ const drafts=draftDatasets();
+ if(!drafts.length){alert("Belum ada perubahan untuk dipublikasikan.");return}
+ if(!confirm("Publish "+drafts.length+" bagian perubahan ke website?"))return;
+ const btn=$("#publishBtn");btn.disabled=true;btn.textContent="Publishing…";
+ try{
+  for(const d of drafts){
+   const value=getDraft(d.key);
+   await window.ChinaTripDB.writeKey(d.key,value,d.description);
+   removeDraft(d.key)
+  }
+  setStatus("Semua perubahan dipublish");
+  alert("Perubahan berhasil dipublikasikan ke website.");
+  await selectDataset(activeDataset.id)
  }catch(err){
-  setStatus("Gagal menyimpan");
-  alert("Gagal menyimpan ke Supabase: "+err.message);
+  setStatus("Publish gagal");
+  alert("Publish gagal: "+err.message);
   if(/sesi|login|jwt|token/i.test(err.message)){await window.ChinaTripDB.signOut();location.reload()}
- }
+ }finally{btn.disabled=false;btn.textContent="Publish";updateDraftCount()}
 }
 async function resetCurrent(){
  if(!confirm("Reset bagian ini ke data bawaan dan simpan ke Supabase?"))return;
@@ -389,7 +427,7 @@ async function exportAll(){
  try{
   setStatus("Menyiapkan backup…");
   const payload={app:"China Trip 2027",version:36,exportedAt:new Date().toISOString(),data:{}};
-  for(const d of DATASETS)payload.data[d.path]=await currentData(d);
+  for(const d of DATASETS.filter(x=>x.key))payload.data[d.path]=await currentData(d);
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
   const url=URL.createObjectURL(blob),a=document.createElement("a");
   a.href=url;a.download="china-trip-2027-v36-full-backup.json";a.click();URL.revokeObjectURL(url);
@@ -401,7 +439,7 @@ async function importBackup(file){
   const p=JSON.parse(await file.text());
   if(!p.data)throw new Error("File backup tidak dikenali");
   let n=0;
-  for(const d of DATASETS){
+  for(const d of DATASETS.filter(x=>x.key)){
    if(p.data[d.path]!==undefined){
     await window.ChinaTripDB.writeKey(d.key,p.data[d.path],d.description);n++
    }
@@ -429,7 +467,14 @@ $("#loginForm").addEventListener("submit",async e=>{
 });
 $("#logoutBtn").onclick=async()=>{await window.ChinaTripDB.signOut();location.reload()};
 $("#saveBtn").onclick=saveCurrent;
-$("#reloadBtn").onclick=()=>selectDataset(activeDataset.id);
+$("#publishBtn").onclick=publishAll;
+$("#reloadBtn").onclick=async()=>{
+ if(activeDataset.key&&getDraft(activeDataset.key)!==null){
+  if(!confirm("Batalkan draft pada bagian ini?"))return;
+  removeDraft(activeDataset.key)
+ }
+ await selectDataset(activeDataset.id)
+};
 $("#exportBtn").onclick=exportAll;
 $("#importInput").onchange=e=>{const f=e.target.files?.[0];if(f)importBackup(f);e.target.value=""};
 (async()=>{const session=await window.ChinaTripDB.validSession();if(session)await showAdmin()})();

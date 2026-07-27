@@ -1,0 +1,18 @@
+CHINA TRIP 2027 V38
+
+Perubahan:
+1. Menu Emergency di dashboard peserta dihapus.
+2. Kartu menu peserta dibuat lebih besar dan ikon diberi warna berbeda.
+3. Flight, Hotel, dan HSR memakai tampilan timeline.
+4. Admin Peserta memiliki kolom pencarian.
+5. Tombol Simpan berubah menjadi Simpan Draft.
+6. Tombol Publish mengirim seluruh draft ke Supabase sekaligus.
+
+Alur admin:
+- Edit satu atau beberapa bagian.
+- Tekan Simpan Draft pada setiap bagian.
+- Setelah semua selesai, tekan Publish di kanan atas.
+- Website peserta baru berubah setelah Publish berhasil.
+
+Supabase tetap menggunakan project dan tabel yang sama.
+Tidak perlu menjalankan SQL baru.
