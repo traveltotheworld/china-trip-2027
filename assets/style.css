@@ -838,3 +838,30 @@ footer,
     font-size:11px;
   }
 }
+
+
+/* V35 — Group-specific hotel dates and Shangrao stay */
+.hotel-city-card{
+  overflow:hidden;
+}
+.hotel-city-head{
+  align-items:flex-start;
+}
+.hotel-map-btn{
+  align-self:flex-start;
+}
+.hotel-room-grid{
+  gap:9px;
+}
+.hotel-room-card{
+  padding:13px 14px;
+}
+@media(max-width:420px){
+  .hotel-city-head{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+  }
+  .hotel-map-btn{
+    margin-top:42px;
+  }
+}

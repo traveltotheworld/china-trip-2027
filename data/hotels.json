@@ -1,10 +1,21 @@
 [
   {
+    "city": "Shangrao",
+    "name": "Wangxiangu Zhonglou Homestay (Wangxiangu Scenic Area)",
+    "dates": "03–04 Mar 2027",
+    "address": "No. 13 Ludixin Street, Wangxian Village, Wangxian Township, Guangxin District, Shangrao, Jiangxi, China",
+    "mapsQuery": "望仙谷钟楼民宿 上饶",
+    "groupOnly": "group-a",
+    "sourceUrl": "https://id.trip.com/hotels/Shangrao-hotel-detail-111115638/Wangxiangu-Zhonglou-Homestay%28Wangxiangu-Scenic-Area%29/"
+  },
+  {
     "city": "Shanghai",
     "name": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
     "dates": "04–09 Mar 2027",
     "address": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-    "mapsQuery": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）"
+    "mapsQuery": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
+    "datesGroupA": "04–09 Mar 2027",
+    "datesGroupB": "06–09 Mar 2027"
   },
   {
     "city": "Suzhou",

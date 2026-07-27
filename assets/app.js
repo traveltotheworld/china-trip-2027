@@ -274,42 +274,72 @@ async function renderFlights(){
    </section>`;
 }
 async function renderHotels(){
- const [hotels,roomData]=await Promise.all([
+ const [hotels,roomData,members]=await Promise.all([
   getJSON("data/hotels.json"),
-  getJSON("data/room-groups.json")
+  getJSON("data/room-groups.json"),
+  getJSON("data/members.json")
  ]);
 
- const defaultRooms=(roomData.regions&&roomData.regions[0]&&roomData.regions[0].rooms)||[];
+ const memberId=getMemberId();
+ const currentMember=members.find(member=>member.id===memberId)||members[0];
+ const currentGroup=currentMember.flightGroup||"group-b";
 
- $("#content").innerHTML=hotels.map(hotel=>`
-  <section class="hotel-city-card">
-   <div class="hotel-city-head">
-    <div class="hotel-city-copy">
-     <span class="eyebrow">${hotel.city} • ${hotel.dates}</span>
-     <h2>${hotel.name}</h2>
-     <div class="hotel-address">${hotel.address}</div>
+ const allRooms=(roomData.regions&&roomData.regions[0]&&roomData.regions[0].rooms)||[];
+ const groupARooms=[
+  {
+   room:"Kamar 1",
+   members:["Septino","Lina","Raelyn Xenaria Jayanthi"]
+  }
+ ];
+
+ const visibleHotels=hotels.filter(hotel=>{
+  if(!hotel.groupOnly)return true;
+  return hotel.groupOnly===currentGroup;
+ });
+
+ $("#content").innerHTML=visibleHotels.map(hotel=>{
+  const city=String(hotel.city||"").toLowerCase();
+  const displayDates=city==="shanghai"
+   ? (currentGroup==="group-a"
+      ? (hotel.datesGroupA||"04–09 Mar 2027")
+      : (hotel.datesGroupB||"06–09 Mar 2027"))
+   : hotel.dates;
+
+  const rooms=city==="shangrao" ? groupARooms : allRooms;
+
+  return `
+   <section class="hotel-city-card">
+    <div class="hotel-city-head">
+     <div class="hotel-city-copy">
+      <span class="eyebrow">${hotel.city} • ${displayDates}</span>
+      <h2>${hotel.name}</h2>
+      <div class="hotel-address">${hotel.address||""}</div>
+     </div>
+     <a class="btn hotel-map-btn"
+        href="${baiduLink(hotel.mapsQuery||hotel.name,hotel.city)}"
+        target="_blank"
+        rel="noopener">
+      Buka Baidu Maps
+     </a>
     </div>
-    <a class="btn hotel-map-btn" href="${baiduLink(hotel.mapsQuery||hotel.name,hotel.city)}">
-     Buka Baidu Maps
-    </a>
-   </div>
 
-   <div class="hotel-room-divider"></div>
-   <span class="hotel-room-label">Pembagian Kamar</span>
+    <div class="hotel-room-divider"></div>
+    <span class="hotel-room-label">Pembagian Kamar</span>
 
-   <div class="hotel-room-grid">
-    ${defaultRooms.map(room=>`
-     <article class="hotel-room-card">
-      <strong>${room.room}</strong>
-      <span class="room-count">${room.members.length} Orang</span>
-      <ul>
-       ${room.members.map(name=>`<li>${name}</li>`).join("")}
-      </ul>
-     </article>
-    `).join("")}
-   </div>
-  </section>
- `).join("");
+    <div class="hotel-room-grid">
+     ${rooms.map(room=>`
+      <article class="hotel-room-card">
+       <strong>${room.room}</strong>
+       <span class="room-count">${room.members.length} Orang</span>
+       <ul>
+        ${room.members.map(name=>`<li>${name}</li>`).join("")}
+       </ul>
+      </article>
+     `).join("")}
+    </div>
+   </section>
+  `;
+ }).join("");
 }
 async function renderHSR(){
  const d=await getJSON("data/hsr.json");$("#content").innerHTML=d.map(x=>`<article class="card"><span class="eyebrow">${x.date}</span><h4>${x.route}</h4><div class="meta">Kereta: ${x.train}<br>Waktu: ${x.time}<br>Stasiun: ${x.station}</div></article>`).join("");
@@ -338,7 +368,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=34",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=35",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });
