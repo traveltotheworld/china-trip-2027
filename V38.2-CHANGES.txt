@@ -1,0 +1,9 @@
+CHINA TRIP 2027 V38.2
+
+Alur dashboard:
+- Data Personal tampil langsung saat halaman dibuka.
+- Menu Perjalanan tersembunyi.
+- Klik kartu nama pada hero untuk membuka Itinerary, Flight, Hotel, HSR, dan Trip Info.
+- Klik kembali kartu nama untuk menutup menu.
+- Emergency tetap dihapus.
+- Supabase dan SQL tidak berubah.

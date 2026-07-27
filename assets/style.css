@@ -1062,3 +1062,18 @@ footer,
 .profile-chevron{transition:transform .2s ease}
 .travel-menu-section{padding-top:28px}
 .travel-menu-section>.lead{margin-bottom:4px}
+
+
+/* V38.2 — personal data first, menu opens on profile click */
+.profile-trigger::after{
+  content:"Klik untuk membuka menu perjalanan";
+  position:absolute;
+  left:64px;
+  bottom:7px;
+  font-size:9px;
+  font-weight:700;
+  opacity:.58;
+  letter-spacing:.01em
+}
+.profile-trigger{position:relative;padding-bottom:24px}
+.profile-trigger.is-open::after{content:"Klik untuk menutup menu perjalanan"}

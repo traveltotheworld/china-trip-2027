@@ -18,7 +18,7 @@
     <h1>China Trip</h1>
     <p class="hero-subtitle">Shanghai - Suzhou - Hangzhou</p>
 
-    <button class="profile profile-trigger" id="profileMenuTrigger" type="button" aria-expanded="false" aria-controls="personalSection">
+    <button class="profile profile-trigger" id="profileMenuTrigger" type="button" aria-expanded="false" aria-controls="travelMenuSection">
       <div class="avatar" id="travelerInitial">T</div>
       <div class="profile-copy">
         <strong id="travelerName">Traveler</strong>
@@ -30,7 +30,18 @@
   </div>
 </section>
 
-<section class="section alt travel-menu-section" id="travelMenuSection">
+<section class="section personal-section">
+  <span class="eyebrow">Personal profile</span>
+  <h3>Data Personal</h3>
+  <p class="lead">Informasi kontak pemilik koper ini.</p>
+  <div class="nfc-card">
+    <div class="nfc-row"><span class="nfc-label">Nama</span><strong id="personalName">Traveler</strong></div>
+    <div class="nfc-row"><span class="nfc-label">WhatsApp</span><a id="personalWhatsapp" href="#" rel="noopener">Belum diisi</a></div>
+    <div class="nfc-row"><span class="nfc-label">Email</span><a id="personalEmail" href="#">Belum diisi</a></div>
+  </div>
+</section>
+
+<section class="section alt travel-menu-section" id="travelMenuSection" hidden>
   <span class="eyebrow">Travel tools</span>
   <h3>Menu perjalanan</h3>
   <p class="lead">Akses cepat ke seluruh kebutuhan perjalanan.</p>
@@ -42,23 +53,8 @@
     <a data-page="trip-info.html"><span class="icon">🇨🇳</span><span><strong>Trip Info</strong><small>Informasi penting selama di China</small></span><span class="arrow">›</span></a>
   </div>
 </section>
-
-<section class="section personal-section compact-personal-section" id="personalSection" hidden>
-  <div class="compact-section-head">
-    <div>
-      <span class="eyebrow">Personal profile</span>
-      <h3>Data Personal</h3>
-    </div>
-    <button id="closePersonalBtn" class="compact-close-btn" type="button">Tutup</button>
-  </div>
-  <p class="lead">Informasi kontak pemilik koper ini.</p>
-  <div class="nfc-card compact-nfc-card">
-    <div class="nfc-row"><span class="nfc-label">Nama</span><strong id="personalName">Traveler</strong></div>
-    <div class="nfc-row"><span class="nfc-label">WhatsApp</span><a id="personalWhatsapp" href="#" rel="noopener">Belum diisi</a></div>
-    <div class="nfc-row"><span class="nfc-label">Email</span><a id="personalEmail" href="#">Belum diisi</a></div>
-  </div>
-</section>
 </main>
+
 <script src="assets/supabase-config.js"></script>
 <script src="assets/supabase-data.js"></script>
 <script src="assets/app.js"></script>
