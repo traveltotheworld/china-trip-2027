@@ -1,0 +1,9 @@
+CHINA TRIP 2027 V38.1
+
+Perubahan:
+- Fitur Emergency dihapus sampai bersih dari HTML dan JavaScript.
+- Tidak ada lagi card Polisi China atau Ambulans China di bawah dashboard.
+- Menu Perjalanan tampil langsung setelah hero.
+- Data Personal dibuat tersembunyi dan dapat dibuka dengan menekan kartu nama pada hero.
+- Tombol Tutup ditambahkan pada Data Personal.
+- Supabase dan SQL tetap sama.

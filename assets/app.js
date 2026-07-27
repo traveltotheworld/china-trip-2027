@@ -30,17 +30,17 @@ async function initHome(){
  document.querySelectorAll("[data-page]").forEach(a=>a.href=keepId(a.getAttribute("data-page")));
 
  const profileTrigger=$("#profileMenuTrigger");
- const travelMenu=$("#travelMenuSection");
- if(profileTrigger&&travelMenu){
-  profileTrigger.onclick=()=>{
-   const willOpen=travelMenu.hidden;
-   travelMenu.hidden=!willOpen;
-   profileTrigger.setAttribute("aria-expanded",String(willOpen));
-   profileTrigger.classList.toggle("is-open",willOpen);
-   if(willOpen){
-    requestAnimationFrame(()=>travelMenu.scrollIntoView({behavior:"smooth",block:"start"}));
-   }
+ const personalSection=$("#personalSection");
+ const closePersonalBtn=$("#closePersonalBtn");
+ if(profileTrigger&&personalSection){
+  const setPersonalOpen=open=>{
+   personalSection.hidden=!open;
+   profileTrigger.setAttribute("aria-expanded",String(open));
+   profileTrigger.classList.toggle("is-open",open);
+   if(open)requestAnimationFrame(()=>personalSection.scrollIntoView({behavior:"smooth",block:"start"}));
   };
+  profileTrigger.onclick=()=>setPersonalOpen(personalSection.hidden);
+  if(closePersonalBtn)closePersonalBtn.onclick=()=>setPersonalOpen(false);
  }
 
 }
@@ -299,7 +299,7 @@ async function renderMembers(){
 if("serviceWorker" in navigator){
  window.addEventListener("load",async()=>{
    try{
-     const reg=await navigator.serviceWorker.register("/sw.js?v=38",{updateViaCache:"none"});
+     const reg=await navigator.serviceWorker.register("/sw.js?v=381",{updateViaCache:"none"});
      await reg.update();
    }catch(e){console.warn("Service worker update failed",e);}
  });

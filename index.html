@@ -1,4 +1,16 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111820"><link rel="canonical" href="https://china-trip-2027.vercel.app/"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="assets/style.css"><title>China Trip 2027</title></head><body><main class="app">
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111820">
+<link rel="canonical" href="https://china-trip-2027.vercel.app/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/style.css">
+<title>China Trip 2027</title>
+</head>
+<body>
+<main class="app">
 <section class="hero hero-v27">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -6,7 +18,7 @@
     <h1>China Trip</h1>
     <p class="hero-subtitle">Shanghai - Suzhou - Hangzhou</p>
 
-    <button class="profile profile-trigger" id="profileMenuTrigger" type="button" aria-expanded="false" aria-controls="travelMenuSection">
+    <button class="profile profile-trigger" id="profileMenuTrigger" type="button" aria-expanded="false" aria-controls="personalSection">
       <div class="avatar" id="travelerInitial">T</div>
       <div class="profile-copy">
         <strong id="travelerName">Traveler</strong>
@@ -17,17 +29,39 @@
     </button>
   </div>
 </section>
-<section class="section personal-section"><span class="eyebrow">Personal profile</span><h3>Data Personal</h3><p class="lead">Informasi kontak pemilik koper ini.</p><div class="nfc-card">
-<div class="nfc-row"><span class="nfc-label">Nama</span><strong id="personalName">Traveler</strong></div>
-<div class="nfc-row"><span class="nfc-label">WhatsApp</span><a id="personalWhatsapp" href="#" rel="noopener">Belum diisi</a></div>
-<div class="nfc-row"><span class="nfc-label">Email</span><a id="personalEmail" href="#">Belum diisi</a></div>
-</div></section>
-<section class="section alt travel-menu-section" id="travelMenuSection" hidden><span class="eyebrow">Travel tools</span><h3>Menu perjalanan</h3><div class="menu">
-<a data-page="itinerary.html"><span class="icon">🗓️</span><span><strong>Itinerary</strong><small>Jadwal perjalanan harian</small></span><span class="arrow">›</span></a>
-<a data-page="flight.html"><span class="icon">✈️</span><span><strong>Flight</strong><small>Detail penerbangan</small></span><span class="arrow">›</span></a>
-<a data-page="hotel.html"><span class="icon">🏨</span><span><strong>Hotel</strong><small>Hotel dan pembagian kamar</small></span><span class="arrow">›</span></a>
-<a data-page="hsr.html"><span class="icon">🚄</span><span><strong>High Speed Rail</strong><small>Jadwal perjalanan antar kota</small></span><span class="arrow">›</span></a>
-<a data-page="trip-info.html"><span class="icon">🇨🇳</span><span><strong>Trip Info</strong><small>Informasi penting selama di China</small></span><span class="arrow">›</span></a>
-</div></section></main>
-<div class="card"><b>Polisi China</b><div class="meta">110</div></div><div class="card"><b>Ambulans China</b><div class="meta">120</div></div></div></div>
-<script src="assets/supabase-config.js"></script><script src="assets/supabase-data.js"></script><script src="assets/app.js"></script><script>initHome()</script></body></html>
+
+<section class="section alt travel-menu-section" id="travelMenuSection">
+  <span class="eyebrow">Travel tools</span>
+  <h3>Menu perjalanan</h3>
+  <p class="lead">Akses cepat ke seluruh kebutuhan perjalanan.</p>
+  <div class="menu">
+    <a data-page="itinerary.html"><span class="icon">🗓️</span><span><strong>Itinerary</strong><small>Jadwal perjalanan harian</small></span><span class="arrow">›</span></a>
+    <a data-page="flight.html"><span class="icon">✈️</span><span><strong>Flight</strong><small>Detail penerbangan</small></span><span class="arrow">›</span></a>
+    <a data-page="hotel.html"><span class="icon">🏨</span><span><strong>Hotel</strong><small>Hotel dan pembagian kamar</small></span><span class="arrow">›</span></a>
+    <a data-page="hsr.html"><span class="icon">🚄</span><span><strong>High Speed Rail</strong><small>Jadwal perjalanan antar kota</small></span><span class="arrow">›</span></a>
+    <a data-page="trip-info.html"><span class="icon">🇨🇳</span><span><strong>Trip Info</strong><small>Informasi penting selama di China</small></span><span class="arrow">›</span></a>
+  </div>
+</section>
+
+<section class="section personal-section compact-personal-section" id="personalSection" hidden>
+  <div class="compact-section-head">
+    <div>
+      <span class="eyebrow">Personal profile</span>
+      <h3>Data Personal</h3>
+    </div>
+    <button id="closePersonalBtn" class="compact-close-btn" type="button">Tutup</button>
+  </div>
+  <p class="lead">Informasi kontak pemilik koper ini.</p>
+  <div class="nfc-card compact-nfc-card">
+    <div class="nfc-row"><span class="nfc-label">Nama</span><strong id="personalName">Traveler</strong></div>
+    <div class="nfc-row"><span class="nfc-label">WhatsApp</span><a id="personalWhatsapp" href="#" rel="noopener">Belum diisi</a></div>
+    <div class="nfc-row"><span class="nfc-label">Email</span><a id="personalEmail" href="#">Belum diisi</a></div>
+  </div>
+</section>
+</main>
+<script src="assets/supabase-config.js"></script>
+<script src="assets/supabase-data.js"></script>
+<script src="assets/app.js"></script>
+<script>initHome()</script>
+</body>
+</html>
