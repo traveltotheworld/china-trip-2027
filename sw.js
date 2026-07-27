@@ -1,4 +1,4 @@
-const CACHE="china-trip-v36-full-admin-editor";
+const CACHE="china-trip-v37-simple-admin";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",

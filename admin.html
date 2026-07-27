@@ -5,81 +5,70 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#111820">
 <link rel="stylesheet" href="assets/style.css">
-<title>Admin Portal — China Trip 2027</title>
+<title>Admin — China Trip 2027</title>
 </head>
-<body class="admin-body">
-<main class="admin-shell">
-  <section id="loginPanel" class="admin-login-card">
+<body class="simple-admin-body">
+<main class="simple-admin-shell">
+  <section id="loginPanel" class="simple-login-card">
+    <div class="simple-login-logo">CT</div>
     <span class="eyebrow">China Trip 2027</span>
-    <h1>Admin Portal</h1>
-    <p class="lead">Masukkan password admin.</p>
+    <h1>Masuk Admin</h1>
+    <p class="lead">Gunakan akun admin untuk mengubah data perjalanan.</p>
     <form id="loginForm" class="admin-form">
-      <label>Email Admin
+      <label>Email
         <input id="adminEmail" type="email" autocomplete="username" value="septinogao@gmail.com" required>
       </label>
       <label>Password
         <input id="adminPassword" type="password" autocomplete="current-password" required>
       </label>
       <button class="admin-primary" type="submit">Masuk</button>
-      <p id="loginError" class="admin-error" hidden>Login gagal. Periksa email, password, dan akun Supabase Auth.</p>
+      <p id="loginError" class="admin-error" hidden></p>
     </form>
   </section>
 
-  <section id="adminPanel" hidden>
-    <header class="admin-header">
-      <div>
-        <span class="eyebrow">China Trip 2027</span>
-        <h1>Admin Portal</h1>
-        <p class="lead">Semua data aktif website dapat diubah di sini tanpa membuka coding.</p>
+  <section id="adminPanel" class="simple-admin-app" hidden>
+    <aside class="simple-admin-sidebar">
+      <div class="simple-admin-brand">
+        <div class="simple-brand-icon">CT</div>
+        <div><strong>China Trip</strong><small>Admin 2027</small></div>
       </div>
-      <div class="admin-header-actions">
-        <a href="index.html" class="admin-secondary">Lihat Website</a>
-        <button id="logoutBtn" class="admin-secondary">Keluar</button>
+      <nav id="adminTabs" class="simple-admin-menu"></nav>
+      <div class="simple-admin-sidebar-bottom">
+        <a href="index.html" class="simple-side-link">🌐 Lihat Website</a>
+        <button id="logoutBtn" class="simple-side-link">↪ Keluar</button>
       </div>
-    </header>
+    </aside>
 
-    <section class="admin-notice">
-      <strong>Seluruh data website dapat diedit</strong>
-      <p>Peserta, itinerary, penerbangan, HSR, hotel, tanggal per grup, pembagian kamar, informasi trip, serta lokasi Baidu Maps dibaca dan disimpan langsung melalui Supabase.</p>
-    </section>
-
-    <nav id="adminTabs" class="admin-tabs"></nav>
-
-    <section class="admin-editor-card cms-editor-card">
-      <div class="admin-editor-head">
+    <section class="simple-admin-main">
+      <header class="simple-admin-topbar">
         <div>
-          <span class="eyebrow" id="editorCategory">Data</span>
-          <h2 id="editorTitle">Editor</h2>
+          <span id="editorCategory" class="eyebrow">Beranda</span>
+          <h1 id="editorTitle">Dashboard</h1>
+          <p id="editorDescription" class="lead">Pilih bagian yang ingin diubah.</p>
         </div>
-        <span id="saveStatus" class="save-status">Menggunakan data bawaan</span>
-      </div>
-      <div id="formEditor" class="cms-form-editor"></div>
-      <details class="advanced-json-panel">
-        <summary>Editor JSON Lanjutan</summary>
-        <p class="lead">Digunakan untuk mengubah field tambahan atau struktur data yang belum tersedia pada formulir.</p>
-        <textarea id="rawJsonEditor" class="raw-json-editor" spellcheck="false"></textarea>
-        <div class="admin-actions">
-          <button id="applyJsonBtn" class="admin-secondary" type="button">Terapkan JSON ke Formulir</button>
-          <button id="formatJsonBtn" class="admin-secondary" type="button">Rapikan JSON</button>
-        </div>
-        <p id="jsonError" class="admin-error" hidden></p>
-      </details>
-      <div class="admin-actions sticky-admin-actions">
-        <button id="saveBtn" class="admin-primary">Simpan Perubahan</button>
-        <button id="reloadBtn" class="admin-secondary">Muat Ulang</button>
-        <button id="resetCurrentBtn" class="admin-danger">Reset Bagian Ini</button>
-      </div>
-    </section>
+        <span id="saveStatus" class="simple-save-status">Siap</span>
+      </header>
 
-    <section class="admin-tools-card">
-      <h2>Backup & Pemindahan Data</h2>
-      <div class="admin-actions">
-        <button id="exportBtn" class="admin-primary">Export Semua Data</button>
-        <label class="admin-secondary file-button">Import Backup
-          <input id="importInput" type="file" accept=".json,application/json" hidden>
-        </label>
-        <button id="resetAllBtn" class="admin-danger">Reset Semua Perubahan</button>
-      </div>
+      <section class="simple-editor-card">
+        <div id="formEditor" class="cms-form-editor"></div>
+        <div id="editorActions" class="simple-sticky-actions">
+          <button id="saveBtn" class="admin-primary">Simpan</button>
+          <button id="reloadBtn" class="admin-secondary">Batalkan Perubahan</button>
+        </div>
+      </section>
+
+      <section id="backupPanel" class="simple-backup-card">
+        <details>
+          <summary>Backup dan pemulihan data</summary>
+          <p class="lead">Unduh cadangan sebelum melakukan perubahan besar.</p>
+          <div class="admin-actions">
+            <button id="exportBtn" class="admin-secondary">Download Backup</button>
+            <label class="admin-secondary file-button">Restore Backup
+              <input id="importInput" type="file" accept=".json,application/json" hidden>
+            </label>
+          </div>
+        </details>
+      </section>
     </section>
   </section>
 </main>

@@ -1,18 +1,17 @@
 
 const DATASETS=[
- {id:"trip",title:"Informasi Utama Trip",category:"Umum",path:"data/trip.json",key:"trip",description:"Judul, tanggal, ketua dan kontak perjalanan",type:"trip"},
- {id:"itinerary-a",title:"Itinerary Grup A — 2–6 Maret",category:"Itinerary",path:"data/itinerary-group-a-early.json",key:"itinerary_group_a_early",description:"Itinerary awal Grup A, 2–6 Maret 2027",type:"itinerary"},
- {id:"itinerary-b",title:"Itinerary Grup B — 6 Maret",category:"Itinerary",path:"data/itinerary-group-b-early.json",key:"itinerary_group_b_early",description:"Itinerary awal Grup B, 6 Maret 2027",type:"itinerary"},
- {id:"itinerary-common",title:"Itinerary Bersama — 7–14 Maret",category:"Itinerary",path:"data/itinerary-common.json",key:"itinerary_common",description:"Itinerary bersama, 7–14 Maret 2027",type:"itinerary"},
- {id:"itinerary-special",title:"Itinerary Khusus Septino–Lina–Raelyn",category:"Itinerary",path:"data/itinerary-septino-lina-raelyn.json",key:"itinerary_septino_lina_raelyn",description:"Data itinerary khusus lama",type:"itinerary"},
- {id:"itinerary-legacy",title:"Itinerary Lama",category:"Itinerary",path:"data/itinerary.json",key:"itinerary_legacy",description:"Data itinerary lama/arsip",type:"itinerary"},
- {id:"flights",title:"Penerbangan",category:"Transportasi",path:"data/flights.json",key:"flights",description:"Data penerbangan Grup A dan Grup B",type:"flights"},
- {id:"hsr",title:"High Speed Rail",category:"Transportasi",path:"data/hsr.json",key:"hsr",description:"Jadwal High Speed Rail",type:"hsr"},
- {id:"hotels",title:"Hotel",category:"Akomodasi",path:"data/hotels.json",key:"hotels",description:"Daftar hotel dan aturan grup",type:"hotels"},
- {id:"rooms",title:"Pembagian Kamar",category:"Akomodasi",path:"data/room-groups.json",key:"room_groups",description:"Pembagian kamar",type:"rooms"},
- {id:"members",title:"Peserta",category:"Peserta",path:"data/members.json",key:"members",description:"Data peserta",type:"members"},
- {id:"trip-info",title:"Informasi Perjalanan",category:"Informasi",path:"data/trip-info.json",key:"trip_info",description:"Informasi penting perjalanan",type:"tripinfo"},
- {id:"locations",title:"Lokasi & Baidu Maps",category:"Informasi",path:"data/locations.json",key:"locations",description:"Daftar lokasi dan query peta",type:"locations"}
+ {id:"dashboard",title:"Dashboard",category:"Beranda",icon:"🏠",description:"Ringkasan data perjalanan",type:"dashboard"},
+ {id:"members",title:"Peserta",category:"Data Utama",icon:"👥",path:"data/members.json",key:"members",description:"Nama, kontak, grup dan kamar peserta",type:"members"},
+ {id:"flights",title:"Penerbangan",category:"Transportasi",icon:"✈️",path:"data/flights.json",key:"flights",description:"Jadwal penerbangan pergi dan pulang",type:"flights"},
+ {id:"hotels",title:"Hotel",category:"Akomodasi",icon:"🏨",path:"data/hotels.json",key:"hotels",description:"Hotel, tanggal dan lokasi Baidu Maps",type:"hotels"},
+ {id:"rooms",title:"Pembagian Kamar",category:"Akomodasi",icon:"🛏️",path:"data/room-groups.json",key:"room_groups",description:"Susunan kamar setiap kota",type:"rooms"},
+ {id:"hsr",title:"Kereta HSR",category:"Transportasi",icon:"🚄",path:"data/hsr.json",key:"hsr",description:"Jadwal kereta antarkota",type:"hsr"},
+ {id:"itinerary-a",title:"Itinerary Grup A",category:"Itinerary",icon:"🗓️",path:"data/itinerary-group-a-early.json",key:"itinerary_group_a_early",description:"Jadwal peserta Grup A",type:"itinerary"},
+ {id:"itinerary-b",title:"Itinerary Grup B",category:"Itinerary",icon:"🗓️",path:"data/itinerary-group-b-early.json",key:"itinerary_group_b_early",description:"Jadwal peserta Grup B",type:"itinerary"},
+ {id:"itinerary-common",title:"Itinerary Bersama",category:"Itinerary",icon:"📅",path:"data/itinerary-common.json",key:"itinerary_common",description:"Jadwal bersama seluruh peserta",type:"itinerary"},
+ {id:"trip-info",title:"Informasi Penting",category:"Informasi",icon:"📌",path:"data/trip-info.json",key:"trip_info",description:"Catatan penting selama perjalanan",type:"tripinfo"},
+ {id:"locations",title:"Lokasi Peta",category:"Informasi",icon:"📍",path:"data/locations.json",key:"locations",description:"Nama lokasi dan pencarian Baidu Maps",type:"locations"},
+ {id:"trip",title:"Pengaturan Trip",category:"Pengaturan",icon:"⚙️",path:"data/trip.json",key:"trip",description:"Judul, tanggal dan kontak utama perjalanan",type:"trip"}
 ];
 
 let activeDataset=DATASETS[0];
@@ -21,17 +20,24 @@ const $=s=>document.querySelector(s);
 const clone=v=>JSON.parse(JSON.stringify(v));
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 function baseData(path){return clone(window.CHINA_TRIP_DEFAULTS[path])}
-function markChanged(){setStatus("Ada perubahan belum disimpan")}
+function markChanged(){setStatus("Belum disimpan");$("#saveStatus").classList.add("changed")}
 function setStatus(text){$("#saveStatus").textContent=text}
 async function currentData(dataset){
  try{return await window.ChinaTripDB.readKey(dataset.key)}
  catch(err){console.warn(err);return baseData(dataset.path)}
 }
 async function showAdmin(){
- $("#loginPanel").hidden=true;$("#adminPanel").hidden=false;buildTabs();await selectDataset(DATASETS[0].id)
+ $("#loginPanel").hidden=true;
+ $("#adminPanel").hidden=false;
+ buildTabs();
+ await selectDataset("dashboard")
 }
 function buildTabs(){
- $("#adminTabs").innerHTML=DATASETS.map(d=>`<button data-id="${d.id}" class="${d.id===activeDataset.id?"active":""}"><small>${d.category}</small><strong>${d.title}</strong></button>`).join("");
+ $("#adminTabs").innerHTML=DATASETS.map(d=>`
+  <button type="button" data-id="${d.id}" class="${d.id===activeDataset.id?"active":""}">
+   <span class="simple-menu-icon">${d.icon}</span>
+   <span>${d.title}</span>
+  </button>`).join("");
  $("#adminTabs").querySelectorAll("button").forEach(b=>b.onclick=()=>selectDataset(b.dataset.id))
 }
 async function selectDataset(id){
@@ -39,12 +45,21 @@ async function selectDataset(id){
  buildTabs();
  $("#editorCategory").textContent=activeDataset.category;
  $("#editorTitle").textContent=activeDataset.title;
- setStatus("Memuat dari Supabase…");
+ $("#editorDescription").textContent=activeDataset.description||"";
+ const isDashboard=activeDataset.type==="dashboard";
+ $("#editorActions").hidden=isDashboard;
+ $("#backupPanel").hidden=!isDashboard;
+ if(isDashboard){
+  setStatus("Data tersambung");
+  await renderDashboard();
+  return
+ }
+ setStatus("Memuat data…");
  try{
   workingData=await currentData(activeDataset);
-  setStatus("Terhubung ke Supabase");
-  renderEditor();
- }catch(err){setStatus("Gagal memuat: "+err.message)}
+  setStatus("Data terbaru");
+  renderEditor()
+ }catch(err){setStatus("Gagal memuat");alert("Data gagal dimuat: "+err.message)}
 }
 function field(label,value,path,type="text",placeholder=""){
  return `<label class="cms-field"><span>${label}</span><input type="${type}" value="${esc(value)}" data-path="${path}" placeholder="${esc(placeholder)}"></label>`
@@ -77,8 +92,51 @@ function bindFields(){
  });
  $("#formEditor").querySelectorAll("[data-action]").forEach(el=>el.onclick=handleAction)
 }
+async function renderDashboard(){
+ const ids=["members","hotels","flights","hsr","itinerary-common"];
+ const results={};
+ await Promise.all(ids.map(async id=>{
+  const d=DATASETS.find(x=>x.id===id);
+  try{results[id]=await currentData(d)}catch(e){results[id]=baseData(d.path)}
+ }));
+ const members=results.members||[];
+ const hotels=results.hotels||[];
+ const flightGroups=results.flights?.groups||[];
+ const hsr=results.hsr||[];
+ const days=results["itinerary-common"]?.days||[];
+ $("#formEditor").innerHTML=`
+  <section class="simple-welcome-card">
+   <div>
+    <span class="eyebrow">China Trip 2027</span>
+    <h2>Kelola perjalanan dengan mudah</h2>
+    <p>Pilih menu di sebelah kiri, ubah data, lalu tekan <strong>Simpan</strong>.</p>
+   </div>
+   <a href="index.html" class="admin-primary">Buka Website</a>
+  </section>
+  <div class="simple-stat-grid">
+   <button data-open="members"><strong>${members.length}</strong><span>Peserta</span></button>
+   <button data-open="hotels"><strong>${hotels.length}</strong><span>Hotel</span></button>
+   <button data-open="flights"><strong>${flightGroups.length}</strong><span>Grup Flight</span></button>
+   <button data-open="hsr"><strong>${hsr.length}</strong><span>Jadwal HSR</span></button>
+  </div>
+  <section class="simple-quick-card">
+   <h3>Edit Cepat</h3>
+   <div class="simple-quick-grid">
+    ${DATASETS.filter(d=>["members","flights","hotels","itinerary-common","trip-info","trip"].includes(d.id)).map(d=>`
+     <button data-open="${d.id}"><span>${d.icon}</span><strong>${d.title}</strong><small>${d.description}</small></button>`).join("")}
+   </div>
+  </section>
+  <section class="simple-help-card">
+   <h3>Cara Menggunakan</h3>
+   <div><b>1</b><span>Pilih menu yang ingin diubah.</span></div>
+   <div><b>2</b><span>Edit data pada formulir.</span></div>
+   <div><b>3</b><span>Tekan tombol <strong>Simpan</strong>.</span></div>
+  </section>`;
+ $("#formEditor").querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>selectDataset(b.dataset.open))
+}
 function renderEditor(){
  const t=activeDataset.type;
+ if(t==="dashboard")return renderDashboard();
  if(t==="trip")renderTrip();
  else if(t==="itinerary")renderItinerary();
  else if(t==="flights")renderFlights();
@@ -314,7 +372,7 @@ async function saveCurrent(){
    }))
   }
   await window.ChinaTripDB.writeKey(activeDataset.key,workingData,activeDataset.description);
-  setStatus("Tersimpan online");
+  setStatus("Berhasil disimpan");$("#saveStatus").classList.remove("changed");
  }catch(err){
   setStatus("Gagal menyimpan");
   alert("Gagal menyimpan ke Supabase: "+err.message);
@@ -374,8 +432,6 @@ $("#loginForm").addEventListener("submit",async e=>{
 $("#logoutBtn").onclick=async()=>{await window.ChinaTripDB.signOut();location.reload()};
 $("#saveBtn").onclick=saveCurrent;
 $("#reloadBtn").onclick=()=>selectDataset(activeDataset.id);
-$("#resetCurrentBtn").onclick=resetCurrent;
 $("#exportBtn").onclick=exportAll;
 $("#importInput").onchange=e=>{const f=e.target.files?.[0];if(f)importBackup(f);e.target.value=""};
-$("#resetAllBtn").onclick=resetAll;
 (async()=>{const session=await window.ChinaTripDB.validSession();if(session)await showAdmin()})();

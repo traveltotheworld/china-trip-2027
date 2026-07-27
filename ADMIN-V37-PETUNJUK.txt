@@ -1,0 +1,25 @@
+CHINA TRIP 2027 — ADMIN SEDERHANA V37
+
+1. Deploy seluruh isi folder ini ke Vercel.
+2. Buka /admin.html.
+3. Login menggunakan akun Supabase Auth yang sama.
+4. Pilih menu di sisi kiri.
+5. Ubah data lalu tekan SIMPAN.
+
+Database Supabase dan akun admin tetap sama dengan versi sebelumnya.
+Tidak perlu membuat project Supabase baru.
+
+Menu admin:
+- Peserta
+- Penerbangan
+- Hotel
+- Pembagian Kamar
+- Kereta HSR
+- Itinerary Grup A
+- Itinerary Grup B
+- Itinerary Bersama
+- Informasi Penting
+- Lokasi Peta
+- Pengaturan Trip
+
+Fitur teknis seperti editor JSON telah dihapus dari tampilan agar lebih mudah digunakan.
