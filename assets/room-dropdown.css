@@ -1,0 +1,82 @@
+/* China Trip 2027 — Dropdown Pembagian Kamar */
+.room-dropdown {
+  margin-top: 18px;
+  border: 1px solid rgba(15, 23, 42, .10);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.room-dropdown__toggle {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 16px;
+  border: 0;
+  background: #fff;
+  color: #172033;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.room-dropdown__toggle:hover {
+  background: rgba(15, 23, 42, .025);
+}
+
+.room-dropdown__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+}
+
+.room-dropdown__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 134, 11, .12);
+  flex: 0 0 auto;
+}
+
+.room-dropdown__chevron {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+
+.room-dropdown.is-open .room-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.room-dropdown__content {
+  padding: 0 16px 16px;
+}
+
+.room-dropdown:not(.is-open) .room-dropdown__content {
+  display: none;
+}
+
+.room-dropdown__content > :first-child {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .room-dropdown {
+    border-radius: 14px;
+  }
+
+  .room-dropdown__toggle {
+    padding: 12px 14px;
+  }
+
+  .room-dropdown__content {
+    padding: 0 12px 14px;
+  }
+}
