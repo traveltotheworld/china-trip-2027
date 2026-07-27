@@ -1,14 +1,18 @@
 
 const DATASETS=[
+ {id:"trip",title:"Informasi Utama Trip",category:"Umum",path:"data/trip.json",key:"trip",description:"Judul, tanggal, ketua dan kontak perjalanan",type:"trip"},
  {id:"itinerary-a",title:"Itinerary Grup A — 2–6 Maret",category:"Itinerary",path:"data/itinerary-group-a-early.json",key:"itinerary_group_a_early",description:"Itinerary awal Grup A, 2–6 Maret 2027",type:"itinerary"},
  {id:"itinerary-b",title:"Itinerary Grup B — 6 Maret",category:"Itinerary",path:"data/itinerary-group-b-early.json",key:"itinerary_group_b_early",description:"Itinerary awal Grup B, 6 Maret 2027",type:"itinerary"},
  {id:"itinerary-common",title:"Itinerary Bersama — 7–14 Maret",category:"Itinerary",path:"data/itinerary-common.json",key:"itinerary_common",description:"Itinerary bersama, 7–14 Maret 2027",type:"itinerary"},
+ {id:"itinerary-special",title:"Itinerary Khusus Septino–Lina–Raelyn",category:"Itinerary",path:"data/itinerary-septino-lina-raelyn.json",key:"itinerary_septino_lina_raelyn",description:"Data itinerary khusus lama",type:"itinerary"},
+ {id:"itinerary-legacy",title:"Itinerary Lama",category:"Itinerary",path:"data/itinerary.json",key:"itinerary_legacy",description:"Data itinerary lama/arsip",type:"itinerary"},
  {id:"flights",title:"Penerbangan",category:"Transportasi",path:"data/flights.json",key:"flights",description:"Data penerbangan Grup A dan Grup B",type:"flights"},
- {id:"hotels",title:"Hotel",category:"Akomodasi",path:"data/hotels.json",key:"hotels",description:"Daftar hotel",type:"hotels"},
  {id:"hsr",title:"High Speed Rail",category:"Transportasi",path:"data/hsr.json",key:"hsr",description:"Jadwal High Speed Rail",type:"hsr"},
+ {id:"hotels",title:"Hotel",category:"Akomodasi",path:"data/hotels.json",key:"hotels",description:"Daftar hotel dan aturan grup",type:"hotels"},
+ {id:"rooms",title:"Pembagian Kamar",category:"Akomodasi",path:"data/room-groups.json",key:"room_groups",description:"Pembagian kamar",type:"rooms"},
  {id:"members",title:"Peserta",category:"Peserta",path:"data/members.json",key:"members",description:"Data peserta",type:"members"},
- {id:"rooms",title:"Pembagian Kamar",category:"Peserta",path:"data/room-groups.json",key:"room_groups",description:"Pembagian kamar",type:"rooms"},
- {id:"trip-info",title:"Informasi Perjalanan",category:"Informasi",path:"data/trip-info.json",key:"trip_info",description:"Informasi perjalanan",type:"tripinfo"}
+ {id:"trip-info",title:"Informasi Perjalanan",category:"Informasi",path:"data/trip-info.json",key:"trip_info",description:"Informasi penting perjalanan",type:"tripinfo"},
+ {id:"locations",title:"Lokasi & Baidu Maps",category:"Informasi",path:"data/locations.json",key:"locations",description:"Daftar lokasi dan query peta",type:"locations"}
 ];
 
 let activeDataset=DATASETS[0];
@@ -40,9 +44,7 @@ async function selectDataset(id){
   workingData=await currentData(activeDataset);
   setStatus("Terhubung ke Supabase");
   renderEditor();
- }catch(err){
-  setStatus("Gagal memuat: "+err.message);
- }
+ }catch(err){setStatus("Gagal memuat: "+err.message)}
 }
 function field(label,value,path,type="text",placeholder=""){
  return `<label class="cms-field"><span>${label}</span><input type="${type}" value="${esc(value)}" data-path="${path}" placeholder="${esc(placeholder)}"></label>`
@@ -57,35 +59,63 @@ function setByPath(obj,path,value){
  const parts=path.split(".");
  let cur=obj;
  for(let i=0;i<parts.length-1;i++){
-   const k=/^\d+$/.test(parts[i])?Number(parts[i]):parts[i];
-   cur=cur[k];
+  const k=/^\d+$/.test(parts[i])?Number(parts[i]):parts[i];
+  if(cur[k]===undefined||cur[k]===null)cur[k]={};
+  cur=cur[k];
  }
  const last=/^\d+$/.test(parts.at(-1))?Number(parts.at(-1)):parts.at(-1);
  cur[last]=value;
 }
 function bindFields(){
  $("#formEditor").querySelectorAll("[data-path]:not([data-path*=\"__\"])").forEach(el=>{
-   const evt=el.type==="checkbox"?"change":"input";
-   el.addEventListener(evt,()=>{
-     let v=el.type==="checkbox"?el.checked:el.value;
-     setByPath(workingData,el.dataset.path,v);markChanged()
-   })
- })
+  const evt=el.type==="checkbox"?"change":"input";
+  el.addEventListener(evt,()=>{
+   let v=el.type==="checkbox"?el.checked:el.value;
+   if(el.type==="number"&&v!=="")v=Number(v);
+   setByPath(workingData,el.dataset.path,v);markChanged()
+  })
+ });
  $("#formEditor").querySelectorAll("[data-action]").forEach(el=>el.onclick=handleAction)
 }
 function renderEditor(){
  const t=activeDataset.type;
- if(t==="itinerary")renderItinerary();
+ if(t==="trip")renderTrip();
+ else if(t==="itinerary")renderItinerary();
  else if(t==="flights")renderFlights();
- else if(t==="hotels")renderSimpleList("Hotel",["city","name","dates","address","mapsQuery"]);
+ else if(t==="hotels")renderHotels();
  else if(t==="hsr")renderSimpleList("HSR",["route","date","train","time","station","group"]);
- else if(t==="members")renderSimpleList("Peserta",["id","name","whatsapp","email","member","room","roommates","flightGroup","seat","itineraryGroup"]);
+ else if(t==="members")renderMembers();
  else if(t==="rooms")renderRooms();
  else if(t==="tripinfo")renderTripInfo();
+ else if(t==="locations")renderSimpleList("Lokasi",["id","city","name","cn","query"]);
  bindFields()
 }
+function renderTrip(){
+ $("#formEditor").innerHTML=`
+ <article class="cms-record-card">
+  <div class="cms-grid two">
+   ${field("Judul perjalanan",workingData.title||"","title")}
+   ${field("Subjudul / rute",workingData.subtitle||"","subtitle")}
+   ${field("Tanggal perjalanan",workingData.date||"","date")}
+   ${field("Titik pertemuan",workingData.meeting||"","meeting")}
+   ${field("Ketua rombongan",workingData.leader||"","leader")}
+   ${field("Nomor ketua",workingData.leaderPhone||"","leaderPhone")}
+   ${field("WhatsApp utama",workingData.whatsapp||"","whatsapp")}
+  </div>
+ </article>`;
+}
 function renderItinerary(){
- $("#formEditor").innerHTML=(workingData.days||[]).map((day,di)=>`
+ if(!Array.isArray(workingData.days))workingData.days=[];
+ $("#formEditor").innerHTML=`
+ <article class="cms-record-card">
+  <div class="cms-grid two">
+   ${field("ID grup",workingData.groupId||"","groupId")}
+   ${field("Berlaku untuk",workingData.appliesTo||"","appliesTo")}
+  </div>
+  ${field("Daftar ID peserta (pisahkan koma)",(workingData.members||[]).join(", "),"__rootMembers")}
+  ${field("Status",workingData.status||"","status")}
+ </article>`+
+ (workingData.days||[]).map((day,di)=>`
  <section class="cms-day-card">
   <div class="cms-card-head">
    <div><span class="eyebrow">Hari ${di+1}</span><h3>${esc(day.label||day.date)}</h3></div>
@@ -116,68 +146,108 @@ function renderItinerary(){
   </div>
   <button class="admin-secondary" data-action="add-item" data-day="${di}">+ Tambah Aktivitas</button>
  </section>`).join("")+`<button class="admin-primary" data-action="add-day">+ Tambah Hari</button>`;
- // Ensure route objects exist for binding
- workingData.days.forEach(d=>d.items.forEach(it=>it.route??={originZh:"",destinationZh:"",regionZh:"",mode:"transit"}))
+
+ workingData.days.forEach(d=>(d.items||[]).forEach(it=>{if(!it.route)it.route={originZh:"",destinationZh:"",regionZh:"",mode:"transit"}}));
+ const rootMembers=$("#formEditor").querySelector('[data-path="__rootMembers"]');
+ if(rootMembers)rootMembers.addEventListener("input",()=>{
+  workingData.members=rootMembers.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
+ })
 }
 function renderFlights(){
- $("#formEditor").innerHTML=(workingData.groups||[]).map((g,gi)=>`
+ if(!Array.isArray(workingData.groups))workingData.groups=[];
+ $("#formEditor").innerHTML=workingData.groups.map((g,gi)=>`
  <section class="cms-day-card">
-  <div class="cms-card-head"><div><span class="eyebrow">Grup</span><h3>${esc(g.id)}</h3></div></div>
-  ${field("ID Grup",g.id,`groups.${gi}.id`)}
-  ${field("Nama peserta (pisahkan koma)",(g.travellers||[]).join(", "),`groups.${gi}.__travellers`)}
+  <div class="cms-card-head">
+   <div><span class="eyebrow">Grup penerbangan</span><h3>${esc(g.name||g.id)}</h3></div>
+   <button class="admin-danger small-action" data-action="delete-flight-group" data-group="${gi}">Hapus Grup</button>
+  </div>
+  <div class="cms-grid three">
+   ${field("ID grup",g.id||"",`groups.${gi}.id`)}
+   ${field("Nama grup",g.name||"",`groups.${gi}.name`)}
+   ${field("Peserta (pisahkan koma)",(g.travellers||[]).join(", "),`groups.${gi}.__travellers`)}
+  </div>
   ${["outbound","return"].map(type=>{
-    const f=g[type];
-    return `<article class="cms-flight-section">
-      <h3>${type==="outbound"?"Penerbangan Pergi":"Penerbangan Pulang"}</h3>
-      <div class="cms-grid three">
-       ${field("Maskapai",f.airline,`groups.${gi}.${type}.airline`)}
-       ${field("Nomor penerbangan",f.flight,`groups.${gi}.${type}.flight`)}
-       ${field("Pesawat",f.aircraft,`groups.${gi}.${type}.aircraft`)}
-       ${field("Tanggal",f.date,`groups.${gi}.${type}.date`)}
-       ${field("Kode booking",f.referenceCode,`groups.${gi}.${type}.referenceCode`)}
-      </div>
-      <h4>Keberangkatan</h4>
-      <div class="cms-grid four">
-       ${field("Kode bandara",f.departure.code,`groups.${gi}.${type}.departure.code`)}
-       ${field("Bandara",f.departure.airport,`groups.${gi}.${type}.departure.airport`)}
-       ${field("Terminal",f.departure.terminal,`groups.${gi}.${type}.departure.terminal`)}
-       ${field("Waktu",f.departure.time,`groups.${gi}.${type}.departure.time`,"time")}
-      </div>
-      <h4>Kedatangan</h4>
-      <div class="cms-grid four">
-       ${field("Kode bandara",f.arrival.code,`groups.${gi}.${type}.arrival.code`)}
-       ${field("Bandara",f.arrival.airport,`groups.${gi}.${type}.arrival.airport`)}
-       ${field("Terminal",f.arrival.terminal,`groups.${gi}.${type}.arrival.terminal`)}
-       ${field("Waktu",f.arrival.time,`groups.${gi}.${type}.arrival.time`,"time")}
-      </div>
-      <h4>Bagasi</h4>
-      <div class="cms-grid three">
-       ${field("Personal item",f.baggage.personalItem,`groups.${gi}.${type}.baggage.personalItem`)}
-       ${field("Kabin",f.baggage.cabin,`groups.${gi}.${type}.baggage.cabin`)}
-       ${field("Bagasi tercatat",f.baggage.checked,`groups.${gi}.${type}.baggage.checked`)}
-      </div>
-    </article>`
+   const f=g[type]||{departure:{},arrival:{},baggage:{}};
+   g[type]=f;f.departure=f.departure||{};f.arrival=f.arrival||{};f.baggage=f.baggage||{};
+   return `<article class="cms-flight-section">
+    <h3>${type==="outbound"?"Penerbangan Pergi":"Penerbangan Pulang"}</h3>
+    <div class="cms-grid three">
+     ${field("Maskapai",f.airline||"",`groups.${gi}.${type}.airline`)}
+     ${field("Nomor penerbangan",f.flight||"",`groups.${gi}.${type}.flight`)}
+     ${field("Pesawat",f.aircraft||"",`groups.${gi}.${type}.aircraft`)}
+     ${field("Tanggal",f.date||"",`groups.${gi}.${type}.date`)}
+     ${field("Kode booking",f.referenceCode||"",`groups.${gi}.${type}.referenceCode`)}
+    </div>
+    <h4>Keberangkatan</h4>
+    <div class="cms-grid four">
+     ${field("Kode bandara",f.departure.code||"",`groups.${gi}.${type}.departure.code`)}
+     ${field("Bandara",f.departure.airport||"",`groups.${gi}.${type}.departure.airport`)}
+     ${field("Terminal",f.departure.terminal||"",`groups.${gi}.${type}.departure.terminal`)}
+     ${field("Waktu",f.departure.time||"",`groups.${gi}.${type}.departure.time`,"time")}
+    </div>
+    <h4>Kedatangan</h4>
+    <div class="cms-grid four">
+     ${field("Kode bandara",f.arrival.code||"",`groups.${gi}.${type}.arrival.code`)}
+     ${field("Bandara",f.arrival.airport||"",`groups.${gi}.${type}.arrival.airport`)}
+     ${field("Terminal",f.arrival.terminal||"",`groups.${gi}.${type}.arrival.terminal`)}
+     ${field("Waktu",f.arrival.time||"",`groups.${gi}.${type}.arrival.time`,"time")}
+    </div>
+    <h4>Bagasi</h4>
+    <div class="cms-grid three">
+     ${field("Personal item",f.baggage.personalItem||"",`groups.${gi}.${type}.baggage.personalItem`)}
+     ${field("Kabin",f.baggage.cabin||"",`groups.${gi}.${type}.baggage.cabin`)}
+     ${field("Bagasi tercatat",f.baggage.checked||"",`groups.${gi}.${type}.baggage.checked`)}
+    </div>
+   </article>`
   }).join("")}
- </section>`).join("");
- // custom travellers field
+ </section>`).join("")+`<button class="admin-primary" data-action="add-flight-group">+ Tambah Grup Penerbangan</button>`;
+
  $("#formEditor").querySelectorAll('[data-path$=".__travellers"]').forEach(el=>{
-   el.addEventListener("input",()=>{
-    const gi=Number(el.dataset.path.split(".")[1]);
-    workingData.groups[gi].travellers=el.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
-   })
+  el.addEventListener("input",()=>{
+   const gi=Number(el.dataset.path.split(".")[1]);
+   workingData.groups[gi].travellers=el.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
+  })
  })
+}
+function renderHotels(){
+ $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
+ <article class="cms-record-card">
+  <div class="cms-card-head"><h3>${esc(row.city||"Hotel")} — ${i+1}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
+  <div class="cms-grid two">
+   ${field("Kota",row.city||"",`${i}.city`)}
+   ${field("Nama hotel",row.name||"",`${i}.name`)}
+   ${field("Tanggal umum",row.dates||"",`${i}.dates`)}
+   ${field("Tanggal Grup A",row.datesGroupA||"",`${i}.datesGroupA`)}
+   ${field("Tanggal Grup B",row.datesGroupB||"",`${i}.datesGroupB`)}
+   ${field("Khusus grup (group-a / group-b / kosong)",row.groupOnly||"",`${i}.groupOnly`)}
+   ${field("Nama Mandarin / alamat",row.address||"",`${i}.address`)}
+   ${field("Query Baidu Maps",row.mapsQuery||"",`${i}.mapsQuery`)}
+   ${field("URL sumber / pemesanan",row.sourceUrl||"",`${i}.sourceUrl`,"url")}
+  </div>
+ </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Hotel</button>`;
+}
+function renderMembers(){
+ const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","seat","itineraryGroup"];
+ $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
+ <article class="cms-record-card">
+  <div class="cms-card-head"><h3>${esc(row.name||"Peserta Baru")}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
+  <div class="cms-grid two">
+   ${keys.map(k=>field(k,row[k]??"",`${i}.${k}`,k==="member"?"number":"text")).join("")}
+  </div>
+ </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Peserta</button>`;
 }
 function renderSimpleList(title,keys){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
  <article class="cms-record-card">
   <div class="cms-card-head"><h3>${title} ${i+1}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
   <div class="cms-grid two">
-   ${keys.map(k=>field(k,row[k]??"",`${i}.${k}`,k==="member"?"number":"text")).join("")}
+   ${keys.map(k=>field(k,row[k]??"",`${i}.${k}`)).join("")}
   </div>
  </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah ${title}</button>`;
 }
 function renderRooms(){
- $("#formEditor").innerHTML=(workingData.regions||[]).map((region,ri)=>`
+ if(!Array.isArray(workingData.regions))workingData.regions=[];
+ $("#formEditor").innerHTML=workingData.regions.map((region,ri)=>`
  <section class="cms-day-card">
   <div class="cms-card-head"><h3>${esc(region.name)}</h3><button class="admin-danger small-action" data-action="delete-region" data-region="${ri}">Hapus Kota</button></div>
   <div class="cms-grid two">${field("ID",region.id,`regions.${ri}.id`)}${field("Nama kota",region.name,`regions.${ri}.name`)}</div>
@@ -189,9 +259,11 @@ function renderRooms(){
    </article>`).join("")}
   <button class="admin-secondary" data-action="add-room" data-region="${ri}">+ Tambah Kamar</button>
  </section>`).join("")+`<button class="admin-primary" data-action="add-region">+ Tambah Kota</button>`;
+
  $("#formEditor").querySelectorAll('[data-path$=".__members"]').forEach(el=>{
   el.addEventListener("input",()=>{
-   const p=el.dataset.path.split(".");workingData.regions[+p[1]].rooms[+p[3]].members=el.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
+   const p=el.dataset.path.split(".");
+   workingData.regions[+p[1]].rooms[+p[3]].members=el.value.split(",").map(x=>x.trim()).filter(Boolean);markChanged()
   })
  })
 }
@@ -202,36 +274,43 @@ function renderTripInfo(){
   <div class="cms-grid two">${field("Ikon",row.icon,`${i}.icon`)}${field("Judul",row.title,`${i}.title`)}</div>
   ${area("Isi informasi — satu baris untuk satu poin",(row.items||[]).join("\n"),`${i}.__items`)}
  </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Informasi</button>`;
+
  $("#formEditor").querySelectorAll('[data-path$=".__items"]').forEach(el=>{
-  el.addEventListener("input",()=>{const i=+el.dataset.path.split(".")[0];workingData[i].items=el.value.split("\n").map(x=>x.trim()).filter(Boolean);markChanged()})
+  el.addEventListener("input",()=>{
+   const i=+el.dataset.path.split(".")[0];
+   workingData[i].items=el.value.split("\n").map(x=>x.trim()).filter(Boolean);markChanged()
+  })
  })
 }
 function handleAction(e){
  const a=e.currentTarget.dataset.action;
- if(a==="add-day"){workingData.days.push({date:"2027-03-15",label:"Hari Baru",items:[]})}
- if(a==="delete-day"){if(confirm("Hapus hari ini?"))workingData.days.splice(+e.currentTarget.dataset.day,1)}
- if(a==="add-item"){workingData.days[+e.currentTarget.dataset.day].items.push({from:"09:00",to:"10:00",activity:"Aktivitas baru",baiduMap:false,route:{originZh:"",destinationZh:"",regionZh:"",mode:"transit"}})}
- if(a==="delete-item"){if(confirm("Hapus aktivitas ini?"))workingData.days[+e.currentTarget.dataset.day].items.splice(+e.currentTarget.dataset.item,1)}
+ if(a==="add-day")workingData.days.push({date:"2027-03-15",label:"Hari Baru",items:[]});
+ if(a==="delete-day"&&confirm("Hapus hari ini?"))workingData.days.splice(+e.currentTarget.dataset.day,1);
+ if(a==="add-item")workingData.days[+e.currentTarget.dataset.day].items.push({from:"09:00",to:"10:00",activity:"Aktivitas baru",baiduMap:false,route:{originZh:"",destinationZh:"",regionZh:"",mode:"transit"}});
+ if(a==="delete-item"&&confirm("Hapus aktivitas ini?"))workingData.days[+e.currentTarget.dataset.day].items.splice(+e.currentTarget.dataset.item,1);
+ if(a==="add-flight-group")workingData.groups.push({id:"group-new",name:"Grup Baru",travellers:[],outbound:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""}},return:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""}}});
+ if(a==="delete-flight-group"&&confirm("Hapus grup penerbangan ini?"))workingData.groups.splice(+e.currentTarget.dataset.group,1);
  if(a==="add-record"){
   const t=activeDataset.type;
-  if(t==="hotels")workingData.push({city:"",name:"",dates:"",address:"",mapsQuery:""});
+  if(t==="hotels")workingData.push({city:"",name:"",dates:"",datesGroupA:"",datesGroupB:"",address:"",mapsQuery:"",groupOnly:"",sourceUrl:""});
   if(t==="hsr")workingData.push({route:"",date:"",train:"",time:"",station:"",group:""});
   if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",seat:"",itineraryGroup:"main-group"});
-  if(t==="tripinfo")workingData.push({title:"Informasi Baru",icon:"ℹ️",items:[]})
+  if(t==="tripinfo")workingData.push({title:"Informasi Baru",icon:"ℹ️",items:[]});
+  if(t==="locations")workingData.push({id:"",city:"",name:"",cn:"",query:""})
  }
- if(a==="delete-record"){if(confirm("Hapus data ini?"))workingData.splice(+e.currentTarget.dataset.index,1)}
- if(a==="add-region")workingData.regions.push({id:"kota-baru",name:"Kota Baru",rooms:[]})
- if(a==="delete-region"){if(confirm("Hapus kota ini?"))workingData.regions.splice(+e.currentTarget.dataset.region,1)}
- if(a==="add-room")workingData.regions[+e.currentTarget.dataset.region].rooms.push({room:"Kamar Baru",members:[]})
- if(a==="delete-room"){if(confirm("Hapus kamar ini?"))workingData.regions[+e.currentTarget.dataset.region].rooms.splice(+e.currentTarget.dataset.room,1)}
+ if(a==="delete-record"&&confirm("Hapus data ini?"))workingData.splice(+e.currentTarget.dataset.index,1);
+ if(a==="add-region")workingData.regions.push({id:"kota-baru",name:"Kota Baru",rooms:[]});
+ if(a==="delete-region"&&confirm("Hapus kota ini?"))workingData.regions.splice(+e.currentTarget.dataset.region,1);
+ if(a==="add-room")workingData.regions[+e.currentTarget.dataset.region].rooms.push({room:"Kamar Baru",members:[]});
+ if(a==="delete-room"&&confirm("Hapus kamar ini?"))workingData.regions[+e.currentTarget.dataset.region].rooms.splice(+e.currentTarget.dataset.room,1);
  renderEditor();markChanged()
 }
 async function saveCurrent(){
  try{
   setStatus("Menyimpan ke Supabase…");
   if(activeDataset.type==="itinerary"){
-   workingData.days.forEach(d=>d.items.forEach(it=>{
-    if(!it.baiduMap && it.route && !Object.values(it.route).some(Boolean))delete it.route
+   workingData.days.forEach(d=>(d.items||[]).forEach(it=>{
+    if(!it.baiduMap&&it.route&&!Object.values(it.route).some(Boolean))delete it.route
    }))
   }
   await window.ChinaTripDB.writeKey(activeDataset.key,workingData,activeDataset.description);
@@ -253,11 +332,11 @@ async function resetCurrent(){
 async function exportAll(){
  try{
   setStatus("Menyiapkan backup…");
-  const payload={app:"China Trip 2027",version:22,exportedAt:new Date().toISOString(),data:{}};
+  const payload={app:"China Trip 2027",version:36,exportedAt:new Date().toISOString(),data:{}};
   for(const d of DATASETS)payload.data[d.path]=await currentData(d);
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
   const url=URL.createObjectURL(blob),a=document.createElement("a");
-  a.href=url;a.download="china-trip-2027-supabase-backup.json";a.click();URL.revokeObjectURL(url);
+  a.href=url;a.download="china-trip-2027-v36-full-backup.json";a.click();URL.revokeObjectURL(url);
   setStatus("Backup selesai")
  }catch(err){alert("Export gagal: "+err.message)}
 }
@@ -276,13 +355,12 @@ async function importBackup(file){
  }catch(e){alert("Import gagal: "+e.message)}
 }
 async function resetAll(){
- if(!confirm("Reset seluruh data Supabase ke data bawaan V22?"))return;
+ if(!confirm("Reset seluruh data Supabase ke data bawaan V36?"))return;
  try{
   for(const d of DATASETS)await window.ChinaTripDB.writeKey(d.key,baseData(d.path),d.description);
   alert("Semua data berhasil direset.");await selectDataset(activeDataset.id)
  }catch(err){alert("Reset semua gagal: "+err.message)}
 }
-
 $("#loginForm").addEventListener("submit",async e=>{
  e.preventDefault();$("#loginError").hidden=true;
  const btn=e.submitter;btn.disabled=true;btn.textContent="Masuk…";
@@ -290,8 +368,7 @@ $("#loginForm").addEventListener("submit",async e=>{
   await window.ChinaTripDB.login($("#adminEmail").value.trim(),$("#adminPassword").value);
   await showAdmin()
  }catch(err){
-  $("#loginError").hidden=false;
-  $("#loginError").textContent="Login gagal: "+err.message
+  $("#loginError").hidden=false;$("#loginError").textContent="Login gagal: "+err.message
  }finally{btn.disabled=false;btn.textContent="Masuk"}
 });
 $("#logoutBtn").onclick=async()=>{await window.ChinaTripDB.signOut();location.reload()};
@@ -301,8 +378,4 @@ $("#resetCurrentBtn").onclick=resetCurrent;
 $("#exportBtn").onclick=exportAll;
 $("#importInput").onchange=e=>{const f=e.target.files?.[0];if(f)importBackup(f);e.target.value=""};
 $("#resetAllBtn").onclick=resetAll;
-
-(async()=>{
- const session=await window.ChinaTripDB.validSession();
- if(session)await showAdmin()
-})();
+(async()=>{const session=await window.ChinaTripDB.validSession();if(session)await showAdmin()})();

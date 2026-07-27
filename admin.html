@@ -30,7 +30,7 @@
       <div>
         <span class="eyebrow">China Trip 2027</span>
         <h1>Admin Portal</h1>
-        <p class="lead">Ubah data menggunakan formulir, lalu tekan Simpan.</p>
+        <p class="lead">Semua data aktif website dapat diubah di sini tanpa membuka coding.</p>
       </div>
       <div class="admin-header-actions">
         <a href="index.html" class="admin-secondary">Lihat Website</a>
@@ -39,8 +39,8 @@
     </header>
 
     <section class="admin-notice">
-      <strong>Data admin siap digunakan</strong>
-      <p>Data dibaca dan disimpan langsung melalui Supabase. Setelah disimpan, perubahan dapat dilihat seluruh peserta tanpa deploy ulang.</p>
+      <strong>Seluruh data website dapat diedit</strong>
+      <p>Peserta, itinerary, penerbangan, HSR, hotel, tanggal per grup, pembagian kamar, informasi trip, serta lokasi Baidu Maps dibaca dan disimpan langsung melalui Supabase.</p>
     </section>
 
     <nav id="adminTabs" class="admin-tabs"></nav>
@@ -54,6 +54,16 @@
         <span id="saveStatus" class="save-status">Menggunakan data bawaan</span>
       </div>
       <div id="formEditor" class="cms-form-editor"></div>
+      <details class="advanced-json-panel">
+        <summary>Editor JSON Lanjutan</summary>
+        <p class="lead">Digunakan untuk mengubah field tambahan atau struktur data yang belum tersedia pada formulir.</p>
+        <textarea id="rawJsonEditor" class="raw-json-editor" spellcheck="false"></textarea>
+        <div class="admin-actions">
+          <button id="applyJsonBtn" class="admin-secondary" type="button">Terapkan JSON ke Formulir</button>
+          <button id="formatJsonBtn" class="admin-secondary" type="button">Rapikan JSON</button>
+        </div>
+        <p id="jsonError" class="admin-error" hidden></p>
+      </details>
       <div class="admin-actions sticky-admin-actions">
         <button id="saveBtn" class="admin-primary">Simpan Perubahan</button>
         <button id="reloadBtn" class="admin-secondary">Muat Ulang</button>

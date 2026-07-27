@@ -2,15 +2,19 @@
 (function(){
  const cfg=window.CHINA_TRIP_SUPABASE||{};
  const pathToKey={
+  "data/trip.json":"trip",
   "data/itinerary-group-a-early.json":"itinerary_group_a_early",
   "data/itinerary-group-b-early.json":"itinerary_group_b_early",
   "data/itinerary-common.json":"itinerary_common",
+  "data/itinerary-septino-lina-raelyn.json":"itinerary_septino_lina_raelyn",
+  "data/itinerary.json":"itinerary_legacy",
   "data/flights.json":"flights",
   "data/hotels.json":"hotels",
   "data/hsr.json":"hsr",
   "data/members.json":"members",
   "data/room-groups.json":"room_groups",
-  "data/trip-info.json":"trip_info"
+  "data/trip-info.json":"trip_info",
+  "data/locations.json":"locations"
  };
  const sessionKey="china_trip_supabase_session";
  const cachePrefix="china_trip_supabase_cache:";

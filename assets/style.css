@@ -865,3 +865,78 @@ footer,
     margin-top:42px;
   }
 }
+
+
+/* V36 — Full admin editor */
+.cms-field select{
+  width:100%;
+  min-height:46px;
+  padding:11px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  color:var(--ink);
+  font:inherit;
+}
+.advanced-json-panel{
+  margin-top:20px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#f8fafb;
+  padding:16px;
+}
+.advanced-json-panel summary{
+  cursor:pointer;
+  font-weight:900;
+}
+.raw-json-editor{
+  display:block;
+  width:100%;
+  min-height:360px;
+  margin:14px 0;
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#101820;
+  color:#e7edf3;
+  font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  resize:vertical;
+}
+.field-error{
+  border-color:#d54b4b!important;
+  background:#fff4f4!important;
+}
+@media(max-width:720px){
+  .cms-grid.three,.cms-grid.four{grid-template-columns:1fr}
+}
+
+
+/* V36 — Full Admin Editor */
+.admin-tabs{
+  max-height:360px;
+  overflow:auto;
+  align-content:start;
+}
+.admin-tabs button small{
+  pointer-events:none;
+}
+.admin-tabs button strong{
+  pointer-events:none;
+}
+.cms-field input[type="url"]{
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+@media(max-width:560px){
+  .admin-tabs{
+    display:flex;
+    overflow-x:auto;
+    max-height:none;
+    padding-bottom:8px;
+    scroll-snap-type:x proximity;
+  }
+  .admin-tabs button{
+    min-width:190px;
+    scroll-snap-align:start;
+  }
+}
