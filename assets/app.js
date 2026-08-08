@@ -149,54 +149,88 @@ async function renderItinerary(){
  ].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
 
  $("#content").innerHTML=`
+   <div class="itinerary-toolbar">
+     <button class="itinerary-toggle-all" type="button" data-itinerary-action="expand-all">Buka semua hari</button>
+     <button class="itinerary-toggle-all secondary" type="button" data-itinerary-action="collapse-all">Tutup semua</button>
+   </div>
    <div class="itinerary-table-list">
      ${days.map((day,dayIndex)=>`
-       <section class="itinerary-table-card">
-         <div class="itinerary-day-header">
-           <div>
+       <section class="itinerary-table-card ${dayIndex===0 ? "is-open" : "is-collapsed"}" data-day-card>
+         <button class="itinerary-day-header" type="button" data-day-toggle aria-expanded="${dayIndex===0 ? "true" : "false"}">
+           <span class="itinerary-day-title">
              <span class="eyebrow">Hari ${dayIndex+1}</span>
-             <h3>${day.label||day.date}</h3>
-           </div>
-           <span class="activity-count">${(day.items||[]).length} aktivitas</span>
-         </div>
+             <span class="itinerary-day-name">${day.label||day.date}</span>
+           </span>
+           <span class="itinerary-day-meta">
+             <span class="activity-count">${(day.items||[]).length} aktivitas</span>
+             <span class="itinerary-chevron" aria-hidden="true">⌄</span>
+           </span>
+         </button>
 
-         <div class="itinerary-table-wrap">
-           <table class="itinerary-table">
-             <thead>
-               <tr>
-                 <th>Waktu</th>
-                 <th>Aktivitas</th>
-                 <th>Aksi</th>
-               </tr>
-             </thead>
-             <tbody>
-               ${(day.items||[]).map(item=>`
+         <div class="itinerary-day-body" data-day-body>
+           <div class="itinerary-table-wrap">
+             <table class="itinerary-table">
+               <thead>
                  <tr>
-                   <td data-label="Waktu">
-                     <span class="time-pill">${item.from}</span>
-                     <span class="time-arrow">→</span>
-                     <span class="time-pill">${item.to}</span>
-                   </td>
-                   <td data-label="Aktivitas">
-                     <div class="activity-text">${item.activity}</div>
-                   </td>
-                   <td data-label="Aksi">
-                     ${item.baiduMap===true && item.route
-                       ? `<a class="map-btn navigate-btn compact-map-btn"
-                              href="${baiduDirectionLink(item.route)}"
-                              target="_blank"
-                              rel="noopener"
-                              aria-label="Buka rute di Baidu Maps">🧭 Navigate</a>`
-                       : `<span class="no-action">—</span>`}
-                   </td>
+                   <th>Waktu</th>
+                   <th>Aktivitas</th>
+                   <th>Aksi</th>
                  </tr>
-               `).join("")}
-             </tbody>
-           </table>
+               </thead>
+               <tbody>
+                 ${(day.items||[]).map(item=>`
+                   <tr>
+                     <td data-label="Waktu">
+                       <span class="time-pill">${item.from}</span>
+                       <span class="time-arrow">→</span>
+                       <span class="time-pill">${item.to}</span>
+                     </td>
+                     <td data-label="Aktivitas">
+                       <div class="activity-text">${item.activity}</div>
+                     </td>
+                     <td data-label="Aksi">
+                       ${item.baiduMap===true && item.route
+                         ? `<a class="map-btn navigate-btn compact-map-btn"
+                                href="${baiduDirectionLink(item.route)}"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Buka rute di Baidu Maps">🧭 Navigate</a>`
+                         : `<span class="no-action">—</span>`}
+                     </td>
+                   </tr>
+                 `).join("")}
+               </tbody>
+             </table>
+           </div>
          </div>
        </section>
      `).join("")}
    </div>`;
+
+ document.querySelectorAll("[data-day-toggle]").forEach(btn=>{
+   btn.addEventListener("click",()=>{
+     const card=btn.closest("[data-day-card]");
+     const open=card.classList.toggle("is-open");
+     card.classList.toggle("is-collapsed",!open);
+     btn.setAttribute("aria-expanded",String(open));
+   });
+ });
+
+ document.querySelector('[data-itinerary-action="expand-all"]')?.addEventListener("click",()=>{
+   document.querySelectorAll("[data-day-card]").forEach(card=>{
+     card.classList.add("is-open");
+     card.classList.remove("is-collapsed");
+     card.querySelector("[data-day-toggle]")?.setAttribute("aria-expanded","true");
+   });
+ });
+
+ document.querySelector('[data-itinerary-action="collapse-all"]')?.addEventListener("click",()=>{
+   document.querySelectorAll("[data-day-card]").forEach(card=>{
+     card.classList.remove("is-open");
+     card.classList.add("is-collapsed");
+     card.querySelector("[data-day-toggle]")?.setAttribute("aria-expanded","false");
+   });
+ });
 }
 async function renderFlights(){
  const [members,data,bookingRefs]=await Promise.all([
@@ -218,7 +252,7 @@ async function renderFlights(){
   const seat=flight.seats?.[me.id]||"Belum diisi";
   const baggage=flight.baggage||{};
   return `
-  <section class="boarding-pass flight-card">
+  <section class="boarding-pass flight-card ${flight.airline==="Xiamen Airlines" ? "boarding-pass-xiamen" : "boarding-pass-spring"}">
    <div class="bp-top">
     <div class="airline-mark">
      <div class="airline-logo">✦</div>

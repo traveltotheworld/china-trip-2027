@@ -1,0 +1,8 @@
+China Trip 2027 V46 — Itinerary expand/collapse + boarding pass colors
+
+Perubahan:
+- Setiap hari di halaman Itinerary sekarang bisa expand/collapse dengan klik header hari.
+- Hari pertama terbuka secara default; hari berikutnya tertutup agar tampilan lebih ringkas.
+- Ditambahkan tombol “Buka semua hari” dan “Tutup semua”.
+- Boarding pass Spring Airlines dan Xiamen Airlines diberi warna visual berbeda agar lebih mudah dibedakan.
+- Service worker cache dinaikkan ke v46 agar perubahan CSS/JS tidak tertahan cache lama.
