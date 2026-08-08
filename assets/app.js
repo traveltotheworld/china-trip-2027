@@ -7,7 +7,7 @@ async function getJSON(path){
  if(!r.ok)throw new Error(path);
  return r.json();
 }
-function getMemberId(){return (new URLSearchParams(location.search).get("id")||localStorage.getItem("trip_member")||"septino").toLowerCase()}
+function getMemberId(){const raw=(new URLSearchParams(location.search).get("id")||localStorage.getItem("trip_member")||"septino").toLowerCase();return raw==="rico"?"rikko":raw}
 function keepId(link){const id=getMemberId();if(link.includes("?"))return link+"&id="+id;return link+"?id="+id}
 async function initHome(){
  const [members,trip]=await Promise.all([getJSON("data/members.json"),getJSON("data/trip.json")]);
@@ -204,8 +204,9 @@ async function renderFlights(){
   getJSON("data/flights.json"),
   fetch("data/booking-references.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))
  ]);
+ members.forEach(x=>{if(x.id==="rico")x.id="rikko"});
  const me=members.find(x=>x.id===getMemberId())||members[0];
- const refOverride=bookingRefs?.[me.id]||{};
+ const refOverride=bookingRefs?.[me.id]||bookingRefs?.rico||{};
  const grp=data.groups.find(g=>g.id===me.flightGroup);
 
  if(!grp){

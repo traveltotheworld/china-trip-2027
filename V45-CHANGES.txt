@@ -1,0 +1,10 @@
+China Trip 2027 V45 — Fix Rikko member ID
+
+Masalah ditemukan: Rikko tersimpan dengan id internal "rico", sementara link/QR dan pencarian member menggunakan "rikko". Akibatnya halaman Flight gagal menemukan Rikko dan jatuh ke member default.
+
+Perbaikan:
+- Canonical member id Rikko sekarang: rikko.
+- getMemberId() menerima id lama "rico" dan otomatis mengarah ke "rikko" agar QR/link lama tetap kompatibel.
+- Data booking reference Rikko: Spring BLPB0FK, Xiamen PWP4CK.
+- Normalisasi member dari Supabase yang masih memakai id "rico" menjadi "rikko" di halaman Flight.
+- Cache service worker dinaikkan ke v45.
