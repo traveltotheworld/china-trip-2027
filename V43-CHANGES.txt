@@ -1,0 +1,22 @@
+V43 - BOOKING REFERENCE SPRING & XIAMEN
+
+Spring Airlines (flight 9C7678) per peserta:
+- Prianto: BLPBR0K
+- Astina Fanfani: BLPB0FK
+- Irin Enzelin: BLPB0FK
+- Rikko Supriyadi: BLPB0FK
+- Devia: BLPB0FK
+- Yongki Wijaya: BLPB0FK
+- Fredy Lim: BLPB0FK
+- Apryanto: BLPB0FK
+
+Xiamen Airlines (flight MF8703):
+- Devia: PWP4CK
+- Rikko Supriyadi: PWP4CK
+- Fredy Lim: PWP4CK
+- Cindy Amelia Fortuna: PWP4CK
+- Astina Fanfani: PWP4CK
+- Yongki Wijaya: PWP4CK
+- Prianto: PWP4CK
+
+Irin dan Apryanto tidak diberi Xiamen booking reference karena tidak tercantum dalam daftar.
