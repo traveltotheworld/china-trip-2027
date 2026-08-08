@@ -245,7 +245,7 @@ async function renderFlights(){
    <div class="bp-grid">
     <div class="bp-info"><small>Passenger</small><strong>${me.name}</strong></div>
     <div class="bp-info"><small>Seat</small><strong>${seat}</strong></div>
-    <div class="bp-info"><small>Booking Reference</small><strong>${flight.referenceCode||"Belum diisi"}</strong></div>
+    <div class="bp-info"><small>${flight.airline} Booking Reference</small><strong>${flight.airline==="Xiamen Airlines"?(me.xiamenBookingReference||flight.referenceCode||"Belum diisi"):(me.bookingReference||flight.referenceCode||"Belum diisi")}</strong></div>
     <div class="bp-info"><small>Flight</small><strong>${flight.flight}</strong></div>
    </div>
 

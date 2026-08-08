@@ -354,14 +354,14 @@ function renderHotels(){
  </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Hotel</button>`;
 }
 function renderMembers(){
- const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","itineraryGroup"];
+ const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","itineraryGroup","bookingReference","xiamenBookingReference"];
  $("#formEditor").innerHTML=`
  <div class="member-search-bar"><span>🔎</span><input id="memberSearch" type="search" placeholder="Cari nama, WhatsApp, email, kamar atau grup…"><b id="memberResultCount">${(workingData||[]).length} peserta</b></div>
  <div id="memberCards">${(workingData||[]).map((row,i)=>`
  <article class="cms-record-card member-admin-card" data-member-search="${esc([row.name,row.whatsapp,row.email,row.room,row.flightGroup].join(" ").toLowerCase())}">
   <div class="cms-card-head"><h3>${esc(row.name||"Peserta Baru")}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
   <div class="cms-grid two">
-   ${keys.map(k=>field(k,row[k]??"",`${i}.${k}`,k==="member"?"number":"text")).join("")}
+   ${keys.map(k=>field(k==="bookingReference"?"Spring Airlines Booking Reference":k==="xiamenBookingReference"?"Xiamen Airlines Booking Reference":k,row[k]??"",`${i}.${k}`,k==="member"?"number":"text")).join("")}
   </div>
  </article>`).join("")}</div>
  <button class="admin-primary" data-action="add-record">+ Tambah Peserta</button>`;
@@ -430,7 +430,7 @@ function handleAction(e){
   const t=activeDataset.type;
   if(t==="hotels")workingData.push({city:"",name:"",dates:"",datesGroupA:"",datesGroupB:"",address:"",mapsQuery:"",groupOnly:"",sourceUrl:""});
   if(t==="hsr")workingData.push({route:"",date:"",train:"",time:"",station:"",group:""});
-  if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",itineraryGroup:"main-group"});
+  if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",itineraryGroup:"main-group",bookingReference:""});
   if(t==="tripinfo")workingData.push({title:"Informasi Baru",icon:"ℹ️",items:[]});
   if(t==="locations")workingData.push({id:"",city:"",name:"",cn:"",query:""})
  }

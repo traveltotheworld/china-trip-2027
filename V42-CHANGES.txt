@@ -1,0 +1,7 @@
+China Trip 2027 V42 — Booking Reference
+
+- Booking Reference disimpan per peserta agar bisa berbeda dalam satu grup penerbangan.
+- Prianto: BLPBR0K
+- Astina, Irin, Rikko, Devia, Yongki, Fredy, Apryanto: BLPB0FK
+- Halaman Flight menampilkan Booking Reference milik peserta yang sedang dibuka.
+- Admin > Peserta kini memiliki field Booking Reference.
