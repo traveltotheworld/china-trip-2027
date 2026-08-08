@@ -1,0 +1,12 @@
+China Trip 2027 V44 — Booking Reference Fix
+
+Masalah V43: halaman Flight masih mengambil data members dari Supabase, sehingga perubahan lokal di members.json tidak terlihat di website yang sudah terhubung ke Supabase.
+
+Perbaikan:
+- Tambah data/booking-references.json sebagai fallback lokal per peserta.
+- Flight card sekarang memakai fallback booking reference jika data Supabase kosong/stale.
+- Spring Airlines: Prianto BLPBR0K; Astina, Cindy, Rikko, Devia, Yongki, Fredy, Apryanto, Irin BLPB0FK.
+- Xiamen Airlines: Devia, Rikko, Fredy, Cindy, Astina, Yongki, Prianto PWP4CK.
+- Irin dan Apryanto tidak diberi Xiamen booking reference.
+- Service worker cache dinaikkan ke v44.
+- Tambah SUPABASE-UPDATE-BOOKING-REF-V44.sql untuk memperbarui database Supabase live.

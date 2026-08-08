@@ -1,4 +1,4 @@
-const CACHE="china-trip-v40";
+const CACHE="china-trip-v44";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",
@@ -20,6 +20,7 @@ const ASSETS=[
   "/assets/style.css",
   "/assets/app.js",
   "/data/members.json",
+  "/data/booking-references.json",
   "/data/room-groups.json",
   "/data/trip.json",
   "/data/itinerary.json",

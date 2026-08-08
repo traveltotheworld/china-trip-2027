@@ -199,8 +199,13 @@ async function renderItinerary(){
    </div>`;
 }
 async function renderFlights(){
- const [members,data]=await Promise.all([getJSON("data/members.json"),getJSON("data/flights.json")]);
+ const [members,data,bookingRefs]=await Promise.all([
+  getJSON("data/members.json"),
+  getJSON("data/flights.json"),
+  fetch("data/booking-references.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))
+ ]);
  const me=members.find(x=>x.id===getMemberId())||members[0];
+ const refOverride=bookingRefs?.[me.id]||{};
  const grp=data.groups.find(g=>g.id===me.flightGroup);
 
  if(!grp){
@@ -245,7 +250,7 @@ async function renderFlights(){
    <div class="bp-grid">
     <div class="bp-info"><small>Passenger</small><strong>${me.name}</strong></div>
     <div class="bp-info"><small>Seat</small><strong>${seat}</strong></div>
-    <div class="bp-info"><small>${flight.airline} Booking Reference</small><strong>${flight.airline==="Xiamen Airlines"?(me.xiamenBookingReference||flight.referenceCode||"Belum diisi"):(me.bookingReference||flight.referenceCode||"Belum diisi")}</strong></div>
+    <div class="bp-info"><small>${flight.airline} Booking Reference</small><strong>${flight.airline==="Xiamen Airlines"?(me.xiamenBookingReference||refOverride.xiamen||flight.referenceCode||"Belum diisi"):(me.bookingReference||refOverride.spring||flight.referenceCode||"Belum diisi")}</strong></div>
     <div class="bp-info"><small>Flight</small><strong>${flight.flight}</strong></div>
    </div>
 
