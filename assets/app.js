@@ -251,7 +251,7 @@ async function renderFlights(){
   const seat=flight.seats?.[me.id]||"Belum diisi";
   const baggage=flight.baggage||{};
   return `
-  <section class="boarding-pass flight-card ${flight.airline==="Xiamen Airlines" ? "boarding-pass-xiamen" : "boarding-pass-spring"}">
+  <section class="boarding-pass flight-card ${flight.airline==="Xiamen Airlines" ? "boarding-pass-xiamen" : (flight.airline==="Singapore Airlines" ? "boarding-pass-singapore" : "boarding-pass-spring")}">
    <div class="bp-top">
     <div class="airline-mark">
      <div class="airline-logo">✦</div>

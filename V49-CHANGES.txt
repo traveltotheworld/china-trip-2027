@@ -1,0 +1,1 @@
+V49 — Boarding pass colors only. Singapore Airlines uses navy/gold, Spring Airlines green/white, Xiamen Airlines blue/white. Existing portrait/card layout is unchanged; no landscape redesign.

@@ -111,17 +111,27 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
 .itinerary-table-card.is-collapsed .itinerary-chevron{transform:rotate(-90deg)}
 .itinerary-table-card.is-open .itinerary-day-header{border-bottom:1px solid var(--line)}
 
-/* Different boarding-pass colors by airline */
-.boarding-pass-spring{background:linear-gradient(145deg,#102b3c,#173f4c);}
-.boarding-pass-spring .bp-top{background:linear-gradient(135deg,#174b59,#102b3c)}
-.boarding-pass-spring .airline-logo{background:linear-gradient(145deg,#e6b85c,#c58b27)}
-.boarding-pass-spring .flight-line,.boarding-pass-spring .bp-date{color:#f1c968}
-.boarding-pass-spring .passenger-avatar{background:#e6b85c}
-.boarding-pass-xiamen{background:linear-gradient(145deg,#13253d,#193b5b);}
-.boarding-pass-xiamen .bp-top{background:linear-gradient(135deg,#1b5272,#13253d)}
-.boarding-pass-xiamen .airline-logo{background:linear-gradient(145deg,#72c7e8,#2e8fbd);color:#09253a}
-.boarding-pass-xiamen .flight-line,.boarding-pass-xiamen .bp-date{color:#7fd3f2}
-.boarding-pass-xiamen .passenger-avatar{background:#72c7e8}
+/* Airline-inspired colors only. Layout/portrait boarding-pass shape stays unchanged. */
+.boarding-pass-singapore{background:linear-gradient(145deg,#071b49,#102d67);}
+.boarding-pass-singapore .bp-top{background:linear-gradient(135deg,#0a2457,#071b49)}
+.boarding-pass-singapore .airline-logo{background:linear-gradient(145deg,#f4c84d,#c99a2e);color:#071b49}
+.boarding-pass-singapore .eyebrow.light{color:#f4c84d}
+.boarding-pass-singapore .flight-line,.boarding-pass-singapore .bp-date{color:#f4c84d}
+.boarding-pass-singapore .passenger-avatar{background:#f4c84d;color:#071b49}
+
+.boarding-pass-spring{background:linear-gradient(145deg,#006b3c,#008f52);}
+.boarding-pass-spring .bp-top{background:linear-gradient(135deg,#008447,#006b3c)}
+.boarding-pass-spring .airline-logo{background:linear-gradient(145deg,#ffffff,#dcefe5);color:#006b3c}
+.boarding-pass-spring .eyebrow.light{color:#d9f3e5}
+.boarding-pass-spring .flight-line,.boarding-pass-spring .bp-date{color:#d9f3e5}
+.boarding-pass-spring .passenger-avatar{background:#ffffff;color:#006b3c}
+
+.boarding-pass-xiamen{background:linear-gradient(145deg,#005baa,#0075c9);}
+.boarding-pass-xiamen .bp-top{background:linear-gradient(135deg,#0073c6,#005baa)}
+.boarding-pass-xiamen .airline-logo{background:linear-gradient(145deg,#ffffff,#dceeff);color:#005baa}
+.boarding-pass-xiamen .eyebrow.light{color:#d9ecff}
+.boarding-pass-xiamen .flight-line,.boarding-pass-xiamen .bp-date{color:#d9ecff}
+.boarding-pass-xiamen .passenger-avatar{background:#ffffff;color:#005baa}
 
 /* Itinerary table UI */
 .itinerary-table-list{
