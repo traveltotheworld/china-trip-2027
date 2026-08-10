@@ -1,4 +1,4 @@
-const CACHE="china-trip-v46";
+const CACHE="china-trip-v48";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",

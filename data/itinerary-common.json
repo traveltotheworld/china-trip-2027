@@ -1,6 +1,7 @@
 {
-  "groupId": "common",
-  "appliesTo": "all-members",
+  "groupId": "group-b",
+  "appliesTo": "group-b",
+  "status": "final",
   "days": [
     {
       "date": "2027-03-07",
@@ -10,132 +11,90 @@
           "from": "00:00",
           "to": "02:00",
           "activity": "Shanghai Pudong Airport - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
-          "baiduMap": true,
-          "route": {
-            "originZh": "上海浦东国际机场T2航站楼",
-            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "baiduMap": false
         },
         {
           "from": "02:00",
           "to": "02:15",
-          "activity": "Mandi dan persiapan istirahat",
+          "activity": "Checkin Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": false
         },
         {
           "from": "02:15",
           "to": "09:00",
-          "activity": "Istirahat",
+          "activity": "Rest & Fight For Tomorrow",
           "baiduMap": false
         },
         {
           "from": "09:00",
           "to": "10:00",
           "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Jing'an Temple",
-          "baiduMap": true,
-          "route": {
-            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "destinationZh": "静安寺",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "baiduMap": false
         },
         {
           "from": "10:00",
           "to": "11:00",
-          "activity": "Jalan-jalan",
+          "activity": "Walk around",
           "baiduMap": false
         },
         {
           "from": "11:00",
           "to": "12:00",
           "activity": "Jing'an Temple - Wukang Road",
-          "baiduMap": true,
-          "route": {
-            "originZh": "静安寺",
-            "destinationZh": "武康路",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "baiduMap": false
         },
         {
           "from": "12:00",
           "to": "13:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Walk around & Lunch",
           "baiduMap": false
         },
         {
           "from": "13:30",
           "to": "14:30",
-          "activity": "Jing'an Temple - Xintiandi",
-          "baiduMap": true,
-          "route": {
-            "originZh": "静安寺",
-            "destinationZh": "上海新天地",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "activity": "Wukang Road - Xintiandi",
+          "baiduMap": false
         },
         {
           "from": "14:30",
           "to": "16:00",
-          "activity": "Jalan-jalan",
+          "activity": "Walk around",
           "baiduMap": false
         },
         {
           "from": "16:00",
           "to": "17:00",
           "activity": "Xintiandi - Tianzifang",
-          "baiduMap": true,
-          "route": {
-            "originZh": "上海新天地",
-            "destinationZh": "田子坊",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "baiduMap": false
         },
         {
           "from": "17:00",
           "to": "18:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "activity": "Walk around & Dinner",
           "baiduMap": false
         },
         {
           "from": "18:30",
           "to": "19:30",
-          "activity": "Tianzifang - The Bund, Lujiazui dan Oriental Pearl Tower",
-          "baiduMap": true,
-          "route": {
-            "originZh": "田子坊",
-            "destinationZh": "外滩",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "activity": "Tianzifang - The Bund, Lu Jia Zui, Oriental Pearl Tower (Maybe Cruise for Night View)",
+          "baiduMap": false
         },
         {
           "from": "19:30",
           "to": "20:30",
-          "activity": "Jalan-jalan",
+          "activity": "Walk around",
           "baiduMap": false
         },
         {
           "from": "20:30",
           "to": "22:00",
-          "activity": "The Bund, Lujiazui dan Oriental Pearl Tower - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
-          "baiduMap": true,
-          "route": {
-            "originZh": "东方明珠广播电视塔",
-            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "activity": "The Bund, Lu Jia Zui, Oriental Pearl Tower - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "baiduMap": false
         },
         {
           "from": "22:00",
           "to": "06:00",
-          "activity": "Mandi dan istirahat",
+          "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
       ]
@@ -147,103 +106,73 @@
         {
           "from": "06:00",
           "to": "07:00",
-          "activity": "Bangun dan mandi",
+          "activity": "Wake up & take a bath",
           "baiduMap": false
         },
         {
           "from": "07:00",
           "to": "08:00",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast at nearby or 饿了么",
           "baiduMap": false
         },
         {
           "from": "08:00",
           "to": "09:00",
           "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Yuyuan Garden",
-          "baiduMap": true,
-          "route": {
-            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "destinationZh": "豫园",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "baiduMap": false
         },
         {
           "from": "09:00",
           "to": "10:00",
-          "activity": "Jalan-jalan",
+          "activity": "Walk around",
           "baiduMap": false
         },
         {
           "from": "10:00",
           "to": "10:15",
           "activity": "Yuyuan Garden - Chenghuangmiao No.1 Shopping Center",
-          "baiduMap": true,
-          "route": {
-            "originZh": "豫园",
-            "destinationZh": "城隍庙第一购物中心",
-            "regionZh": "上海",
-            "mode": "walking"
-          }
+          "baiduMap": false
         },
         {
           "from": "10:15",
           "to": "12:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Walk around & Lunch",
           "baiduMap": false
         },
         {
           "from": "12:30",
-          "to": "14:00",
-          "activity": "Chenghuangmiao - Nanjing Road Pedestrian Street",
-          "baiduMap": true,
-          "route": {
-            "originZh": "上海城隍庙",
-            "destinationZh": "南京路步行街",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "14:00",
-          "to": "16:00",
-          "activity": "Jalan-jalan",
+          "to": "13:30",
+          "activity": "Chenghuangmiao - Shanghai Romance Park",
           "baiduMap": false
         },
         {
-          "from": "16:00",
-          "to": "17:00",
-          "activity": "Nanjing Road Pedestrian Street - Shanghai Romance Park",
-          "baiduMap": true,
-          "route": {
-            "originZh": "南京路步行街",
-            "destinationZh": "上海千古情景区",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "17:00",
-          "to": "21:00",
-          "activity": "Jalan-jalan dan makan malam",
+          "from": "13:30",
+          "to": "19:30",
+          "activity": "Walk around & Dinner",
           "baiduMap": false
         },
         {
-          "from": "21:00",
-          "to": "22:30",
-          "activity": "Shanghai Romance Park - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
-          "baiduMap": true,
-          "route": {
-            "originZh": "上海千古情景区",
-            "destinationZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "from": "19:30",
+          "to": "20:30",
+          "activity": "Shanghai Romance Park - Nanjing Road Pedestrian Street",
+          "baiduMap": false
         },
         {
-          "from": "22:30",
-          "to": "06:30",
-          "activity": "Mandi dan istirahat",
+          "from": "20:30",
+          "to": "22:00",
+          "activity": "Walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "22:00",
+          "to": "23:00",
+          "activity": "Nanjing Road Pedestrian Street - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "23:00",
+          "to": "06:00",
+          "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
       ]
@@ -253,111 +182,87 @@
       "label": "Selasa, 09 Maret 2027",
       "items": [
         {
-          "from": "06:30",
-          "to": "07:30",
-          "activity": "Bangun, mandi dan check-out",
+          "from": "06:00",
+          "to": "07:00",
+          "activity": "Wake up, take a bath & Checkout",
           "baiduMap": false
         },
         {
-          "from": "07:30",
-          "to": "08:30",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Breakfast at nearby or 饿了么",
           "baiduMap": false
         },
         {
-          "from": "08:30",
-          "to": "11:00",
-          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Zhujiajiao 朱家角古镇旅游区",
-          "baiduMap": true,
-          "route": {
-            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "destinationZh": "朱家角古镇旅游区",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "11:00",
-          "to": "13:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "from": "08:00",
+          "to": "09:30",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Shanghai Hongqiao Railway Station",
           "baiduMap": false
         },
         {
-          "from": "13:30",
+          "from": "09:30",
+          "to": "11:39",
+          "activity": "waiting for boarding HSR",
+          "baiduMap": false
+        },
+        {
+          "from": "11:39",
+          "to": "12:05",
+          "activity": "Shanghai Hongqiao Railway Station - Suzhou Station",
+          "baiduMap": false
+        },
+        {
+          "from": "12:05",
+          "to": "12:21",
+          "activity": "Custom Clearance",
+          "baiduMap": false
+        },
+        {
+          "from": "12:21",
+          "to": "12:36",
+          "activity": "Suzhou Station - Madison Hotel Suzhou Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "12:36",
+          "to": "14:30",
+          "activity": "Check in & have lunch nearby",
+          "baiduMap": false
+        },
+        {
+          "from": "14:30",
           "to": "16:00",
-          "activity": "Zhujiajiao - Jian Home Apartment",
-          "baiduMap": true,
-          "route": {
-            "originZh": "朱家角古镇旅游区",
-            "destinationZh": "简·寓Jian Home Apartment服务式公寓（上海徐汇交大店）",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
+          "activity": "Madison Hotel Suzhou Railway Station - Hanshan Temple",
+          "baiduMap": false
         },
         {
           "from": "16:00",
-          "to": "16:15",
-          "activity": "Ambil bagasi",
+          "to": "17:15",
+          "activity": "walk around",
           "baiduMap": false
         },
         {
-          "from": "16:15",
-          "to": "17:45",
-          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Shanghai Hongqiao Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-            "destinationZh": "上海虹桥站",
-            "regionZh": "上海",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "17:45",
-          "to": "19:52",
-          "activity": "Menunggu boarding HSR",
+          "from": "17:15",
+          "to": "18:15",
+          "activity": "Hanshan Temple - Qilishantang Street",
           "baiduMap": false
         },
         {
-          "from": "19:52",
-          "to": "20:18",
-          "activity": "Shanghai Hongqiao Railway Station - Suzhou Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "上海虹桥站",
-            "destinationZh": "苏州站",
-            "regionZh": "中国",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "20:18",
-          "to": "20:30",
-          "activity": "Proses keluar stasiun",
+          "from": "18:15",
+          "to": "20:45",
+          "activity": "walk around and dinner",
           "baiduMap": false
         },
         {
-          "from": "20:30",
-          "to": "21:30",
-          "activity": "Suzhou Station - Madison Hotel Suzhou Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "苏州站",
-            "destinationZh": "苏州火车站美仑酒店",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "21:30",
-          "to": "22:00",
-          "activity": "Check-in",
+          "from": "20:45",
+          "to": "21:15",
+          "activity": "Qilishantang Street - Madison Hotel Suzhou Railway Station",
           "baiduMap": false
         },
         {
-          "from": "22:00",
-          "to": "07:00",
-          "activity": "Mandi dan istirahat",
+          "from": "21:15",
+          "to": "06:15",
+          "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
       ]
@@ -367,105 +272,75 @@
       "label": "Rabu, 10 Maret 2027",
       "items": [
         {
-          "from": "07:00",
-          "to": "08:00",
-          "activity": "Bangun dan mandi",
+          "from": "06:15",
+          "to": "07:15",
+          "activity": "Wake up & take a bath",
           "baiduMap": false
         },
         {
-          "from": "08:00",
-          "to": "09:00",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "from": "07:15",
+          "to": "08:15",
+          "activity": "Breakfast at nearby or 饿了么",
           "baiduMap": false
         },
         {
-          "from": "09:00",
-          "to": "10:00",
+          "from": "08:15",
+          "to": "09:15",
           "activity": "Madison Hotel Suzhou Railway Station - Tiger Hill Pagoda",
-          "baiduMap": true,
-          "route": {
-            "originZh": "苏州火车站美仑酒店",
-            "destinationZh": "虎丘塔",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "10:00",
-          "to": "12:00",
-          "activity": "Jalan-jalan",
           "baiduMap": false
         },
         {
-          "from": "12:00",
-          "to": "13:00",
+          "from": "09:15",
+          "to": "11:15",
+          "activity": "walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "11:15",
+          "to": "12:15",
           "activity": "Tiger Hill Pagoda - Lion Grove Garden",
-          "baiduMap": true,
-          "route": {
-            "originZh": "虎丘塔",
-            "destinationZh": "狮子林",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "13:00",
-          "to": "15:00",
-          "activity": "Jalan-jalan dan makan siang",
           "baiduMap": false
         },
         {
-          "from": "15:00",
-          "to": "15:15",
-          "activity": "Lion Grove Garden - Pingjiang Road",
-          "baiduMap": true,
-          "route": {
-            "originZh": "狮子林",
-            "destinationZh": "平江路历史街区",
-            "regionZh": "苏州",
-            "mode": "walking"
-          }
-        },
-        {
-          "from": "15:15",
-          "to": "17:30",
-          "activity": "Jalan-jalan",
+          "from": "12:15",
+          "to": "14:15",
+          "activity": "Walk around & Lunch",
           "baiduMap": false
         },
         {
-          "from": "17:30",
-          "to": "18:00",
+          "from": "14:15",
+          "to": "14:30",
+          "activity": "Lion Grove Garden - Humble Administrator Garden",
+          "baiduMap": false
+        },
+        {
+          "from": "14:30",
+          "to": "16:45",
+          "activity": "Walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "16:45",
+          "to": "17:15",
           "activity": "Humble Administrator Garden - Pingjiang Road",
-          "baiduMap": true,
-          "route": {
-            "originZh": "拙政园",
-            "destinationZh": "平江路历史街区",
-            "regionZh": "苏州",
-            "mode": "walking"
-          }
-        },
-        {
-          "from": "18:00",
-          "to": "20:30",
-          "activity": "Jalan-jalan dan makan malam",
           "baiduMap": false
         },
         {
-          "from": "20:30",
-          "to": "22:00",
-          "activity": "Pingjiang Road - Madison Hotel Suzhou Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "平江路历史街区",
-            "destinationZh": "苏州火车站美仑酒店",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
+          "from": "17:15",
+          "to": "19:45",
+          "activity": "Walk around & Dinner",
+          "baiduMap": false
         },
         {
-          "from": "22:00",
-          "to": "07:00",
-          "activity": "Mandi dan istirahat",
+          "from": "19:45",
+          "to": "21:15",
+          "activity": "Pingjiang Road - Madison Hotel Suzhou Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "21:15",
+          "to": "06:30",
+          "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
       ]
@@ -475,129 +350,69 @@
       "label": "Kamis, 11 Maret 2027",
       "items": [
         {
-          "from": "07:00",
-          "to": "08:00",
-          "activity": "Bangun, mandi dan check-out",
+          "from": "06:30",
+          "to": "07:30",
+          "activity": "Wake up, take a bath & Checkout",
           "baiduMap": false
         },
         {
-          "from": "08:00",
-          "to": "09:00",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "from": "07:30",
+          "to": "07:45",
+          "activity": "Madison Hotel Suzhou Railway Station - Suzhou Railway Station",
           "baiduMap": false
         },
         {
-          "from": "09:00",
-          "to": "10:30",
-          "activity": "Madison Hotel Suzhou Railway Station - Hanshan Temple",
-          "baiduMap": true,
-          "route": {
-            "originZh": "苏州火车站美仑酒店",
-            "destinationZh": "寒山寺",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
+          "from": "07:45",
+          "to": "09:59",
+          "activity": "Waiting for boarding HSR",
+          "baiduMap": false
         },
         {
-          "from": "10:30",
+          "from": "09:59",
+          "to": "11:52",
+          "activity": "Suzhou Railway Station - Hangzhou West Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "11:52",
           "to": "12:30",
-          "activity": "Jalan-jalan",
+          "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
           "from": "12:30",
-          "to": "13:30",
-          "activity": "Hanshan Temple - Qili Shantang Street",
-          "baiduMap": true,
-          "route": {
-            "originZh": "寒山寺",
-            "destinationZh": "七里山塘景区",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "13:30",
-          "to": "15:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "to": "14:00",
+          "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
           "baiduMap": false
         },
         {
-          "from": "15:30",
-          "to": "16:00",
-          "activity": "Shantang Street - Madison Hotel Suzhou Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "七里山塘景区",
-            "destinationZh": "苏州火车站美仑酒店",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
+          "from": "14:00",
+          "to": "14:30",
+          "activity": "Check in Hangzhou Yi Apartment (Zheda Zijingang Branch)",
+          "baiduMap": false
         },
         {
-          "from": "16:00",
+          "from": "14:30",
           "to": "16:30",
-          "activity": "Ambil bagasi",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Song Dynasty Town",
           "baiduMap": false
         },
         {
           "from": "16:30",
-          "to": "17:30",
-          "activity": "Madison Hotel Suzhou Railway Station - Suzhou Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "苏州火车站美仑酒店",
-            "destinationZh": "苏州站",
-            "regionZh": "苏州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "17:30",
-          "to": "18:52",
-          "activity": "Menunggu boarding HSR dan makan malam",
+          "to": "21:30",
+          "activity": "walk around",
           "baiduMap": false
         },
         {
-          "from": "18:52",
-          "to": "20:25",
-          "activity": "Suzhou South Railway Station - Hangzhou West Railway Station",
-          "baiduMap": true,
-          "route": {
-            "originZh": "苏州南站",
-            "destinationZh": "杭州西站",
-            "regionZh": "中国",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "20:25",
-          "to": "20:40",
-          "activity": "Proses keluar stasiun",
+          "from": "21:30",
+          "to": "23:30",
+          "activity": "Song Dynasty Town - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
           "baiduMap": false
         },
         {
-          "from": "20:40",
-          "to": "22:00",
-          "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
-          "baiduMap": true,
-          "route": {
-            "originZh": "杭州西站",
-            "destinationZh": "杭州憶公寓（浙大紫金港店）",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "22:00",
-          "to": "22:30",
-          "activity": "Check-in hotel",
-          "baiduMap": false
-        },
-        {
-          "from": "22:30",
-          "to": "06:30",
-          "activity": "Mandi dan istirahat",
+          "from": "23:30",
+          "to": "07:30",
+          "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
       ]
@@ -607,105 +422,75 @@
       "label": "Jumat, 12 Maret 2027",
       "items": [
         {
-          "from": "06:30",
-          "to": "07:30",
-          "activity": "Bangun dan mandi",
-          "baiduMap": false
-        },
-        {
           "from": "07:30",
           "to": "08:30",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Wake up & take a bath",
           "baiduMap": false
         },
         {
           "from": "08:30",
-          "to": "10:00",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch) - Lingyin Temple dan Feilai Feng",
-          "baiduMap": true,
-          "route": {
-            "originZh": "杭州憶公寓（浙大紫金港店）",
-            "destinationZh": "灵隐寺飞来峰景区",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "10:00",
-          "to": "12:30",
-          "activity": "Jalan-jalan",
+          "to": "09:30",
+          "activity": "Breakfast at nearby or 饿了么",
           "baiduMap": false
         },
         {
-          "from": "12:30",
-          "to": "13:30",
-          "activity": "Feilai Feng - West Lake",
-          "baiduMap": true,
-          "route": {
-            "originZh": "飞来峰",
-            "destinationZh": "西湖风景名胜区",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
+          "from": "09:30",
+          "to": "11:00",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Lingyin Temple & Feilai Feng",
+          "baiduMap": false
         },
         {
-          "from": "13:30",
-          "to": "17:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "from": "11:00",
+          "to": "13:30",
+          "activity": "Walk around",
           "baiduMap": false
         },
         {
           "from": "13:30",
           "to": "14:30",
-          "activity": "West Lake - Qinghefang dan Hefang Street",
-          "baiduMap": true,
-          "route": {
-            "originZh": "西湖风景名胜区",
-            "destinationZh": "清河坊历史文化特色街区",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
+          "activity": "Feilai Feng - West Lake",
+          "baiduMap": false
         },
         {
           "from": "14:30",
-          "to": "16:30",
-          "activity": "Jalan-jalan",
+          "to": "18:30",
+          "activity": "Walk around & Lunch",
           "baiduMap": false
         },
         {
-          "from": "16:30",
+          "from": "14:30",
+          "to": "15:30",
+          "activity": "West Lake - Qinghefang 清河坊 历史文化特色街区 & Hefang Street",
+          "baiduMap": false
+        },
+        {
+          "from": "15:30",
           "to": "17:30",
-          "activity": "Qinghefang dan Hefang Street - Wulin Road Night Market",
-          "baiduMap": true,
-          "route": {
-            "originZh": "清河坊历史文化特色街区",
-            "destinationZh": "武林夜市",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
+          "activity": "Walk around",
+          "baiduMap": false
         },
         {
           "from": "17:30",
-          "to": "20:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "to": "18:30",
+          "activity": "Qinghefang 清河坊 历史文化特色街区 & Hefang Street - Wulin Road Night Market",
           "baiduMap": false
         },
         {
-          "from": "20:30",
+          "from": "18:30",
           "to": "21:30",
-          "activity": "Wulin Road Night Market - Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
-          "baiduMap": true,
-          "route": {
-            "originZh": "武林夜市",
-            "destinationZh": "杭州憶公寓（浙大紫金港店）",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
+          "activity": "Walk around & Dinner",
+          "baiduMap": false
         },
         {
           "from": "21:30",
-          "to": "06:30",
-          "activity": "Mandi dan istirahat",
+          "to": "22:30",
+          "activity": "Wulin Road Night Market - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
+          "baiduMap": false
+        },
+        {
+          "from": "22:30",
+          "to": "06:00",
+          "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
       ]
@@ -715,69 +500,39 @@
       "label": "Sabtu, 13 Maret 2027",
       "items": [
         {
-          "from": "06:30",
-          "to": "08:30",
-          "activity": "Bangun dan mandi",
+          "from": "06:00",
+          "to": "08:00",
+          "activity": "Wake up, take a bath & Breakfast",
           "baiduMap": false
         },
         {
-          "from": "08:30",
-          "to": "09:30",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "from": "08:00",
+          "to": "10:00",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Tianzidi Scenic Area 天子地景区游客中心 / OMG 心跳乐园 / 马岭天官",
           "baiduMap": false
         },
         {
-          "from": "09:30",
-          "to": "10:30",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch) - Xixi Wetland",
-          "baiduMap": true,
-          "route": {
-            "originZh": "杭州憶公寓（浙大紫金港店）",
-            "destinationZh": "西溪国家湿地公园",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "10:30",
-          "to": "13:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "from": "10:00",
+          "to": "15:00",
+          "activity": "Walk around & Lunch",
           "baiduMap": false
         },
         {
-          "from": "13:30",
-          "to": "15:30",
-          "activity": "Xixi Wetland - Song Dynasty Town",
-          "baiduMap": true,
-          "route": {
-            "originZh": "西溪国家湿地公园",
-            "destinationZh": "杭州宋城",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
-        },
-        {
-          "from": "15:30",
-          "to": "21:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "from": "15:00",
+          "to": "17:00",
+          "activity": "Tianzidi Scenic Area 天子地景区游客中心 / OMG 心跳乐园 / 马岭天官 - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
           "baiduMap": false
         },
         {
-          "from": "21:30",
-          "to": "22:30",
-          "activity": "Song Dynasty Town - Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch)",
-          "baiduMap": true,
-          "route": {
-            "originZh": "杭州宋城",
-            "destinationZh": "杭州憶公寓（浙大紫金港店）",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
+          "from": "17:00",
+          "to": "18:00",
+          "activity": "Dinner at nearby or 饿了么",
+          "baiduMap": false
         },
         {
-          "from": "22:30",
+          "from": "18:00",
           "to": "03:30",
-          "activity": "Mandi dan istirahat",
+          "activity": "Bath & Rest",
           "baiduMap": false
         }
       ]
@@ -789,49 +544,43 @@
         {
           "from": "03:30",
           "to": "04:30",
-          "activity": "Bangun, mandi dan check-out",
+          "activity": "Wake up, take a bath & Checkout",
           "baiduMap": false
         },
         {
           "from": "04:30",
           "to": "06:00",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch / Zunteng Wanguo Hotel China Academy of Art Branch) - Hangzhou Xiaoshan International Airport Terminal 4",
-          "baiduMap": true,
-          "route": {
-            "originZh": "杭州憶公寓（浙大紫金港店）",
-            "destinationZh": "杭州萧山国际机场T4航站楼",
-            "regionZh": "杭州",
-            "mode": "transit"
-          }
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Hangzhou Xiaoshan International Airport Terminal 4",
+          "baiduMap": false
         },
         {
           "from": "06:00",
           "to": "08:20",
-          "activity": "Menunggu boarding pesawat dan sarapan",
+          "activity": "Waiting for boarding plane & Breakfast",
           "baiduMap": false
         },
         {
           "from": "08:20",
           "to": "13:50",
-          "activity": "Hangzhou Xiaoshan International Airport - Singapore Changi Airport Terminal 3 via Xiamen Airlines MF8703",
+          "activity": "Hangzhou Xiaoshan International Airport - Singapore Changi Airport Terminal 3 (Via Xiamen Airlines)",
           "baiduMap": false
         },
         {
           "from": "13:50",
           "to": "16:05",
-          "activity": "Proses imigrasi",
+          "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
           "from": "16:05",
           "to": "17:05",
-          "activity": "Changi Airport - HarbourFront Centre",
+          "activity": "Changi Airport - Tanah Merah",
           "baiduMap": false
         },
         {
           "from": "17:05",
           "to": "19:20",
-          "activity": "Menunggu boarding ferry",
+          "activity": "Waiting for boarding Ferry",
           "baiduMap": false
         },
         {
@@ -843,16 +592,17 @@
         {
           "from": "19:20",
           "to": "20:35",
-          "activity": "Proses imigrasi",
+          "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
           "from": "20:35",
           "to": "21:05",
-          "activity": "Perjalanan selesai",
+          "activity": "END OF TRIP & BYE-BYE",
           "baiduMap": false
         }
       ]
     }
-  ]
+  ],
+  "source": "PDF 2 — Shanghai Suzhou Hangzhou.xlsx - cus(1).pdf"
 }

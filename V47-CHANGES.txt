@@ -1,0 +1,7 @@
+V47 - Itinerary Septino, Lina & Raelyn 03-14 March 2027
+
+- Replaced the Septino/Lina/Raelyn itinerary with the schedule from the uploaded PDF for 03-14 March 2027.
+- 02 March is intentionally excluded because the requested itinerary period starts 03 March 2027.
+- Septino/Lina/Raelyn now use data/itinerary-septino-lina-raelyn.json directly and do not merge the common itinerary.
+- Other participant groups keep the existing itinerary behavior.
+- Expand/collapse per day remains enabled.

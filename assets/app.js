@@ -134,14 +134,13 @@ async function renderItinerary(){
  const members=await getJSON("data/members.json");
  const me=members.find(x=>x.id===getMemberId())||members[0];
 
- const earlyFile=me?.itineraryGroup==="septino-lina-raelyn"
-   ? "data/itinerary-group-a-early.json"
+ const isSeptinoGroup=me?.itineraryGroup==="septino-lina-raelyn";
+ const earlyFile=isSeptinoGroup
+   ? "data/itinerary-septino-lina-raelyn.json"
    : "data/itinerary-group-b-early.json";
 
- const [earlyData,commonData]=await Promise.all([
-   getJSON(earlyFile),
-   getJSON("data/itinerary-common.json")
- ]);
+ const earlyData=await getJSON(earlyFile);
+ const commonData=isSeptinoGroup ? {days:[]} : await getJSON("data/itinerary-common.json");
 
  const days=[
    ...(earlyData.days||[]),

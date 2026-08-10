@@ -11,21 +11,28 @@
     "apryanto",
     "irin"
   ],
+  "status": "final",
   "days": [
     {
       "date": "2027-03-06",
       "label": "Sabtu, 06 Maret 2027",
       "items": [
         {
+          "from": "14:40",
+          "to": "17:40",
+          "activity": "Waiting for boarding plane",
+          "baiduMap": false
+        },
+        {
           "from": "17:40",
           "to": "22:55",
-          "activity": "Singapore Changi Airport Terminal 4 - Shanghai Pudong Airport Terminal 2",
+          "activity": "Singapore Changi Airport Terminal 4 - Shanghai Pudong Airport Terminal 2 (via Spring Airlines 9C7678)",
           "baiduMap": false
         },
         {
           "from": "22:55",
           "to": "00:00",
-          "activity": "Proses imigrasi",
+          "activity": "Custom Clearance",
           "baiduMap": false
         }
       ]
