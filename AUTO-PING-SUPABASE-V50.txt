@@ -1,0 +1,16 @@
+V50 - Supabase daily activity ping
+
+Added a Vercel Cron job that runs once per day at 02:00 UTC (09:00 WIB).
+It performs one lightweight read from Supabase app_data and does not modify any data.
+
+Vercel Hobby supports daily cron jobs. After deploying this version to Vercel,
+open /api/supabase-ping to verify the endpoint. It should return JSON with ok:true
+while the Supabase project is active.
+
+IMPORTANT:
+- The Supabase project must first be unpaused.
+- The cron only runs after this version is deployed to the production Vercel deployment.
+- This is intended to generate real database activity; Supabase says a few user database
+  requests per day over the preceding week are typically enough to avoid inactivity pausing,
+  but Supabase does not guarantee that any specific ping frequency will prevent pausing.
+- For a guaranteed no-auto-pause option, use a paid Supabase plan.
