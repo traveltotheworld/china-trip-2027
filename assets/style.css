@@ -847,3 +847,76 @@ body:has(.app){min-width:320px;}
 }
 .travel-menu-button:focus-visible{outline:2px solid rgba(231,184,95,.95);outline-offset:3px;}
 .travel-menu-button span:last-child{color:#17202b;}
+
+/* V74 — premium travel menu cards */
+.travel-menu-section{
+  background:linear-gradient(180deg,#f7f9fb 0%,#f3f6f8 100%);
+  padding-top:30px;
+  padding-bottom:34px;
+}
+.travel-menu-section .eyebrow{color:#b17b2d}
+.travel-menu-section h3{font-size:28px;letter-spacing:-.035em;margin-top:6px}
+.travel-menu-section .lead{font-size:14px;margin-bottom:2px}
+.travel-menu-section .menu{gap:12px;margin-top:20px}
+.travel-menu-section .menu a{
+  position:relative;
+  overflow:hidden;
+  min-height:74px;
+  grid-template-columns:52px minmax(0,1fr) 34px;
+  gap:13px;
+  padding:11px 13px 11px 11px;
+  border:1px solid rgba(34,45,55,.09);
+  border-radius:20px;
+  background:linear-gradient(135deg,#ffffff 0%,#fbfcfd 100%);
+  box-shadow:0 7px 18px rgba(24,34,43,.055),0 1px 2px rgba(24,34,43,.035);
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;
+}
+.travel-menu-section .menu a::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,#e7b95e,#cf8748);
+  opacity:.85;
+}
+.travel-menu-section .menu a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(204,148,61,.3);
+  box-shadow:0 12px 26px rgba(24,34,43,.10),0 2px 4px rgba(24,34,43,.04);
+  background:#fff;
+}
+.travel-menu-section .menu a:active{transform:scale(.985)}
+.travel-menu-section .menu a:focus-visible{outline:3px solid rgba(213,164,76,.35);outline-offset:2px}
+.travel-menu-section .icon{
+  width:52px;height:52px;
+  border-radius:16px;
+  display:grid;place-items:center;
+  font-size:24px;
+  background:linear-gradient(145deg,#fff4d9,#f1d18a);
+  border:1px solid rgba(194,139,51,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+.travel-menu-section .menu strong{
+  font-size:16px;font-weight:900;letter-spacing:-.02em;color:#18222d;
+}
+.travel-menu-section .menu small{
+  margin-top:4px;font-size:12px;line-height:1.35;color:#7c8792;
+}
+.travel-menu-section .arrow{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;font-size:22px;font-weight:500;
+  background:linear-gradient(145deg,#d9a64e,#c9804a);
+  box-shadow:0 5px 12px rgba(193,128,52,.18);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.travel-menu-section .menu a:hover .arrow{transform:translateX(2px);box-shadow:0 7px 16px rgba(193,128,52,.25)}
+@media(max-width:390px){
+ .travel-menu-section{padding-top:25px;padding-bottom:28px}
+ .travel-menu-section h3{font-size:25px}
+ .travel-menu-section .menu a{min-height:68px;grid-template-columns:46px minmax(0,1fr) 32px;padding:10px 11px 10px 9px;border-radius:18px}
+ .travel-menu-section .icon{width:46px;height:46px;border-radius:14px;font-size:21px}
+ .travel-menu-section .menu strong{font-size:15px}
+ .travel-menu-section .menu small{font-size:11px}
+ .travel-menu-section .arrow{width:32px;height:32px;font-size:20px}
+}
