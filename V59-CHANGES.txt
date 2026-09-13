@@ -1,0 +1,5 @@
+V59 - Luggage page one-screen mobile first
+- Luggage page constrained to 100svh so it fits one phone screen without scrolling.
+- Compact responsive layout for short and tall phones.
+- Desktop shows a centered phone-width card while preserving the mobile-first proportions.
+- No change to Supabase, QR, NFC, itinerary, or admin data logic.
