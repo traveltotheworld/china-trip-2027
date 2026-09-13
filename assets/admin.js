@@ -2,6 +2,7 @@
 const DATASETS=[
  {id:"dashboard",title:"Dashboard",category:"Beranda",icon:"🏠",description:"Ringkasan data perjalanan",type:"dashboard"},
  {id:"members",title:"Peserta",category:"Data Utama",icon:"👥",path:"data/members.json",key:"members",description:"Nama, kontak, grup dan kamar peserta",type:"members"},
+ {id:"luggage-tags",title:"Luggage NFC + QR",category:"Luggage Tag",icon:"🏷️",path:"data/luggage-tags.json",key:"luggage_tags",description:"Data NFC itinerary dan informasi pribadi yang tampil lewat QR",type:"luggage"},
  {id:"flights",title:"Penerbangan",category:"Transportasi",icon:"✈️",path:"data/flights.json",key:"flights",description:"Jadwal penerbangan pergi dan pulang",type:"flights"},
  {id:"hotels",title:"Hotel",category:"Akomodasi",icon:"🏨",path:"data/hotels.json",key:"hotels",description:"Hotel, tanggal dan lokasi Baidu Maps",type:"hotels"},
  {id:"rooms",title:"Pembagian Kamar",category:"Akomodasi",icon:"🛏️",path:"data/room-groups.json",key:"room_groups",description:"Susunan kamar setiap kota",type:"rooms"},
@@ -169,6 +170,7 @@ function renderEditor(){
  else if(t==="hotels")renderHotels();
  else if(t==="hsr")renderSimpleList("HSR",["route","date","train","time","station","group"]);
  else if(t==="members")renderMembers();
+ else if(t==="luggage")renderLuggageTags();
  else if(t==="rooms")renderRooms();
  else if(t==="tripinfo")renderTripInfo();
  else if(t==="locations")renderSimpleList("Lokasi",["id","city","name","cn","query"]);
@@ -372,6 +374,104 @@ function renderMembers(){
   $("#memberResultCount").textContent=visible+" peserta"
  })
 }
+function nfcDateLabel(date){
+ const m=String(date||"").match(/^(?:\d{4}-)?(\d{2})-(\d{2})$/);
+ return m?`${m[2]}/${m[1]}`:String(date||"").slice(0,10);
+}
+function compactActivity(v,max=54){
+ let x=String(v||"").replace(/\s+/g," ").replace(/→/g,"-").trim();
+ if(x.length>max)x=x.slice(0,max-1)+"…";
+ return x;
+}
+function makeNfcSnapshot(row,days){
+ const lines=[
+  "CHINA TRIP 2027",
+  `LUGGAGE ${row.luggageId||row.id||""}`,
+  `OWNER ${row.name||row.id||""}`,
+  "OFFLINE ITINERARY"
+ ];
+ (days||[]).forEach(d=>{
+  const items=d.items||[]; if(!items.length)return;
+  const first=items[0],last=items[items.length-1];
+  let line=`${nfcDateLabel(d.date)} ${first.from||""} ${compactActivity(first.activity,44)}`;
+  if(last!==first) line+=` / ${last.to||""} ${compactActivity(last.activity,44)}`;
+  lines.push(line);
+ });
+ let out=lines.join("\n");
+ if(out.length>900){
+  // NTAG216 has 924 bytes total user memory; keep a safe payload margin.
+  while(out.length>850 && lines.length>5){lines.pop();out=lines.join("\n")}
+  if(out.length>850)out=out.slice(0,849)+"…";
+ }
+ return out;
+}
+async function getItineraryDaysForMember(memberId){
+ const members=await currentData(DATASETS.find(d=>d.id==="members"));
+ const me=(members||[]).find(x=>String(x.id||"").toLowerCase()===String(memberId||"").toLowerCase())||{};
+ const isA=me.itineraryGroup==="septino-lina-raelyn";
+ const earlyKey=isA?"itinerary_septino_lina_raelyn":"itinerary_group_b_early";
+ const commonKey="itinerary_common";
+ const early=await window.ChinaTripDB.readKey(earlyKey);
+ const common=isA?{days:[]}:await window.ChinaTripDB.readKey(commonKey);
+ return [...(early?.days||[]),...(common?.days||[])].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
+}
+function downloadNfcPayload(row,snapshot,url){
+ const payload={version:1,owner:row.name||row.id,luggageId:row.luggageId||row.id,url,snapshot,generatedAt:new Date().toISOString()};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`NFC-${row.luggageId||row.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+async function writeNfcPayload(url,snapshot){
+ if(!("NDEFReader" in window))throw new Error("Browser ini tidak mendukung penulisan NFC. Gunakan Chrome Android dengan NFC aktif.");
+ const ndef=new NDEFReader();
+ await ndef.write({records:[{recordType:"url",data:url},{recordType:"text",data:snapshot}]});
+}
+async function handleNfcAction(action,row){
+ try{
+  const days=await getItineraryDaysForMember(row.itineraryMemberId||row.id);
+  const snapshot=makeNfcSnapshot(row,days);
+  const url=`https://china-trip-2027.vercel.app/itinerary.html?id=${encodeURIComponent(row.itineraryMemberId||row.id||"")}`;
+  if(action==="download"){
+   downloadNfcPayload(row,snapshot,url);
+   alert(`Payload NFC ${row.name||row.id} sudah dibuat.\n\nIsi offline: ${snapshot.length} karakter.\n\nCatatan: ini adalah ringkasan offline agar muat di NTAG216. Itinerary lengkap tetap diperbarui dari website.`);
+  }else{
+   await writeNfcPayload(url,snapshot);
+   alert(`NFC ${row.name||row.id} berhasil ditulis.\n\nTag berisi URL itinerary + ringkasan offline.`);
+  }
+ }catch(err){alert("NFC gagal: "+err.message)}
+}
+function renderLuggageTags(){
+ const base="https://china-trip-2027.vercel.app/";
+ const rows=Array.isArray(workingData)?workingData:[];
+ const fields=(row,i)=>`
+   <div class="cms-grid two">
+    ${field("ID peserta",row.id||"",`${i}.id`)}
+    ${field("Luggage ID",row.luggageId||"",`${i}.luggageId`)}
+    ${field("ID itinerary untuk NFC",row.itineraryMemberId||row.id||"",`${i}.itineraryMemberId`)}
+    ${field("Nama publik QR",row.publicContactName||row.name||"",`${i}.publicContactName`)}
+    ${field("WhatsApp publik QR",row.publicWhatsapp||"",`${i}.publicWhatsapp`)}
+    ${field("Email publik QR",row.publicEmail||"",`${i}.publicEmail`)}
+   </div>
+   <div class="cms-check-grid">
+    ${checkbox("Tampilkan nama di QR",row.qrShowName!==false,`${i}.qrShowName`)}
+    ${checkbox("Tampilkan WhatsApp di QR",row.qrShowWhatsapp!==false,`${i}.qrShowWhatsapp`)}
+    ${checkbox("Tampilkan email di QR",row.qrShowEmail===true,`${i}.qrShowEmail`)}
+   </div>
+   ${area("Pesan untuk orang yang menemukan koper",row.publicNote||"",`${i}.publicNote`)}
+   <div class="luggage-admin-links">
+    <a class="admin-secondary" href="${base}itinerary.html?id=${encodeURIComponent(row.itineraryMemberId||row.id||"")}" target="_blank" rel="noopener">📱 Tes NFC / Itinerary</a>
+    <a class="admin-secondary" href="${base}luggage.html?id=${encodeURIComponent(row.id||"")}" target="_blank" rel="noopener">▦ Tes QR / Contact</a>
+    <button type="button" class="admin-secondary" data-action="nfc-download" data-index="${i}">⬇️ Buat Payload NFC</button>
+    <button type="button" class="admin-primary" data-action="nfc-write" data-index="${i}">📡 Tulis ke NTAG216</button>
+   </div>`;
+ $("#formEditor").innerHTML=`
+  <div class="simple-welcome-card luggage-admin-intro">
+   <div><span class="eyebrow">NFC + QR</span><h2>Hybrid NFC + QR</h2><p>QR menampilkan kontak publik terpilih. NFC membuka itinerary terbaru saat online dan membawa ringkasan itinerary offline di dalam NTAG216. Jika itinerary berubah, generate lalu tulis ulang NFC.</p></div>
+  </div>
+  <div class="simple-help-card"><h3>Update NFC</h3><div><b>1</b><span>Edit itinerary lalu <strong>Publish</strong>.</span></div><div><b>2</b><span>Buka menu ini dan tekan <strong>Buat Payload NFC</strong>.</span></div><div><b>3</b><span>Jika memakai Chrome Android, tekan <strong>Tulis ke NTAG216</strong> lalu tempelkan kartu.</span></div><div><b>!</b><span>NTAG216 hanya cukup untuk <strong>ringkasan offline</strong>; itinerary lengkap tetap online.</span></div></div>
+  ${rows.map((row,i)=>`<article class="cms-record-card luggage-admin-card"><div class="cms-card-head"><div><h3>${esc(row.name||row.id||"Luggage")}</h3><small>${esc(row.luggageId||"")}</small></div></div>${fields(row,i)}</article>`).join("")}`;
+ bindFields();
+}
+
 function renderSimpleList(title,keys){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
  <article class="cms-record-card">
@@ -439,6 +539,8 @@ function handleAction(e){
  if(a==="delete-region"&&confirm("Hapus kota ini?"))workingData.regions.splice(+e.currentTarget.dataset.region,1);
  if(a==="add-room")workingData.regions[+e.currentTarget.dataset.region].rooms.push({room:"Kamar Baru",members:[]});
  if(a==="delete-room"&&confirm("Hapus kamar ini?"))workingData.regions[+e.currentTarget.dataset.region].rooms.splice(+e.currentTarget.dataset.room,1);
+ if(a==="nfc-download"){const row=workingData[+e.currentTarget.dataset.index];handleNfcAction("download",row);return}
+ if(a==="nfc-write"){const row=workingData[+e.currentTarget.dataset.index];handleNfcAction("write",row);return}
  renderEditor();markChanged()
 }
 async function saveCurrent(){

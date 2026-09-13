@@ -1,0 +1,24 @@
+CHINA TRIP 2027 — V53 HYBRID NFC + QR
+
+NFC:
+- NTAG216 13.56 MHz.
+- URL record opens the participant itinerary when online.
+- Text record contains a compact offline itinerary summary.
+- Full itinerary is NOT stored in the tag because NTAG216 has limited user memory.
+- If itinerary changes, Admin must generate/write the NFC tag again.
+
+ADMIN:
+1. Login to /admin.html
+2. Edit itinerary.
+3. Save + Publish.
+4. Open Luggage NFC + QR.
+5. Press "Buat Payload NFC" to download a payload file, or use Chrome Android with NFC and press "Tulis ke NTAG216".
+6. Hold the NTAG216 card near the phone when Chrome asks for a tag.
+
+QR:
+- QR remains the public contact channel.
+- Only fields enabled by Admin are shown.
+- Do not put passport number, NIK, home address, or other sensitive data in the QR.
+
+OFFLINE NOTE:
+A first-time tap on a phone that has never opened the website cannot guarantee opening the website offline. The physical NFC text record itself can be read by compatible NFC/NDEF tools without internet. The website's offline itinerary cache works on devices that have previously loaded the itinerary.

@@ -130,24 +130,36 @@ function itineraryLocation(activity){
  return null;
 }
 
-async function renderItinerary(){
- const members=await getJSON("data/members.json");
- const me=members.find(x=>x.id===getMemberId())||members[0];
-
+function itineraryCacheKey(id){return "china_trip_itinerary_offline:"+String(id||"").toLowerCase()}
+function saveOfflineItinerary(id,payload){try{localStorage.setItem(itineraryCacheKey(id),JSON.stringify({savedAt:new Date().toISOString(),payload}))}catch(e){console.warn("Offline itinerary cache failed",e)}}
+function readOfflineItinerary(id){try{const x=JSON.parse(localStorage.getItem(itineraryCacheKey(id))||"null");return x?.payload||null}catch(e){return null}}
+async function loadItineraryForMember(me){
  const isSeptinoGroup=me?.itineraryGroup==="septino-lina-raelyn";
  const earlyFile=isSeptinoGroup
    ? "data/itinerary-septino-lina-raelyn.json"
    : "data/itinerary-group-b-early.json";
+ try{
+  const earlyData=await getJSON(earlyFile);
+  const commonData=isSeptinoGroup ? {days:[]} : await getJSON("data/itinerary-common.json");
+  const days=[...(earlyData.days||[]),...(commonData.days||[])].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
+  const payload={groupId:me?.itineraryGroup||me?.id,days};
+  saveOfflineItinerary(me?.id,payload);
+  return {days,offline:false};
+ }catch(err){
+  const cached=readOfflineItinerary(me?.id);
+  if(cached?.days?.length)return {days:cached.days,offline:true};
+  throw err;
+ }
+}
 
- const earlyData=await getJSON(earlyFile);
- const commonData=isSeptinoGroup ? {days:[]} : await getJSON("data/itinerary-common.json");
-
- const days=[
-   ...(earlyData.days||[]),
-   ...(commonData.days||[])
- ].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
+async function renderItinerary(){
+ const members=await getJSON("data/members.json");
+ const me=members.find(x=>x.id===getMemberId())||members[0];
+ const loaded=await loadItineraryForMember(me);
+ const days=loaded.days;
 
  $("#content").innerHTML=`
+   ${loaded.offline ? '<div class="offline-notice">📴 Offline mode — menampilkan itinerary terakhir yang tersimpan di perangkat.</div>' : ''}
    <div class="itinerary-toolbar">
      <button class="itinerary-toggle-all" type="button" data-itinerary-action="expand-all">Buka semua hari</button>
      <button class="itinerary-toggle-all secondary" type="button" data-itinerary-action="collapse-all">Tutup semua</button>

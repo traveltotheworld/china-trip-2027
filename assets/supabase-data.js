@@ -12,6 +12,7 @@
   "data/hotels.json":"hotels",
   "data/hsr.json":"hsr",
   "data/members.json":"members",
+  "data/luggage-tags.json":"luggage_tags",
   "data/room-groups.json":"room_groups",
   "data/trip-info.json":"trip_info",
   "data/locations.json":"locations"

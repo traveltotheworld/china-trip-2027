@@ -1167,3 +1167,7 @@ footer,
 .hotel-room-summary-meta{margin-left:auto;padding:6px 9px;border-radius:999px;background:#eef2f5;color:#68747e;font-size:11px;white-space:nowrap}
 .hotel-room-dropdown-content{border-top:1px solid #e8ecef;padding:15px}
 .hotel-room-dropdown .hotel-room-grid{margin-top:0}
+
+/* Luggage NFC + QR admin */
+.luggage-admin-intro{margin-bottom:16px}.luggage-admin-card h3{margin-bottom:2px}.luggage-admin-card small{color:#718096}.cms-check-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}.luggage-admin-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.luggage-admin-links a{text-decoration:none}@media(max-width:700px){.cms-check-grid{grid-template-columns:1fr}}
+.offline-notice{margin:0 0 14px;padding:12px 14px;border-radius:14px;background:#fff7e8;color:#7a4b00;border:1px solid #f1dfb6;font-size:13px;font-weight:700}
