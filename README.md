@@ -31,3 +31,8 @@ Itinerary, Flight, Hotel, High Speed Rail, Maps, Group Members, Trip Info, dan E
 Semua tombol peta memakai deep link `baidumap://` agar membuka aplikasi Baidu Maps di HP. Pastikan aplikasi Baidu Maps sudah terpasang.
 
 V62: Luggage public contact page removes the Message field and adds a Contact via Email button when email is enabled.
+
+V65 image sources:
+- Shanghai: Wikimedia Commons, “Shanghai skyline Pudong.jpg” by Ernest Jourdier, CC BY 4.0.
+- Suzhou: Wikimedia Commons, “SuzhouGarden.jpg” by Immanuel Giel, public domain.
+- Hangzhou: Wikimedia Commons, “Hangzhou Skyline on West Lake.jpg” by Yinweichen, CC BY-SA 4.0.

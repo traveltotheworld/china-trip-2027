@@ -1,0 +1,7 @@
+V65 — Three-City Hero
+- Replaced the oversized single Shanghai hero with a mobile-first three-panel city collage.
+- Shanghai, Suzhou and Hangzhou are visibly represented.
+- Reduced empty sky/space and improved visual balance around the profile card.
+- Added city labels and responsive sizing for small phones.
+- Kept all existing profile, itinerary and travel-menu functionality unchanged.
+- Uses Wikimedia Commons images for the three city panels; source/licensing references are documented in the project notes.
