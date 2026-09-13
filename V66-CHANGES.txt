@@ -1,0 +1,7 @@
+V66 — Seamless cinematic three-city hero
+- Reworked homepage hero to a single seamless panoramic composition.
+- Shanghai, Suzhou and Hangzhou photos overlap/feather into each other with no divider lines.
+- Unified color grading, blue/gold sunset atmosphere and water-focused composition.
+- Added compact Explore / Discover / Together topline.
+- Added refined China Trip title, date pill, route line, tagline and city labels.
+- Kept the functional dynamic traveler profile card and mobile-first layout.
