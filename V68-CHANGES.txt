@@ -1,0 +1,6 @@
+V68 — TRUE MOBILE-FIRST SHELL
+- Public website shell is now max 430px wide instead of 560px.
+- On desktop browsers, the public site remains a centered phone-width layout.
+- On phones, it uses the full viewport width with no side shadow.
+- Hero and all public sections inherit the mobile-first 430px canvas.
+- Admin pages/layout are unchanged.
