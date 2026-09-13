@@ -806,3 +806,28 @@ body:has(.app){min-width:320px;}
   .hero-v30{height:calc(100vw * 1.2451171875);min-height:0;}
   .hero-v30-content{min-height:100%;height:100%;padding-bottom:10px;}
 }
+
+
+/* V72 — move the expand action below Personal Information */
+.hero-v30 .profile-trigger{
+  cursor:default;
+  grid-template-columns:52px minmax(0,1fr) auto;
+}
+.hero-v30 .profile-trigger:hover{transform:none;border-color:rgba(255,255,255,.22);box-shadow:none}
+.hero-v30 .profile-trigger:active{transform:none}
+.hero-v30 .profile-trigger .profile-chevron{display:none!important}
+.travel-menu-button{
+  width:100%; margin-top:18px; border:1px solid rgba(17,24,32,.12);
+  border-radius:16px; padding:14px 16px; display:flex; align-items:center; justify-content:space-between;
+  background:#111820; color:#fff; font:800 13px/1.2 inherit; letter-spacing:.06em; text-transform:uppercase;
+  cursor:pointer; box-shadow:0 10px 24px rgba(17,24,32,.12); transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.travel-menu-button:hover{transform:translateY(-1px);box-shadow:0 14px 28px rgba(17,24,32,.18);background:#17212b}
+.travel-menu-button:active{transform:scale(.985)}
+.travel-menu-button:focus-visible{outline:2px solid rgba(196,146,53,.9);outline-offset:3px}
+.travel-menu-button span:last-child{font-size:18px;line-height:1;transition:transform .25s ease}
+.travel-menu-button.is-open span:last-child{transform:rotate(180deg)}
+@media(max-width:390px){
+ .hero-v30 .profile-trigger{grid-template-columns:48px minmax(0,1fr) auto;gap:8px;padding:9px 10px}
+ .travel-menu-button{margin-top:15px;padding:13px 14px;border-radius:14px;font-size:12px}
+}
