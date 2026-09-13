@@ -29,3 +29,5 @@ Itinerary, Flight, Hotel, High Speed Rail, Maps, Group Members, Trip Info, dan E
 
 ## Baidu Maps
 Semua tombol peta memakai deep link `baidumap://` agar membuka aplikasi Baidu Maps di HP. Pastikan aplikasi Baidu Maps sudah terpasang.
+
+V62: Luggage public contact page removes the Message field and adds a Contact via Email button when email is enabled.
