@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#12345b">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="assets/style.css?v=56">
+<link rel="stylesheet" href="assets/style.css?v=57">
 <title>Luggage Tag — China Trip 2027</title>
 <style>
 :root{--navy:#12345b;--ink:#10233d;--muted:#66778d;--cream:#f8f0e2;--green:#18a768;--gold:#c98b22}
@@ -13,7 +13,7 @@
 body{background:radial-gradient(circle at 50% 0,#e8f3fc 0,#f5f8fb 43%,#e9e5dc 100%);padding:18px 0 32px}
 .luggage-shell{width:min(100%,520px);margin:auto;padding:0 12px}
 .luggage-card{overflow:hidden;position:relative;border-radius:38px;background:#fbf4e8;box-shadow:0 25px 75px rgba(18,52,91,.20),0 4px 18px rgba(0,0,0,.08);border:1px solid rgba(18,52,91,.1)}
-.luggage-hero{height:390px;position:relative;background:#f7efe1 url('assets/china-luggage-hero.jpg') center center/cover no-repeat}
+.luggage-hero{height:390px;position:relative;overflow:hidden;background:radial-gradient(circle at 70% 22%,rgba(255,255,255,.95),transparent 28%),linear-gradient(145deg,#fffaf1 0%,#f8efdf 58%,#f1e4d2 100%)}
 .luggage-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0) 70%,rgba(255,249,239,.3));pointer-events:none}
 .luggage-hanger{position:absolute;z-index:4;top:-2px;left:50%;transform:translateX(-50%);width:92px;height:115px;background:linear-gradient(90deg,#102e4e,#1b466d 50%,#102e4e);border-radius:0 0 25px 25px;box-shadow:inset 4px 0 7px rgba(255,255,255,.12),inset -4px 0 7px rgba(0,0,0,.18)}
 .luggage-hanger:before,.luggage-hanger:after{content:"";position:absolute;top:10px;width:2px;height:96px;background:repeating-linear-gradient(to bottom,#dce7f2 0 7px,transparent 7px 13px);opacity:.9}.luggage-hanger:before{left:18px}.luggage-hanger:after{right:18px}
@@ -26,8 +26,9 @@ body{background:radial-gradient(circle at 50% 0,#e8f3fc 0,#f5f8fb 43%,#e9e5dc 10
 .luggage-grid{display:grid;gap:10px}.luggage-row{display:flex;align-items:center;gap:13px;padding:12px 13px;border-radius:19px;background:linear-gradient(100deg,#f1f7fc,#edf3f8);border:1px solid #e3ebf3}.luggage-row-icon{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:#e4eff9;font-size:23px}.luggage-row-content{min-width:0}.luggage-label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:#708095;margin-bottom:3px;font-weight:850}.luggage-value{font-size:17px;font-weight:850;overflow-wrap:anywhere;line-height:1.2}
 .luggage-actions{margin-top:17px}.luggage-btn{width:100%;min-height:56px;display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:18px;text-decoration:none;font-size:17px;font-weight:900;background:var(--green);color:#fff;box-shadow:0 12px 24px rgba(24,167,104,.22)}.luggage-btn span{font-size:28px;line-height:0;margin-left:2px}
 .luggage-privacy{margin-top:14px;padding:14px 15px;border-radius:18px;background:#fff2d9;color:#76521e;border:1px solid #f1dfbd;font-size:12.5px;line-height:1.48}
-.luggage-footer{min-height:190px;padding:125px 22px 24px;background:#fbf3e5 url('assets/china-luggage-footer.jpg') center bottom/cover no-repeat;text-align:center;color:#6f7d8e}.luggage-footer strong{display:block;color:#183555;font-size:15px;font-weight:900}.luggage-footer span{font-size:10px;letter-spacing:.19em;text-transform:uppercase}
-.luggage-error{margin:18px;padding:20px;border-radius:18px;background:#fff0f0;color:#a33}.luggage-loading{padding:60px 20px;text-align:center;color:#64748b}
+.luggage-footer{min-height:145px;padding:92px 22px 24px;background:linear-gradient(180deg,#fbf3e5,#f5eadb);text-align:center;color:#6f7d8e;position:relative;overflow:hidden}.luggage-footer:before{content:'✈︎  ·  ·  ·  ·  ·  ';position:absolute;top:30px;left:50%;transform:translateX(-50%) rotate(-4deg);white-space:nowrap;color:#17395d;font-size:20px;letter-spacing:8px}.luggage-footer:after{content:'EXPLORE  ·  TOGETHER  ·  CREATE MEMORIES';display:block;color:#183555;font-size:10px;letter-spacing:.18em;font-weight:800}
+.travel-word{position:absolute;left:28px;top:72px;font-family:"Brush Script MT","Segoe Script",cursive;font-size:76px;line-height:1;color:#17395d;letter-spacing:-.05em;transform:rotate(-4deg)}
+.travel-kicker{position:absolute;right:25px;top:38px;color:#17395d;font-size:10px;font-weight:900;letter-spacing:.18em;line-height:1.7;text-align:right}.travel-kicker:after{content:"";display:block;width:28px;height:4px;background:#d9423e;margin:9px 0 0 auto;border-radius:4px}.travel-motto{position:absolute;left:31px;top:177px;color:#17395d;font-size:12px;font-weight:800;letter-spacing:.2em;line-height:1.9}.travel-stamp{position:absolute;right:31px;top:125px;width:86px;height:86px;border:3px solid rgba(208,70,66,.45);border-radius:50%;display:grid;place-items:center;color:rgba(208,70,66,.65);font-size:40px;transform:rotate(8deg);box-shadow:0 0 0 7px rgba(208,70,66,.08)}.travel-route{position:absolute;left:30px;right:30px;top:35px;color:#d34d47;font-size:18px;letter-spacing:6px;transform:rotate(-8deg);opacity:.85}.luggage-error{margin:18px;padding:20px;border-radius:18px;background:#fff0f0;color:#a33}.luggage-loading{padding:60px 20px;text-align:center;color:#64748b}
 @media(max-width:380px){body{padding:8px 0 18px}.luggage-shell{padding:0 7px}.luggage-card{border-radius:30px}.luggage-hero{height:350px}.luggage-body{margin:0 10px;padding:51px 13px 15px;border-radius:25px 25px 18px 18px}.luggage-title{font-size:25px}.luggage-row{padding:11px}.luggage-row-icon{width:43px;height:43px;flex-basis:43px}.luggage-value{font-size:16px}.luggage-footer{min-height:175px;padding-top:112px}}
 </style>
 </head>
@@ -35,6 +36,6 @@ body{background:radial-gradient(circle at 50% 0,#e8f3fc 0,#f5f8fb 43%,#e9e5dc 10
 <main class="luggage-shell"><section id="luggageContent" class="luggage-card"><div class="luggage-loading">Memuat informasi koper…</div></section></main>
 <script src="assets/supabase-config.js"></script>
 <script src="assets/supabase-data.js"></script>
-<script src="assets/luggage.js?v=56"></script>
+<script src="assets/luggage.js?v=57"></script>
 </body>
 </html>

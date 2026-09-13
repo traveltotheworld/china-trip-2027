@@ -30,11 +30,11 @@
    const wa=showWa?waLink(whatsapp):"";
    $("#luggageContent").innerHTML=`
     <div class="luggage-hero">
-      <span class="luggage-badge">CHINA TRIP 2027 • LUGGAGE</span>
-      <div class="luggage-brand">China</div>
-      <div class="luggage-trip">Trip 2027</div>
-      <div class="luggage-motto">Explore · Together · Create Memories</div>
-      <div class="luggage-skyline" aria-hidden="true"></div>
+      <div class="travel-word">Travel</div>
+      <div class="travel-kicker">TRAVEL · DISCOVER · MORE</div>
+      <div class="travel-motto">EXPLORE<br>TOGETHER<br>CREATE MEMORIES</div>
+      <div class="travel-stamp" aria-hidden="true">✈</div>
+      <div class="travel-route" aria-hidden="true">✈ · · · · · · · ·</div>
       <div class="luggage-tag-icon" aria-hidden="true">🧳</div>
     </div>
     <div class="luggage-body">
@@ -44,7 +44,7 @@
       <div class="luggage-actions">${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener">💬 Hubungi via WhatsApp <span>›</span></a>`:""}</div>
       <div class="luggage-privacy">🔒 Halaman ini hanya menampilkan data pribadi yang dipilih admin. Data itinerary berada di halaman terpisah.</div>
     </div>
-    <div class="luggage-footer"><strong>Good People · Brighter Journeys</strong><span>China Trip 2027</span></div>`;
+    <div class="luggage-footer" aria-label="Travel footer"></div>`;
    document.title=`Luggage ${luggageId} — China Trip 2027`;
   }catch(e){$("#luggageContent").innerHTML=`<div class="luggage-error"><strong>Data tidak dapat dimuat.</strong><br>${esc(e.message)}<br><br>Jika sedang offline, halaman ini harus sudah pernah dibuka/cache di perangkat.</div>`}
  }
