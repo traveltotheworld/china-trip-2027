@@ -5,7 +5,7 @@
       "name": "Shanghai",
       "rooms": [
         {
-          "room": "Kamar 1",
+          "room": "Room 1",
           "members": [
             "Septino",
             "Lina",
@@ -13,28 +13,28 @@
           ]
         },
         {
-          "room": "Kamar 2",
+          "room": "Room 2",
           "members": [
             "Irin Enzelin",
             "Apryanto"
           ]
         },
         {
-          "room": "Kamar 3",
+          "room": "Room 3",
           "members": [
             "Yongki Wijaya",
             "Prianto"
           ]
         },
         {
-          "room": "Kamar 4",
+          "room": "Room 4",
           "members": [
             "Rikko Supriyadi",
             "Fredy Lim"
           ]
         },
         {
-          "room": "Kamar 5",
+          "room": "Room 5",
           "members": [
             "Astina Fanfani",
             "Devia",

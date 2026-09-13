@@ -2,7 +2,7 @@
   {
     "route": "Shanghai Hongqiao → Shangrao",
     "date": "03 Mar 2027",
-    "train": "Belum diisi",
+    "train": "Not set",
     "time": "12:19–15:05",
     "station": "Shanghai Hongqiao Railway Station → Shangrao Railway Station",
     "group": "Septino, Lina & Raelyn"
@@ -10,7 +10,7 @@
   {
     "route": "Shangrao → Shanghai Hongqiao",
     "date": "04 Mar 2027",
-    "train": "Belum diisi",
+    "train": "Not set",
     "time": "14:35–16:50",
     "station": "Shangrao Railway Station → Shanghai Hongqiao Railway Station",
     "group": "Septino, Lina & Raelyn"
@@ -18,7 +18,7 @@
   {
     "route": "Shanghai Hongqiao → Suzhou",
     "date": "09 Mar 2027",
-    "train": "Belum diisi",
+    "train": "Not set",
     "time": "19:52–20:18",
     "station": "Shanghai Hongqiao Railway Station → Suzhou Station",
     "group": "All participants"
@@ -26,7 +26,7 @@
   {
     "route": "Suzhou South → Hangzhou West",
     "date": "11 Mar 2027",
-    "train": "Belum diisi",
+    "train": "Not set",
     "time": "18:52–20:25",
     "station": "Suzhou South Railway Station → Hangzhou West Railway Station",
     "group": "All participants"

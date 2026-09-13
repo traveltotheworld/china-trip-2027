@@ -13,21 +13,21 @@
   function isRoomHeading(element) {
     if (!(element instanceof HTMLElement)) return false;
     const text = normalise(element.textContent);
-    return text === "pembagian kamar" || text.includes("pembagian kamar");
+    return text === "pembagian rooms" || text.includes("pembagian rooms");
   }
 
   function findRoomBody(heading) {
-    // Struktur paling umum: heading lalu grid/list kamar sebagai sibling berikutnya.
+    // Struktur paling umum: heading lalu grid/list rooms sebagai sibling berikutnya.
     let node = heading.nextElementSibling;
     while (node) {
       const text = normalise(node.textContent);
       if (
         node.matches?.(".room-grid, .rooms-grid, .room-list, .rooms-list, [class*='room-grid'], [class*='rooms-grid']") ||
-        /kamar\s*1/.test(text)
+        /rooms\s*1/.test(text)
       ) {
         return node;
       }
-      if (/pembagian kamar/.test(text)) break;
+      if (/pembagian rooms/.test(text)) break;
       node = node.nextElementSibling;
     }
 
@@ -37,7 +37,7 @@
       node = parent.nextElementSibling;
       while (node) {
         const text = normalise(node.textContent);
-        if (/kamar\s*1/.test(text)) return node;
+        if (/rooms\s*1/.test(text)) return node;
         node = node.nextElementSibling;
       }
     }
@@ -71,7 +71,7 @@
     title.className = "room-dropdown__title";
     title.innerHTML =
       '<span class="room-dropdown__icon" aria-hidden="true">🛏️</span>' +
-      "<span>Pembagian Kamar</span>";
+      "<span>Room Assignments</span>";
 
     const chevron = document.createElement("span");
     chevron.className = "room-dropdown__chevron";

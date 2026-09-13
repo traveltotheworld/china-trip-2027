@@ -7,10 +7,10 @@ Cara pasang:
 2. Salin hotel.html ke root project dan pilih Replace.
 3. Salin room-dropdown.css dan room-dropdown.js ke folder assets.
 4. Commit dan push ke GitHub/Vercel.
-5. Buka halaman Hotel & Pembagian Kamar lalu refresh.
+5. Open halaman Hotel & Pembagian Room lalu refresh.
 
 Hasil:
-- Bagian “Pembagian Kamar” tampil sebagai tombol dropdown.
-- Daftar kamar tertutup saat halaman pertama dibuka.
-- Klik tombol untuk membuka atau menutup daftar kamar.
-- Data kamar dan peserta tidak diubah.
+- Bagian “Room Assignments” tampil sebagai tombol dropdown.
+- Daftar rooms tertutup saat halaman pertama dibuka.
+- Klik tombol untuk membuka atau menutup daftar rooms.
+- Data rooms dan travellers tidak diubah.

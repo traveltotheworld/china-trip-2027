@@ -13,7 +13,7 @@ async function initHome(){
  const [members,trip]=await Promise.all([getJSON("data/members.json"),getJSON("data/trip.json")]);
  const id=getMemberId();const m=members.find(x=>x.id===id)||members[0];localStorage.setItem("trip_member",m.id);
  $("#travelerName").textContent=m.name;$("#travelerInitial").textContent=m.name[0].toUpperCase();
- $("#travelerEmail").textContent=m.email||"Email belum diisi";
+ $("#travelerEmail").textContent=m.email||"Email not set";
  const tripDate=m.flightGroup==="group-a"?"03–14 MARCH 2027":"06–14 MARCH 2027";
  const heroTripDate=$("#heroTripDate");
  if(heroTripDate) heroTripDate.textContent=tripDate;
@@ -106,7 +106,7 @@ function itineraryLocation(activity){
  if(!activity)return null;
  const lower=activity.toLowerCase();
 
- // Tidak menampilkan tautan peta untuk perjalanan pesawat
+ // Map links are not shown for flights
  const isFlight=
    lower.includes("singapore airlines") ||
    lower.includes("pesawat") ||
@@ -323,7 +323,7 @@ async function renderFlights(){
    <p class="lead">This is a trip summary and not an official airline boarding pass.</p>
   </section>`;
 }
-async function renderHotels(){
+async function renderHotel(){
  const [hotels,roomData,members]=await Promise.all([
   getJSON("data/hotels.json"),
   getJSON("data/room-groups.json"),
@@ -333,14 +333,14 @@ async function renderHotels(){
  const currentMember=members.find(member=>member.id===getMemberId())||members[0];
  const currentGroup=currentMember.flightGroup||"group-b";
  const allRooms=(roomData.regions&&roomData.regions[0]&&roomData.regions[0].rooms)||[];
- const groupARooms=[{room:"Kamar 1",members:["Septino","Lina","Raelyn Xenaria Jayanthi"]}];
+ const groupARooms=[{room:"Room 1",members:["Septino","Lina","Raelyn Xenaria Jayanthi"]}];
 
- const visibleHotels=hotels.filter(hotel=>{
+ const visibleHotel=hotels.filter(hotel=>{
   if(!hotel.groupOnly)return true;
   return hotel.groupOnly===currentGroup;
  });
 
- $("#content").innerHTML=visibleHotels.map(hotel=>{
+ $("#content").innerHTML=visibleHotel.map(hotel=>{
   const city=String(hotel.city||"").toLowerCase();
   const displayDates=city==="shanghai"
    ? (currentGroup==="group-a"
@@ -361,14 +361,14 @@ async function renderHotels(){
        href="${baiduLink(hotel.mapsQuery||hotel.name,hotel.city)}"
        target="_blank"
        rel="noopener">
-     Buka Baidu Maps
+     Open Baidu Maps
     </a>
    </div>
 
    <details class="hotel-room-dropdown">
     <summary>
-     <span class="hotel-room-summary-title"><span aria-hidden="true">🛏️</span> Pembagian Kamar</span>
-     <span class="hotel-room-summary-meta">${rooms.length} kamar</span>
+     <span class="hotel-room-summary-title"><span aria-hidden="true">🛏️</span> Room Assignments</span>
+     <span class="hotel-room-summary-meta">${rooms.length} rooms</span>
     </summary>
     <div class="hotel-room-dropdown-content">
      <div class="hotel-room-grid">
@@ -405,7 +405,7 @@ async function renderHSR(){
  });
 
  if(!filtered.length){
-  $("#content").innerHTML="<div class='card'>Belum ada jadwal HSR untuk peserta ini.</div>";
+  $("#content").innerHTML="<div class='card'>None yet jadwal HSR untuk travellers ini.</div>";
   return;
  }
 
@@ -418,8 +418,8 @@ async function renderHSR(){
      <span class="timeline-date">${x.train||"Not set"}</span>
     </div>
     <div class="hsr-time-row">
-     <strong>${x.time||"Waktu belum diisi"}</strong>
-     <span>${x.station||"Stasiun belum diisi"}</span>
+     <strong>${x.time||"Time not set"}</strong>
+     <span>${x.station||"Station not set"}</span>
     </div>
    </div>
   </article>`).join("")}</div>`;
@@ -430,7 +430,7 @@ async function renderMembers(){
  $("#content").innerHTML=roomData.regions.map(region=>`
    <section class="simple-room-region">
      <div class="simple-region-title">
-       <span class="eyebrow">Pembagian Kamar</span>
+       <span class="eyebrow">Room Assignments</span>
        <h2>${region.name}</h2>
      </div>
 

@@ -45,13 +45,13 @@
         {
           "from": "02:15",
           "to": "09:30",
-          "activity": "Istirahat",
+          "activity": "Rest",
           "baiduMap": false
         },
         {
           "from": "09:30",
           "to": "10:00",
-          "activity": "Bangun, mandi dan sarapan",
+          "activity": "Wake up, shower and have breakfast",
           "baiduMap": false
         },
         {
@@ -69,7 +69,7 @@
         {
           "from": "11:00",
           "to": "12:00",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -87,7 +87,7 @@
         {
           "from": "13:00",
           "to": "14:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -105,7 +105,7 @@
         {
           "from": "15:30",
           "to": "17:00",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -123,13 +123,13 @@
         {
           "from": "18:00",
           "to": "19:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "activity": "Explore and have dinner",
           "baiduMap": false
         },
         {
           "from": "19:30",
           "to": "20:30",
-          "activity": "Tianzifang - The Bund, Lujiazui dan Oriental Pearl Tower",
+          "activity": "Tianzifang - The Bund, Lujiazui and Oriental Pearl Tower",
           "baiduMap": true,
           "route": {
             "originZh": "田子坊",
@@ -141,13 +141,13 @@
         {
           "from": "20:30",
           "to": "21:30",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
           "from": "21:30",
           "to": "23:00",
-          "activity": "The Bund, Lujiazui dan Oriental Pearl Tower - Jian Home Apartment",
+          "activity": "The Bund, Lujiazui and Oriental Pearl Tower - Jian Home Apartment",
           "baiduMap": true,
           "route": {
             "originZh": "东方明珠广播电视塔",
@@ -159,7 +159,7 @@
         {
           "from": "23:00",
           "to": "06:00",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -171,13 +171,13 @@
         {
           "from": "06:00",
           "to": "07:00",
-          "activity": "Bangun dan mandi",
+          "activity": "Wake up and shower",
           "baiduMap": false
         },
         {
           "from": "07:00",
           "to": "08:00",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast nearby or  饿了么",
           "baiduMap": false
         },
         {
@@ -195,7 +195,7 @@
         {
           "from": "09:00",
           "to": "10:00",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -213,7 +213,7 @@
         {
           "from": "10:15",
           "to": "12:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -231,7 +231,7 @@
         {
           "from": "14:00",
           "to": "16:00",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -249,7 +249,7 @@
         {
           "from": "17:00",
           "to": "21:00",
-          "activity": "Jalan-jalan dan makan malam",
+          "activity": "Explore and have dinner",
           "baiduMap": false
         },
         {
@@ -267,7 +267,7 @@
         {
           "from": "22:30",
           "to": "06:30",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -279,13 +279,13 @@
         {
           "from": "06:30",
           "to": "07:30",
-          "activity": "Bangun, mandi dan check-out",
+          "activity": "Wake up, shower and check out",
           "baiduMap": false
         },
         {
           "from": "07:30",
           "to": "08:30",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast nearby or  饿了么",
           "baiduMap": false
         },
         {
@@ -303,7 +303,7 @@
         {
           "from": "11:00",
           "to": "13:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -321,7 +321,7 @@
         {
           "from": "16:00",
           "to": "16:15",
-          "activity": "Ambil bagasi",
+          "activity": "Collect luggage",
           "baiduMap": false
         },
         {
@@ -339,7 +339,7 @@
         {
           "from": "17:45",
           "to": "19:52",
-          "activity": "Menunggu boarding HSR",
+          "activity": "Wait for HSR boarding",
           "baiduMap": false
         },
         {
@@ -351,7 +351,7 @@
         {
           "from": "20:18",
           "to": "20:30",
-          "activity": "Proses keluar stasiun",
+          "activity": "Exit the station",
           "baiduMap": false
         },
         {
@@ -375,7 +375,7 @@
         {
           "from": "22:00",
           "to": "07:00",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -387,13 +387,13 @@
         {
           "from": "07:00",
           "to": "08:00",
-          "activity": "Bangun dan mandi",
+          "activity": "Wake up and shower",
           "baiduMap": false
         },
         {
           "from": "08:00",
           "to": "09:00",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast nearby or  饿了么",
           "baiduMap": false
         },
         {
@@ -411,7 +411,7 @@
         {
           "from": "10:00",
           "to": "12:00",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -429,7 +429,7 @@
         {
           "from": "13:00",
           "to": "15:00",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -447,7 +447,7 @@
         {
           "from": "15:15",
           "to": "17:30",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -465,7 +465,7 @@
         {
           "from": "18:00",
           "to": "20:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "activity": "Explore and have dinner",
           "baiduMap": false
         },
         {
@@ -483,7 +483,7 @@
         {
           "from": "22:00",
           "to": "07:00",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -495,13 +495,13 @@
         {
           "from": "07:00",
           "to": "08:00",
-          "activity": "Bangun, mandi dan check-out",
+          "activity": "Wake up, shower and check out",
           "baiduMap": false
         },
         {
           "from": "08:00",
           "to": "09:00",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast nearby or  饿了么",
           "baiduMap": false
         },
         {
@@ -519,7 +519,7 @@
         {
           "from": "10:30",
           "to": "12:30",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -537,7 +537,7 @@
         {
           "from": "13:30",
           "to": "15:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -555,7 +555,7 @@
         {
           "from": "16:00",
           "to": "16:30",
-          "activity": "Ambil bagasi",
+          "activity": "Collect luggage",
           "baiduMap": false
         },
         {
@@ -573,7 +573,7 @@
         {
           "from": "17:30",
           "to": "18:52",
-          "activity": "Menunggu boarding HSR dan makan malam",
+          "activity": "Wait for HSR boarding dan dinner",
           "baiduMap": false
         },
         {
@@ -585,7 +585,7 @@
         {
           "from": "20:25",
           "to": "20:40",
-          "activity": "Proses keluar stasiun",
+          "activity": "Exit the station",
           "baiduMap": false
         },
         {
@@ -609,7 +609,7 @@
         {
           "from": "22:30",
           "to": "06:30",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -621,13 +621,13 @@
         {
           "from": "06:30",
           "to": "07:30",
-          "activity": "Bangun dan mandi",
+          "activity": "Wake up and shower",
           "baiduMap": false
         },
         {
           "from": "07:30",
           "to": "08:30",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast nearby or  饿了么",
           "baiduMap": false
         },
         {
@@ -645,7 +645,7 @@
         {
           "from": "10:00",
           "to": "12:30",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -663,7 +663,7 @@
         {
           "from": "13:30",
           "to": "17:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -681,7 +681,7 @@
         {
           "from": "14:30",
           "to": "16:30",
-          "activity": "Jalan-jalan",
+          "activity": "Explore",
           "baiduMap": false
         },
         {
@@ -699,7 +699,7 @@
         {
           "from": "17:30",
           "to": "20:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "activity": "Explore and have dinner",
           "baiduMap": false
         },
         {
@@ -717,7 +717,7 @@
         {
           "from": "21:30",
           "to": "06:30",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -729,13 +729,13 @@
         {
           "from": "06:30",
           "to": "08:30",
-          "activity": "Bangun dan mandi",
+          "activity": "Wake up and shower",
           "baiduMap": false
         },
         {
           "from": "08:30",
           "to": "09:30",
-          "activity": "Sarapan di sekitar atau 饿了么",
+          "activity": "Breakfast nearby or  饿了么",
           "baiduMap": false
         },
         {
@@ -753,7 +753,7 @@
         {
           "from": "10:30",
           "to": "13:30",
-          "activity": "Jalan-jalan dan makan siang",
+          "activity": "Explore and have lunch",
           "baiduMap": false
         },
         {
@@ -771,7 +771,7 @@
         {
           "from": "15:30",
           "to": "21:30",
-          "activity": "Jalan-jalan dan makan malam",
+          "activity": "Explore and have dinner",
           "baiduMap": false
         },
         {
@@ -789,7 +789,7 @@
         {
           "from": "22:30",
           "to": "02:30",
-          "activity": "Mandi dan istirahat",
+          "activity": "Shower and rest",
           "baiduMap": false
         }
       ]
@@ -801,7 +801,7 @@
         {
           "from": "02:30",
           "to": "03:30",
-          "activity": "Bangun, mandi dan check-out",
+          "activity": "Wake up, shower and check out",
           "baiduMap": false
         },
         {
@@ -819,7 +819,7 @@
         {
           "from": "05:00",
           "to": "08:20",
-          "activity": "Menunggu boarding pesawat dan sarapan",
+          "activity": "Wait for flight boarding and have breakfast",
           "baiduMap": false
         },
         {
@@ -843,7 +843,7 @@
         {
           "from": "17:05",
           "to": "19:20",
-          "activity": "Menunggu boarding ferry",
+          "activity": "Wait for ferry boarding",
           "baiduMap": false
         },
         {

@@ -3,45 +3,45 @@
     "title": "Internet & Roaming",
     "icon": "📶",
     "items": [
-      "Aktifkan paket roaming sebelum keberangkatan.",
-      "Simpan screenshot alamat hotel dan itinerary untuk kondisi tanpa internet.",
-      "Pastikan aplikasi komunikasi utama sudah login sebelum tiba di China."
+      "Activate your roaming package before departure.",
+      "Save screenshots of your hotel address and itinerary for offline use.",
+      "Make sure your main communication apps are signed in before arriving in China."
     ]
   },
   {
-    "title": "Pembayaran",
+    "title": "Payments",
     "icon": "💳",
     "items": [
-      "Gunakan Alipay atau WeChat Pay sesuai akun yang sudah disiapkan.",
-      "Simpan sedikit uang tunai RMB sebagai cadangan.",
-      "Periksa metode pembayaran sebelum memesan makanan atau kendaraan."
+      "Use Alipay or WeChat Pay with the accounts you have prepared.",
+      "Keep some RMB cash as a backup.",
+      "Check the payment method before ordering food or transport."
     ]
   },
   {
-    "title": "Metro & Transportasi",
+    "title": "Metro & Transportation",
     "icon": "🚇",
     "items": [
-      "Gunakan peta metro yang sudah disimpan secara offline.",
-      "Pastikan nama stasiun tujuan tersedia dalam bahasa Mandarin.",
-      "Untuk taksi atau Didi, tunjukkan alamat lengkap dalam bahasa Mandarin."
+      "Use an offline metro map.",
+      "Make sure the destination station name is available in Chinese.",
+      "For taxis or Didi, show the full address in Chinese."
     ]
   },
   {
-    "title": "Perlengkapan",
+    "title": "Packing & Equipment",
     "icon": "🔌",
     "items": [
-      "Bawa adaptor universal.",
-      "Bawa power bank dan kabel pengisi daya.",
-      "Gunakan sepatu yang nyaman untuk berjalan jauh."
+      "Bring a universal travel adapter.",
+      "Bring a power bank and charging cable.",
+      "Wear comfortable shoes for long walks."
     ]
   },
   {
-    "title": "Keamanan",
+    "title": "Safety",
     "icon": "🛡️",
     "items": [
-      "Jangan berjalan sendiri tanpa memberi tahu ketua rombongan.",
-      "Simpan paspor dan dokumen penting di tempat aman.",
-      "Gunakan tombol Emergency pada halaman utama saat membutuhkan bantuan."
+      "Do not travel alone without informing the group leader.",
+      "Keep your passport and important documents in a safe place.",
+      "Use the Emergency button on the home page when you need help."
     ]
   }
 ]

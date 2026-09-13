@@ -4,7 +4,7 @@
     "name": "Septino",
     "email": "septinogao@gmail.com",
     "member": 1,
-    "room": "Kamar 1",
+    "room": "Room 1",
     "roommates": "Lina & Raelyn",
     "flightGroup": "group-a",
     "seat": "59H",
@@ -18,14 +18,14 @@
     "publicWhatsapp": "628116946999",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "lina",
     "name": "Lina",
     "email": "sightniner@gmail.com",
     "member": 2,
-    "room": "Kamar 1",
+    "room": "Room 1",
     "roommates": "Septino & Raelyn",
     "flightGroup": "group-a",
     "seat": "59J",
@@ -39,14 +39,14 @@
     "publicWhatsapp": "6282284879722",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "astina",
     "name": "Astina Fanfani",
     "email": "astinafanfani99@gmail.com",
     "member": 3,
-    "room": "Kamar 2",
+    "room": "Room 2",
     "roommates": "Cindy & Devia",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -60,14 +60,14 @@
     "publicWhatsapp": "6281270566101",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "cindy",
     "name": "Cindy Amelia Fortuna",
     "email": "amelliaacin@gmail.com",
     "member": 4,
-    "room": "Kamar 2",
+    "room": "Room 2",
     "roommates": "Astina & Devia",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -81,15 +81,15 @@
     "publicWhatsapp": "6281261109667",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "rikko",
     "name": "Rikko Supriyadi",
     "email": "rikkosupryadi26@gmail.com",
     "member": 5,
-    "room": "Belum diisi",
-    "roommates": "Belum diisi",
+    "room": "Not set",
+    "roommates": "Not set",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
     "whatsapp": "",
@@ -102,14 +102,14 @@
     "publicWhatsapp": "",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "devia",
     "name": "Devia",
     "email": "siladevidevia@gmail.com",
     "member": 6,
-    "room": "Kamar 2",
+    "room": "Room 2",
     "roommates": "Astina & Cindy",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -123,14 +123,14 @@
     "publicWhatsapp": "6285835294668",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "yongki",
     "name": "Yongki Wijaya",
     "email": "",
     "member": 7,
-    "room": "Kamar 3",
+    "room": "Room 3",
     "roommates": "Prianto",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -144,14 +144,14 @@
     "publicWhatsapp": "6281268419799",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "prianto",
     "name": "Prianto",
     "email": "",
     "member": 8,
-    "room": "Kamar 3",
+    "room": "Room 3",
     "roommates": "Yongki",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -165,14 +165,14 @@
     "publicWhatsapp": "6281388885292",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "fredy",
     "name": "Fredy Lim",
     "email": "fredylim372@gmail.com",
     "member": 9,
-    "room": "Kamar 5",
+    "room": "Room 5",
     "roommates": "Lg Tan",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -186,14 +186,14 @@
     "publicWhatsapp": "6282255348259",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "apryanto",
     "name": "Apryanto",
     "email": "apryanto.chen@gmail.com",
     "member": 10,
-    "room": "Kamar 4",
+    "room": "Room 4",
     "roommates": "Irin",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -207,14 +207,14 @@
     "publicWhatsapp": "6282170809390",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "raelyn",
     "name": "Raelyn Xenaria Jayanthi",
     "email": "jayanthiraelynxenaria@gmail.com",
     "member": 11,
-    "room": "Kamar 1",
+    "room": "Room 1",
     "roommates": "Septino & Lina",
     "flightGroup": "group-a",
     "seat": "59K",
@@ -228,14 +228,14 @@
     "publicWhatsapp": "628116946999",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "irin",
     "name": "Irin Enzelin",
     "email": "irinenzelin20@gmail.com",
     "member": 12,
-    "room": "Kamar 4",
+    "room": "Room 4",
     "roommates": "Apryanto",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
@@ -249,6 +249,6 @@
     "publicWhatsapp": "6281277122263",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "Jika ditemukan, mohon hubungi pemilik koper."
+    "publicNote": "If found, please contact the luggage owner."
   }
 ]

@@ -55,11 +55,11 @@
           "terminal": "Terminal 3",
           "time": "13:50"
         },
-        "referenceCode": "Belum diisi",
+        "referenceCode": "Not set",
         "baggage": {
-          "personalItem": "Belum diisi",
-          "cabin": "Belum diisi",
-          "checked": "Belum diisi"
+          "personalItem": "Not set",
+          "cabin": "Not set",
+          "checked": "Not set"
         },
         "seats": {}
       }
@@ -95,11 +95,11 @@
           "terminal": "Terminal 2",
           "time": "22:55"
         },
-        "referenceCode": "Belum diisi",
+        "referenceCode": "Not set",
         "baggage": {
-          "personalItem": "Belum diisi",
-          "cabin": "Belum diisi",
-          "checked": "Belum diisi"
+          "personalItem": "Not set",
+          "cabin": "Not set",
+          "checked": "Not set"
         },
         "seats": {}
       },
@@ -121,11 +121,11 @@
           "terminal": "Terminal 3",
           "time": "13:50"
         },
-        "referenceCode": "Belum diisi",
+        "referenceCode": "Not set",
         "baggage": {
-          "personalItem": "Belum diisi",
-          "cabin": "Belum diisi",
-          "checked": "Belum diisi"
+          "personalItem": "Not set",
+          "cabin": "Not set",
+          "checked": "Not set"
         },
         "seats": {}
       }

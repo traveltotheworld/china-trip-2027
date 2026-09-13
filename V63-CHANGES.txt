@@ -1,0 +1,7 @@
+V63 — Full English UI + polished visual refresh
+- Home/travel menu labels translated to English.
+- Itinerary visible labels and itinerary content translated to English where applicable.
+- Luggage QR/contact UI remains English, with WhatsApp + Email actions.
+- Admin labels, help text, settings and common status messages translated to English.
+- Premium responsive visual styling added across the main app and admin.
+- Proper names and Chinese map/search fields are preserved where they are identifiers or navigation data.
