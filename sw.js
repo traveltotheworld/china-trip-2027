@@ -1,4 +1,4 @@
-const CACHE="china-trip-v53-hybrid-nfc-qr";
+const CACHE="china-trip-v54-hybrid-nfc-qr";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",

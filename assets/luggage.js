@@ -3,7 +3,6 @@
  const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[m]));
  const idRaw=new URLSearchParams(location.search).get("id")||"";
  const id=idRaw.toLowerCase()==="rico"?"rikko":idRaw.toLowerCase();
- const itineraryUrl=`itinerary.html?id=${encodeURIComponent(id)}`;
  const waLink=v=>{const n=String(v||"").replace(/\D/g,"");return n?`https://wa.me/${n}`:""};
  async function getMembers(){
   try{const online=window.ChinaTripDB&&await window.ChinaTripDB.readKey("luggage_tags");if(Array.isArray(online))return online}catch(e){}
@@ -33,7 +32,7 @@
     <h1 class="luggage-title">Jika Anda menemukan koper ini</h1>
     <p class="luggage-sub">Mohon bantu hubungi pemilik melalui informasi di bawah.</p>
     <div class="luggage-grid">${rows.join("")||'<div class="luggage-row">Informasi kontak belum diaktifkan.</div>'}</div>
-    <div class="luggage-actions">${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener">💬 Hubungi WhatsApp</a>`:""}<a class="luggage-btn" href="${itineraryUrl}">✈️ Buka Itinerary</a></div>
+    <div class="luggage-actions">${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener">💬 Hubungi WhatsApp</a>`:""}</div>
     <div class="luggage-privacy">🔒 Halaman ini hanya menampilkan data pribadi yang dipilih admin. Data itinerary berada di halaman terpisah.</div>`;
    document.title=`Luggage ${luggageId} — China Trip 2027`;
   }catch(e){$("#luggageContent").innerHTML=`<div class="luggage-error"><strong>Data tidak dapat dimuat.</strong><br>${esc(e.message)}<br><br>Jika sedang offline, halaman ini harus sudah pernah dibuka/cache di perangkat.</div>`}
