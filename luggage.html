@@ -5,47 +5,33 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#12345b">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="assets/style.css?v=59">
+<link rel="stylesheet" href="assets/style.css?v=60">
 <title>Luggage Tag — China Trip 2027</title>
 <style>
-:root{--navy:#12345b;--ink:#10233d;--muted:#66778d;--cream:#f8f0e2;--green:#18a768;--gold:#c98b22}
+:root{--ink:#102542;--muted:#72839a;--line:#e5edf4;--soft:#f4f8fc;--green:#19ad70;--green-dark:#11915d}
 *{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
-body{background:radial-gradient(circle at 50% 0,#e8f3fc 0,#f5f8fb 43%,#e9e5dc 100%);padding:8px 0}
-.luggage-shell{width:100%;height:calc(100svh - 16px);max-width:420px;margin:0 auto;padding:0 6px}
-.luggage-card{height:100%;overflow:hidden;position:relative;border-radius:28px;background:#fbf4e8;box-shadow:0 18px 50px rgba(18,52,91,.20),0 3px 14px rgba(0,0,0,.08);border:1px solid rgba(18,52,91,.1);display:grid;grid-template-rows:31% 57% 12%}
-.luggage-hero{min-height:0;position:relative;overflow:hidden;background:radial-gradient(circle at 70% 22%,rgba(255,255,255,.95),transparent 28%),linear-gradient(145deg,#fffaf1 0%,#f8efdf 58%,#f1e4d2 100%)}
-.luggage-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0) 70%,rgba(255,249,239,.3));pointer-events:none}
-.luggage-hanger{position:absolute;z-index:4;top:-2px;left:50%;transform:translateX(-50%);width:66px;height:72px;background:linear-gradient(90deg,#102e4e,#1b466d 50%,#102e4e);border-radius:0 0 22px 22px;box-shadow:inset 4px 0 7px rgba(255,255,255,.12),inset -4px 0 7px rgba(0,0,0,.18)}
-.luggage-hanger:before,.luggage-hanger:after{content:"";position:absolute;top:8px;width:2px;height:82px;background:repeating-linear-gradient(to bottom,#dce7f2 0 6px,transparent 6px 11px);opacity:.9}.luggage-hanger:before{left:15px}.luggage-hanger:after{right:15px}
-.luggage-ring{position:absolute;z-index:5;top:56px;left:50%;transform:translateX(-50%);width:80px;height:46px;border:8px solid #7f8588;border-top-color:#c3c4bd;border-radius:0 0 40px 40px;box-shadow:0 4px 10px rgba(0,0,0,.22)}
-.travel-word{position:absolute;left:22px;top:64px;font-family:"Brush Script MT","Segoe Script",cursive;font-size:48px;line-height:1;color:#17395d;letter-spacing:-.05em;transform:rotate(-4deg)}
-.travel-kicker{position:absolute;right:20px;top:20px;color:#17395d;font-size:8px;font-weight:900;letter-spacing:.17em;line-height:1.7;text-align:right}.travel-kicker:after{content:"";display:block;width:24px;height:3px;background:#d9423e;margin:7px 0 0 auto;border-radius:4px}
-.travel-motto{position:absolute;left:25px;top:122px;color:#17395d;font-size:10px;font-weight:800;letter-spacing:.18em;line-height:1.7}
-.travel-stamp{position:absolute;right:24px;top:70px;width:54px;height:54px;border:3px solid rgba(208,70,66,.45);border-radius:50%;display:grid;place-items:center;color:rgba(208,70,66,.65);font-size:25px;transform:rotate(8deg);box-shadow:0 0 0 6px rgba(208,70,66,.08)}
-.travel-route{position:absolute;left:25px;right:25px;top:30px;color:#d34d47;font-size:14px;letter-spacing:5px;transform:rotate(-8deg);opacity:.85}
-.luggage-tag-icon{position:absolute;z-index:5;left:18px;bottom:-23px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid rgba(18,52,91,.1);box-shadow:0 9px 22px rgba(18,52,91,.15);font-size:27px}
-.luggage-body{min-height:0;position:relative;z-index:3;margin:0 8px;padding:40px 12px 10px;border-radius:22px 22px 16px 16px;background:rgba(255,255,255,.95);box-shadow:0 4px 14px rgba(18,52,91,.09);overflow:hidden}
-.luggage-title{margin:0 0 5px;font-size:clamp(21px,6vw,27px);line-height:1.03;letter-spacing:-.045em;color:#122641;font-weight:900}
-.luggage-sub{margin:0 0 9px;color:#5e7186;line-height:1.28;font-size:11.5px}
-.luggage-grid{display:grid;gap:6px}.luggage-row{display:flex;align-items:center;gap:10px;padding:7px 9px;border-radius:13px;background:linear-gradient(100deg,#f1f7fc,#edf3f8);border:1px solid #e3ebf3;min-height:42px}.luggage-row-icon{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:grid;place-items:center;background:#e4eff9;font-size:17px}.luggage-row-content{min-width:0}.luggage-label{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.13em;color:#708095;margin-bottom:2px;font-weight:850}.luggage-value{font-size:12.5px;font-weight:850;overflow-wrap:anywhere;line-height:1.12}
-.luggage-actions{margin-top:9px}.luggage-btn{width:100%;min-height:42px;display:flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:14px;text-decoration:none;font-size:13px;font-weight:900;background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(24,167,104,.20)}.luggage-btn span{font-size:21px;line-height:0}
-.luggage-privacy{margin-top:7px;padding:8px 10px;border-radius:12px;background:#fff2d9;color:#76521e;border:1px solid #f1dfbd;font-size:9.5px;line-height:1.28}
-.luggage-footer{min-height:0;padding:28px 12px 7px;background:linear-gradient(180deg,#fbf3e5,#f5eadb);text-align:center;color:#6f7d8e;position:relative;overflow:hidden}.luggage-footer:before{content:'✈︎  ·  ·  ·  ·  ·  ';position:absolute;top:7px;left:50%;transform:translateX(-50%) rotate(-4deg);white-space:nowrap;color:#17395d;font-size:12px;letter-spacing:6px}.luggage-footer:after{content:'EXPLORE  ·  TOGETHER  ·  CREATE MEMORIES';display:block;color:#183555;font-size:8px;letter-spacing:.13em;font-weight:800}
-.luggage-error{margin:15px;padding:16px;border-radius:16px;background:#fff0f0;color:#a33}.luggage-loading{padding:40px 16px;text-align:center;color:#64748b}
-@media (max-height:700px){
- body{padding:4px 0}.luggage-shell{height:calc(100svh - 8px)}
- .luggage-card{grid-template-rows:28% 60% 12%;border-radius:24px}
- .travel-word{top:53px;font-size:40px}.travel-motto{top:104px;font-size:8px}.travel-stamp{top:60px;width:47px;height:47px;font-size:21px}.luggage-ring{top:48px;width:70px;height:40px}.luggage-hanger{width:58px;height:62px}
- .luggage-body{margin:0 7px;padding:34px 10px 8px}.luggage-title{font-size:20px}.luggage-sub{font-size:10px;margin-bottom:7px}.luggage-grid{gap:4px}.luggage-row{min-height:36px;padding:5px 7px;border-radius:11px}.luggage-row-icon{width:29px;height:29px;flex-basis:29px;font-size:14px}.luggage-label{font-size:7px}.luggage-value{font-size:11px}.luggage-actions{margin-top:6px}.luggage-btn{min-height:37px;font-size:11.5px;border-radius:12px}.luggage-privacy{margin-top:5px;padding:6px 8px;font-size:8.5px}.luggage-footer{padding-top:23px}.luggage-footer:after{font-size:7px}
-}
-@media (min-width:700px){body{padding-top:10px}.luggage-shell{max-width:420px}}
+html,body{margin:0;width:100%;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+body{background:linear-gradient(180deg,#f5f8fc 0%,#edf3f8 100%);padding:16px}
+.luggage-shell{width:100%;min-height:calc(100svh - 32px);max-width:430px;margin:auto;display:flex;align-items:center;justify-content:center}
+.luggage-card{width:100%;min-height:0;background:transparent;overflow:visible}
+.contact-card{background:rgba(255,255,255,.98);border:1px solid rgba(16,37,66,.07);border-radius:28px;padding:22px 18px 18px;box-shadow:0 22px 55px rgba(20,50,80,.13),0 4px 14px rgba(20,50,80,.05)}
+.contact-top{display:flex;gap:13px;align-items:flex-start;margin-bottom:17px}
+.contact-icon{width:54px;height:54px;flex:0 0 54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,#eaf4ff,#dcecfb);font-size:25px;box-shadow:inset 0 1px 0 #fff}
+.contact-eyebrow{font-size:9px;font-weight:900;letter-spacing:.18em;color:#7890aa;margin:1px 0 5px}
+.luggage-title{margin:0;font-size:clamp(22px,6vw,29px);line-height:1.04;letter-spacing:-.045em;font-weight:900;color:var(--ink)}
+.luggage-sub{margin:7px 0 0;color:var(--muted);font-size:11.5px;line-height:1.4}
+.luggage-grid{display:grid;gap:8px}.luggage-row{display:flex;align-items:center;gap:11px;padding:9px 10px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,#f8fbfe,#f0f6fb);min-height:55px}.luggage-row-icon{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:grid;place-items:center;background:#e5f0fa;font-size:17px}.luggage-row-content{min-width:0}.luggage-label{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.16em;color:#7a8ba0;font-weight:900;margin-bottom:3px}.luggage-value{font-size:13px;line-height:1.18;font-weight:850;overflow-wrap:anywhere;color:#142b48}
+.luggage-btn{margin-top:11px;width:100%;min-height:49px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:16px;text-decoration:none;font-size:14px;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--green),var(--green-dark));box-shadow:0 10px 22px rgba(25,173,112,.23);transition:transform .15s ease,box-shadow .15s ease}.luggage-btn:active{transform:scale(.985);box-shadow:0 6px 14px rgba(25,173,112,.2)}.luggage-btn b{font-size:24px;font-weight:500;line-height:0;margin-left:2px}.wa-mark{width:27px;height:27px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:15px;line-height:1}
+.contact-note{margin-top:10px;text-align:center;color:#91a0b1;font-size:8.5px;line-height:1.35}
+.luggage-error{background:#fff;border:1px solid #f0d8d8;border-radius:20px;padding:20px;color:#a33;box-shadow:0 12px 35px rgba(20,50,80,.08)}.luggage-loading{padding:30px;text-align:center;color:#64748b}
+@media (max-height:720px){body{padding:10px}.luggage-shell{min-height:calc(100svh - 20px)}.contact-card{padding:16px 14px 13px;border-radius:23px}.contact-top{gap:10px;margin-bottom:11px}.contact-icon{width:44px;height:44px;flex-basis:44px;border-radius:14px;font-size:21px}.contact-eyebrow{font-size:7px;margin-bottom:3px}.luggage-title{font-size:20px}.luggage-sub{font-size:9.5px;margin-top:4px}.luggage-grid{gap:5px}.luggage-row{min-height:42px;padding:6px 8px;border-radius:12px;gap:8px}.luggage-row-icon{width:29px;height:29px;flex-basis:29px;font-size:14px}.luggage-label{font-size:6.5px;margin-bottom:1px}.luggage-value{font-size:10.5px}.luggage-btn{margin-top:7px;min-height:39px;border-radius:12px;font-size:11px}.luggage-btn b{font-size:19px}.wa-mark{width:22px;height:22px;font-size:12px}.contact-note{margin-top:6px;font-size:7px}}
+@media (min-width:700px){body{padding:20px}.luggage-shell{max-width:430px}}
 </style>
 </head>
 <body>
 <main class="luggage-shell"><section id="luggageContent" class="luggage-card"><div class="luggage-loading">Memuat informasi koper…</div></section></main>
 <script src="assets/supabase-config.js"></script>
 <script src="assets/supabase-data.js"></script>
-<script src="assets/luggage.js?v=59"></script>
+<script src="assets/luggage.js?v=60"></script>
 </body>
 </html>

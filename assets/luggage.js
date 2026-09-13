@@ -29,24 +29,19 @@
    if(m.publicNote)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">💬</div><div class="luggage-row-content"><span class="luggage-label">Pesan</span><div class="luggage-value">${esc(m.publicNote)}</div></div></div>`);
    const wa=showWa?waLink(whatsapp):"";
    $("#luggageContent").innerHTML=`
-    <div class="luggage-hero">
-      <div class="luggage-hanger" aria-hidden="true"></div>
-      <div class="luggage-ring" aria-hidden="true"></div>
-      <div class="travel-word">Travel</div>
-      <div class="travel-kicker">TRAVEL · DISCOVER · MORE</div>
-      <div class="travel-motto">EXPLORE<br>TOGETHER<br>CREATE MEMORIES</div>
-      <div class="travel-stamp" aria-hidden="true">✈</div>
-      <div class="travel-route" aria-hidden="true">✈ · · · · · · · ·</div>
-      <div class="luggage-tag-icon" aria-hidden="true">🧳</div>
-    </div>
-    <div class="luggage-body">
-      <h1 class="luggage-title">Jika Anda menemukan koper ini</h1>
-      <p class="luggage-sub">Mohon bantu hubungi pemilik melalui informasi di bawah. Terima kasih ❤️</p>
+    <div class="contact-card">
+      <div class="contact-top">
+        <div class="contact-icon">🧳</div>
+        <div>
+          <div class="contact-eyebrow">LUGGAGE CONTACT</div>
+          <h1 class="luggage-title">Jika Anda menemukan koper ini</h1>
+          <p class="luggage-sub">Mohon bantu hubungi pemilik melalui informasi di bawah. Terima kasih ❤️</p>
+        </div>
+      </div>
       <div class="luggage-grid">${rows.join("")||'<div class="luggage-row"><div class="luggage-row-icon">🔒</div><div class="luggage-row-content"><div class="luggage-value">Informasi kontak belum diaktifkan.</div></div></div>'}</div>
-      <div class="luggage-actions">${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener">💬 Hubungi via WhatsApp <span>›</span></a>`:""}</div>
-      <div class="luggage-privacy">🔒 Halaman ini hanya menampilkan data pribadi yang dipilih admin. Data itinerary berada di halaman terpisah.</div>
-    </div>
-    <div class="luggage-footer" aria-label="Travel footer"></div>`;
+      ${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener"><span class="wa-mark">⌕</span><span>Hubungi via WhatsApp</span><b>›</b></a>`:""}
+      <div class="contact-note">Informasi yang ditampilkan hanya data pribadi yang diizinkan pemilik.</div>
+    </div>`;
    document.title=`Luggage ${luggageId} — China Trip 2027`;
   }catch(e){$("#luggageContent").innerHTML=`<div class="luggage-error"><strong>Data tidak dapat dimuat.</strong><br>${esc(e.message)}<br><br>Jika sedang offline, halaman ini harus sudah pernah dibuka/cache di perangkat.</div>`}
  }
