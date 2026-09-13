@@ -460,6 +460,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
  outline:3px solid rgba(255,210,123,.7);
  outline-offset:3px;
 }
+.profile-expand-hint{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.58);white-space:nowrap;align-self:center;transition:color .2s ease}
 .profile-chevron{
  margin-left:auto;
  font-size:22px;
@@ -467,7 +468,8 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
  color:rgba(255,255,255,.8);
  transition:transform .22s ease;
 }
-.profile-trigger.is-open .profile-chevron{transform:rotate(180deg)}
+.profile-trigger.is-open .profile-expand-hint{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.58);white-space:nowrap;align-self:center;transition:color .2s ease}
+.profile-chevron{transform:rotate(180deg)}
 .travel-menu-section[hidden]{display:none!important}
 .travel-menu-section{
  animation:travelMenuReveal .28s ease both;
@@ -765,7 +767,7 @@ footer,
 .hero-v30 .profile-copy strong{display:block;color:#fff;font-size:14px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hero-v30 .profile-copy span{display:block;color:rgba(255,255,255,.68);font-size:11px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hero-v30 .avatar{width:52px;height:52px;border-radius:15px;font-size:21px}.hero-v30 .status{width:9px;height:9px}
-@media(max-width:390px){.hero-v30{min-height:640px}.hero-v30-content{min-height:640px;padding-bottom:12px}.hero-v30 .profile-trigger{grid-template-columns:48px minmax(0,1fr) auto auto;gap:8px;padding:9px 10px;border-radius:17px}.hero-v30 .avatar{width:48px;height:48px;border-radius:14px;font-size:20px}.hero-v30 .profile-copy strong{font-size:13px}.hero-v30 .profile-copy span{font-size:10px}}
+@media(max-width:390px){.hero-v30{min-height:640px}.hero-v30-content{min-height:640px;padding-bottom:12px}.hero-v30 .profile-trigger{grid-template-columns:48px minmax(0,1fr) auto auto;gap:8px;padding:9px 10px;border-radius:17px}.hero-v30 .avatar{width:48px;height:48px;border-radius:14px;font-size:20px}.hero-v30 .profile-copy strong{font-size:13px}.hero-v30 .profile-copy span{font-size:10px}.hero-v30 .profile-expand-hint{display:none}.hero-v30 .profile-chevron{width:27px;height:27px;font-size:19px}}
 
 
 /* V68 — true mobile-first public shell */

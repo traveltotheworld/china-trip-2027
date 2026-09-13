@@ -1,0 +1,5 @@
+V70 – Profile Expand Affordance
+- Added clear “Tap to expand” cue to the traveler profile card.
+- Added circular chevron button treatment and hover/active feedback.
+- Keeps the card fully clickable and preserves existing expand/collapse behavior.
+- Hint hides on very small screens to keep the mobile card compact.
