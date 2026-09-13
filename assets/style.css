@@ -938,3 +938,47 @@ body:has(.app){min-width:320px;}
 .hotel-room-card{padding:13px;border:1px solid #e8ecef;border-radius:14px;background:#f9fafb}.hotel-room-card strong{font-size:13px}.hotel-room-card .room-count{display:block;margin:3px 0 8px;color:var(--muted);font-size:11px}.hotel-room-card ul{margin:0;padding-left:17px;color:#3d4853;font-size:12px;line-height:1.55}
 .travel-menu-button{background:linear-gradient(135deg,#c18b3d,#e4b763)!important;color:#17212b!important}
 @media(max-width:420px){.hotel-city-card{padding:15px;border-radius:19px}.hotel-city-copy h2{font-size:20px}}
+
+/* V77 — rebuilt responsive admin CMS shell */
+.simple-admin-body{background:#eef1f4;color:#17212b;min-height:100vh}
+.simple-admin-body .simple-admin-shell{width:100%;min-height:100vh;margin:0}
+.simple-login-card{width:min(430px,calc(100% - 32px));margin:10vh auto 0;background:#fff;border:1px solid #e3e7eb;border-radius:26px;padding:32px;box-shadow:0 20px 60px rgba(17,24,32,.12)}
+.simple-login-logo,.simple-brand-icon{display:grid;place-items:center;background:linear-gradient(145deg,#e2bb73,#b98435);color:#111820;font-weight:950;letter-spacing:-.04em}
+.simple-login-logo{width:58px;height:58px;border-radius:18px;font-size:20px;margin-bottom:18px}
+.simple-login-card h1{margin:6px 0 8px;font-size:30px;letter-spacing:-.035em}
+.simple-admin-app{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh;background:#f4f6f8}
+.simple-admin-sidebar{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:20px 14px;background:#111820;color:#fff;z-index:20}
+.simple-admin-brand{display:flex;align-items:center;gap:11px;padding:4px 7px 20px}
+.simple-brand-icon{width:40px;height:40px;border-radius:12px;font-size:13px;flex:0 0 auto}
+.simple-admin-brand strong,.simple-admin-brand small{display:block}.simple-admin-brand strong{font-size:14px}.simple-admin-brand small{font-size:11px;color:#9da8b2;margin-top:3px}
+.simple-admin-menu{display:grid;gap:5px;overflow:auto;padding-right:2px}
+.simple-admin-menu button{appearance:none;border:1px solid transparent;background:transparent;color:#c9d0d6;width:100%;display:flex;align-items:center;gap:9px;text-align:left;padding:10px 10px;border-radius:12px;font:inherit;font-size:12px;font-weight:750;cursor:pointer;transition:.16s ease}
+.simple-admin-menu button:hover{background:rgba(255,255,255,.07);color:#fff}
+.simple-admin-menu button.active{background:#fff;color:#111820;box-shadow:0 4px 16px rgba(0,0,0,.14)}
+.simple-menu-icon{width:24px;text-align:center;font-size:15px;flex:0 0 24px}
+.simple-admin-sidebar-bottom{margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);display:grid;gap:7px}
+.simple-side-link{display:flex;align-items:center;justify-content:center;min-height:38px;padding:9px 10px;border-radius:11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.simple-admin-main{min-width:0;padding:30px clamp(18px,3vw,42px) 50px}
+.simple-admin-topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;max-width:1250px;margin:0 auto 20px}
+.simple-admin-topbar h1{font-size:34px;line-height:1.1;margin:6px 0 8px;letter-spacing:-.04em}.simple-admin-topbar .lead{font-size:14px}
+.publish-area{display:flex;align-items:center;gap:9px;padding-top:4px}.draft-count,.simple-save-status{font-size:11px;font-weight:850;padding:8px 10px;border-radius:999px;background:#fff;border:1px solid #e1e5e9;color:#66717c;white-space:nowrap}.simple-save-status.changed{color:#9a6d28;background:#fff8ea;border-color:#ead6ad}
+.publish-button{border:0;border-radius:12px;background:#d4a85b;color:#111820;padding:11px 16px;font:inherit;font-size:12px;font-weight:900;cursor:pointer;box-shadow:0 6px 18px rgba(184,139,66,.2)}
+.simple-editor-card,.simple-backup-card{max-width:1250px;margin:0 auto;background:#fff;border:1px solid #e1e6ea;border-radius:22px;box-shadow:0 12px 35px rgba(17,24,32,.06);overflow:hidden}
+.simple-sticky-actions{display:flex;justify-content:flex-end;gap:9px;padding:14px 18px;border-top:1px solid #e6eaee;background:rgba(255,255,255,.96);position:sticky;bottom:0;z-index:10}
+.simple-welcome-card{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px;background:linear-gradient(135deg,#fff,#fbf7ee);border-bottom:1px solid #ece4d6}
+.simple-welcome-card h2{margin:7px 0 8px;font-size:25px;letter-spacing:-.03em}.simple-welcome-card p{margin:0;color:var(--muted);font-size:14px}
+.simple-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px;background:#f7f9fb}
+.simple-stat-grid button{border:1px solid #e1e6ea;background:#fff;border-radius:16px;padding:16px;text-align:left;cursor:pointer;transition:.16s ease}.simple-stat-grid button:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(17,24,32,.06)}.simple-stat-grid strong,.simple-stat-grid span{display:block}.simple-stat-grid strong{font-size:25px}.simple-stat-grid span{margin-top:3px;color:var(--muted);font-size:11px;font-weight:750}
+.simple-quick-card,.simple-help-card{padding:20px 18px;border-top:1px solid #e6eaee}.simple-quick-card h3,.simple-help-card h3{margin:0 0 14px;font-size:18px}.simple-quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.simple-quick-grid button{display:grid;grid-template-columns:32px 1fr;column-gap:8px;align-items:center;border:1px solid #e1e6ea;background:#fff;border-radius:14px;padding:12px;text-align:left;cursor:pointer}.simple-quick-grid button span{grid-row:1/3;font-size:17px}.simple-quick-grid strong{font-size:12px}.simple-quick-grid small{color:var(--muted);font-size:10px;line-height:1.35;margin-top:2px}.simple-help-card>div{display:flex;align-items:center;gap:10px;margin:8px 0;color:#56616c;font-size:13px}.simple-help-card b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#f1f3f5;color:#111820;font-size:11px}
+.simple-backup-card{margin-top:18px;padding:0}.simple-backup-card details{padding:16px 18px}.simple-backup-card summary{font-weight:850;cursor:pointer}.simple-backup-card .lead{margin:10px 0;font-size:13px}
+.simple-admin-body [hidden]{display:none!important}
+@media(max-width:900px){
+ .simple-admin-app{display:block}
+ .simple-admin-sidebar{position:sticky;top:0;height:auto;padding:10px 12px;box-shadow:0 5px 20px rgba(0,0,0,.12)}
+ .simple-admin-brand{padding:2px 5px 9px}.simple-admin-menu{display:flex;overflow-x:auto;gap:5px;padding-bottom:1px}.simple-admin-menu button{width:auto;min-width:max-content;padding:8px 10px}.simple-admin-sidebar-bottom{display:flex;margin:8px 0 0;padding:8px 0 0}.simple-side-link{flex:1}
+ .simple-admin-main{padding:20px 14px 35px}.simple-admin-topbar{gap:14px}
+}
+@media(max-width:650px){
+ .simple-admin-topbar{display:block}.publish-area{margin-top:13px;flex-wrap:wrap}.simple-stat-grid{grid-template-columns:repeat(2,1fr)}.simple-quick-grid{grid-template-columns:1fr}.simple-welcome-card{display:block}.simple-welcome-card .admin-primary{margin-top:15px}.simple-editor-card{border-radius:17px}.simple-admin-topbar h1{font-size:29px}
+}
+@media(max-width:430px){.simple-login-card{padding:25px;margin-top:7vh}.simple-admin-main{padding:16px 9px 28px}.simple-stat-grid{gap:8px;padding:10px}.simple-stat-grid button{padding:13px}.simple-admin-sidebar-bottom .simple-side-link{font-size:11px}.simple-welcome-card,.simple-quick-card,.simple-help-card{padding:17px 14px}}
