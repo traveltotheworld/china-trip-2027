@@ -1,0 +1,5 @@
+V64
+- Fixed remaining Indonesian UI strings in Admin and public pages.
+- Redesigned Admin responsive layout to prevent sidebar/bottom navigation overlap.
+- Added mobile-first public website sizing: 430px phone canvas, responsive typography and spacing.
+- Kept existing Supabase, itinerary, NFC and QR functionality.
