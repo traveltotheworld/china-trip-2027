@@ -30,6 +30,8 @@
    const wa=showWa?waLink(whatsapp):"";
    $("#luggageContent").innerHTML=`
     <div class="luggage-hero">
+      <div class="luggage-hanger" aria-hidden="true"></div>
+      <div class="luggage-ring" aria-hidden="true"></div>
       <div class="travel-word">Travel</div>
       <div class="travel-kicker">TRAVEL · DISCOVER · MORE</div>
       <div class="travel-motto">EXPLORE<br>TOGETHER<br>CREATE MEMORIES</div>

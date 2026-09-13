@@ -1,0 +1,5 @@
+V58 – Mobile-first luggage UI
+- Responsive 100% width on phones with max-width 420px for desktop preview.
+- Added hidden luggage strap/ring elements to the rendered card.
+- Tightened spacing, typography, cards, hero, and footer for mobile screens.
+- NFC/QR/Admin logic remains unchanged.
