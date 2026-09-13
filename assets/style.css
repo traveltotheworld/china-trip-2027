@@ -831,3 +831,19 @@ body:has(.app){min-width:320px;}
  .hero-v30 .profile-trigger{grid-template-columns:48px minmax(0,1fr) auto;gap:8px;padding:9px 10px}
  .travel-menu-button{margin-top:15px;padding:13px 14px;border-radius:14px;font-size:12px}
 }
+
+
+/* V73 — dedicated travel menu action; profile card is display-only */
+.hero-v30 #profileCard{cursor:default;}
+.travel-menu-button{
+  border:1px solid rgba(255,214,130,.55);
+  background:linear-gradient(135deg,#c98b3d 0%,#e5b85d 48%,#d98259 100%);
+  color:#17202b;
+  box-shadow:0 10px 26px rgba(193,128,52,.24), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.travel-menu-button:hover{
+  background:linear-gradient(135deg,#d59a49 0%,#edc66e 48%,#e39168 100%);
+  box-shadow:0 14px 30px rgba(193,128,52,.30), inset 0 1px 0 rgba(255,255,255,.32);
+}
+.travel-menu-button:focus-visible{outline:2px solid rgba(231,184,95,.95);outline-offset:3px;}
+.travel-menu-button span:last-child{color:#17202b;}

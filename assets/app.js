@@ -29,14 +29,14 @@ async function initHome(){
  document.title=m.name+" — "+trip.title;
  document.querySelectorAll("[data-page]").forEach(a=>a.href=keepId(a.getAttribute("data-page")));
 
- const profileTrigger=$("#profileMenuTrigger");
+ const menuButton=$("#travelMenuButton");
  const travelMenu=$("#travelMenuSection");
- if(profileTrigger&&travelMenu){
-  profileTrigger.onclick=()=>{
+ if(menuButton&&travelMenu){
+  menuButton.onclick=()=>{
    const willOpen=travelMenu.hidden;
    travelMenu.hidden=!willOpen;
-   profileTrigger.setAttribute("aria-expanded",String(willOpen));
-   profileTrigger.classList.toggle("is-open",willOpen);
+   menuButton.setAttribute("aria-expanded",String(willOpen));
+   menuButton.classList.toggle("is-open",willOpen);
    if(willOpen){
     requestAnimationFrame(()=>travelMenu.scrollIntoView({behavior:"smooth",block:"start"}));
    }

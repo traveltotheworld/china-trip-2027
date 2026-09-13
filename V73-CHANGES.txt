@@ -1,0 +1,6 @@
+V73 CHANGES
+- Fixed travel menu button click target: removed duplicate profileMenuTrigger ID.
+- Profile card no longer controls travel menu expansion.
+- View Travel Menu button now independently toggles the travel menu.
+- Changed button to a warm sunset gold/orange gradient synchronized with the hero artwork.
+- Kept mobile-first layout and existing itinerary/member behavior.
