@@ -753,3 +753,16 @@ footer,
   .hero-v29 .city-labels small{display:none}
 }
 
+
+
+/* V67 — supplied seamless cinematic artwork, with dynamic profile card */
+.hero-v30{position:relative;min-height:680px;padding:0;overflow:hidden;background:#173b61;isolation:isolate;border-radius:0 0 26px 26px}
+.hero-v30 .hero-art{position:absolute;inset:0;z-index:0;background-image:url("china-trip-hero-v67.jpg");background-size:cover;background-position:center top;background-repeat:no-repeat}
+.hero-v30::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(4,19,33,.04) 0%,rgba(4,19,33,0) 62%,rgba(4,14,24,.38) 100%)}
+.hero-v30-content{position:relative;z-index:3;min-height:680px;padding:0 15px 15px;display:flex;align-items:flex-end;justify-content:center}
+.hero-v30 .profile-trigger{width:100%;margin:0;display:grid;grid-template-columns:52px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 11px;border:1px solid rgba(255,255,255,.2);border-radius:19px;background:rgba(12,22,32,.90);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 18px 38px rgba(0,0,0,.34);text-align:left}
+.hero-v30 .profile-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;line-height:1.15}
+.hero-v30 .profile-copy strong{display:block;color:#fff;font-size:14px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-v30 .profile-copy span{display:block;color:rgba(255,255,255,.68);font-size:11px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-v30 .avatar{width:52px;height:52px;border-radius:15px;font-size:21px}.hero-v30 .status{width:9px;height:9px}
+@media(max-width:390px){.hero-v30{min-height:640px}.hero-v30-content{min-height:640px;padding-bottom:12px}.hero-v30 .profile-trigger{grid-template-columns:48px minmax(0,1fr) auto auto;gap:8px;padding:9px 10px;border-radius:17px}.hero-v30 .avatar{width:48px;height:48px;border-radius:14px;font-size:20px}.hero-v30 .profile-copy strong{font-size:13px}.hero-v30 .profile-copy span{font-size:10px}}

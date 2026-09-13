@@ -1,0 +1,9 @@
+V67 — HERO ARTWORK MATCHED TO USER REFERENCE
+
+- Replaced the previous three-panel/remote-photo hero with the supplied reference artwork.
+- The hero artwork is used as one seamless full-bleed visual: Shanghai, Suzhou and Hangzhou are visually unified with the same blue/gold sunset treatment.
+- No divider lines between the three cities.
+- Removed duplicated HTML hero title/date/city text so the artwork itself controls the visual composition.
+- Kept the traveler profile card dynamic from the existing app data.
+- Changed profile card layout so traveler name is on the first line and email is directly underneath on the second line.
+- Kept mobile-first sizing and responsive compact profile card.
