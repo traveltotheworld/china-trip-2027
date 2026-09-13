@@ -9,6 +9,14 @@ async function getJSON(path){
 }
 function getMemberId(){const raw=(new URLSearchParams(location.search).get("id")||localStorage.getItem("trip_member")||"septino").toLowerCase();return raw==="rico"?"rikko":raw}
 function keepId(link){const id=getMemberId();if(link.includes("?"))return link+"&id="+id;return link+"?id="+id}
+function wireMenuBack(){
+ document.querySelectorAll(".back").forEach(a=>{
+  if(location.pathname.endsWith("/index.html")||location.pathname==="/"||a.dataset.keepHistoryBack) return;
+  a.href=keepId("index.html?menu=open");
+  a.removeAttribute("data-keep-history");
+ });
+}
+wireMenuBack();
 async function initHome(){
  const [members,trip]=await Promise.all([getJSON("data/members.json"),getJSON("data/trip.json")]);
  const id=getMemberId();const m=members.find(x=>x.id===id)||members[0];localStorage.setItem("trip_member",m.id);
@@ -41,6 +49,12 @@ async function initHome(){
     requestAnimationFrame(()=>travelMenu.scrollIntoView({behavior:"smooth",block:"start"}));
    }
   };
+  const menuOpen=new URLSearchParams(location.search).get("menu")==="open";
+  if(menuOpen){
+   travelMenu.hidden=false;
+   menuButton.setAttribute("aria-expanded","true");
+   menuButton.classList.add("is-open");
+  }
  }
 
 }
@@ -152,6 +166,13 @@ async function loadItineraryForMember(me){
  }
 }
 
+function englishDayLabel(day, index){
+ const raw=String(day.label||day.date||"");
+ const map={Senin:"Monday",Selasa:"Tuesday",Rabu:"Wednesday",Kamis:"Thursday",Jumat:"Friday",Sabtu:"Saturday",Minggu:"Sunday"};
+ let out=raw;
+ Object.entries(map).forEach(([id,en])=>{out=out.replace(new RegExp("^"+id+"\\b", "i"),en);});
+ return out || `Day ${index+1}`;
+}
 async function renderItinerary(){
  const members=await getJSON("data/members.json");
  const me=members.find(x=>x.id===getMemberId())||members[0];
@@ -170,7 +191,7 @@ async function renderItinerary(){
          <button class="itinerary-day-header" type="button" data-day-toggle aria-expanded="${dayIndex===0 ? "true" : "false"}">
            <span class="itinerary-day-title">
              <span class="eyebrow">Day ${dayIndex+1}</span>
-             <span class="itinerary-day-name">${day.label||day.date}</span>
+             <span class="itinerary-day-name">${englishDayLabel(day,dayIndex)}</span>
            </span>
            <span class="itinerary-day-meta">
              <span class="activity-count">${(day.items||[]).length} activities</span>
@@ -375,7 +396,7 @@ async function renderHotel(){
       ${rooms.map(room=>`
        <article class="hotel-room-card">
         <strong>${room.room}</strong>
-        <span class="room-count">${room.members.length} Orang</span>
+        <span class="room-count">${room.members.length} rooms</span>
         <ul>${room.members.map(name=>`<li>${name}</li>`).join("")}</ul>
        </article>
       `).join("")}
@@ -405,7 +426,7 @@ async function renderHSR(){
  });
 
  if(!filtered.length){
-  $("#content").innerHTML="<div class='card'>None yet jadwal HSR untuk travellers ini.</div>";
+  $("#content").innerHTML="<div class='card'>No HSR schedule is available for this traveller yet.</div>";
   return;
  }
 

@@ -759,7 +759,7 @@ footer,
 
 /* V67 — supplied seamless cinematic artwork, with dynamic profile card */
 .hero-v30{position:relative;min-height:680px;padding:0;overflow:hidden;background:#173b61;isolation:isolate;border-radius:0 0 26px 26px}
-.hero-v30 .hero-art{position:absolute;inset:0;z-index:0;background-image:url("china-trip-hero-v67.jpg");background-size:cover;background-position:center top;background-repeat:no-repeat}
+.hero-v30 .hero-art{position:absolute;inset:0;z-index:0;background-image:url("china-trip-hero-v67.webp");background-size:cover;background-position:center top;background-repeat:no-repeat}
 .hero-v30::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(4,19,33,.04) 0%,rgba(4,19,33,0) 62%,rgba(4,14,24,.38) 100%)}
 .hero-v30-content{position:relative;z-index:3;min-height:680px;padding:0 15px 15px;display:flex;align-items:flex-end;justify-content:center}
 .hero-v30 .profile-trigger{width:100%;margin:0;display:grid;grid-template-columns:52px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 11px;border:1px solid rgba(255,255,255,.2);border-radius:19px;background:rgba(12,22,32,.90);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 18px 38px rgba(0,0,0,.34);text-align:left}
@@ -920,3 +920,21 @@ body:has(.app){min-width:320px;}
  .travel-menu-section .menu small{font-size:11px}
  .travel-menu-section .arrow{width:32px;height:32px;font-size:20px}
 }
+
+/* V76 — faster, cleaner mobile UI */
+.hotel-list{display:grid;gap:16px}
+.hotel-city-card{padding:18px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#fff,#fbfcfd);box-shadow:0 10px 28px rgba(16,31,46,.06)}
+.hotel-city-head{display:grid;gap:13px}
+.hotel-city-copy h2{margin:6px 0 9px;font-size:22px;line-height:1.22;letter-spacing:-.025em}
+.hotel-address{font-size:13px;line-height:1.55;color:var(--muted)}
+.hotel-map-btn{justify-self:start;margin-top:0;background:linear-gradient(135deg,#b98535,#e1b963);color:#17212b;border:0;box-shadow:0 8px 18px rgba(191,142,61,.18)}
+.hotel-room-dropdown{margin-top:14px;border:1px solid #e2e7eb;border-radius:16px;background:#fff;overflow:hidden}
+.hotel-room-dropdown summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;cursor:pointer;font-weight:800}
+.hotel-room-dropdown summary::-webkit-details-marker{display:none}
+.hotel-room-dropdown summary::after{content:'⌄';width:28px;height:28px;border-radius:9px;background:#f1f3f5;display:grid;place-items:center;color:#6b7681;transition:transform .2s ease}
+.hotel-room-dropdown[open] summary::after{transform:rotate(180deg)}
+.hotel-room-summary-title{display:flex;align-items:center;gap:8px;font-size:13px}.hotel-room-summary-meta{font-size:11px;color:var(--muted);font-weight:700;margin-left:auto}
+.hotel-room-dropdown-content{padding:0 12px 12px}.hotel-room-grid{display:grid;gap:9px}
+.hotel-room-card{padding:13px;border:1px solid #e8ecef;border-radius:14px;background:#f9fafb}.hotel-room-card strong{font-size:13px}.hotel-room-card .room-count{display:block;margin:3px 0 8px;color:var(--muted);font-size:11px}.hotel-room-card ul{margin:0;padding-left:17px;color:#3d4853;font-size:12px;line-height:1.55}
+.travel-menu-button{background:linear-gradient(135deg,#c18b3d,#e4b763)!important;color:#17212b!important}
+@media(max-width:420px){.hotel-city-card{padding:15px;border-radius:19px}.hotel-city-copy h2{font-size:20px}}
