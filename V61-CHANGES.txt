@@ -1,0 +1,7 @@
+V61 - English UI/Data
+- Luggage contact page translated to English.
+- Admin UI translated to English, including Luggage NFC + QR controls.
+- Itinerary UI translated to English.
+- Itinerary weekday/month labels translated to English.
+- Luggage public notes translated to English.
+- Existing names, places, IDs, and booking references preserved.

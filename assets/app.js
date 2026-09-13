@@ -19,12 +19,12 @@ async function initHome(){
  if(heroTripDate) heroTripDate.textContent=tripDate;
  const memberNumber=$("#memberNumber");
  if(memberNumber) memberNumber.textContent=String(m.member).padStart(2,"0")+" / "+String(members.length).padStart(2,"0");
- if($("#personalName")) $("#personalName").textContent=m.name||"Belum diisi";
+ if($("#personalName")) $("#personalName").textContent=m.name||"Not set";
  const wa=String(m.whatsapp||"").replace(/\D/g,"");
- const waText=m.whatsapp||"Belum diisi";
+ const waText=m.whatsapp||"Not set";
  if($("#personalWhatsapp")) $("#personalWhatsapp").textContent=waText;
  if($("#personalWhatsapp")){if(wa){$("#personalWhatsapp").href="https://wa.me/"+wa}else{$("#personalWhatsapp").removeAttribute("href")}}
- if($("#personalEmail")) $("#personalEmail").textContent=m.email||"Belum diisi";
+ if($("#personalEmail")) $("#personalEmail").textContent=m.email||"Not set";
  if($("#personalEmail")){if(m.email){$("#personalEmail").href="mailto:"+m.email}else{$("#personalEmail").removeAttribute("href")}}
  document.title=m.name+" — "+trip.title;
  document.querySelectorAll("[data-page]").forEach(a=>a.href=keepId(a.getAttribute("data-page")));
@@ -116,7 +116,7 @@ function itineraryLocation(activity){
 
  if(isFlight)return null;
 
- // Ambil lokasi tujuan pada rute, atau lokasi yang disebut dalam aktivitas
+ // Ambil lokasi tujuan pada rute, atau lokasi yang disebut dalam activities
  const destination=activity.includes("→")
    ? activity.split("→").pop().trim()
    : activity;
@@ -159,21 +159,21 @@ async function renderItinerary(){
  const days=loaded.days;
 
  $("#content").innerHTML=`
-   ${loaded.offline ? '<div class="offline-notice">📴 Offline mode — menampilkan itinerary terakhir yang tersimpan di perangkat.</div>' : ''}
+   ${loaded.offline ? '<div class="offline-notice">📴 Offline mode — showing the latest itinerary saved on this device.</div>' : ''}
    <div class="itinerary-toolbar">
-     <button class="itinerary-toggle-all" type="button" data-itinerary-action="expand-all">Buka semua hari</button>
-     <button class="itinerary-toggle-all secondary" type="button" data-itinerary-action="collapse-all">Tutup semua</button>
+     <button class="itinerary-toggle-all" type="button" data-itinerary-action="expand-all">Expand all days</button>
+     <button class="itinerary-toggle-all secondary" type="button" data-itinerary-action="collapse-all">Collapse all days</button>
    </div>
    <div class="itinerary-table-list">
      ${days.map((day,dayIndex)=>`
        <section class="itinerary-table-card ${dayIndex===0 ? "is-open" : "is-collapsed"}" data-day-card>
          <button class="itinerary-day-header" type="button" data-day-toggle aria-expanded="${dayIndex===0 ? "true" : "false"}">
            <span class="itinerary-day-title">
-             <span class="eyebrow">Hari ${dayIndex+1}</span>
+             <span class="eyebrow">Day ${dayIndex+1}</span>
              <span class="itinerary-day-name">${day.label||day.date}</span>
            </span>
            <span class="itinerary-day-meta">
-             <span class="activity-count">${(day.items||[]).length} aktivitas</span>
+             <span class="activity-count">${(day.items||[]).length} activities</span>
              <span class="itinerary-chevron" aria-hidden="true">⌄</span>
            </span>
          </button>
@@ -183,29 +183,29 @@ async function renderItinerary(){
              <table class="itinerary-table">
                <thead>
                  <tr>
-                   <th>Waktu</th>
-                   <th>Aktivitas</th>
-                   <th>Aksi</th>
+                   <th>Time</th>
+                   <th>Activity</th>
+                   <th>Action</th>
                  </tr>
                </thead>
                <tbody>
                  ${(day.items||[]).map(item=>`
                    <tr>
-                     <td data-label="Waktu">
+                     <td data-label="Time">
                        <span class="time-pill">${item.from}</span>
                        <span class="time-arrow">→</span>
                        <span class="time-pill">${item.to}</span>
                      </td>
-                     <td data-label="Aktivitas">
+                     <td data-label="Activity">
                        <div class="activity-text">${item.activity}</div>
                      </td>
-                     <td data-label="Aksi">
+                     <td data-label="Action">
                        ${item.baiduMap===true && item.route
                          ? `<a class="map-btn navigate-btn compact-map-btn"
                                 href="${baiduDirectionLink(item.route)}"
                                 target="_blank"
                                 rel="noopener"
-                                aria-label="Buka rute di Baidu Maps">🧭 Navigate</a>`
+                                aria-label="Open route in Baidu Maps">🧭 Navigate</a>`
                          : `<span class="no-action">—</span>`}
                      </td>
                    </tr>
@@ -255,12 +255,12 @@ async function renderFlights(){
  const grp=data.groups.find(g=>g.id===me.flightGroup);
 
  if(!grp){
-  $("#content").innerHTML="<div class='card'>Belum ada data penerbangan.</div>";
+  $("#content").innerHTML="<div class='card'>No flight data available.</div>";
   return;
  }
 
  function flightCard(flight){
-  const seat=flight.seats?.[me.id]||"Belum diisi";
+  const seat=flight.seats?.[me.id]||"Not set";
   const baggage=flight.baggage||{};
   return `
   <section class="boarding-pass flight-card ${flight.airline==="Xiamen Airlines" ? "boarding-pass-xiamen" : (flight.airline==="Singapore Airlines" ? "boarding-pass-singapore" : "boarding-pass-spring")}">
@@ -268,11 +268,11 @@ async function renderFlights(){
     <div class="airline-mark">
      <div class="airline-logo">✦</div>
      <div>
-      <span class="eyebrow light">${flight.type||"Penerbangan"}</span>
+      <span class="eyebrow light">${flight.type||"Flight"}</span>
       <h2>${flight.airline} · ${flight.flight}</h2>
      </div>
     </div>
-    <div class="aircraft-tag">${flight.aircraft||"Pesawat belum diisi"}</div>
+    <div class="aircraft-tag">${flight.aircraft||"Aircraft not set"}</div>
    </div>
 
    <div class="bp-route">
@@ -296,7 +296,7 @@ async function renderFlights(){
    <div class="bp-grid">
     <div class="bp-info"><small>Passenger</small><strong>${me.name}</strong></div>
     <div class="bp-info"><small>Seat</small><strong>${seat}</strong></div>
-    <div class="bp-info"><small>${flight.airline} Booking Reference</small><strong>${flight.airline==="Xiamen Airlines"?(me.xiamenBookingReference||refOverride.xiamen||flight.referenceCode||"Belum diisi"):(me.bookingReference||refOverride.spring||flight.referenceCode||"Belum diisi")}</strong></div>
+    <div class="bp-info"><small>${flight.airline} Booking Reference</small><strong>${flight.airline==="Xiamen Airlines"?(me.xiamenBookingReference||refOverride.xiamen||flight.referenceCode||"Not set"):(me.bookingReference||refOverride.spring||flight.referenceCode||"Not set")}</strong></div>
     <div class="bp-info"><small>Flight</small><strong>${flight.flight}</strong></div>
    </div>
 
@@ -305,9 +305,9 @@ async function renderFlights(){
    <div class="bp-bottom">
     <div class="passenger-avatar">${me.name.slice(0,2).toUpperCase()}</div>
     <div class="baggage-list">
-     <div><span>Personal Item</span><strong>${baggage.personalItem||"Belum diisi"}</strong></div>
-     <div><span>Cabin Baggage</span><strong>${baggage.cabin||"Belum diisi"}</strong></div>
-     <div><span>Checked Baggage</span><strong>${baggage.checked||"Belum diisi"}</strong></div>
+     <div><span>Personal Item</span><strong>${baggage.personalItem||"Not set"}</strong></div>
+     <div><span>Cabin Baggage</span><strong>${baggage.cabin||"Not set"}</strong></div>
+     <div><span>Checked Baggage</span><strong>${baggage.checked||"Not set"}</strong></div>
     </div>
    </div>
   </section>`;
@@ -320,7 +320,7 @@ async function renderFlights(){
   </div>
   <section class="section-note">
    <span class="eyebrow">Travel note</span>
-   <p class="lead">Data ini adalah ringkasan perjalanan dan bukan boarding pass resmi maskapai.</p>
+   <p class="lead">This is a trip summary and not an official airline boarding pass.</p>
   </section>`;
 }
 async function renderHotels(){
@@ -415,7 +415,7 @@ async function renderHSR(){
    <div class="travel-timeline-card">
     <div class="timeline-card-top">
      <div><span class="eyebrow">${x.date||""}</span><h2>${x.route||""}</h2></div>
-     <span class="timeline-date">${x.train||"Belum diisi"}</span>
+     <span class="timeline-date">${x.train||"Not set"}</span>
     </div>
     <div class="hsr-time-row">
      <strong>${x.time||"Waktu belum diisi"}</strong>

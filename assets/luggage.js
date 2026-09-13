@@ -6,27 +6,27 @@
  const waLink=v=>{const n=String(v||"").replace(/\D/g,"");return n?`https://wa.me/${n}`:""};
  async function getMembers(){
   try{const online=window.ChinaTripDB&&await window.ChinaTripDB.readKey("luggage_tags");if(Array.isArray(online))return online}catch(e){}
-  const r=await fetch("data/luggage-tags.json",{cache:"no-store"});if(!r.ok)throw new Error("Data peserta tidak tersedia");return r.json();
+  const r=await fetch("data/luggage-tags.json",{cache:"no-store"});if(!r.ok)throw new Error("Luggage data is unavailable");return r.json();
  }
  async function init(){
-  if(!id){$("#luggageContent").innerHTML='<div class="luggage-error"><strong>ID koper tidak ditemukan.</strong><br>Gunakan QR/NFC tag yang benar.</div>';return}
+  if(!id){$("#luggageContent").innerHTML='<div class="luggage-error"><strong>Luggage ID not found.</strong><br>Please use the correct QR/NFC tag.</div>';return}
   try{
    const members=await getMembers();
    const m=members.find(x=>(x.id||"").toLowerCase()===id);
-   if(!m)throw new Error("Data koper tidak ditemukan");
+   if(!m)throw new Error("Luggage data not found");
    const showName=m.qrShowName!==false;
    const showWa=m.qrShowWhatsapp!==false;
    const showEmail=m.qrShowEmail===true;
-   const publicName=m.publicContactName||m.name||"Pemilik koper";
+   const publicName=m.publicContactName||m.name||"Luggage owner";
    const whatsapp=m.publicWhatsapp||m.whatsapp||"";
    const email=m.publicEmail||m.email||"";
    const luggageId=m.luggageId||(`CT27-${String(m.id).toUpperCase()}`);
    const prettyWa=whatsapp ? (String(whatsapp).startsWith("62") ? "+"+String(whatsapp) : whatsapp) : "";
    const rows=[];
-   if(showName)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">👤</div><div class="luggage-row-content"><span class="luggage-label">Nama</span><div class="luggage-value">${esc(publicName)}</div></div></div>`);
+   if(showName)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">👤</div><div class="luggage-row-content"><span class="luggage-label">Name</span><div class="luggage-value">${esc(publicName)}</div></div></div>`);
    if(showWa&&whatsapp)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">💬</div><div class="luggage-row-content"><span class="luggage-label">WhatsApp</span><div class="luggage-value">${esc(prettyWa)}</div></div></div>`);
    if(showEmail&&email)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">✉️</div><div class="luggage-row-content"><span class="luggage-label">Email</span><div class="luggage-value">${esc(email)}</div></div></div>`);
-   if(m.publicNote)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">💬</div><div class="luggage-row-content"><span class="luggage-label">Pesan</span><div class="luggage-value">${esc(m.publicNote)}</div></div></div>`);
+   if(m.publicNote)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">💬</div><div class="luggage-row-content"><span class="luggage-label">Message</span><div class="luggage-value">${esc(m.publicNote)}</div></div></div>`);
    const wa=showWa?waLink(whatsapp):"";
    $("#luggageContent").innerHTML=`
     <div class="contact-card">
@@ -34,16 +34,16 @@
         <div class="contact-icon">🧳</div>
         <div>
           <div class="contact-eyebrow">LUGGAGE CONTACT</div>
-          <h1 class="luggage-title">Jika Anda menemukan koper ini</h1>
-          <p class="luggage-sub">Mohon bantu hubungi pemilik melalui informasi di bawah. Terima kasih ❤️</p>
+          <h1 class="luggage-title">If you find this luggage</h1>
+          <p class="luggage-sub">Please contact the owner using the information below. Thank you ❤️</p>
         </div>
       </div>
-      <div class="luggage-grid">${rows.join("")||'<div class="luggage-row"><div class="luggage-row-icon">🔒</div><div class="luggage-row-content"><div class="luggage-value">Informasi kontak belum diaktifkan.</div></div></div>'}</div>
-      ${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener"><span class="wa-mark">⌕</span><span>Hubungi via WhatsApp</span><b>›</b></a>`:""}
-      <div class="contact-note">Informasi yang ditampilkan hanya data pribadi yang diizinkan pemilik.</div>
+      <div class="luggage-grid">${rows.join("")||'<div class="luggage-row"><div class="luggage-row-icon">🔒</div><div class="luggage-row-content"><div class="luggage-value">Contact information has not been enabled.</div></div></div>'}</div>
+      ${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener"><span class="wa-mark">⌕</span><span>Contact via WhatsApp</span><b>›</b></a>`:""}
+      <div class="contact-note">Only personal information approved by the owner is shown here.</div>
     </div>`;
    document.title=`Luggage ${luggageId} — China Trip 2027`;
-  }catch(e){$("#luggageContent").innerHTML=`<div class="luggage-error"><strong>Data tidak dapat dimuat.</strong><br>${esc(e.message)}<br><br>Jika sedang offline, halaman ini harus sudah pernah dibuka/cache di perangkat.</div>`}
+  }catch(e){$("#luggageContent").innerHTML=`<div class="luggage-error"><strong>Unable to load data.</strong><br>${esc(e.message)}<br><br>If you are offline, this page must have been opened or cached on this device before.</div>`}
  }
  init();
 })();

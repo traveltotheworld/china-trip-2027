@@ -12,8 +12,8 @@
   <section id="loginPanel" class="simple-login-card">
     <div class="simple-login-logo">CT</div>
     <span class="eyebrow">China Trip 2027</span>
-    <h1>Masuk Admin</h1>
-    <p class="lead">Gunakan akun admin untuk mengubah data perjalanan.</p>
+    <h1>Admin Login</h1>
+    <p class="lead">Use the admin account to manage trip data.</p>
     <form id="loginForm" class="admin-form">
       <label>Email
         <input id="adminEmail" type="email" autocomplete="username" value="septinogao@gmail.com" required>
@@ -21,7 +21,7 @@
       <label>Password
         <input id="adminPassword" type="password" autocomplete="current-password" required>
       </label>
-      <button class="admin-primary" type="submit">Masuk</button>
+      <button class="admin-primary" type="submit">Sign In</button>
       <p id="loginError" class="admin-error" hidden></p>
     </form>
   </section>
@@ -42,9 +42,9 @@
     <section class="simple-admin-main">
       <header class="simple-admin-topbar">
         <div>
-          <span id="editorCategory" class="eyebrow">Beranda</span>
+          <span id="editorCategory" class="eyebrow">Home</span>
           <h1 id="editorTitle">Dashboard</h1>
-          <p id="editorDescription" class="lead">Pilih bagian yang ingin diubah.</p>
+          <p id="editorDescription" class="lead">Choose a section to edit.</p>
         </div>
         <div class="publish-area">
  <span id="draftCount" class="draft-count" hidden>0 perubahan</span>
@@ -56,14 +56,14 @@
       <section class="simple-editor-card">
         <div id="formEditor" class="cms-form-editor"></div>
         <div id="editorActions" class="simple-sticky-actions">
-          <button id="saveBtn" class="admin-primary">Simpan Draft</button>
-          <button id="reloadBtn" class="admin-secondary">Batalkan Perubahan</button>
+          <button id="saveBtn" class="admin-primary">Save Draft</button>
+          <button id="reloadBtn" class="admin-secondary">Discard Changes</button>
         </div>
       </section>
 
       <section id="backupPanel" class="simple-backup-card">
         <details>
-          <summary>Backup dan pemulihan data</summary>
+          <summary>Data Backup & Restore</summary>
           <p class="lead">Unduh cadangan sebelum melakukan perubahan besar.</p>
           <div class="admin-actions">
             <button id="exportBtn" class="admin-secondary">Download Backup</button>

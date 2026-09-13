@@ -9,7 +9,7 @@
   "days": [
     {
       "date": "2027-03-03",
-      "label": "Rabu, 03 Maret 2027",
+      "label": "Wednesday, 03 March 2027",
       "items": [
         {
           "from": "01:15",
@@ -87,7 +87,7 @@
     },
     {
       "date": "2027-03-04",
-      "label": "Kamis, 04 Maret 2027",
+      "label": "Thursday, 04 March 2027",
       "items": [
         {
           "from": "07:30",
@@ -165,7 +165,7 @@
     },
     {
       "date": "2027-03-05",
-      "label": "Jumat, 05 Maret 2027",
+      "label": "Friday, 05 March 2027",
       "items": [
         {
           "from": "07:00",
@@ -207,7 +207,7 @@
     },
     {
       "date": "2027-03-06",
-      "label": "Sabtu, 06 Maret 2027",
+      "label": "Saturday, 06 March 2027",
       "items": [
         {
           "from": "07:00",
@@ -261,7 +261,7 @@
     },
     {
       "date": "2027-03-07",
-      "label": "Minggu, 07 Maret 2027",
+      "label": "Sunday, 07 March 2027",
       "items": [
         {
           "from": "00:00",
@@ -357,7 +357,7 @@
     },
     {
       "date": "2027-03-08",
-      "label": "Senin, 08 Maret 2027",
+      "label": "Monday, 08 March 2027",
       "items": [
         {
           "from": "06:00",
@@ -435,7 +435,7 @@
     },
     {
       "date": "2027-03-09",
-      "label": "Selasa, 09 Maret 2027",
+      "label": "Tuesday, 09 March 2027",
       "items": [
         {
           "from": "06:00",
@@ -525,7 +525,7 @@
     },
     {
       "date": "2027-03-10",
-      "label": "Rabu, 10 Maret 2027",
+      "label": "Wednesday, 10 March 2027",
       "items": [
         {
           "from": "06:15",
@@ -603,7 +603,7 @@
     },
     {
       "date": "2027-03-11",
-      "label": "Kamis, 11 Maret 2027",
+      "label": "Thursday, 11 March 2027",
       "items": [
         {
           "from": "06:30",
@@ -675,7 +675,7 @@
     },
     {
       "date": "2027-03-12",
-      "label": "Jumat, 12 Maret 2027",
+      "label": "Friday, 12 March 2027",
       "items": [
         {
           "from": "07:30",
@@ -753,7 +753,7 @@
     },
     {
       "date": "2027-03-13",
-      "label": "Sabtu, 13 Maret 2027",
+      "label": "Saturday, 13 March 2027",
       "items": [
         {
           "from": "06:00",
@@ -795,7 +795,7 @@
     },
     {
       "date": "2027-03-14",
-      "label": "Minggu, 14 Maret 2027",
+      "label": "Sunday, 14 March 2027",
       "items": [
         {
           "from": "03:30",

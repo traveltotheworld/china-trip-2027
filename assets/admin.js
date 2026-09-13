@@ -1,18 +1,18 @@
 
 const DATASETS=[
- {id:"dashboard",title:"Dashboard",category:"Beranda",icon:"🏠",description:"Ringkasan data perjalanan",type:"dashboard"},
- {id:"members",title:"Peserta",category:"Data Utama",icon:"👥",path:"data/members.json",key:"members",description:"Nama, kontak, grup dan kamar peserta",type:"members"},
- {id:"luggage-tags",title:"Luggage NFC + QR",category:"Luggage Tag",icon:"🏷️",path:"data/luggage-tags.json",key:"luggage_tags",description:"Data NFC itinerary dan informasi pribadi yang tampil lewat QR",type:"luggage"},
- {id:"flights",title:"Penerbangan",category:"Transportasi",icon:"✈️",path:"data/flights.json",key:"flights",description:"Jadwal penerbangan pergi dan pulang",type:"flights"},
- {id:"hotels",title:"Hotel",category:"Akomodasi",icon:"🏨",path:"data/hotels.json",key:"hotels",description:"Hotel, tanggal dan lokasi Baidu Maps",type:"hotels"},
- {id:"rooms",title:"Pembagian Kamar",category:"Akomodasi",icon:"🛏️",path:"data/room-groups.json",key:"room_groups",description:"Susunan kamar setiap kota",type:"rooms"},
- {id:"hsr",title:"Kereta HSR",category:"Transportasi",icon:"🚄",path:"data/hsr.json",key:"hsr",description:"Jadwal kereta antarkota",type:"hsr"},
- {id:"itinerary-a",title:"Itinerary Grup A",category:"Itinerary",icon:"🗓️",path:"data/itinerary-group-a-early.json",key:"itinerary_group_a_early",description:"Jadwal peserta Grup A",type:"itinerary"},
- {id:"itinerary-b",title:"Itinerary Grup B",category:"Itinerary",icon:"🗓️",path:"data/itinerary-group-b-early.json",key:"itinerary_group_b_early",description:"Jadwal peserta Grup B",type:"itinerary"},
- {id:"itinerary-common",title:"Itinerary Bersama",category:"Itinerary",icon:"📅",path:"data/itinerary-common.json",key:"itinerary_common",description:"Jadwal bersama seluruh peserta",type:"itinerary"},
- {id:"trip-info",title:"Informasi Penting",category:"Informasi",icon:"📌",path:"data/trip-info.json",key:"trip_info",description:"Catatan penting selama perjalanan",type:"tripinfo"},
- {id:"locations",title:"Lokasi Peta",category:"Informasi",icon:"📍",path:"data/locations.json",key:"locations",description:"Nama lokasi dan pencarian Baidu Maps",type:"locations"},
- {id:"trip",title:"Pengaturan Trip",category:"Pengaturan",icon:"⚙️",path:"data/trip.json",key:"trip",description:"Judul, tanggal dan kontak utama perjalanan",type:"trip"}
+ {id:"dashboard",title:"Dashboard",category:"Beranda",icon:"🏠",description:"Trip data overview",type:"dashboard"},
+ {id:"members",title:"Members",category:"Main Data",icon:"👥",path:"data/members.json",key:"members",description:"Member names, contacts, groups and rooms",type:"members"},
+ {id:"luggage-tags",title:"Luggage NFC + QR",category:"Luggage Tag",icon:"🏷️",path:"data/luggage-tags.json",key:"luggage_tags",description:"NFC itinerary data and personal information shown through QR",type:"luggage"},
+ {id:"flights",title:"Flights",category:"Transport",icon:"✈️",path:"data/flights.json",key:"flights",description:"Outbound and return flight schedules",type:"flights"},
+ {id:"hotels",title:"Hotels",category:"Accommodation",icon:"🏨",path:"data/hotels.json",key:"hotels",description:"Hotels, tanggal dan lokasi Baidu Maps",type:"hotels"},
+ {id:"rooms",title:"Room Assignments",category:"Accommodation",icon:"🛏️",path:"data/room-groups.json",key:"room_groups",description:"Room assignments for each city",type:"rooms"},
+ {id:"hsr",title:"HSR Trains",category:"Transport",icon:"🚄",path:"data/hsr.json",key:"hsr",description:"Intercity train schedules",type:"hsr"},
+ {id:"itinerary-a",title:"Group A Itinerary",category:"Itinerary",icon:"🗓️",path:"data/itinerary-group-a-early.json",key:"itinerary_group_a_early",description:"Group A member schedule",type:"itinerary"},
+ {id:"itinerary-b",title:"Group B Itinerary",category:"Itinerary",icon:"🗓️",path:"data/itinerary-group-b-early.json",key:"itinerary_group_b_early",description:"Group B member schedule",type:"itinerary"},
+ {id:"itinerary-common",title:"Common Itinerary",category:"Itinerary",icon:"📅",path:"data/itinerary-common.json",key:"itinerary_common",description:"Shared schedule for all members",type:"itinerary"},
+ {id:"trip-info",title:"Important Information",category:"Information",icon:"📌",path:"data/trip-info.json",key:"trip_info",description:"Important travel notes",type:"tripinfo"},
+ {id:"locations",title:"Map Locations",category:"Information",icon:"📍",path:"data/locations.json",key:"locations",description:"Location names and Baidu Maps searches",type:"locations"},
+ {id:"trip",title:"Trip Settings",category:"Pengaturan",icon:"⚙️",path:"data/trip.json",key:"trip",description:"Trip title, dates and primary contact",type:"trip"}
 ];
 
 let activeDataset=DATASETS[0];
@@ -32,7 +32,7 @@ function updateDraftCount(){
 }
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 function baseData(path){return clone(window.CHINA_TRIP_DEFAULTS[path])}
-function markChanged(){setStatus("Belum disimpan");$("#saveStatus").classList.add("changed")}
+function markChanged(){setStatus("Unsaved");$("#saveStatus").classList.add("changed")}
 function setStatus(text){$("#saveStatus").textContent=text}
 async function currentData(dataset){
  const draft=getDraft(dataset.key);
@@ -79,16 +79,16 @@ async function selectDataset(id){
  $("#editorActions").hidden=isDashboard;
  $("#backupPanel").hidden=!isDashboard;
  if(isDashboard){
-  setStatus("Data tersambung");
+  setStatus("Data connected");
   await renderDashboard();
   return
  }
- setStatus("Memuat data…");
+ setStatus("Loading data…");
  try{
   workingData=await currentData(activeDataset);
-  setStatus("Data terbaru");
+  setStatus("Latest data");
   renderEditor()
- }catch(err){setStatus("Gagal memuat");alert("Data gagal dimuat: "+err.message)}
+ }catch(err){setStatus("Load failed");alert("Failed to load data: "+err.message)}
 }
 function field(label,value,path,type="text",placeholder=""){
  return `<label class="cms-field"><span>${label}</span><input type="${type}" value="${esc(value)}" data-path="${path}" placeholder="${esc(placeholder)}"></label>`
@@ -138,26 +138,26 @@ async function renderDashboard(){
    <div>
     <span class="eyebrow">China Trip 2027</span>
     <h2>Kelola perjalanan dengan mudah</h2>
-    <p>Pilih menu di sebelah kiri, ubah data, lalu tekan <strong>Simpan</strong>.</p>
+    <p>Pilih menu di sebelah kiri, ubah data, lalu tekan <strong>Save</strong>.</p>
    </div>
-   <a href="index.html" class="admin-primary">Buka Website</a>
+   <a href="index.html" class="admin-primary">Open Website</a>
   </section>
   <div class="simple-stat-grid">
-   <button data-open="members"><strong>${members.length}</strong><span>Peserta</span></button>
-   <button data-open="hotels"><strong>${hotels.length}</strong><span>Hotel</span></button>
-   <button data-open="flights"><strong>${flightGroups.length}</strong><span>Grup Flight</span></button>
-   <button data-open="hsr"><strong>${hsr.length}</strong><span>Jadwal HSR</span></button>
+   <button data-open="members"><strong>${members.length}</strong><span>Members</span></button>
+   <button data-open="hotels"><strong>${hotels.length}</strong><span>Hotels</span></button>
+   <button data-open="flights"><strong>${flightGroups.length}</strong><span>Flight Groups</span></button>
+   <button data-open="hsr"><strong>${hsr.length}</strong><span>HSR Schedule</span></button>
   </div>
   <section class="simple-quick-card">
-   <h3>Edit Cepat</h3>
+   <h3>Quick Edit</h3>
    <div class="simple-quick-grid">${DATASETS.filter(d=>["members","flights","hotels","itinerary-common","trip-info","trip"].includes(d.id)).map(d=>`<button data-open="${d.id}"><span>${d.icon}</span><strong>${d.title}</strong><small>${d.description}</small></button>`).join("")}
    </div>
   </section>
   <section class="simple-help-card">
    <h3>Cara Menggunakan</h3>
    <div><b>1</b><span>Pilih menu yang ingin diubah.</span></div>
-   <div><b>2</b><span>Edit data pada formulir.</span></div>
-   <div><b>3</b><span>Tekan tombol <strong>Simpan</strong>.</span></div>
+   <div><b>2</b><span>Edit the data in the form.</span></div>
+   <div><b>3</b><span>Tekan tombol <strong>Save</strong>.</span></div>
   </section>`;
  $("#formEditor").querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>selectDataset(b.dataset.open))
 }
@@ -167,7 +167,7 @@ function renderEditor(){
  if(t==="trip")renderTrip();
  else if(t==="itinerary")renderItinerary();
  else if(t==="flights"){renderFlights();return}
- else if(t==="hotels")renderHotels();
+ else if(t==="hotels")renderHotelss();
  else if(t==="hsr")renderSimpleList("HSR",["route","date","train","time","station","group"]);
  else if(t==="members")renderMembers();
  else if(t==="luggage")renderLuggageTags();
@@ -204,8 +204,8 @@ function renderItinerary(){
  (workingData.days||[]).map((day,di)=>`
  <section class="cms-day-card">
   <div class="cms-card-head">
-   <div><span class="eyebrow">Hari ${di+1}</span><h3>${esc(day.label||day.date)}</h3></div>
-   <button class="admin-danger small-action" data-action="delete-day" data-day="${di}">Hapus Hari</button>
+   <div><span class="eyebrow">Day ${di+1}</span><h3>${esc(day.label||day.date)}</h3></div>
+   <button class="admin-danger small-action" data-action="delete-day" data-day="${di}">Delete Hari</button>
   </div>
   <div class="cms-grid two">
    ${field("Tanggal",day.date,`days.${di}.date`,"date")}
@@ -214,12 +214,12 @@ function renderItinerary(){
   <div class="cms-activity-list">
    ${(day.items||[]).map((it,ii)=>`
     <article class="cms-activity-card">
-     <div class="cms-activity-number">Aktivitas ${ii+1}</div>
+     <div class="cms-activity-number">Activity ${ii+1}</div>
      <div class="cms-grid time-grid">
       ${field("Dari",it.from,`days.${di}.items.${ii}.from`,"time")}
       ${field("Sampai",it.to,`days.${di}.items.${ii}.to`,"time")}
      </div>
-     ${area("Aktivitas",it.activity,`days.${di}.items.${ii}.activity`)}
+     ${area("Activity",it.activity,`days.${di}.items.${ii}.activity`)}
      ${checkbox("Tampilkan tombol Baidu Navigate",it.baiduMap,`days.${di}.items.${ii}.baiduMap`)}
      <div class="cms-grid route-grid">
       ${field("Asal Mandarin",it.route?.originZh||"",`days.${di}.items.${ii}.route.originZh`)}
@@ -227,11 +227,11 @@ function renderItinerary(){
       ${field("Wilayah",it.route?.regionZh||"",`days.${di}.items.${ii}.route.regionZh`)}
       ${field("Mode",it.route?.mode||"transit",`days.${di}.items.${ii}.route.mode`)}
      </div>
-     <button class="admin-danger small-action" data-action="delete-item" data-day="${di}" data-item="${ii}">Hapus Aktivitas</button>
+     <button class="admin-danger small-action" data-action="delete-item" data-day="${di}" data-item="${ii}">Delete Activity</button>
     </article>`).join("")}
   </div>
-  <button class="admin-secondary" data-action="add-item" data-day="${di}">+ Tambah Aktivitas</button>
- </section>`).join("")+`<button class="admin-primary" data-action="add-day">+ Tambah Hari</button>`;
+  <button class="admin-secondary" data-action="add-item" data-day="${di}">+ Add Activity</button>
+ </section>`).join("")+`<button class="admin-primary" data-action="add-day">+ Add Hari</button>`;
 
  workingData.days.forEach(d=>(d.items||[]).forEach(it=>{if(!it.route)it.route={originZh:"",destinationZh:"",regionZh:"",mode:"transit"}}));
  const rootMembers=$("#formEditor").querySelector('[data-path="__rootMembers"]');
@@ -251,7 +251,7 @@ async function renderFlights(){
  <section class="cms-day-card flight-admin-group">
   <div class="cms-card-head">
    <div><span class="eyebrow">Grup penerbangan</span><h3>${esc(g.name||g.id)}</h3></div>
-   <button class="admin-danger small-action" data-action="delete-flight-group" data-group="${gi}">Hapus Grup</button>
+   <button class="admin-danger small-action" data-action="delete-flight-group" data-group="${gi}">Delete Grup</button>
   </div>
 
   <div class="cms-grid two">
@@ -276,12 +276,12 @@ async function renderFlights(){
     <div class="flight-section-title">
      <div>
       <span class="eyebrow">${type==="outbound"?"Departure":"Return"}</span>
-      <h3>${type==="outbound"?"Penerbangan Pergi":"Penerbangan Pulang"}</h3>
+      <h3>${type==="outbound"?"Flights Pergi":"Flights Pulang"}</h3>
      </div>
      <span class="flight-admin-badge">${esc(f.airline||"Maskapai")} ${esc(f.flight||"")}</span>
     </div>
 
-    <h4>Informasi Penerbangan</h4>
+    <h4>Information Flights</h4>
     <div class="cms-grid three">
      ${field("Maskapai",f.airline||"",`groups.${gi}.${type}.airline`)}
      ${field("Nomor penerbangan",f.flight||"",`groups.${gi}.${type}.flight`)}
@@ -295,7 +295,7 @@ async function renderFlights(){
      ${field("Kode bandara",f.departure.code||"",`groups.${gi}.${type}.departure.code`)}
      ${field("Bandara",f.departure.airport||"",`groups.${gi}.${type}.departure.airport`)}
      ${field("Terminal",f.departure.terminal||"",`groups.${gi}.${type}.departure.terminal`)}
-     ${field("Waktu",f.departure.time||"",`groups.${gi}.${type}.departure.time`,"time")}
+     ${field("Time",f.departure.time||"",`groups.${gi}.${type}.departure.time`,"time")}
     </div>
 
     <h4>Kedatangan</h4>
@@ -303,7 +303,7 @@ async function renderFlights(){
      ${field("Kode bandara",f.arrival.code||"",`groups.${gi}.${type}.arrival.code`)}
      ${field("Bandara",f.arrival.airport||"",`groups.${gi}.${type}.arrival.airport`)}
      ${field("Terminal",f.arrival.terminal||"",`groups.${gi}.${type}.arrival.terminal`)}
-     ${field("Waktu",f.arrival.time||"",`groups.${gi}.${type}.arrival.time`,"time")}
+     ${field("Time",f.arrival.time||"",`groups.${gi}.${type}.arrival.time`,"time")}
     </div>
 
     <h4>Bagasi</h4>
@@ -329,21 +329,21 @@ async function renderFlights(){
           value="${esc(f.seats[member.id]||"")}"
           data-path="groups.${gi}.${type}.seats.${member.id}"
           placeholder="Contoh: 59H">
-       </label>`).join(""):`<p class="empty-seat-note">Tambahkan peserta ke ${esc(g.name||g.id)} melalui menu Peserta terlebih dahulu.</p>`}
+       </label>`).join(""):`<p class="empty-seat-note">Addkan peserta ke ${esc(g.name||g.id)} melalui menu Members terlebih dahulu.</p>`}
      </div>
     </details>
    </article>`
   }).join("")}
- </section>`}).join("")+`<button class="admin-primary" data-action="add-flight-group">+ Tambah Grup Penerbangan</button>`;
+ </section>`}).join("")+`<button class="admin-primary" data-action="add-flight-group">+ Add Flight Groupss</button>`;
 
  bindFields()
 }
-function renderHotels(){
+function renderHotelss(){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
  <article class="cms-record-card">
-  <div class="cms-card-head"><h3>${esc(row.city||"Hotel")} — ${i+1}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
+  <div class="cms-card-head"><h3>${esc(row.city||"Hotels")} — ${i+1}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Delete</button></div>
   <div class="cms-grid two">
-   ${field("Kota",row.city||"",`${i}.city`)}
+   ${field("City",row.city||"",`${i}.city`)}
    ${field("Nama hotel",row.name||"",`${i}.name`)}
    ${field("Tanggal umum",row.dates||"",`${i}.dates`)}
    ${field("Tanggal Grup A",row.datesGroupA||"",`${i}.datesGroupA`)}
@@ -353,7 +353,7 @@ function renderHotels(){
    ${field("Query Baidu Maps",row.mapsQuery||"",`${i}.mapsQuery`)}
    ${field("URL sumber / pemesanan",row.sourceUrl||"",`${i}.sourceUrl`,"url")}
   </div>
- </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Hotel</button>`;
+ </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Add Hotels</button>`;
 }
 function renderMembers(){
  const keys=["id","name","whatsapp","email","member","room","roommates","flightGroup","itineraryGroup","bookingReference","xiamenBookingReference"];
@@ -361,12 +361,12 @@ function renderMembers(){
  <div class="member-search-bar"><span>🔎</span><input id="memberSearch" type="search" placeholder="Cari nama, WhatsApp, email, kamar atau grup…"><b id="memberResultCount">${(workingData||[]).length} peserta</b></div>
  <div id="memberCards">${(workingData||[]).map((row,i)=>`
  <article class="cms-record-card member-admin-card" data-member-search="${esc([row.name,row.whatsapp,row.email,row.room,row.flightGroup].join(" ").toLowerCase())}">
-  <div class="cms-card-head"><h3>${esc(row.name||"Peserta Baru")}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
+  <div class="cms-card-head"><h3>${esc(row.name||"Members Baru")}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Delete</button></div>
   <div class="cms-grid two">
    ${keys.map(k=>field(k==="bookingReference"?"Spring Airlines Booking Reference":k==="xiamenBookingReference"?"Xiamen Airlines Booking Reference":k,row[k]??"",`${i}.${k}`,k==="member"?"number":"text")).join("")}
   </div>
  </article>`).join("")}</div>
- <button class="admin-primary" data-action="add-record">+ Tambah Peserta</button>`;
+ <button class="admin-primary" data-action="add-record">+ Add Members</button>`;
  const search=$("#memberSearch");
  search.addEventListener("input",()=>{
   const q=search.value.trim().toLowerCase();let visible=0;
@@ -432,10 +432,10 @@ async function handleNfcAction(action,row){
   const url=`https://china-trip-2027.vercel.app/itinerary.html?id=${encodeURIComponent(row.itineraryMemberId||row.id||"")}`;
   if(action==="download"){
    downloadNfcPayload(row,snapshot,url);
-   alert(`Payload NFC ${row.name||row.id} sudah dibuat.\n\nIsi offline: ${snapshot.length} karakter.\n\nCatatan: ini adalah ringkasan offline agar muat di NTAG216. Itinerary lengkap tetap diperbarui dari website.`);
+   alert(`NFC payload for ${row.name||row.id} has been generated.\n\nOffline content: ${snapshot.length} characters.\n\nNote: this is a compact offline summary to fit NTAG216. The complete itinerary is still updated from the website.`);
   }else{
    await writeNfcPayload(url,snapshot);
-   alert(`NFC ${row.name||row.id} berhasil ditulis.\n\nTag berisi URL itinerary + ringkasan offline.`);
+   alert(`NFC ${row.name||row.id} written successfully.\n\nThe tag contains the itinerary URL + offline summary.`);
   }
  }catch(err){alert("NFC gagal: "+err.message)}
 }
@@ -446,28 +446,28 @@ function renderLuggageTags(){
    <div class="cms-grid two">
     ${field("ID peserta",row.id||"",`${i}.id`)}
     ${field("Luggage ID",row.luggageId||"",`${i}.luggageId`)}
-    ${field("ID itinerary untuk NFC",row.itineraryMemberId||row.id||"",`${i}.itineraryMemberId`)}
-    ${field("Nama publik QR",row.publicContactName||row.name||"",`${i}.publicContactName`)}
-    ${field("WhatsApp publik QR",row.publicWhatsapp||"",`${i}.publicWhatsapp`)}
-    ${field("Email publik QR",row.publicEmail||"",`${i}.publicEmail`)}
+    ${field("Itinerary ID for NFC",row.itineraryMemberId||row.id||"",`${i}.itineraryMemberId`)}
+    ${field("Public QR Name",row.publicContactName||row.name||"",`${i}.publicContactName`)}
+    ${field("Public QR WhatsApp",row.publicWhatsapp||"",`${i}.publicWhatsapp`)}
+    ${field("Public QR Email",row.publicEmail||"",`${i}.publicEmail`)}
    </div>
    <div class="cms-check-grid">
-    ${checkbox("Tampilkan nama di QR",row.qrShowName!==false,`${i}.qrShowName`)}
-    ${checkbox("Tampilkan WhatsApp di QR",row.qrShowWhatsapp!==false,`${i}.qrShowWhatsapp`)}
-    ${checkbox("Tampilkan email di QR",row.qrShowEmail===true,`${i}.qrShowEmail`)}
+    ${checkbox("Show name in QR",row.qrShowName!==false,`${i}.qrShowName`)}
+    ${checkbox("Show WhatsApp in QR",row.qrShowWhatsapp!==false,`${i}.qrShowWhatsapp`)}
+    ${checkbox("Show email in QR",row.qrShowEmail===true,`${i}.qrShowEmail`)}
    </div>
-   ${area("Pesan untuk orang yang menemukan koper",row.publicNote||"",`${i}.publicNote`)}
+   ${area("Message for the person who finds the luggage",row.publicNote||"",`${i}.publicNote`)}
    <div class="luggage-admin-links">
-    <a class="admin-secondary" href="${base}itinerary.html?id=${encodeURIComponent(row.itineraryMemberId||row.id||"")}" target="_blank" rel="noopener">📱 Tes NFC / Itinerary</a>
-    <a class="admin-secondary" href="${base}luggage.html?id=${encodeURIComponent(row.id||"")}" target="_blank" rel="noopener">▦ Tes QR / Contact</a>
-    <button type="button" class="admin-secondary" data-action="nfc-download" data-index="${i}">⬇️ Buat Payload NFC</button>
-    <button type="button" class="admin-primary" data-action="nfc-write" data-index="${i}">📡 Tulis ke NTAG216</button>
+    <a class="admin-secondary" href="${base}itinerary.html?id=${encodeURIComponent(row.itineraryMemberId||row.id||"")}" target="_blank" rel="noopener">📱 Test NFC / Itinerary</a>
+    <a class="admin-secondary" href="${base}luggage.html?id=${encodeURIComponent(row.id||"")}" target="_blank" rel="noopener">▦ Test QR / Contact</a>
+    <button type="button" class="admin-secondary" data-action="nfc-download" data-index="${i}">⬇️ Generate NFC Payload</button>
+    <button type="button" class="admin-primary" data-action="nfc-write" data-index="${i}">📡 Write to NTAG216</button>
    </div>`;
  $("#formEditor").innerHTML=`
   <div class="simple-welcome-card luggage-admin-intro">
-   <div><span class="eyebrow">NFC + QR</span><h2>Hybrid NFC + QR</h2><p>QR menampilkan kontak publik terpilih. NFC membuka itinerary terbaru saat online dan membawa ringkasan itinerary offline di dalam NTAG216. Jika itinerary berubah, generate lalu tulis ulang NFC.</p></div>
+   <div><span class="eyebrow">NFC + QR</span><h2>Hybrid NFC + QR</h2><p>QR shows selected public contact information. NFC opens the latest itinerary when online and also carries an offline itinerary summary in NTAG216. If the itinerary changes, generate and rewrite the NFC tag.</p></div>
   </div>
-  <div class="simple-help-card"><h3>Update NFC</h3><div><b>1</b><span>Edit itinerary lalu <strong>Publish</strong>.</span></div><div><b>2</b><span>Buka menu ini dan tekan <strong>Buat Payload NFC</strong>.</span></div><div><b>3</b><span>Jika memakai Chrome Android, tekan <strong>Tulis ke NTAG216</strong> lalu tempelkan kartu.</span></div><div><b>!</b><span>NTAG216 hanya cukup untuk <strong>ringkasan offline</strong>; itinerary lengkap tetap online.</span></div></div>
+  <div class="simple-help-card"><h3>Update NFC</h3><div><b>1</b><span>Edit the itinerary, then <strong>Publish</strong>.</span></div><div><b>2</b><span>Buka menu ini dan tekan <strong>Generate NFC Payload</strong>.</span></div><div><b>3</b><span>Jika memakai Chrome Android, tekan <strong>Write to NTAG216</strong> lalu tempelkan kartu.</span></div><div><b>!</b><span>NTAG216 only has enough space for an <strong>offline summary</strong>; the complete itinerary remains online.</span></div></div>
   ${rows.map((row,i)=>`<article class="cms-record-card luggage-admin-card"><div class="cms-card-head"><div><h3>${esc(row.name||row.id||"Luggage")}</h3><small>${esc(row.luggageId||"")}</small></div></div>${fields(row,i)}</article>`).join("")}`;
  bindFields();
 }
@@ -475,26 +475,26 @@ function renderLuggageTags(){
 function renderSimpleList(title,keys){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
  <article class="cms-record-card">
-  <div class="cms-card-head"><h3>${title} ${i+1}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
+  <div class="cms-card-head"><h3>${title} ${i+1}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Delete</button></div>
   <div class="cms-grid two">
    ${keys.map(k=>field(k,row[k]??"",`${i}.${k}`)).join("")}
   </div>
- </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah ${title}</button>`;
+ </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Add ${title}</button>`;
 }
 function renderRooms(){
  if(!Array.isArray(workingData.regions))workingData.regions=[];
  $("#formEditor").innerHTML=workingData.regions.map((region,ri)=>`
  <section class="cms-day-card">
-  <div class="cms-card-head"><h3>${esc(region.name)}</h3><button class="admin-danger small-action" data-action="delete-region" data-region="${ri}">Hapus Kota</button></div>
+  <div class="cms-card-head"><h3>${esc(region.name)}</h3><button class="admin-danger small-action" data-action="delete-region" data-region="${ri}">Delete City</button></div>
   <div class="cms-grid two">${field("ID",region.id,`regions.${ri}.id`)}${field("Nama kota",region.name,`regions.${ri}.name`)}</div>
   ${(region.rooms||[]).map((room,rmi)=>`
    <article class="cms-record-card">
-    <div class="cms-card-head"><h4>${esc(room.room)}</h4><button class="admin-danger small-action" data-action="delete-room" data-region="${ri}" data-room="${rmi}">Hapus</button></div>
+    <div class="cms-card-head"><h4>${esc(room.room)}</h4><button class="admin-danger small-action" data-action="delete-room" data-region="${ri}" data-room="${rmi}">Delete</button></div>
     ${field("Nama kamar",room.room,`regions.${ri}.rooms.${rmi}.room`)}
-    ${field("Peserta (pisahkan koma)",(room.members||[]).join(", "),`regions.${ri}.rooms.${rmi}.__members`)}
+    ${field("Members (pisahkan koma)",(room.members||[]).join(", "),`regions.${ri}.rooms.${rmi}.__members`)}
    </article>`).join("")}
-  <button class="admin-secondary" data-action="add-room" data-region="${ri}">+ Tambah Kamar</button>
- </section>`).join("")+`<button class="admin-primary" data-action="add-region">+ Tambah Kota</button>`;
+  <button class="admin-secondary" data-action="add-room" data-region="${ri}">+ Add Room</button>
+ </section>`).join("")+`<button class="admin-primary" data-action="add-region">+ Add City</button>`;
 
  $("#formEditor").querySelectorAll('[data-path$=".__members"]').forEach(el=>{
   el.addEventListener("input",()=>{
@@ -506,10 +506,10 @@ function renderRooms(){
 function renderTripInfo(){
  $("#formEditor").innerHTML=(workingData||[]).map((row,i)=>`
  <article class="cms-record-card">
-  <div class="cms-card-head"><h3>${esc(row.icon)} ${esc(row.title)}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Hapus</button></div>
+  <div class="cms-card-head"><h3>${esc(row.icon)} ${esc(row.title)}</h3><button class="admin-danger small-action" data-action="delete-record" data-index="${i}">Delete</button></div>
   <div class="cms-grid two">${field("Ikon",row.icon,`${i}.icon`)}${field("Judul",row.title,`${i}.title`)}</div>
   ${area("Isi informasi — satu baris untuk satu poin",(row.items||[]).join("\n"),`${i}.__items`)}
- </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Tambah Informasi</button>`;
+ </article>`).join("")+`<button class="admin-primary" data-action="add-record">+ Add Information</button>`;
 
  $("#formEditor").querySelectorAll('[data-path$=".__items"]').forEach(el=>{
   el.addEventListener("input",()=>{
@@ -520,25 +520,25 @@ function renderTripInfo(){
 }
 function handleAction(e){
  const a=e.currentTarget.dataset.action;
- if(a==="add-day")workingData.days.push({date:"2027-03-15",label:"Hari Baru",items:[]});
- if(a==="delete-day"&&confirm("Hapus hari ini?"))workingData.days.splice(+e.currentTarget.dataset.day,1);
- if(a==="add-item")workingData.days[+e.currentTarget.dataset.day].items.push({from:"09:00",to:"10:00",activity:"Aktivitas baru",baiduMap:false,route:{originZh:"",destinationZh:"",regionZh:"",mode:"transit"}});
- if(a==="delete-item"&&confirm("Hapus aktivitas ini?"))workingData.days[+e.currentTarget.dataset.day].items.splice(+e.currentTarget.dataset.item,1);
- if(a==="add-flight-group")workingData.groups.push({id:"group-new",name:"Grup Baru",travellers:[],outbound:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""},seats:{}},return:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""},seats:{}}});
- if(a==="delete-flight-group"&&confirm("Hapus grup penerbangan ini?"))workingData.groups.splice(+e.currentTarget.dataset.group,1);
+ if(a==="add-day")workingData.days.push({date:"2027-03-15",label:"New Day",items:[]});
+ if(a==="delete-day"&&confirm("Delete hari ini?"))workingData.days.splice(+e.currentTarget.dataset.day,1);
+ if(a==="add-item")workingData.days[+e.currentTarget.dataset.day].items.push({from:"09:00",to:"10:00",activity:"New activity",baiduMap:false,route:{originZh:"",destinationZh:"",regionZh:"",mode:"transit"}});
+ if(a==="delete-item"&&confirm("Delete activities ini?"))workingData.days[+e.currentTarget.dataset.day].items.splice(+e.currentTarget.dataset.item,1);
+ if(a==="add-flight-group")workingData.groups.push({id:"group-new",name:"New Group",travellers:[],outbound:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""},seats:{}},return:{airline:"",flight:"",aircraft:"",date:"",referenceCode:"",departure:{code:"",airport:"",terminal:"",time:""},arrival:{code:"",airport:"",terminal:"",time:""},baggage:{personalItem:"",cabin:"",checked:""},seats:{}}});
+ if(a==="delete-flight-group"&&confirm("Delete grup penerbangan ini?"))workingData.groups.splice(+e.currentTarget.dataset.group,1);
  if(a==="add-record"){
   const t=activeDataset.type;
   if(t==="hotels")workingData.push({city:"",name:"",dates:"",datesGroupA:"",datesGroupB:"",address:"",mapsQuery:"",groupOnly:"",sourceUrl:""});
   if(t==="hsr")workingData.push({route:"",date:"",train:"",time:"",station:"",group:""});
   if(t==="members")workingData.push({id:"",name:"",whatsapp:"",email:"",member:workingData.length+1,room:"",roommates:"",flightGroup:"group-b",itineraryGroup:"main-group",bookingReference:""});
-  if(t==="tripinfo")workingData.push({title:"Informasi Baru",icon:"ℹ️",items:[]});
+  if(t==="tripinfo")workingData.push({title:"Information Baru",icon:"ℹ️",items:[]});
   if(t==="locations")workingData.push({id:"",city:"",name:"",cn:"",query:""})
  }
- if(a==="delete-record"&&confirm("Hapus data ini?"))workingData.splice(+e.currentTarget.dataset.index,1);
- if(a==="add-region")workingData.regions.push({id:"kota-baru",name:"Kota Baru",rooms:[]});
- if(a==="delete-region"&&confirm("Hapus kota ini?"))workingData.regions.splice(+e.currentTarget.dataset.region,1);
- if(a==="add-room")workingData.regions[+e.currentTarget.dataset.region].rooms.push({room:"Kamar Baru",members:[]});
- if(a==="delete-room"&&confirm("Hapus kamar ini?"))workingData.regions[+e.currentTarget.dataset.region].rooms.splice(+e.currentTarget.dataset.room,1);
+ if(a==="delete-record"&&confirm("Delete data ini?"))workingData.splice(+e.currentTarget.dataset.index,1);
+ if(a==="add-region")workingData.regions.push({id:"kota-baru",name:"City Baru",rooms:[]});
+ if(a==="delete-region"&&confirm("Delete kota ini?"))workingData.regions.splice(+e.currentTarget.dataset.region,1);
+ if(a==="add-room")workingData.regions[+e.currentTarget.dataset.region].rooms.push({room:"Room Baru",members:[]});
+ if(a==="delete-room"&&confirm("Delete kamar ini?"))workingData.regions[+e.currentTarget.dataset.region].rooms.splice(+e.currentTarget.dataset.room,1);
  if(a==="nfc-download"){const row=workingData[+e.currentTarget.dataset.index];handleNfcAction("download",row);return}
  if(a==="nfc-write"){const row=workingData[+e.currentTarget.dataset.index];handleNfcAction("write",row);return}
  renderEditor();markChanged()
@@ -551,9 +551,9 @@ async function saveCurrent(){
    }))
   }
   saveDraft(activeDataset.key,workingData);
-  setStatus("Draft tersimpan");
+  setStatus("Draft saved");
   $("#saveStatus").classList.remove("changed");
- }catch(err){setStatus("Gagal menyimpan draft");alert("Draft gagal disimpan: "+err.message)}
+ }catch(err){setStatus("Save failed draft");alert("Failed to save draft: "+err.message)}
 }
 async function publishAll(){
  const drafts=draftDatasets();
@@ -634,7 +634,7 @@ $("#saveBtn").onclick=saveCurrent;
 $("#publishBtn").onclick=publishAll;
 $("#reloadBtn").onclick=async()=>{
  if(activeDataset.key&&getDraft(activeDataset.key)!==null){
-  if(!confirm("Batalkan draft pada bagian ini?"))return;
+  if(!confirm("Cancel draft pada bagian ini?"))return;
   removeDraft(activeDataset.key)
  }
  await selectDataset(activeDataset.id)
