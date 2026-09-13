@@ -1,0 +1,7 @@
+V55 — Luggage page mobile-friendly redesign
+- Redesigned luggage/contact page as a premium luggage-tag style card.
+- Mobile-first responsive layout with compact spacing for iPhone/Android.
+- Added China Trip 2027 travel visual header, luggage icon, contact cards, WhatsApp CTA, privacy notice, and footer.
+- Removed itinerary access from QR page; QR remains contact-only.
+- Kept admin-controlled visibility for name/WhatsApp/email/note.
+- Bumped luggage assets to v55.

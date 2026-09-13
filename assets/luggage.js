@@ -21,19 +21,30 @@
    const whatsapp=m.publicWhatsapp||m.whatsapp||"";
    const email=m.publicEmail||m.email||"";
    const luggageId=m.luggageId||(`CT27-${String(m.id).toUpperCase()}`);
+   const prettyWa=whatsapp ? (String(whatsapp).startsWith("62") ? "+"+String(whatsapp) : whatsapp) : "";
    const rows=[];
-   if(showName)rows.push(`<div class="luggage-row"><span class="luggage-label">Nama</span><div class="luggage-value">${esc(publicName)}</div></div>`);
-   if(showWa&&whatsapp)rows.push(`<div class="luggage-row"><span class="luggage-label">WhatsApp</span><div class="luggage-value">${esc(whatsapp)}</div></div>`);
-   if(showEmail&&email)rows.push(`<div class="luggage-row"><span class="luggage-label">Email</span><div class="luggage-value">${esc(email)}</div></div>`);
-   if(m.publicNote)rows.push(`<div class="luggage-row"><span class="luggage-label">Pesan</span><div class="luggage-value">${esc(m.publicNote)}</div></div>`);
+   if(showName)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">👤</div><div class="luggage-row-content"><span class="luggage-label">Nama</span><div class="luggage-value">${esc(publicName)}</div></div></div>`);
+   if(showWa&&whatsapp)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">💬</div><div class="luggage-row-content"><span class="luggage-label">WhatsApp</span><div class="luggage-value">${esc(prettyWa)}</div></div></div>`);
+   if(showEmail&&email)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">✉️</div><div class="luggage-row-content"><span class="luggage-label">Email</span><div class="luggage-value">${esc(email)}</div></div></div>`);
+   if(m.publicNote)rows.push(`<div class="luggage-row"><div class="luggage-row-icon">💬</div><div class="luggage-row-content"><span class="luggage-label">Pesan</span><div class="luggage-value">${esc(m.publicNote)}</div></div></div>`);
    const wa=showWa?waLink(whatsapp):"";
    $("#luggageContent").innerHTML=`
-    <span class="luggage-badge">CHINA TRIP 2027 • LUGGAGE</span>
-    <h1 class="luggage-title">Jika Anda menemukan koper ini</h1>
-    <p class="luggage-sub">Mohon bantu hubungi pemilik melalui informasi di bawah.</p>
-    <div class="luggage-grid">${rows.join("")||'<div class="luggage-row">Informasi kontak belum diaktifkan.</div>'}</div>
-    <div class="luggage-actions">${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener">💬 Hubungi WhatsApp</a>`:""}</div>
-    <div class="luggage-privacy">🔒 Halaman ini hanya menampilkan data pribadi yang dipilih admin. Data itinerary berada di halaman terpisah.</div>`;
+    <div class="luggage-hero">
+      <span class="luggage-badge">CHINA TRIP 2027 • LUGGAGE</span>
+      <div class="luggage-brand">China</div>
+      <div class="luggage-trip">Trip 2027</div>
+      <div class="luggage-motto">Explore · Together · Create Memories</div>
+      <div class="luggage-skyline" aria-hidden="true"></div>
+      <div class="luggage-tag-icon" aria-hidden="true">🧳</div>
+    </div>
+    <div class="luggage-body">
+      <h1 class="luggage-title">Jika Anda menemukan koper ini</h1>
+      <p class="luggage-sub">Mohon bantu hubungi pemilik melalui informasi di bawah. Terima kasih ❤️</p>
+      <div class="luggage-grid">${rows.join("")||'<div class="luggage-row"><div class="luggage-row-icon">🔒</div><div class="luggage-row-content"><div class="luggage-value">Informasi kontak belum diaktifkan.</div></div></div>'}</div>
+      <div class="luggage-actions">${wa?`<a class="luggage-btn primary" href="${wa}" target="_blank" rel="noopener">💬 Hubungi via WhatsApp <span>›</span></a>`:""}</div>
+      <div class="luggage-privacy">🔒 Halaman ini hanya menampilkan data pribadi yang dipilih admin. Data itinerary berada di halaman terpisah.</div>
+    </div>
+    <div class="luggage-footer"><strong>Good People · Brighter Journeys</strong><span>China Trip 2027</span></div>`;
    document.title=`Luggage ${luggageId} — China Trip 2027`;
   }catch(e){$("#luggageContent").innerHTML=`<div class="luggage-error"><strong>Data tidak dapat dimuat.</strong><br>${esc(e.message)}<br><br>Jika sedang offline, halaman ini harus sudah pernah dibuka/cache di perangkat.</div>`}
  }
