@@ -982,3 +982,18 @@ body:has(.app){min-width:320px;}
  .simple-admin-topbar{display:block}.publish-area{margin-top:13px;flex-wrap:wrap}.simple-stat-grid{grid-template-columns:repeat(2,1fr)}.simple-quick-grid{grid-template-columns:1fr}.simple-welcome-card{display:block}.simple-welcome-card .admin-primary{margin-top:15px}.simple-editor-card{border-radius:17px}.simple-admin-topbar h1{font-size:29px}
 }
 @media(max-width:430px){.simple-login-card{padding:25px;margin-top:7vh}.simple-admin-main{padding:16px 9px 28px}.simple-stat-grid{gap:8px;padding:10px}.simple-stat-grid button{padding:13px}.simple-admin-sidebar-bottom .simple-side-link{font-size:11px}.simple-welcome-card,.simple-quick-card,.simple-help-card{padding:17px 14px}}
+
+
+/* V78 — prevent traveler email from being clipped on narrow screens */
+.hero-v30 .profile-copy{min-width:0;overflow:visible;}
+.hero-v30 .profile-copy span{
+  max-width:100%;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+@media(max-width:430px){
+  .hero-v30 .profile-copy span{font-size:10.5px;line-height:1.2;}
+}

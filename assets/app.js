@@ -154,7 +154,16 @@ async function loadItineraryForMember(me){
    ? "data/itinerary-septino-lina-raelyn.json"
    : "data/itinerary-group-b-early.json";
  try{
-  const earlyData=await getJSON(earlyFile);
+  // Septino/Lina/Raelyn have a dedicated 03–14 March 2027 itinerary.
+  // Keep this local file authoritative so an older Supabase dataset cannot
+  // accidentally replace the early-trip schedule with the 06–14 schedule.
+  const earlyData=isSeptinoGroup
+    ? await (async()=>{
+        const r=await fetch(earlyFile+"?v=78",{cache:"no-store"});
+        if(!r.ok)throw new Error(earlyFile);
+        return r.json();
+      })()
+    : await getJSON(earlyFile);
   const commonData=isSeptinoGroup ? {days:[]} : await getJSON("data/itinerary-common.json");
   const days=[...(earlyData.days||[]),...(commonData.days||[])].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
   const payload={groupId:me?.itineraryGroup||me?.id,days};

@@ -1,6 +1,4 @@
-V78 - Septino, Lina & Raelyn itinerary date
-
-- Septino, Lina and Raelyn use 03–14 MARCH 2027 on the profile/hero date.
-- Their itinerary is loaded from data/itinerary-septino-lina-raelyn.json, beginning 03 March 2027 and ending 14 March 2027.
-- Other participants remain on 06–14 MARCH 2027.
-- No global date change was made.
+V78 FIX
+- Septino, Lina, and Raelyn now always load their dedicated local itinerary dated 03–14 March 2027, avoiding stale Supabase 06–14 data.
+- Traveler email in the hero profile can wrap on narrow mobile screens instead of being clipped.
+- CSS cache version bumped to v78.
