@@ -22,7 +22,8 @@ async function initHome(){
  const id=getMemberId();const m=members.find(x=>x.id===id)||members[0];localStorage.setItem("trip_member",m.id);
  $("#travelerName").textContent=m.name;$("#travelerInitial").textContent=m.name[0].toUpperCase();
  $("#travelerEmail").textContent=m.email||"Email not set";
- const tripDate=m.flightGroup==="group-a"?"03–14 MARCH 2027":"06–14 MARCH 2027";
+ const isEarlyTrip=["septino","lina","raelyn"].includes(String(m.id||"").toLowerCase());
+ const tripDate=isEarlyTrip?"03–14 MARCH 2027":"06–14 MARCH 2027";
  const heroTripDate=$("#heroTripDate");
  if(heroTripDate) heroTripDate.textContent=tripDate;
  const memberNumber=$("#memberNumber");
