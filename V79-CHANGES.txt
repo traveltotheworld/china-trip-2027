@@ -1,0 +1,5 @@
+V79 FIX — Septino / Lina / Raelyn itinerary
+
+- Force Septino, Lina, and Raelyn to use the dedicated 03–14 March 2027 itinerary by member ID as well as itineraryGroup.
+- Bump the dedicated itinerary cache-buster from v=78 to v=79 so Vercel/browser cannot reuse the previous JSON response.
+- Other members remain on the 06–14 March 2027 itinerary.

@@ -149,7 +149,7 @@ function itineraryCacheKey(id){return "china_trip_itinerary_offline:"+String(id|
 function saveOfflineItinerary(id,payload){try{localStorage.setItem(itineraryCacheKey(id),JSON.stringify({savedAt:new Date().toISOString(),payload}))}catch(e){console.warn("Offline itinerary cache failed",e)}}
 function readOfflineItinerary(id){try{const x=JSON.parse(localStorage.getItem(itineraryCacheKey(id))||"null");return x?.payload||null}catch(e){return null}}
 async function loadItineraryForMember(me){
- const isSeptinoGroup=me?.itineraryGroup==="septino-lina-raelyn";
+ const isSeptinoGroup=["septino","lina","raelyn"].includes(String(me?.id||"").toLowerCase()) || me?.itineraryGroup==="septino-lina-raelyn";
  const earlyFile=isSeptinoGroup
    ? "data/itinerary-septino-lina-raelyn.json"
    : "data/itinerary-group-b-early.json";
@@ -159,7 +159,7 @@ async function loadItineraryForMember(me){
   // accidentally replace the early-trip schedule with the 06–14 schedule.
   const earlyData=isSeptinoGroup
     ? await (async()=>{
-        const r=await fetch(earlyFile+"?v=78",{cache:"no-store"});
+        const r=await fetch(earlyFile+"?v=79",{cache:"no-store"});
         if(!r.ok)throw new Error(earlyFile);
         return r.json();
       })()
