@@ -1,0 +1,7 @@
+V80 FIX — Correct Septino / Lina / Raelyn itinerary
+
+- Replaced the incorrect Septino/Lina/Raelyn itinerary data with the authoritative 03–14 March 2027 Shanghai–Wuxi–Suzhou–Hangzhou itinerary.
+- Day 1 now starts in Shanghai and continues to Wuxi, not Shangrao/Wangxian Valley.
+- All 12 days (03–14 March 2027) were rebuilt from the final itinerary source.
+- Forced member IDs septino, lina, and raelyn to use this dedicated itinerary.
+- Bumped the itinerary fetch version and service-worker cache to v80 to prevent stale data from being shown.

@@ -6,6 +6,7 @@
     "raelyn"
   ],
   "status": "final",
+  "source": "Shanghai Wuxi Suzhou Hangzhou Itinerary ~ 03 - 14 March 2027",
   "days": [
     {
       "date": "2027-03-03",
@@ -14,7 +15,7 @@
         {
           "from": "01:15",
           "to": "06:30",
-          "activity": "Singapore - Shanghai (Via Singapore Airlines SQ826)",
+          "activity": "Singapore Changi Airport Terminal 3 - Shanghai Pudong International Airport Terminal 2 (Via Singapore Airlines SQ 826)",
           "baiduMap": false
         },
         {
@@ -25,61 +26,97 @@
         },
         {
           "from": "08:00",
-          "to": "10:00",
-          "activity": "Shanghai Pudong Airport - Shanghai Hongqiao International",
+          "to": "09:30",
+          "activity": "Shanghai Pudong Airport Terminal 2 - Shanghai Hongqiao Railway Station",
           "baiduMap": false
         },
         {
-          "from": "10:00",
-          "to": "12:19",
-          "activity": "waiting for boarding HSR & Lunch",
+          "from": "09:30",
+          "to": "11:03",
+          "activity": "Waiting for boarding HSR",
           "baiduMap": false
         },
         {
-          "from": "12:19",
-          "to": "15:05",
-          "activity": "Shanghai Hongqiao Railway Station - Shangrao Railway Station",
+          "from": "11:03",
+          "to": "11:52",
+          "activity": "Shanghai Hongqiao Railway Station - Wuxi Railway Station",
           "baiduMap": false
         },
         {
-          "from": "15:05",
-          "to": "16:15",
+          "from": "11:52",
+          "to": "12:00",
           "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
-          "from": "16:15",
-          "to": "17:15",
-          "activity": "Shangrao Railyway Station - Wangxiangu Zhonglou Homestay",
+          "from": "12:00",
+          "to": "12:30",
+          "activity": "Wuxi Railway Station - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
           "baiduMap": false
         },
         {
-          "from": "17:15",
-          "to": "18:30",
-          "activity": "Checkin at Wangxiangu Zhonglou Homestay",
+          "from": "12:30",
+          "to": "12:45",
+          "activity": "Check-in at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
           "baiduMap": false
         },
         {
-          "from": "18:30",
-          "to": "18:45",
-          "activity": "Wangxiangu Zhonglou Homestay - Wangxian Valley",
+          "from": "12:45",
+          "to": "13:30",
+          "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Huishan Ancient Town",
           "baiduMap": false
         },
         {
-          "from": "18:45",
-          "to": "23:00",
+          "from": "13:30",
+          "to": "15:00",
+          "activity": "Walk around and lunch",
+          "baiduMap": false
+        },
+        {
+          "from": "15:00",
+          "to": "16:00",
+          "activity": "Huishan Ancient Town - Nanchan Temple",
+          "baiduMap": false
+        },
+        {
+          "from": "16:00",
+          "to": "17:00",
           "activity": "Walk around",
           "baiduMap": false
         },
         {
-          "from": "23:00",
-          "to": "23:15",
-          "activity": "Wangxian Valley - Wangxiangu Zhonglou Homestay",
+          "from": "17:00",
+          "to": "18:00",
+          "activity": "Nanchan Temple - Nanchang Street",
           "baiduMap": false
         },
         {
-          "from": "23:15",
-          "to": "07:30",
+          "from": "18:00",
+          "to": "20:00",
+          "activity": "Walk around and dinner",
+          "baiduMap": false
+        },
+        {
+          "from": "20:00",
+          "to": "20:30",
+          "activity": "Nanchang Street - Qingming Bridge",
+          "baiduMap": false
+        },
+        {
+          "from": "20:30",
+          "to": "21:30",
+          "activity": "Walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "21:30",
+          "to": "22:30",
+          "activity": "Nanchang Street - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "22:30",
+          "to": "06:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
@@ -90,73 +127,61 @@
       "label": "Thursday, 04 March 2027",
       "items": [
         {
-          "from": "07:30",
-          "to": "09:00",
+          "from": "06:00",
+          "to": "07:00",
           "activity": "Wake up & take a bath",
           "baiduMap": false
         },
         {
+          "from": "07:00",
+          "to": "07:30",
+          "activity": "Breakfast at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "07:30",
+          "to": "09:00",
+          "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Yuan Tou Zhu + Tai Hu",
+          "baiduMap": false
+        },
+        {
           "from": "09:00",
-          "to": "11:00",
-          "activity": "Walk around nearby and breakfast",
-          "baiduMap": false
-        },
-        {
-          "from": "11:00",
-          "to": "11:15",
-          "activity": "Checkout",
-          "baiduMap": false
-        },
-        {
-          "from": "11:15",
-          "to": "12:30",
-          "activity": "Wangxiangu Zhonglou Homestay - Shangrao Railway Station",
-          "baiduMap": false
-        },
-        {
-          "from": "12:30",
-          "to": "14:35",
-          "activity": "waiting for boarding HSR & Lunch",
-          "baiduMap": false
-        },
-        {
-          "from": "14:35",
-          "to": "16:50",
-          "activity": "Shangrao Railyway Station - Shanghai Hongqiao Railway Station",
-          "baiduMap": false
-        },
-        {
-          "from": "16:50",
-          "to": "18:00",
-          "activity": "Shanghai Hongqiao Railway Station - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) 藝龍安悅酒店（上海第二工業大學顧唐路地鐵站店）",
-          "baiduMap": false
-        },
-        {
-          "from": "18:00",
-          "to": "18:15",
-          "activity": "Checkin at Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
-          "baiduMap": false
-        },
-        {
-          "from": "18:15",
-          "to": "20:15",
-          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Sijing Night Market",
-          "baiduMap": false
-        },
-        {
-          "from": "20:15",
-          "to": "22:00",
+          "to": "10:00",
           "activity": "Walk around",
           "baiduMap": false
         },
         {
-          "from": "22:00",
-          "to": "00:00",
-          "activity": "Sijing Night Market - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "from": "10:00",
+          "to": "12:30",
+          "activity": "Yuan Tou Zhu + Tai Hu - Ling Shan Grand Buddha",
           "baiduMap": false
         },
         {
-          "from": "00:00",
+          "from": "12:30",
+          "to": "16:30",
+          "activity": "Walk around and lunch",
+          "baiduMap": false
+        },
+        {
+          "from": "16:30",
+          "to": "18:00",
+          "activity": "Ling Shan Grand Buddha - Nian Hua Bay",
+          "baiduMap": false
+        },
+        {
+          "from": "18:00",
+          "to": "20:00",
+          "activity": "Walk around and dinner",
+          "baiduMap": false
+        },
+        {
+          "from": "20:00",
+          "to": "22:00",
+          "activity": "Nian Hua Bay - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "22:00",
           "to": "07:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
@@ -170,36 +195,36 @@
         {
           "from": "07:00",
           "to": "08:00",
-          "activity": "Wake up & take a bath",
+          "activity": "Wake up, take a bath & check-out",
           "baiduMap": false
         },
         {
           "from": "08:00",
           "to": "09:00",
-          "activity": "Walk around nearby and breakfast",
+          "activity": "Breakfast at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
           "baiduMap": false
         },
         {
           "from": "09:00",
-          "to": "12:00",
-          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Legoland Shanghai",
+          "to": "10:30",
+          "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Three Kingdoms City",
           "baiduMap": false
         },
         {
-          "from": "12:00",
-          "to": "20:00",
-          "activity": "Walk around nearby, lunch & Dinner",
+          "from": "10:30",
+          "to": "18:00",
+          "activity": "Walk around nearby, lunch & dinner",
           "baiduMap": false
         },
         {
-          "from": "20:00",
-          "to": "23:00",
-          "activity": "Legoland Shanghai - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "from": "18:00",
+          "to": "19:30",
+          "activity": "Three Kingdoms City - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
           "baiduMap": false
         },
         {
-          "from": "23:00",
-          "to": "07:00",
+          "from": "19:30",
+          "to": "06:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
@@ -210,49 +235,73 @@
       "label": "Saturday, 06 March 2027",
       "items": [
         {
-          "from": "07:00",
-          "to": "08:00",
+          "from": "06:00",
+          "to": "07:00",
           "activity": "Wake up & take a bath",
           "baiduMap": false
         },
         {
-          "from": "08:00",
-          "to": "09:00",
-          "activity": "Walk around nearby and breakfast",
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Breakfast at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
           "baiduMap": false
         },
         {
-          "from": "09:00",
-          "to": "11:00",
+          "from": "08:00",
+          "to": "08:30",
+          "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Wuxi Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "08:30",
+          "to": "09:02",
+          "activity": "Waiting for boarding HSR",
+          "baiduMap": false
+        },
+        {
+          "from": "09:02",
+          "to": "09:53",
+          "activity": "Wuxi Railway Station - Shanghai Hongqiao Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "09:53",
+          "to": "10:00",
+          "activity": "Custom Clearance",
+          "baiduMap": false
+        },
+        {
+          "from": "10:00",
+          "to": "12:00",
+          "activity": "Shanghai Hongqiao Railway Station - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "12:00",
+          "to": "12:15",
+          "activity": "Check-in at Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "12:15",
+          "to": "14:15",
           "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Shanghai Wild Animal Park",
           "baiduMap": false
         },
         {
-          "from": "11:00",
-          "to": "17:00",
-          "activity": "Walk around nearby & Lunch",
+          "from": "14:15",
+          "to": "21:00",
+          "activity": "Walk around nearby & lunch",
           "baiduMap": false
         },
         {
-          "from": "17:00",
-          "to": "18:30",
-          "activity": "Shanghai Wild Animal Park - Shanghai Disneytown",
+          "from": "21:00",
+          "to": "23:00",
+          "activity": "Shanghai Wild Animal Park - Shanghai Pudong Airport Terminal 2",
           "baiduMap": false
         },
         {
-          "from": "18:30",
-          "to": "20:30",
-          "activity": "Walk around & Dinner",
-          "baiduMap": false
-        },
-        {
-          "from": "20:30",
-          "to": "21:30",
-          "activity": "Shanghai Disneytown - Shanghai Pudong Airport Terminal 2",
-          "baiduMap": false
-        },
-        {
-          "from": "21:30",
+          "from": "23:00",
           "to": "00:00",
           "activity": "Waiting Group Custom Clearance",
           "baiduMap": false
@@ -272,19 +321,97 @@
         {
           "from": "02:00",
           "to": "02:15",
-          "activity": "Bath, Rest & Fight For Tomorrow",
+          "activity": "Check-in at Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": false
         },
         {
           "from": "02:15",
           "to": "09:00",
-          "activity": "Rest",
+          "activity": "Rest & Fight For Tomorrow",
           "baiduMap": false
         },
         {
           "from": "09:00",
           "to": "10:00",
-          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Jing'an Temple",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Yuyuan Garden",
+          "baiduMap": false
+        },
+        {
+          "from": "10:00",
+          "to": "11:00",
+          "activity": "Walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "11:00",
+          "to": "11:15",
+          "activity": "Yuyuan Garden - Chenghuangmiao No.1 Shopping Center",
+          "baiduMap": false
+        },
+        {
+          "from": "11:15",
+          "to": "13:30",
+          "activity": "Walk around & lunch",
+          "baiduMap": false
+        },
+        {
+          "from": "13:30",
+          "to": "14:30",
+          "activity": "Chenghuangmiao - Shanghai Romance Park",
+          "baiduMap": false
+        },
+        {
+          "from": "14:30",
+          "to": "20:30",
+          "activity": "Walk around & dinner",
+          "baiduMap": false
+        },
+        {
+          "from": "20:30",
+          "to": "21:30",
+          "activity": "Shanghai Romance Park - Nanjing Road Pedestrian Street",
+          "baiduMap": false
+        },
+        {
+          "from": "21:30",
+          "to": "23:00",
+          "activity": "Walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "23:00",
+          "to": "00:00",
+          "activity": "Nanjing Road Pedestrian Street - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "00:00",
+          "to": "07:00",
+          "activity": "Bath, Rest & Fight For Tomorrow",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-08",
+      "label": "Monday, 08 March 2027",
+      "items": [
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Wake up and take a bath",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Walk around nearby and breakfast",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:00",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Jing’an Temple",
           "baiduMap": false
         },
         {
@@ -302,7 +429,7 @@
         {
           "from": "12:00",
           "to": "13:30",
-          "activity": "Walk around & Lunch",
+          "activity": "Walk around & lunch",
           "baiduMap": false
         },
         {
@@ -326,107 +453,29 @@
         {
           "from": "17:00",
           "to": "18:30",
-          "activity": "Walk around & Dinner",
+          "activity": "Walk around & dinner",
           "baiduMap": false
         },
         {
           "from": "18:30",
           "to": "19:30",
-          "activity": "Tianzifang - The Bund, Lu Jia Zui, Oriental Pearl Tower (Maybe Cruise for Night View)",
+          "activity": "Tianzifang - East Fuxing Road Pier",
           "baiduMap": false
         },
         {
           "from": "19:30",
-          "to": "20:30",
-          "activity": "Walk around",
+          "to": "19:45",
+          "activity": "Take local public cross-river ferry to Dongchang Road Pier for Huangpu River night view",
           "baiduMap": false
         },
         {
-          "from": "20:30",
-          "to": "22:00",
-          "activity": "The Bund, Lu Jia Zui, Oriental Pearl Tower - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "from": "19:45",
+          "to": "21:15",
+          "activity": "Dongchang Road Pier - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
           "baiduMap": false
         },
         {
-          "from": "22:00",
-          "to": "06:00",
-          "activity": "Bath, Rest & Fight For Tomorrow",
-          "baiduMap": false
-        }
-      ]
-    },
-    {
-      "date": "2027-03-08",
-      "label": "Monday, 08 March 2027",
-      "items": [
-        {
-          "from": "06:00",
-          "to": "07:00",
-          "activity": "Wake up & take a bath",
-          "baiduMap": false
-        },
-        {
-          "from": "07:00",
-          "to": "08:00",
-          "activity": "Breakfast at nearby or 饿了么",
-          "baiduMap": false
-        },
-        {
-          "from": "08:00",
-          "to": "09:00",
-          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Yuyuan Garden",
-          "baiduMap": false
-        },
-        {
-          "from": "09:00",
-          "to": "10:00",
-          "activity": "Walk around",
-          "baiduMap": false
-        },
-        {
-          "from": "10:00",
-          "to": "10:15",
-          "activity": "Yuyuan Garden - Chenghuangmiao No.1 Shopping Center",
-          "baiduMap": false
-        },
-        {
-          "from": "10:15",
-          "to": "12:30",
-          "activity": "Walk around & Lunch",
-          "baiduMap": false
-        },
-        {
-          "from": "12:30",
-          "to": "13:30",
-          "activity": "Chenghuangmiao - Shanghai Romance Park",
-          "baiduMap": false
-        },
-        {
-          "from": "13:30",
-          "to": "19:30",
-          "activity": "Walk around & Dinner",
-          "baiduMap": false
-        },
-        {
-          "from": "19:30",
-          "to": "20:30",
-          "activity": "Shanghai Romance Park - Nanjing Road Pedestrian Street",
-          "baiduMap": false
-        },
-        {
-          "from": "20:30",
-          "to": "22:00",
-          "activity": "Walk around",
-          "baiduMap": false
-        },
-        {
-          "from": "22:00",
-          "to": "23:00",
-          "activity": "Nanjing Road Pedestrian Street - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
-          "baiduMap": false
-        },
-        {
-          "from": "23:00",
+          "from": "21:15",
           "to": "06:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
@@ -440,13 +489,55 @@
         {
           "from": "06:00",
           "to": "07:00",
-          "activity": "Wake up, take a bath & Checkout",
+          "activity": "Wake up and take a bath",
           "baiduMap": false
         },
         {
           "from": "07:00",
           "to": "08:00",
-          "activity": "Breakfast at nearby or 饿了么",
+          "activity": "Walk around nearby and breakfast",
+          "baiduMap": false
+        },
+        {
+          "from": "08:00",
+          "to": "10:00",
+          "activity": "Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch) - Shanghai Disneyland",
+          "baiduMap": false
+        },
+        {
+          "from": "10:00",
+          "to": "21:00",
+          "activity": "Walk around nearby, lunch & dinner",
+          "baiduMap": false
+        },
+        {
+          "from": "21:00",
+          "to": "23:00",
+          "activity": "Shanghai Disneyland - Yilong Anyue Hotel (Shanghai Gutang Road Subway Station Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "23:00",
+          "to": "06:00",
+          "activity": "Bath, Rest & Fight For Tomorrow",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-10",
+      "label": "Wednesday, 10 March 2027",
+      "items": [
+        {
+          "from": "06:00",
+          "to": "07:00",
+          "activity": "Wake up, take a bath & check-out",
+          "baiduMap": false
+        },
+        {
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Breakfast nearby or Ele.me",
           "baiduMap": false
         },
         {
@@ -458,7 +549,7 @@
         {
           "from": "09:30",
           "to": "11:39",
-          "activity": "waiting for boarding HSR",
+          "activity": "Waiting for boarding HSR",
           "baiduMap": false
         },
         {
@@ -482,7 +573,7 @@
         {
           "from": "12:36",
           "to": "14:30",
-          "activity": "Check in & have lunch nearby",
+          "activity": "Check-in & have lunch nearby",
           "baiduMap": false
         },
         {
@@ -493,109 +584,31 @@
         },
         {
           "from": "16:00",
-          "to": "17:15",
-          "activity": "walk around",
-          "baiduMap": false
-        },
-        {
-          "from": "17:15",
-          "to": "18:15",
-          "activity": "Hanshan Temple - Qilishantang Street",
-          "baiduMap": false
-        },
-        {
-          "from": "18:15",
-          "to": "20:45",
-          "activity": "walk around and dinner",
-          "baiduMap": false
-        },
-        {
-          "from": "20:45",
-          "to": "21:15",
-          "activity": "Qilishantang Street - Madison Hotel Suzhou Railway Station",
-          "baiduMap": false
-        },
-        {
-          "from": "21:15",
-          "to": "06:15",
-          "activity": "Bath, Rest & Fight For Tomorrow",
-          "baiduMap": false
-        }
-      ]
-    },
-    {
-      "date": "2027-03-10",
-      "label": "Wednesday, 10 March 2027",
-      "items": [
-        {
-          "from": "06:15",
-          "to": "07:15",
-          "activity": "Wake up & take a bath",
-          "baiduMap": false
-        },
-        {
-          "from": "07:15",
-          "to": "08:15",
-          "activity": "Breakfast at nearby or 饿了么",
-          "baiduMap": false
-        },
-        {
-          "from": "08:15",
-          "to": "09:15",
-          "activity": "Madison Hotel Suzhou Railway Station - Tiger Hill Pagoda",
-          "baiduMap": false
-        },
-        {
-          "from": "09:15",
-          "to": "11:15",
-          "activity": "walk around",
-          "baiduMap": false
-        },
-        {
-          "from": "11:15",
-          "to": "12:15",
-          "activity": "Tiger Hill Pagoda - Lion Grove Garden",
-          "baiduMap": false
-        },
-        {
-          "from": "12:15",
-          "to": "14:15",
-          "activity": "Walk around & Lunch",
-          "baiduMap": false
-        },
-        {
-          "from": "14:15",
-          "to": "14:30",
-          "activity": "Lion Grove Garden - Humble Administrator Garden",
-          "baiduMap": false
-        },
-        {
-          "from": "14:30",
-          "to": "16:45",
+          "to": "17:30",
           "activity": "Walk around",
           "baiduMap": false
         },
         {
-          "from": "16:45",
-          "to": "17:15",
-          "activity": "Humble Administrator Garden - Pingjiang Road",
+          "from": "17:30",
+          "to": "18:30",
+          "activity": "Hanshan Temple - Qilishantang Street",
           "baiduMap": false
         },
         {
-          "from": "17:15",
-          "to": "19:45",
-          "activity": "Walk around & Dinner",
+          "from": "18:30",
+          "to": "21:00",
+          "activity": "Walk around and dinner",
           "baiduMap": false
         },
         {
-          "from": "19:45",
-          "to": "21:15",
-          "activity": "Pingjiang Road - Madison Hotel Suzhou Railway Station",
+          "from": "21:00",
+          "to": "21:30",
+          "activity": "Qilishantang Street - Madison Hotel Suzhou Railway Station",
           "baiduMap": false
         },
         {
-          "from": "21:15",
-          "to": "06:30",
+          "from": "21:30",
+          "to": "06:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
@@ -606,68 +619,116 @@
       "label": "Thursday, 11 March 2027",
       "items": [
         {
-          "from": "06:30",
-          "to": "07:30",
-          "activity": "Wake up, take a bath & Checkout",
+          "from": "06:00",
+          "to": "07:00",
+          "activity": "Wake up, take a bath & check-out",
           "baiduMap": false
         },
         {
-          "from": "07:30",
-          "to": "07:45",
-          "activity": "Madison Hotel Suzhou Railway Station - Suzhou Railway Station",
+          "from": "07:00",
+          "to": "08:00",
+          "activity": "Breakfast nearby or Ele.me",
           "baiduMap": false
         },
         {
-          "from": "07:45",
-          "to": "09:59",
-          "activity": "Waiting for boarding HSR",
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Madison Hotel Suzhou Railway Station - Tiger Hill Pagoda",
           "baiduMap": false
         },
         {
-          "from": "09:59",
-          "to": "11:52",
-          "activity": "Suzhou Railway Station - Hangzhou West Railway Station",
+          "from": "09:00",
+          "to": "10:30",
+          "activity": "Walk around",
           "baiduMap": false
         },
         {
-          "from": "11:52",
-          "to": "12:30",
+          "from": "10:30",
+          "to": "11:30",
+          "activity": "Tiger Hill Pagoda - Lion Grove Garden",
+          "baiduMap": false
+        },
+        {
+          "from": "11:30",
+          "to": "13:00",
+          "activity": "Walk around & lunch",
+          "baiduMap": false
+        },
+        {
+          "from": "13:00",
+          "to": "13:15",
+          "activity": "Lion Grove Garden - Humble Administrator Garden",
+          "baiduMap": false
+        },
+        {
+          "from": "13:15",
+          "to": "14:45",
+          "activity": "Walk around",
+          "baiduMap": false
+        },
+        {
+          "from": "14:45",
+          "to": "15:15",
+          "activity": "Humble Administrator Garden - Pingjiang Road",
+          "baiduMap": false
+        },
+        {
+          "from": "15:15",
+          "to": "17:45",
+          "activity": "Walk around & dinner",
+          "baiduMap": false
+        },
+        {
+          "from": "17:45",
+          "to": "19:15",
+          "activity": "Pingjiang Road - Madison Hotel Suzhou Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "19:15",
+          "to": "19:30",
+          "activity": "Take luggage",
+          "baiduMap": false
+        },
+        {
+          "from": "19:30",
+          "to": "19:45",
+          "activity": "Madison Hotel Suzhou Railway Station - Suzhou Station",
+          "baiduMap": false
+        },
+        {
+          "from": "19:45",
+          "to": "21:53",
+          "activity": "Waiting for boarding",
+          "baiduMap": false
+        },
+        {
+          "from": "21:53",
+          "to": "22:37",
+          "activity": "Suzhou Station - Hangzhou West Railway Station",
+          "baiduMap": false
+        },
+        {
+          "from": "22:37",
+          "to": "22:52",
           "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
-          "from": "12:30",
-          "to": "14:00",
-          "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
+          "from": "22:52",
+          "to": "00:22",
+          "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment (Zheda Zijingang Branch)",
           "baiduMap": false
         },
         {
-          "from": "14:00",
-          "to": "14:30",
-          "activity": "Check in Hangzhou Yi Apartment (Zheda Zijingang Branch)",
+          "from": "00:22",
+          "to": "00:30",
+          "activity": "Check-in at Hangzhou Yi Apartment (Zheda Zijingang Branch)",
           "baiduMap": false
         },
         {
-          "from": "14:30",
-          "to": "16:30",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Song Dynasty Town",
-          "baiduMap": false
-        },
-        {
-          "from": "16:30",
-          "to": "21:30",
-          "activity": "walk around",
-          "baiduMap": false
-        },
-        {
-          "from": "21:30",
-          "to": "23:30",
-          "activity": "Song Dynasty Town - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
-          "baiduMap": false
-        },
-        {
-          "from": "23:30",
-          "to": "07:30",
+          "from": "00:30",
+          "to": "08:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
           "baiduMap": false
         }
@@ -678,21 +739,63 @@
       "label": "Friday, 12 March 2027",
       "items": [
         {
+          "from": "08:00",
+          "to": "09:00",
+          "activity": "Wake up and take a bath",
+          "baiduMap": false
+        },
+        {
+          "from": "09:00",
+          "to": "10:30",
+          "activity": "Breakfast nearby or Ele.me",
+          "baiduMap": false
+        },
+        {
+          "from": "10:30",
+          "to": "12:30",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) - Song Dynasty Town",
+          "baiduMap": false
+        },
+        {
+          "from": "12:30",
+          "to": "20:00",
+          "activity": "Walk around nearby, lunch & dinner",
+          "baiduMap": false
+        },
+        {
+          "from": "20:00",
+          "to": "22:00",
+          "activity": "Song Dynasty Town - Hangzhou Yi Apartment (Zheda Zijingang Branch)",
+          "baiduMap": false
+        },
+        {
+          "from": "22:00",
+          "to": "07:30",
+          "activity": "Bath, Rest & Fight For Tomorrow",
+          "baiduMap": false
+        }
+      ]
+    },
+    {
+      "date": "2027-03-13",
+      "label": "Saturday, 13 March 2027",
+      "items": [
+        {
           "from": "07:30",
           "to": "08:30",
-          "activity": "Wake up & take a bath",
+          "activity": "Wake up and take a bath",
           "baiduMap": false
         },
         {
           "from": "08:30",
           "to": "09:30",
-          "activity": "Breakfast at nearby or 饿了么",
+          "activity": "Breakfast nearby or Ele.me",
           "baiduMap": false
         },
         {
           "from": "09:30",
           "to": "11:00",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Lingyin Temple & Feilai Feng",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) - Lingyin Temple & Feilai Feng",
           "baiduMap": false
         },
         {
@@ -710,13 +813,13 @@
         {
           "from": "14:30",
           "to": "18:30",
-          "activity": "Walk around & Lunch",
+          "activity": "Walk around & lunch",
           "baiduMap": false
         },
         {
           "from": "14:30",
           "to": "15:30",
-          "activity": "West Lake - Qinghefang 清河坊 历史文化特色街区 & Hefang Street",
+          "activity": "West Lake - Qinghefang & Hefang Street",
           "baiduMap": false
         },
         {
@@ -728,67 +831,25 @@
         {
           "from": "17:30",
           "to": "18:30",
-          "activity": "Qinghefang 清河坊 历史文化特色街区 & Hefang Street - Wulin Road Night Market",
+          "activity": "Qinghefang & Hefang Street - Wulin Road Night Market",
           "baiduMap": false
         },
         {
           "from": "18:30",
           "to": "21:30",
-          "activity": "Walk around & Dinner",
+          "activity": "Walk around & dinner",
           "baiduMap": false
         },
         {
           "from": "21:30",
           "to": "22:30",
-          "activity": "Wulin Road Night Market - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
+          "activity": "Wulin Road Night Market - Hangzhou Yi Apartment (Zheda Zijingang Branch)",
           "baiduMap": false
         },
         {
           "from": "22:30",
-          "to": "06:00",
+          "to": "04:00",
           "activity": "Bath, Rest & Fight For Tomorrow",
-          "baiduMap": false
-        }
-      ]
-    },
-    {
-      "date": "2027-03-13",
-      "label": "Saturday, 13 March 2027",
-      "items": [
-        {
-          "from": "06:00",
-          "to": "08:00",
-          "activity": "Wake up, take a bath & Breakfast",
-          "baiduMap": false
-        },
-        {
-          "from": "08:00",
-          "to": "10:00",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Tianzidi Scenic Area 天子地景区游客中心 / OMG 心跳乐园 / 马岭天官",
-          "baiduMap": false
-        },
-        {
-          "from": "10:00",
-          "to": "15:00",
-          "activity": "Walk around & Lunch",
-          "baiduMap": false
-        },
-        {
-          "from": "15:00",
-          "to": "17:00",
-          "activity": "Tianzidi Scenic Area 天子地景区游客中心 / OMG 心跳乐园 / 马岭天官 - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
-          "baiduMap": false
-        },
-        {
-          "from": "17:00",
-          "to": "18:00",
-          "activity": "Dinner at nearby or 饿了么",
-          "baiduMap": false
-        },
-        {
-          "from": "18:00",
-          "to": "03:30",
-          "activity": "Bath & Rest",
           "baiduMap": false
         }
       ]
@@ -798,62 +859,62 @@
       "label": "Sunday, 14 March 2027",
       "items": [
         {
-          "from": "03:30",
-          "to": "04:30",
-          "activity": "Wake up, take a bath & Checkout",
+          "from": "04:00",
+          "to": "05:00",
+          "activity": "Wake up, take a bath & check-out",
           "baiduMap": false
         },
         {
-          "from": "04:30",
-          "to": "06:00",
-          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Hangzhou Xiaoshan International Airport Terminal 4",
+          "from": "05:00",
+          "to": "06:30",
+          "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) - Hangzhou Xiaoshan International Airport",
           "baiduMap": false
         },
         {
-          "from": "06:00",
-          "to": "08:20",
-          "activity": "Waiting for boarding plane & Breakfast",
+          "from": "06:30",
+          "to": "08:50",
+          "activity": "Terminal 4 waiting for boarding plane & breakfast",
           "baiduMap": false
         },
         {
-          "from": "08:20",
-          "to": "13:50",
+          "from": "08:50",
+          "to": "14:20",
           "activity": "Hangzhou Xiaoshan International Airport - Singapore Changi Airport Terminal 3 (Via Xiamen Airlines)",
           "baiduMap": false
         },
         {
-          "from": "13:50",
-          "to": "16:05",
+          "from": "14:20",
+          "to": "16:35",
           "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
-          "from": "16:05",
-          "to": "17:05",
+          "from": "16:35",
+          "to": "17:35",
           "activity": "Changi Airport - Tanah Merah",
           "baiduMap": false
         },
         {
-          "from": "17:05",
-          "to": "19:20",
-          "activity": "Waiting for boarding Ferry",
+          "from": "17:35",
+          "to": "19:50",
+          "activity": "Waiting for boarding ferry",
           "baiduMap": false
         },
         {
-          "from": "19:20",
-          "to": "19:20",
+          "from": "19:50",
+          "to": "19:50",
           "activity": "Tanah Merah - Batam Centre",
           "baiduMap": false
         },
         {
-          "from": "19:20",
-          "to": "20:35",
+          "from": "19:50",
+          "to": "21:05",
           "activity": "Custom Clearance",
           "baiduMap": false
         },
         {
-          "from": "20:35",
-          "to": "21:05",
+          "from": "21:05",
+          "to": "21:35",
           "activity": "END OF TRIP & BYE-BYE",
           "baiduMap": false
         }

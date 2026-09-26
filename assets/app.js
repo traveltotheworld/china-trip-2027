@@ -159,7 +159,7 @@ async function loadItineraryForMember(me){
   // accidentally replace the early-trip schedule with the 06–14 schedule.
   const earlyData=isSeptinoGroup
     ? await (async()=>{
-        const r=await fetch(earlyFile+"?v=79",{cache:"no-store"});
+        const r=await fetch(earlyFile+"?v=80",{cache:"no-store"});
         if(!r.ok)throw new Error(earlyFile);
         return r.json();
       })()
