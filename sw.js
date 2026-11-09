@@ -1,4 +1,4 @@
-const CACHE="china-trip-v80-itinerary-fix";
+const CACHE="china-trip-v54-hybrid-nfc-qr";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",
@@ -19,7 +19,7 @@ const ASSETS=[
   "/members.html",
   "/trip-info.html",
   "/assets/style.css",
-  "/assets/app.js?v=80",
+  "/assets/app.js",
   "/assets/luggage.js",
   "/data/members.json",
   "/data/luggage-tags.json",

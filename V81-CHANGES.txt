@@ -1,0 +1,6 @@
+V81 — QR Luggage Contact Data Fix
+
+- Enabled public email display and email button for Yongki, Irin, Apryanto, Devia, and Fredy.
+- Set Yongki email to yongki.gmvbb@gmail.com and WhatsApp to 6281268419799.
+- Set Rikko WhatsApp to 6285829476319 and enabled WhatsApp display/button.
+- Updated both data/members.json and data/luggage-tags.json.

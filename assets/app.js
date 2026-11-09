@@ -22,8 +22,7 @@ async function initHome(){
  const id=getMemberId();const m=members.find(x=>x.id===id)||members[0];localStorage.setItem("trip_member",m.id);
  $("#travelerName").textContent=m.name;$("#travelerInitial").textContent=m.name[0].toUpperCase();
  $("#travelerEmail").textContent=m.email||"Email not set";
- const isEarlyTrip=["septino","lina","raelyn"].includes(String(m.id||"").toLowerCase());
- const tripDate=isEarlyTrip?"03–14 MARCH 2027":"06–14 MARCH 2027";
+ const tripDate=m.flightGroup==="group-a"?"03–14 MARCH 2027":"06–14 MARCH 2027";
  const heroTripDate=$("#heroTripDate");
  if(heroTripDate) heroTripDate.textContent=tripDate;
  const memberNumber=$("#memberNumber");
@@ -149,21 +148,12 @@ function itineraryCacheKey(id){return "china_trip_itinerary_offline:"+String(id|
 function saveOfflineItinerary(id,payload){try{localStorage.setItem(itineraryCacheKey(id),JSON.stringify({savedAt:new Date().toISOString(),payload}))}catch(e){console.warn("Offline itinerary cache failed",e)}}
 function readOfflineItinerary(id){try{const x=JSON.parse(localStorage.getItem(itineraryCacheKey(id))||"null");return x?.payload||null}catch(e){return null}}
 async function loadItineraryForMember(me){
- const isSeptinoGroup=["septino","lina","raelyn"].includes(String(me?.id||"").toLowerCase()) || me?.itineraryGroup==="septino-lina-raelyn";
+ const isSeptinoGroup=me?.itineraryGroup==="septino-lina-raelyn";
  const earlyFile=isSeptinoGroup
    ? "data/itinerary-septino-lina-raelyn.json"
    : "data/itinerary-group-b-early.json";
  try{
-  // Septino/Lina/Raelyn have a dedicated 03–14 March 2027 itinerary.
-  // Keep this local file authoritative so an older Supabase dataset cannot
-  // accidentally replace the early-trip schedule with the 06–14 schedule.
-  const earlyData=isSeptinoGroup
-    ? await (async()=>{
-        const r=await fetch(earlyFile+"?v=80",{cache:"no-store"});
-        if(!r.ok)throw new Error(earlyFile);
-        return r.json();
-      })()
-    : await getJSON(earlyFile);
+  const earlyData=await getJSON(earlyFile);
   const commonData=isSeptinoGroup ? {days:[]} : await getJSON("data/itinerary-common.json");
   const days=[...(earlyData.days||[]),...(commonData.days||[])].sort((a,b)=>(a.date||"").localeCompare(b.date||""));
   const payload={groupId:me?.itineraryGroup||me?.id,days};

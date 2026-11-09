@@ -92,14 +92,14 @@
     "roommates": "Not set",
     "flightGroup": "group-b",
     "itineraryGroup": "main-group",
-    "whatsapp": "",
+    "whatsapp": "6285829476319",
     "bookingReference": "BLPB0FK",
     "xiamenBookingReference": "PWP4CK",
     "luggageId": "CT27-RIKKO",
     "qrShowName": true,
     "publicContactName": "Rikko Supriyadi",
-    "qrShowWhatsapp": false,
-    "publicWhatsapp": "",
+    "qrShowWhatsapp": true,
+    "publicWhatsapp": "6285829476319",
     "qrShowEmail": false,
     "publicEmail": "",
     "publicNote": "If found, please contact the luggage owner."
@@ -121,14 +121,14 @@
     "publicContactName": "Devia",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6285835294668",
-    "qrShowEmail": false,
-    "publicEmail": "",
+    "qrShowEmail": true,
+    "publicEmail": "siladevidevia@gmail.com",
     "publicNote": "If found, please contact the luggage owner."
   },
   {
     "id": "yongki",
     "name": "Yongki Wijaya",
-    "email": "",
+    "email": "yongki.gmvbb@gmail.com",
     "member": 7,
     "room": "Room 3",
     "roommates": "Prianto",
@@ -142,8 +142,8 @@
     "publicContactName": "Yongki Wijaya",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6281268419799",
-    "qrShowEmail": false,
-    "publicEmail": "",
+    "qrShowEmail": true,
+    "publicEmail": "yongki.gmvbb@gmail.com",
     "publicNote": "If found, please contact the luggage owner."
   },
   {
@@ -184,8 +184,8 @@
     "publicContactName": "Fredy Lim",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6282255348259",
-    "qrShowEmail": false,
-    "publicEmail": "",
+    "qrShowEmail": true,
+    "publicEmail": "fredylim372@gmail.com",
     "publicNote": "If found, please contact the luggage owner."
   },
   {
@@ -205,8 +205,8 @@
     "publicContactName": "Apryanto",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6282170809390",
-    "qrShowEmail": false,
-    "publicEmail": "",
+    "qrShowEmail": true,
+    "publicEmail": "apryanto.chen@gmail.com",
     "publicNote": "If found, please contact the luggage owner."
   },
   {
@@ -247,8 +247,8 @@
     "publicContactName": "Irin Enzelin",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6281277122263",
-    "qrShowEmail": false,
-    "publicEmail": "",
+    "qrShowEmail": true,
+    "publicEmail": "irinenzelin20@gmail.com",
     "publicNote": "If found, please contact the luggage owner."
   }
 ]

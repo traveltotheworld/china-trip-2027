@@ -58,11 +58,12 @@
     "itineraryMemberId": "rikko",
     "qrShowName": true,
     "publicContactName": "Rikko Supriyadi",
-    "qrShowWhatsapp": false,
-    "publicWhatsapp": "",
+    "qrShowWhatsapp": true,
+    "publicWhatsapp": "6285829476319",
     "qrShowEmail": false,
     "publicEmail": "",
-    "publicNote": "If found, please contact the luggage owner."
+    "publicNote": "If found, please contact the luggage owner.",
+    "whatsapp": "6285829476319"
   },
   {
     "id": "devia",
@@ -73,9 +74,10 @@
     "publicContactName": "Devia",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6285835294668",
-    "qrShowEmail": false,
-    "publicEmail": "",
-    "publicNote": "If found, please contact the luggage owner."
+    "qrShowEmail": true,
+    "publicEmail": "siladevidevia@gmail.com",
+    "publicNote": "If found, please contact the luggage owner.",
+    "email": "siladevidevia@gmail.com"
   },
   {
     "id": "yongki",
@@ -86,9 +88,11 @@
     "publicContactName": "Yongki Wijaya",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6281268419799",
-    "qrShowEmail": false,
-    "publicEmail": "",
-    "publicNote": "If found, please contact the luggage owner."
+    "qrShowEmail": true,
+    "publicEmail": "yongki.gmvbb@gmail.com",
+    "publicNote": "If found, please contact the luggage owner.",
+    "email": "yongki.gmvbb@gmail.com",
+    "whatsapp": "6281268419799"
   },
   {
     "id": "prianto",
@@ -112,9 +116,10 @@
     "publicContactName": "Fredy Lim",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6282255348259",
-    "qrShowEmail": false,
-    "publicEmail": "",
-    "publicNote": "If found, please contact the luggage owner."
+    "qrShowEmail": true,
+    "publicEmail": "fredylim372@gmail.com",
+    "publicNote": "If found, please contact the luggage owner.",
+    "email": "fredylim372@gmail.com"
   },
   {
     "id": "apryanto",
@@ -125,9 +130,10 @@
     "publicContactName": "Apryanto",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6282170809390",
-    "qrShowEmail": false,
-    "publicEmail": "",
-    "publicNote": "If found, please contact the luggage owner."
+    "qrShowEmail": true,
+    "publicEmail": "apryanto.chen@gmail.com",
+    "publicNote": "If found, please contact the luggage owner.",
+    "email": "apryanto.chen@gmail.com"
   },
   {
     "id": "raelyn",
@@ -151,8 +157,9 @@
     "publicContactName": "Irin Enzelin",
     "qrShowWhatsapp": true,
     "publicWhatsapp": "6281277122263",
-    "qrShowEmail": false,
-    "publicEmail": "",
-    "publicNote": "If found, please contact the luggage owner."
+    "qrShowEmail": true,
+    "publicEmail": "irinenzelin20@gmail.com",
+    "publicNote": "If found, please contact the luggage owner.",
+    "email": "irinenzelin20@gmail.com"
   }
 ]
