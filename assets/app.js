@@ -553,13 +553,25 @@ function baiduDirectionLink(route){
 }
 
 function baiduLink(query,region){
+ const route=splitBaiduRoute(query);
+ if(route){
+  const params=new URLSearchParams({
+   origin:route.origin,
+   destination:route.destination,
+   mode:"transit",
+   region:region||"中国",
+   output:"html",
+   src:"webapp.chinatrip2027"
+  });
+  return `https://api.map.baidu.com/direction?${params.toString()}`;
+ }
  return `https://map.baidu.com/search/${encodeURIComponent(query)}/@?querytype=s&wd=${encodeURIComponent(query)}`;
 }
 
 function splitBaiduRoute(activity){
  const text=String(activity||"").trim();
  // Only treat an explicitly written A - B activity as a route.
- const match=text.match(/^(.+?)\\s+-\\s+(.+)$/);
+ const match=text.match(/^(.+?)\s+-\s+(.+)$/);
  if(!match) return null;
  return {origin:match[1].trim(),destination:match[2].trim()};
 }
@@ -575,11 +587,13 @@ function baiduAppLink(activity){
    region:"中国",
    src
   });
-  return `baidumap://map/direction?${params.toString()}`;
+  const scheme=/Android/i.test(navigator.userAgent||"")?"bdapp":"baidumap";
+  return `${scheme}://map/direction?${params.toString()}`;
  }
  // Single-place activities open a place search, never a current-location route.
  const params=new URLSearchParams({query:String(activity||""),region:"中国",src});
- return `baidumap://map/place/search?${params.toString()}`;
+ const scheme=/Android/i.test(navigator.userAgent||"")?"bdapp":"baidumap";
+ return `${scheme}://map/place/search?${params.toString()}`;
 }
 
 function openBaiduMapApp(event){
