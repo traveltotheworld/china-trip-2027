@@ -40,7 +40,6 @@
       "has": [
         {
           "type": "host",
-          "key": "host",
           "value": "china-trip-2027.vercel.app"
         }
       ],
