@@ -556,18 +556,30 @@ function baiduLink(query,region){
  return `https://map.baidu.com/search/${encodeURIComponent(query)}/@?querytype=s&wd=${encodeURIComponent(query)}`;
 }
 
-function baiduAppLink(query, origin, destination){
- const ua=navigator.userAgent||"";
- const isAndroid=/Android/i.test(ua);
- const isIOS=/iPhone|iPad|iPod/i.test(ua);
- const scheme=isAndroid ? "bdapp" : "baidumap";
- const src=isAndroid ? "andr.chinatrip2027.web" : "ios.chinatrip2027.web";
- if(origin && destination){
-  const params=`origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&region=${encodeURIComponent("中国")}&mode=transit&src=${src}`;
-  return `${scheme}://map/direction?${params}`;
+function splitBaiduRoute(activity){
+ const text=String(activity||"").trim();
+ // Only treat an explicitly written A - B activity as a route.
+ const match=text.match(/^(.+?)\\s+-\\s+(.+)$/);
+ if(!match) return null;
+ return {origin:match[1].trim(),destination:match[2].trim()};
+}
+
+function baiduAppLink(activity){
+ const route=splitBaiduRoute(activity);
+ const src="webapp.chinatrip2027";
+ if(route){
+  const params=new URLSearchParams({
+   origin:route.origin,
+   destination:route.destination,
+   mode:"transit",
+   region:"中国",
+   src
+  });
+  return `baidumap://map/direction?${params.toString()}`;
  }
- const params=`query=${encodeURIComponent(query)}&region=${encodeURIComponent("中国")}&src=${src}`;
- return `${scheme}://map/place/search?${params}`;
+ // Single-place activities open a place search, never a current-location route.
+ const params=new URLSearchParams({query:String(activity||""),region:"中国",src});
+ return `baidumap://map/place/search?${params.toString()}`;
 }
 
 function openBaiduMapApp(event){
@@ -576,24 +588,15 @@ function openBaiduMapApp(event){
  const ua=navigator.userAgent||"";
  if(!/Android|iPhone|iPad|iPod/i.test(ua)) return;
  event.preventDefault();
-
  const activity=link.dataset.baiduQuery||"";
- const parts=activity.split(/\\s+(?:-|→)\\s+/).filter(Boolean);
- const origin=parts.length>1 ? parts[0].trim() : "";
- const destination=parts.length>1 ? parts.slice(1).join(" - ").trim() : "";
  const fallback=link.href;
  let appOpened=false;
- const onVisibility=()=>{
-  if(document.hidden) appOpened=true;
- };
+ const onVisibility=()=>{if(document.hidden) appOpened=true;};
  document.addEventListener("visibilitychange",onVisibility);
- window.location.href=baiduAppLink(activity,origin,destination);
-
+ // Use Baidu's documented direction URI and pass BOTH explicit endpoints.
+ window.location.href=baiduAppLink(activity);
  window.setTimeout(()=>{
   document.removeEventListener("visibilitychange",onVisibility);
-  if(!appOpened){
-   // Keep the itinerary page open; use a separate tab only as a fallback.
-   window.open(fallback,"_blank","noopener");
-  }
- },1600);
+  if(!appOpened) window.open(fallback,"_blank","noopener");
+ },1800);
 }

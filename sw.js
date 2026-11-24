@@ -1,4 +1,4 @@
-const CACHE="china-trip-v57-baidumap-fixed-route-stay-itinerary";
+const CACHE="china-trip-v58-baidumap-explicit-origin-destination";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",
