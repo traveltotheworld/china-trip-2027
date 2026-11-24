@@ -1,4 +1,4 @@
-const CACHE="china-trip-v54-hybrid-nfc-qr";
+const CACHE="china-trip-v55-baidumap-mandarin-hotels";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",

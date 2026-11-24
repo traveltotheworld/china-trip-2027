@@ -60,6 +60,47 @@ async function initHome(){
 }
 
 const ITINERARY_LOCATION_RULES=[
+ ["Shanghai Pudong Airport","上海浦东国际机场"],
+ ["Shanghai Hongqiao Railway Station","上海虹桥站"],
+ ["Wuxi Railway Station","无锡站"],
+ ["Wuxi Yishang","无锡怡尚酒店（三阳广场火车站店）"],
+ ["Huishan Ancient Town","无锡惠山古镇"],
+ ["Nanchan Temple","无锡南禅寺"],
+ ["Nanchang Street","无锡南长街"],
+ ["Qingming Bridge","无锡清名桥"],
+ ["Yuan Tou Zhu","无锡鼋头渚"],
+ ["Tai Hu","无锡太湖"],
+ ["Ling Shan Grand Buddha","无锡灵山大佛"],
+ ["Nian Hua Bay","无锡拈花湾"],
+ ["Three Kingdom","无锡三国城"],
+ ["Haiyue Mingting Hotel","海玥名庭酒店（上海南站锦江乐园地铁站店）"],
+ ["Yilong Anyue Hotel","艺龙安悦酒店（上海顾唐路地铁站店）"],
+ ["Shanghai Wild Animal Park","上海野生动物园"],
+ ["Yuyuan Garden","上海豫园"],
+ ["Chenghuangmiao","上海城隍庙"],
+ ["Shanghai Romance Park","上海千古情景区"],
+ ["Nanjing Road Pedestrian Street","上海南京路步行街"],
+ ["Jing'an Temple","上海静安寺"],
+ ["Wukang Road","上海武康路"],
+ ["Xintiandi","上海新天地"],
+ ["Tianzifang","上海田子坊"],
+ ["East Fuxing Road Pier","上海复兴东路轮渡站"],
+ ["Dongchang Road Pier","上海东昌路轮渡站"],
+ ["Shanghai Disneyland","上海迪士尼度假区"],
+ ["Suzhou Station","苏州站"],
+ ["Hanshan Temple","苏州寒山寺"],
+ ["Qilishantang Street","苏州七里山塘街"],
+ ["Tiger Hill Pagoda","苏州虎丘风景区"],
+ ["Lion Grove Garden","苏州狮子林"],
+ ["Humble Administrator Garden","苏州拙政园"],
+ ["Pingjiang Road","苏州平江路"],
+ ["Hangzhou West Railway Station","杭州西站"],
+ ["Hangzhou Yi Apartment","杭州仟茉公寓（浙大紫金港店）"],
+ ["Song Dynasty Town","杭州宋城景区"],
+ ["Lingyin Temple","杭州灵隐寺"],
+ ["Feilai Feng","杭州飞来峰"],
+ ["West Lake","杭州西湖风景名胜区"],
+ ["Wulin Road Night Market","杭州武林夜市"],
  ["Batam Centre","Batam Centre Ferry Terminal"],
  ["Tanah Merah","Tanah Merah Ferry Terminal Singapore"],
  ["HarbourFront","HarbourFront Centre Singapore"],
@@ -74,7 +115,10 @@ const ITINERARY_LOCATION_RULES=[
  ["Sijing Night Market","Sijing Night Market Shanghai"],
  ["Jinshan North Station","Jinshan North Railway Station"],
  ["LEGOLAND Shanghai","LEGOLAND Shanghai Resort"],
- ["Shanghai Wild Animal Park","Shanghai Wild Animal Park"],
+ ["Shanghai Wild Animal Park","上海野生动物园"],
+ ["Haiyue Mingting Hotel","海玥名庭酒店（上海南站锦江乐园地铁站店）"],
+ ["Yilong Anyue Hotel","艺龙安悦酒店（上海顾唐路地铁站店）"],
+ ["Wuxi Yishang","无锡怡尚酒店（三阳广场火车站店）"],
  ["Jian Home Apartment","Jian Home Serviced Apartment Shanghai"],
  ["Jing'an Temple","Jing'an Temple Shanghai"],
  ["Wukang Road","Wukang Road Shanghai"],
@@ -115,6 +159,21 @@ const ITINERARY_LOCATION_RULES=[
  ["Hangzhou Xiaoshan International Airport","Hangzhou Xiaoshan International Airport"],
  ["Hotel Hangzhou","Hangzhou"]
 ];
+
+function itineraryMapQuery(activity){
+ if(!activity)return null;
+ const text=String(activity);
+ const parts=text.split(/\\s*(?:→| - )\\s*/).filter(Boolean);
+ const destination=parts.length>1 ? parts[parts.length-1].trim() : text;
+ const candidates=[destination,text];
+ for(const candidate of candidates){
+  const lower=candidate.toLowerCase();
+  for(const [keyword,query] of ITINERARY_LOCATION_RULES){
+   if(lower.includes(keyword.toLowerCase())) return query;
+  }
+ }
+ return null;
+}
 
 function itineraryLocation(activity){
  if(!activity)return null;
@@ -227,7 +286,13 @@ async function renderItinerary(){
                                 target="_blank"
                                 rel="noopener"
                                 aria-label="Open route in Baidu Maps">🧭 Navigate</a>`
-                         : `<span class="no-action">—</span>`}
+                         : (itineraryMapQuery(item.activity)
+                           ? `<a class="map-btn navigate-btn compact-map-btn"
+                                  href="${baiduLink(itineraryMapQuery(item.activity),"中国")}"
+                                  target="_blank"
+                                  rel="noopener"
+                                  aria-label="Open destination in Baidu Maps">🧭 Baidu Maps</a>`
+                           : `<span class="no-action">—</span>`)}
                      </td>
                    </tr>
                  `).join("")}
