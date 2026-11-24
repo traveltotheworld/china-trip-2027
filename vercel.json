@@ -33,5 +33,19 @@
       "path": "/api/supabase-ping",
       "schedule": "0 2 * * *"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "key": "host",
+          "value": "china-trip-2027.vercel.app"
+        }
+      ],
+      "destination": "https://chinatrip.onesolution.my.id/:path*",
+      "permanent": false
+    }
   ]
 }
