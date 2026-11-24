@@ -283,6 +283,7 @@ async function renderItinerary(){
                        ${item.baiduMap===true
                          ? `<a class="map-btn navigate-btn compact-map-btn"
                                 href="${item.route ? baiduDirectionLink(item.route) : baiduLink(item.activity,"中国")}"
+                                data-baidu-query="${item.route ? "" : item.activity}"
                                 target="_blank"
                                 rel="noopener"
                                 aria-label="Open this itinerary location in Baidu Maps">🧭 Baidu Maps</a>`
@@ -297,6 +298,9 @@ async function renderItinerary(){
        </section>
      `).join("")}
    </div>`;
+
+ document.removeEventListener("click",openBaiduMapApp);
+ document.addEventListener("click",openBaiduMapApp);
 
  document.querySelectorAll("[data-day-toggle]").forEach(btn=>{
    btn.addEventListener("click",()=>{
@@ -550,4 +554,28 @@ function baiduDirectionLink(route){
 
 function baiduLink(query,region){
  return `https://map.baidu.com/search/${encodeURIComponent(query)}/@?querytype=s&wd=${encodeURIComponent(query)}`;
+}
+
+function baiduAppLink(query){
+ const q=encodeURIComponent(query);
+ const ua=navigator.userAgent||"";
+ if(/Android/i.test(ua)) return `bdapp://map/place/search?query=${q}&src=andr.chinatrip2027.web`;
+ if(/iPhone|iPad|iPod/i.test(ua)) return `baidumap://map/place/search?query=${q}&src=ios.chinatrip2027.web`;
+ return baiduLink(query,"中国");
+}
+
+function openBaiduMapApp(event){
+ const link=event.target.closest("a[data-baidu-query]");
+ if(!link || !link.dataset.baiduQuery) return;
+ const ua=navigator.userAgent||"";
+ if(!/Android|iPhone|iPad|iPod/i.test(ua)) return;
+ event.preventDefault();
+ const fallback=link.href;
+ let leftPage=false;
+ const markHidden=()=>{leftPage=true;};
+ document.addEventListener("visibilitychange",markHidden,{once:true});
+ window.location.href=baiduAppLink(link.dataset.baiduQuery||"");
+ window.setTimeout(()=>{
+  if(!leftPage) window.location.href=fallback;
+ },1400);
 }
