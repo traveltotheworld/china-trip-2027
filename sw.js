@@ -1,4 +1,4 @@
-const CACHE="china-trip-v56-baidumap-app-launch-fixed";
+const CACHE="china-trip-v57-baidumap-fixed-route-stay-itinerary";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",
