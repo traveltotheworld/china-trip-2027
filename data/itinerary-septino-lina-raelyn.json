@@ -75,7 +75,13 @@
           "from": "08:00",
           "to": "09:30",
           "activity": "Shanghai Pudong Airport Terminal 2 上海浦东国际机场 - Shanghai Hongqiao Railway Station 上海虹桥站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海浦东国际机场T2航站楼",
+            "destinationZh": "上海虹桥站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "09:30",
@@ -87,7 +93,13 @@
           "from": "11:03",
           "to": "11:52",
           "activity": "Shanghai Hongqiao Railway Station 上海虹桥站 - Wuxi Railway Station 无锡站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "无锡站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "11:52",
@@ -99,19 +111,32 @@
           "from": "12:00",
           "to": "12:30",
           "activity": "Wuxi Railway Station 无锡站 - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "无锡站",
+            "destinationZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "12:30",
           "to": "12:45",
           "activity": "Checkin at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "baiduQueryZh": "怡尚酒店（无锡火车站三阳广场店），无锡"
         },
         {
           "from": "12:45",
           "to": "13:30",
           "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Huishan Ancient Town 惠山古镇",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "destinationZh": "惠山古镇，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "13:30",
@@ -123,7 +148,13 @@
           "from": "15:00",
           "to": "16:00",
           "activity": "Huishan Ancient Town 惠山古镇 - Nanchan Temple 南禅寺",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "惠山古镇，无锡",
+            "destinationZh": "南禅寺，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "16:00",
@@ -135,7 +166,13 @@
           "from": "17:00",
           "to": "18:00",
           "activity": "Nanchan Temple 南禅寺 - Nanchang Street 南长街",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "南禅寺，无锡",
+            "destinationZh": "南长街，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "18:00",
@@ -147,7 +184,13 @@
           "from": "20:00",
           "to": "20:30",
           "activity": "Nanchang Street 南长街 - Qingming Bridge 清名桥",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "南长街，无锡",
+            "destinationZh": "清名桥古运河景区，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "20:30",
@@ -159,7 +202,13 @@
           "from": "21:30",
           "to": "22:30",
           "activity": "Nanchang Street 南长街 - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "南长街，无锡",
+            "destinationZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "22:30",
@@ -183,13 +232,20 @@
           "from": "07:00",
           "to": "07:30",
           "activity": "Breakfast at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "baiduQueryZh": "怡尚酒店（无锡火车站三阳广场店），无锡"
         },
         {
           "from": "07:30",
           "to": "09:00",
           "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Yuan Tou Zhu 鼋头渚 + Tai Hu 太湖",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "destinationZh": "鼋头渚风景区，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "09:00",
@@ -201,7 +257,13 @@
           "from": "10:00",
           "to": "12:30",
           "activity": "Yuan Tou Zhu 鼋头渚 + Tai Hu 太湖 - Ling Shan Grand Buddha 灵山大佛",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "鼋头渚风景区，无锡",
+            "destinationZh": "灵山大佛，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "12:30",
@@ -213,7 +275,13 @@
           "from": "16:30",
           "to": "18:00",
           "activity": "Ling Shan Grand Buddha 灵山大佛 - Nian Hua Bay 拈花湾",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "灵山大佛，无锡",
+            "destinationZh": "拈花湾，无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "18:00",
@@ -225,7 +293,13 @@
           "from": "20:00",
           "to": "22:00",
           "activity": "Nian Hua Bay 拈花湾 - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "拈花湾，无锡",
+            "destinationZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "22:00",
@@ -249,13 +323,20 @@
           "from": "08:00",
           "to": "09:00",
           "activity": "Breakfast at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "baiduQueryZh": "怡尚酒店（无锡火车站三阳广场店），无锡"
         },
         {
           "from": "09:00",
           "to": "10:30",
           "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Three Kingdom 三国城",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "destinationZh": "三国水浒景区（三国城），无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "10:30",
@@ -267,7 +348,13 @@
           "from": "18:00",
           "to": "19:30",
           "activity": "Three Kingdom 三国城 - Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "三国水浒景区（三国城），无锡",
+            "destinationZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "19:30",
@@ -291,13 +378,20 @@
           "from": "07:00",
           "to": "08:00",
           "activity": "Breakfast at Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch)",
-          "baiduMap": true
+          "baiduMap": true,
+          "baiduQueryZh": "怡尚酒店（无锡火车站三阳广场店），无锡"
         },
         {
           "from": "08:00",
           "to": "08:30",
           "activity": "Wuxi Yishang | View High-Rise Hotel (Sanyang Square Wuxi Railway Station Branch) - Wuxi Railway Station 无锡站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "怡尚酒店（无锡火车站三阳广场店），无锡",
+            "destinationZh": "无锡站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "08:30",
@@ -309,7 +403,13 @@
           "from": "09:02",
           "to": "09:53",
           "activity": "Wuxi Railway Station 无锡站 - Shanghai Hongqiao Railway Station 上海虹桥站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "无锡站",
+            "destinationZh": "上海虹桥站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "09:53",
@@ -321,7 +421,13 @@
           "from": "10:00",
           "to": "11:30",
           "activity": "Shanghai Hongqiao Railway Station 上海虹桥站 - Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "11:30",
@@ -333,7 +439,13 @@
           "from": "11:45",
           "to": "14:15",
           "activity": "Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店) - Shanghai Wild Animal Park 上海野生动物园",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "destinationZh": "上海野生动物园",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "14:15",
@@ -345,7 +457,13 @@
           "from": "21:00",
           "to": "23:00",
           "activity": "Shanghai Wild Animal Park 上海野生动物园 - Shanghai Pudong Airport Terminal 2 上海浦东国际机场",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海野生动物园",
+            "destinationZh": "上海浦东国际机场T2航站楼",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "23:00",
@@ -363,7 +481,13 @@
           "from": "00:00",
           "to": "02:00",
           "activity": "Shanghai Pudong Airport - Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海浦东国际机场",
+            "destinationZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "02:00",
@@ -381,7 +505,13 @@
           "from": "09:00",
           "to": "10:00",
           "activity": "Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店) - Yuyuan Garden 豫园",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "destinationZh": "豫园，上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "10:00",
@@ -393,7 +523,13 @@
           "from": "11:00",
           "to": "11:15",
           "activity": "Yuyuan Garden 豫园 - Chenghuangmiao No.1 Shopping Center 上海城隍庙",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "豫园，上海",
+            "destinationZh": "上海城隍庙",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "11:15",
@@ -405,7 +541,13 @@
           "from": "13:30",
           "to": "14:30",
           "activity": "Chenghuangmiao 上海城隍庙 - Shanghai Romance Park 上海千古情景区",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海城隍庙",
+            "destinationZh": "上海千古情景区",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "14:30",
@@ -417,7 +559,13 @@
           "from": "20:30",
           "to": "21:30",
           "activity": "Shanghai Romance Park 上海千古情景区 - Nanjing Road Pedestrian Street 南京路步行街",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海千古情景区",
+            "destinationZh": "南京路步行街，上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "21:30",
@@ -429,7 +577,13 @@
           "from": "23:00",
           "to": "00:00",
           "activity": "Nanjing Road Pedestrian Street 南京路步行街 - Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "南京路步行街，上海",
+            "destinationZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         }
       ]
     },
@@ -453,7 +607,13 @@
           "from": "08:00",
           "to": "09:00",
           "activity": "Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店) - Jing'an Temple 静安寺",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "destinationZh": "静安寺，上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "09:00",
@@ -465,7 +625,13 @@
           "from": "11:00",
           "to": "12:00",
           "activity": "Jing'an Temple 静安寺 - Wukang Road 武康路历史文化街",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "静安寺，上海",
+            "destinationZh": "武康路历史文化街区，上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "12:00",
@@ -477,7 +643,13 @@
           "from": "13:30",
           "to": "14:30",
           "activity": "Wukang Road 武康路历史文化街 - Xintiandi 新天地",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "武康路历史文化街区，上海",
+            "destinationZh": "上海新天地",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "14:30",
@@ -489,7 +661,13 @@
           "from": "16:00",
           "to": "17:00",
           "activity": "Xintiandi 新天地 - Tianzifang 田子坊",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海新天地",
+            "destinationZh": "田子坊，上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "17:00",
@@ -501,7 +679,13 @@
           "from": "18:30",
           "to": "19:30",
           "activity": "Tianzifang 田子坊 - East Fuxing Road Pier 复兴东路轮渡站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "田子坊，上海",
+            "destinationZh": "复兴东路轮渡站，上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "19:30",
@@ -513,7 +697,13 @@
           "from": "19:45",
           "to": "21:15",
           "activity": "Dongchang Road Pier 东昌路 - Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "东昌路渡口，上海",
+            "destinationZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "21:15",
@@ -543,7 +733,13 @@
           "from": "08:00",
           "to": "10:00",
           "activity": "Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店) - Shanghai Disneyland 上海迪士尼度假区",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "destinationZh": "上海迪士尼度假区",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "10:00",
@@ -555,7 +751,13 @@
           "from": "21:00",
           "to": "23:00",
           "activity": "Shanghai Disneyland 上海迪士尼度假区 - Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店)",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海迪士尼度假区",
+            "destinationZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "23:00",
@@ -585,7 +787,13 @@
           "from": "08:00",
           "to": "09:30",
           "activity": "Haiyue Mingting Hotel (海玥名庭酒店｜上海南站锦江乐园地铁站店) - Shanghai Hongqiao Railway Station 上海虹桥站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "海玥名庭酒店（上海南站锦江乐园地铁站店），上海",
+            "destinationZh": "上海虹桥站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "09:30",
@@ -597,7 +805,13 @@
           "from": "11:39",
           "to": "12:05",
           "activity": "Shanghai Hongqiao Railway Station 上海虹桥站 - Suzhou Station 苏州站",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "上海虹桥站",
+            "destinationZh": "苏州站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "12:05",
@@ -609,7 +823,13 @@
           "from": "12:21",
           "to": "12:36",
           "activity": "Suzhou Station 苏州站 - Madison Hotel Suzhou Railway Station",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "苏州站",
+            "destinationZh": "麦迪逊酒店（苏州火车站店），苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "12:36",
@@ -621,7 +841,13 @@
           "from": "14:30",
           "to": "16:00",
           "activity": "Madison Hotel Suzhou Railway Station - Hanshan Temple",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "麦迪逊酒店（苏州火车站店），苏州",
+            "destinationZh": "寒山寺，苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "16:00",
@@ -633,7 +859,13 @@
           "from": "17:30",
           "to": "18:30",
           "activity": "Hanshan Temple - Qilishantang Street",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "寒山寺，苏州",
+            "destinationZh": "山塘街（七里山塘），苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "18:30",
@@ -645,7 +877,13 @@
           "from": "21:00",
           "to": "21:30",
           "activity": "Qilishantang Street - Madison Hotel Suzhou Railway Station",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "山塘街（七里山塘），苏州",
+            "destinationZh": "麦迪逊酒店（苏州火车站店），苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "21:30",
@@ -675,7 +913,13 @@
           "from": "08:00",
           "to": "09:00",
           "activity": "Madison Hotel Suzhou Railway Station - Tiger Hill Pagoda",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "麦迪逊酒店（苏州火车站店），苏州",
+            "destinationZh": "虎丘风景区，苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "09:00",
@@ -687,7 +931,13 @@
           "from": "10:30",
           "to": "11:30",
           "activity": "Tiger Hill Pagoda - Lion Grove Garden",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "虎丘风景区，苏州",
+            "destinationZh": "狮子林，苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "11:30",
@@ -699,7 +949,13 @@
           "from": "13:00",
           "to": "13:15",
           "activity": "Lion Grove Garden - Humble Administrator Garden",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "狮子林，苏州",
+            "destinationZh": "拙政园，苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "13:15",
@@ -711,7 +967,13 @@
           "from": "14:45",
           "to": "15:15",
           "activity": "Humble Administrator Garden - Pingjiang Road",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "拙政园，苏州",
+            "destinationZh": "平江路历史街区，苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "15:15",
@@ -723,7 +985,13 @@
           "from": "17:45",
           "to": "19:15",
           "activity": "Pingjiang Road - Madison Hotel Suzhou Railway Station",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "平江路历史街区，苏州",
+            "destinationZh": "麦迪逊酒店（苏州火车站店），苏州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "19:15",
@@ -735,7 +1003,13 @@
           "from": "19:30",
           "to": "19:45",
           "activity": "Madison Hotel Suzhou Railway Station - Suzhou Station",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "麦迪逊酒店（苏州火车站店），苏州",
+            "destinationZh": "苏州站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "19:45",
@@ -747,7 +1021,13 @@
           "from": "21:53",
           "to": "22:37",
           "activity": "Suzhou Railway Station - Hangzhou West Railway Station",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "苏州站",
+            "destinationZh": "杭州西站",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "22:37",
@@ -759,7 +1039,13 @@
           "from": "22:52",
           "to": "00:22",
           "activity": "Hangzhou West Railway Station - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "杭州西站",
+            "destinationZh": "杭州仟茉公寓（浙大紫金港店）",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "00:22",
@@ -795,7 +1081,13 @@
           "from": "10:30",
           "to": "12:30",
           "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Song Dynasty Town",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "杭州仟茉公寓（浙大紫金港店）",
+            "destinationZh": "杭州宋城",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "12:30",
@@ -807,7 +1099,13 @@
           "from": "20:00",
           "to": "22:00",
           "activity": "Song Dynasty Town - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "杭州宋城",
+            "destinationZh": "杭州仟茉公寓（浙大紫金港店）",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "22:00",
@@ -837,7 +1135,13 @@
           "from": "08:30",
           "to": "10:00",
           "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Lingyin Temple & Feilai Feng",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "杭州仟茉公寓（浙大紫金港店）",
+            "destinationZh": "灵隐寺及飞来峰景区，杭州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "10:00",
@@ -849,7 +1153,13 @@
           "from": "12:30",
           "to": "13:30",
           "activity": "Feilai Feng - West Lake",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "飞来峰景区，杭州",
+            "destinationZh": "西湖，杭州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "13:30",
@@ -861,7 +1171,13 @@
           "from": "17:30",
           "to": "18:30",
           "activity": "West Lake - Wulin Road Night Market",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "西湖，杭州",
+            "destinationZh": "武林夜市，杭州",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "18:30",
@@ -873,7 +1189,13 @@
           "from": "21:30",
           "to": "22:30",
           "activity": "Wulin Road Night Market - Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店）",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "武林夜市，杭州",
+            "destinationZh": "杭州仟茉公寓（浙大紫金港店）",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "22:30",
@@ -897,7 +1219,13 @@
           "from": "04:00",
           "to": "05:30",
           "activity": "Hangzhou Yi Apartment (Zheda Zijingang Branch) 杭州仟茉公寓（浙大紫金港店） - Hangzhou Xiaoshan International Airport Terminal 4",
-          "baiduMap": true
+          "baiduMap": true,
+          "route": {
+            "originZh": "杭州仟茉公寓（浙大紫金港店）",
+            "destinationZh": "杭州萧山国际机场T4航站楼",
+            "mode": "transit",
+            "regionZh": "中国"
+          }
         },
         {
           "from": "05:30",

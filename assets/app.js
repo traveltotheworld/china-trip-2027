@@ -283,7 +283,9 @@ async function renderItinerary(){
                        ${item.baiduMap===true
                          ? `<a class="map-btn navigate-btn compact-map-btn"
                                 href="${item.route ? baiduDirectionLink(item.route) : baiduLink(item.activity,"中国")}"
-                                data-baidu-query="${item.activity}"
+                                data-baidu-query="${item.baiduQueryZh||item.activity}"
+                                data-baidu-origin="${item.route?.originZh||''}"
+                                data-baidu-destination="${item.route?.destinationZh||''}"
                                 target="_blank"
                                 rel="noopener"
                                 aria-label="Open this itinerary location in Baidu Maps">🧭 Baidu Maps</a>`
@@ -576,23 +578,14 @@ function splitBaiduRoute(activity){
  return {origin:match[1].trim(),destination:match[2].trim()};
 }
 
-function baiduAppLink(activity){
- const route=splitBaiduRoute(activity);
+function baiduAppLink(activity,originZh,destinationZh){
  const src="webapp.chinatrip2027";
- if(route){
-  const params=new URLSearchParams({
-   origin:route.origin,
-   destination:route.destination,
-   mode:"transit",
-   region:"中国",
-   src
-  });
-  const scheme=/Android/i.test(navigator.userAgent||"")?"bdapp":"baidumap";
+ const scheme=/Android/i.test(navigator.userAgent||"")?"bdapp":"baidumap";
+ if(originZh && destinationZh){
+  const params=new URLSearchParams({origin:originZh,destination:destinationZh,mode:"transit",region:"中国",src});
   return `${scheme}://map/direction?${params.toString()}`;
  }
- // Single-place activities open a place search, never a current-location route.
  const params=new URLSearchParams({query:String(activity||""),region:"中国",src});
- const scheme=/Android/i.test(navigator.userAgent||"")?"bdapp":"baidumap";
  return `${scheme}://map/place/search?${params.toString()}`;
 }
 
@@ -608,7 +601,7 @@ function openBaiduMapApp(event){
  const onVisibility=()=>{if(document.hidden) appOpened=true;};
  document.addEventListener("visibilitychange",onVisibility);
  // Use Baidu's documented direction URI and pass BOTH explicit endpoints.
- window.location.href=baiduAppLink(activity);
+ window.location.href=baiduAppLink(activity,link.dataset.baiduOrigin,link.dataset.baiduDestination);
  window.setTimeout(()=>{
   document.removeEventListener("visibilitychange",onVisibility);
   if(!appOpened) window.open(fallback,"_blank","noopener");
