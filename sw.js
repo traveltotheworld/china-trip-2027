@@ -1,4 +1,4 @@
-const CACHE="china-trip-v55-baidumap-mandarin-hotels";
+const CACHE="china-trip-v56-pdf-baidumap-actions";
 const ASSETS=[
   "/assets/china-trip-hero-v29.jpg",
   "/assets/supabase-data.js",

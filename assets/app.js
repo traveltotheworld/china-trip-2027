@@ -280,19 +280,13 @@ async function renderItinerary(){
                        <div class="activity-text">${item.activity}</div>
                      </td>
                      <td data-label="Action">
-                       ${item.baiduMap===true && item.route
+                       ${item.baiduMap===true
                          ? `<a class="map-btn navigate-btn compact-map-btn"
-                                href="${baiduDirectionLink(item.route)}"
+                                href="${item.route ? baiduDirectionLink(item.route) : baiduLink(item.activity,"中国")}"
                                 target="_blank"
                                 rel="noopener"
-                                aria-label="Open route in Baidu Maps">🧭 Navigate</a>`
-                         : (itineraryMapQuery(item.activity)
-                           ? `<a class="map-btn navigate-btn compact-map-btn"
-                                  href="${baiduLink(itineraryMapQuery(item.activity),"中国")}"
-                                  target="_blank"
-                                  rel="noopener"
-                                  aria-label="Open destination in Baidu Maps">🧭 Baidu Maps</a>`
-                           : `<span class="no-action">—</span>`)}
+                                aria-label="Open this itinerary location in Baidu Maps">🧭 Baidu Maps</a>`
+                         : `<span class="no-action">—</span>`}
                      </td>
                    </tr>
                  `).join("")}
